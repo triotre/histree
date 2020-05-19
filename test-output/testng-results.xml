@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results total="21" passed="16" failed="5" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2020-05-18T05:26:31Z" name="Default suite" finished-at="2020-05-18T08:35:10Z" duration-ms="11318287">
+    <groups>
+    </groups>
+    <test started-at="2020-05-18T05:26:31Z" name="Default test" finished-at="2020-05-18T08:35:10Z" duration-ms="11318287">
+      <class name="com.triotree.test.website.InventroyModule.InventoryModuleTest">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T10:56:27Z" name="beforeSuite" finished-at="2020-05-18T10:56:31Z" duration-ms="4040" status="PASS">
+          <params>
+            <param index="0">
+              <value is-null="true"/>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeSuite -->
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T10:56:31Z" name="beforeclass" finished-at="2020-05-18T10:56:31Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T10:56:32Z" name="setUp" finished-at="2020-05-18T10:57:20Z" duration-ms="48066" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryIndentOrderTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T10:57:20Z" name="inventoryIndentOrderTest" finished-at="2020-05-18T11:09:37Z" duration-ms="737406" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryIndentOrderTest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:09:37Z" name="setUp" finished-at="2020-05-18T11:09:45Z" duration-ms="8457" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:09:37Z" name="tearDownSession" finished-at="2020-05-18T11:09:37Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method signature="inventoryWithIndentApprovalTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:09:45Z" name="inventoryWithIndentApprovalTest" finished-at="2020-05-18T11:36:10Z" duration-ms="1584676" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryWithIndentApprovalTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:36:10Z" name="tearDownSession" finished-at="2020-05-18T11:36:10Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:36:10Z" name="setUp" finished-at="2020-05-18T11:36:25Z" duration-ms="14971" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryIntendIssue1Test()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:36:25Z" name="inventoryIntendIssue1Test" finished-at="2020-05-18T11:51:04Z" duration-ms="878448" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryIntendIssue1Test -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:51:04Z" name="tearDownSession" finished-at="2020-05-18T11:51:04Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:51:04Z" name="setUp" finished-at="2020-05-18T11:51:15Z" duration-ms="11389" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryItemReceiptWithIndentOrderTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:51:15Z" name="inventoryItemReceiptWithIndentOrderTest" finished-at="2020-05-18T11:54:56Z" duration-ms="221145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryItemReceiptWithIndentOrderTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:54:56Z" name="tearDownSession" finished-at="2020-05-18T11:54:56Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:54:56Z" name="setUp" finished-at="2020-05-18T11:55:11Z" duration-ms="14989" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryPurchaseReqiuistion1Test()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T11:55:11Z" name="inventoryPurchaseReqiuistion1Test" finished-at="2020-05-18T12:08:56Z" duration-ms="824785" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryPurchaseReqiuistion1Test -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:08:56Z" name="tearDownSession" finished-at="2020-05-18T12:08:56Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:08:56Z" name="setUp" finished-at="2020-05-18T12:09:19Z" duration-ms="22787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryPurchaseReqiuistion2Test()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:09:19Z" name="inventoryPurchaseReqiuistion2Test" finished-at="2020-05-18T12:11:46Z" duration-ms="147782" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryPurchaseReqiuistion2Test -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:11:46Z" name="tearDownSession" finished-at="2020-05-18T12:11:46Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:11:46Z" name="setUp" finished-at="2020-05-18T12:11:52Z" duration-ms="5301" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryDirectIssueTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:11:52Z" name="inventoryDirectIssueTest" finished-at="2020-05-18T12:13:18Z" duration-ms="86361" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate element with text: TRIOTREE HOSPITAL
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate element with text: TRIOTREE HOSPITAL
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.IndentItemsPage.selectToFacilityFromDropdownDirectIssuePage(IndentItemsPage.java:313)
+	at com.triotree.test.website.InventroyModule.InventoryModuleTest.inventoryDirectIssueTest(InventoryModuleTest.java:657)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryDirectIssueTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:13:19Z" name="tearDownSession" finished-at="2020-05-18T12:13:19Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:13:19Z" name="setUp" finished-at="2020-05-18T12:13:25Z" duration-ms="6044" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryDirectReceiptTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:13:25Z" name="inventoryDirectReceiptTest" finished-at="2020-05-18T12:20:14Z" duration-ms="409662" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryDirectReceiptTest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:20:14Z" name="setUp" finished-at="2020-05-18T12:20:28Z" duration-ms="13766" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:20:14Z" name="tearDownSession" finished-at="2020-05-18T12:20:14Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method signature="purchaseRequisitionApprovalTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:20:28Z" name="purchaseRequisitionApprovalTest" finished-at="2020-05-18T12:22:38Z" duration-ms="129804" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[NEW REQUISITION(S) popup is not showing up]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: NEW REQUISITION(S) popup is not showing up
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.triotree.test.website.TTWebsiteBaseTest.assertTrue(TTWebsiteBaseTest.java:180)
+	at com.triotree.test.website.InventroyModule.InventoryModuleTest.purchaseRequisitionApprovalTest(InventoryModuleTest.java:841)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- purchaseRequisitionApprovalTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:22:38Z" name="tearDownSession" finished-at="2020-05-18T12:22:38Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:22:38Z" name="setUp" finished-at="2020-05-18T12:22:56Z" duration-ms="17251" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryIndentIssueWithManualModeTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:22:56Z" name="inventoryIndentIssueWithManualModeTest" finished-at="2020-05-18T12:46:51Z" duration-ms="1435386" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryIndentIssueWithManualModeTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:46:51Z" name="tearDownSession" finished-at="2020-05-18T12:46:51Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:46:51Z" name="setUp" finished-at="2020-05-18T12:47:00Z" duration-ms="8647" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="purchaseOrderWithoutPRWithFreeItemsTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:47:00Z" name="purchaseOrderWithoutPRWithFreeItemsTest" finished-at="2020-05-18T12:57:53Z" duration-ms="653406" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- purchaseOrderWithoutPRWithFreeItemsTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:57:53Z" name="tearDownSession" finished-at="2020-05-18T12:57:53Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:57:53Z" name="setUp" finished-at="2020-05-18T12:58:05Z" duration-ms="12120" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="inventoryPurchaseReqiuistionWithoutIndentsTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T12:58:05Z" name="inventoryPurchaseReqiuistionWithoutIndentsTest" finished-at="2020-05-18T13:00:32Z" duration-ms="146485" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryPurchaseReqiuistionWithoutIndentsTest -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:00:32Z" name="setUp" finished-at="2020-05-18T13:00:42Z" duration-ms="10608" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:00:32Z" name="tearDownSession" finished-at="2020-05-18T13:00:32Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method signature="inventoryAcknowledgereturnTest()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:00:42Z" name="inventoryAcknowledgereturnTest" finished-at="2020-05-18T13:04:36Z" duration-ms="233599" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inventoryAcknowledgereturnTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:04:36Z" name="tearDownSession" finished-at="2020-05-18T13:04:36Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:04:36Z" name="setUp" finished-at="2020-05-18T13:04:58Z" duration-ms="22162" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="Inventoryindentclosuretestcase()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:04:58Z" name="Inventoryindentclosuretestcase" finished-at="2020-05-18T13:28:45Z" duration-ms="1426606" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Inventoryindentclosuretestcase -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:28:45Z" name="tearDownSession" finished-at="2020-05-18T13:28:45Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:28:45Z" name="setUp" finished-at="2020-05-18T13:29:00Z" duration-ms="15241" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="InventorywithOPBillabeConsumption1TestCase()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:29:00Z" name="InventorywithOPBillabeConsumption1TestCase" finished-at="2020-05-18T13:36:01Z" duration-ms="420967" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InventorywithOPBillabeConsumption1TestCase -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:36:01Z" name="setUp" finished-at="2020-05-18T13:36:15Z" duration-ms="13814" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:36:01Z" name="tearDownSession" finished-at="2020-05-18T13:36:01Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method signature="InventoryGRNTestCase()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:36:15Z" name="InventoryGRNTestCase" finished-at="2020-05-18T13:41:50Z" duration-ms="335333" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InventoryGRNTestCase -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:41:50Z" name="tearDownSession" finished-at="2020-05-18T13:41:50Z" duration-ms="50" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:41:50Z" name="setUp" finished-at="2020-05-18T13:42:02Z" duration-ms="11637" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="InventoryGRNTestCase1()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:42:02Z" name="InventoryGRNTestCase1" finished-at="2020-05-18T13:46:28Z" duration-ms="266037" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//td[@class='clsfillitembatch' and text()='2']"}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: ff7d76f430d96ba6f00a43a788762d1d
+*** Element info: {Using=xpath, value=//td[@class='clsfillitembatch' and text()='2']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//td[@class='clsfillitembatch' and text()='2']"}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: ff7d76f430d96ba6f00a43a788762d1d
+*** Element info: {Using=xpath, value=//td[@class='clsfillitembatch' and text()='2']}
+	at jdk.internal.reflect.GeneratedConstructorAccessor35.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:472)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.triotree.driver.website.TTWebsiteDriver.findElement(TTWebsiteDriver.java:505)
+	at com.triotree.website.pages.FrontOffice.FrontOfficeHomePage.EnterBatchNumber(FrontOfficeHomePage.java:272)
+	at com.triotree.test.website.InventroyModule.InventoryModuleTest.InventoryGRNTestCase1(InventoryModuleTest.java:1761)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InventoryGRNTestCase1 -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:46:28Z" name="setUp" finished-at="2020-05-18T13:46:40Z" duration-ms="12038" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:46:28Z" name="tearDownSession" finished-at="2020-05-18T13:46:28Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method signature="purchaseorderapprovaltestcase()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:46:40Z" name="purchaseorderapprovaltestcase" finished-at="2020-05-18T13:47:29Z" duration-ms="48768" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[unknown error: Element <input class="radio-input " type="radio" id="radApproved" name="radPOAList" value="1"> is not clickable at point (562, 122). Other element would receive the click: <div id="newpopup" class="popup-area " style="display: block;">...</div>
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: 59d9e503a9c276462d74c3810cc965e4]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: unknown error: Element <input class="radio-input " type="radio" id="radApproved" name="radPOAList" value="1"> is not clickable at point (562, 122). Other element would receive the click: <div id="newpopup" class="popup-area " style="display: block;">...</div>
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: 59d9e503a9c276462d74c3810cc965e4
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at com.triotree.website.pages.FrontOffice.FrontOfficeHomePage.selectNewRadioButton(FrontOfficeHomePage.java:614)
+	at com.triotree.test.website.InventroyModule.InventoryModuleTest.purchaseorderapprovaltestcase(InventoryModuleTest.java:1844)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- purchaseorderapprovaltestcase -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:47:29Z" name="setUp" finished-at="2020-05-18T13:47:36Z" duration-ms="6353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:47:29Z" name="tearDownSession" finished-at="2020-05-18T13:47:29Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method signature="InventoryGRNReturnwithoutGRNTestCase()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:47:36Z" name="InventoryGRNReturnwithoutGRNTestCase" finished-at="2020-05-18T13:48:45Z" duration-ms="69596" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Please enter reason for returning the following Items:!']"}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: fdba1420bc5b51a959662fd09994d1c9
+*** Element info: {Using=xpath, value=//p[text()='Please enter reason for returning the following Items:!']}]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//p[text()='Please enter reason for returning the following Items:!']"}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '10.81.234.27', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: fdba1420bc5b51a959662fd09994d1c9
+*** Element info: {Using=xpath, value=//p[text()='Please enter reason for returning the following Items:!']}
+	at jdk.internal.reflect.GeneratedConstructorAccessor35.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:472)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.triotree.driver.website.TTWebsiteDriver.findElement(TTWebsiteDriver.java:505)
+	at com.triotree.website.pages.FrontOffice.PatientRegistrationPage.verifymessagedisplay(PatientRegistrationPage.java:998)
+	at com.triotree.test.website.InventroyModule.InventoryModuleTest.InventoryGRNReturnwithoutGRNTestCase(InventoryModuleTest.java:1885)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InventoryGRNReturnwithoutGRNTestCase -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:48:46Z" name="tearDownSession" finished-at="2020-05-18T13:48:46Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:48:46Z" name="setUp" finished-at="2020-05-18T13:49:01Z" duration-ms="14765" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="InventorywithOPBillabeConsumption2TestCase()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T13:49:01Z" name="InventorywithOPBillabeConsumption2TestCase" finished-at="2020-05-18T14:00:24Z" duration-ms="683683" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InventorywithOPBillabeConsumption2TestCase -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T14:00:24Z" name="setUp" finished-at="2020-05-18T14:00:38Z" duration-ms="13625" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T14:00:24Z" name="tearDownSession" finished-at="2020-05-18T14:00:24Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method signature="InventoryPaymentAdvicesTestCase()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T14:00:38Z" name="InventoryPaymentAdvicesTestCase" finished-at="2020-05-18T14:05:10Z" duration-ms="271669" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- InventoryPaymentAdvicesTestCase -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T14:05:10Z" name="tearDownSession" finished-at="2020-05-18T14:05:10Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.test.website.InventroyModule.InventoryModuleTest@615f972]" started-at="2020-05-18T14:05:15Z" name="afterSuite" finished-at="2020-05-18T14:05:15Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterSuite -->
+      </class> <!-- com.triotree.test.website.InventroyModule.InventoryModuleTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

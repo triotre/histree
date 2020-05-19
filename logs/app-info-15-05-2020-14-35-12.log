@@ -1,0 +1,244 @@
+[INFO ] 2020-05-15 14:35:21.354 [main] TTBaseTest - Started execution with  null
+[INFO ] 2020-05-15 14:35:21.425 [main] TTBaseTest - Environment properties are not provided by the user ... loading the default properties
+[INFO ] 2020-05-15 14:35:21.426 [main] TTBaseTest - Default Browser is  ------ chrome
+[INFO ] 2020-05-15 14:35:21.426 [main] TTBaseTest - Default URL is  ------ http://206.19.38.8:8001/HISTreeTesting/Login/Login?ReturnUrl=%2fHistreetesting
+[INFO ] 2020-05-15 14:35:21.426 [main] TTBaseTest - Default loginname is  ------ null
+[INFO ] 2020-05-15 14:35:21.426 [main] TTBaseTest - Default username is  ------ null
+[INFO ] 2020-05-15 14:35:21.427 [main] TTBaseTest - Default user password is  ------ Deepak@1234
+[INFO ] 2020-05-15 14:35:31.812 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-15 14:35:31.845 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-15 14:35:33.048 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-15 14:35:34.521 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-15 14:35:34.522 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-15 14:35:38.964 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-15 14:35:38.964 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-15 14:35:39.055 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-15 14:35:39.055 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-15 14:35:39.159 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-15 14:35:39.160 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-15 14:35:39.242 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-15 14:35:39.242 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-15 14:35:39.308 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-15 14:35:39.308 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-15 14:35:39.385 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  InventoryPaymentAdvicesTestCase
+******************************************************************************************************************************
+[INFO ] 2020-05-15 14:35:39.630 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-15 14:35:39.665 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:40.675 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-15 14:35:40.700 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:40.917 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-15 14:35:40.938 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:41.942 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-15 14:35:41.967 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:44.199 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-15 14:35:44.200 [main] TTWebsiteDriver - wait started for By.xpath: //span[@class='app_name' and contains(text(),'Inventory')]//preceding::span[1]
+[INFO ] 2020-05-15 14:35:44.231 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:45.422 [main] HISHomePage - Inventory Icon Clicked
+[INFO ] 2020-05-15 14:35:49.559 [main] HISHomePage - Following Station has been selected from Station Dropdown : Central Medicine Store
+[INFO ] 2020-05-15 14:35:49.624 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-15 14:35:49.673 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:50.676 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-15 14:35:50.708 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:53.449 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-15 14:35:53.450 [main] TTWebsiteDriver - wait started for By.xpath: //a[@href='#'][text()='GRN']
+[INFO ] 2020-05-15 14:35:53.492 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:54.496 [main] TTWebsiteDriver - wait started for By.xpath: //a[@href='#'][text()='GRN']
+[INFO ] 2020-05-15 14:35:54.545 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:55.551 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@href='#'][text()='GRN']
+[INFO ] 2020-05-15 14:35:55.567 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:35:55.688 [main] FrontOfficeHomePage - Indent Issue Section is Expanded
+[INFO ] 2020-05-15 14:35:56.700 [main] FrontOfficeHomePage - Following Option has been selected from Purchase Order Section GRN
+[INFO ] 2020-05-15 14:35:56.700 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-15 14:36:26.760 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='ddlreceipttyp']
+[INFO ] 2020-05-15 14:36:26.839 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:36:28.066 [main] FrontOfficeHomePage - Following Option has been selected from Receipt Type with PO  Without PO
+[INFO ] 2020-05-15 14:36:28.166 [main] FrontOfficeHomePage - Supplier Name A.D AGENCIES
+[INFO ] 2020-05-15 14:36:28.166 [main] TTWebsiteDriver - wait started for By.xpath: //i[@id='btnserachsupp']
+[INFO ] 2020-05-15 14:36:28.203 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:36:30.682 [main] FrontOfficeHomePage - Click on OK Recipt Type Button
+[INFO ] 2020-05-15 14:36:30.729 [main] TTWebsiteDriver - wait started for By.xpath: //table[@id='tblmedicine']//tr
+[INFO ] 2020-05-15 14:36:33.434 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:36:44.255 [main] PatientRegistrationPage - Please enter reason for returning the following Items:!
+[INFO ] 2020-05-15 14:36:44.255 [main] TTWebsiteDriver - wait started for By.xpath: //span[@id='withoutpomodalclose']//i
+[INFO ] 2020-05-15 14:36:44.291 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:36:45.532 [main] FrontOfficeHomePage - Click on GRN Items Close Button
+[INFO ] 2020-05-15 14:36:45.533 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='chkchllan']
+[INFO ] 2020-05-15 14:36:45.573 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:36:46.673 [main] FrontOfficeHomePage - Click on Agaist Challan Check Box
+[INFO ] 2020-05-15 14:36:46.673 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='txtinvoice']
+[INFO ] 2020-05-15 14:36:46.735 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:36:48.625 [main] FrontOfficeHomePage - Enter Invoice Number
+[INFO ] 2020-05-15 14:36:48.625 [main] TTWebsiteDriver - wait started for By.xpath: //i[@id='btnrefreshsupp']
+[INFO ] 2020-05-15 14:36:48.662 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:36:51.433 [main] FrontOfficeHomePage - Click on Reload Button
+[INFO ] 2020-05-15 14:36:51.504 [main] TTWebsiteDriver - wait started for By.xpath: //table[@id='tblmedicine']//tr
+[INFO ] 2020-05-15 14:36:54.149 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:02.724 [main] TTWebsiteDriver - wait started for By.xpath: //span[@id='withoutpomodalclose']//i
+[INFO ] 2020-05-15 14:37:02.764 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:03.972 [main] FrontOfficeHomePage - Click on GRN Items Close Button
+[INFO ] 2020-05-15 14:37:03.972 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btncal']
+[INFO ] 2020-05-15 14:37:04.026 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:05.175 [main] FrontOfficeHomePage - Click on Calculate Button
+[INFO ] 2020-05-15 14:37:05.175 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='btnsyes']
+[INFO ] 2020-05-15 14:37:05.255 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:06.482 [main] FrontOfficeHomePage - Click on Scheme Details Ok Button
+[INFO ] 2020-05-15 14:37:09.240 [main] FrontOfficeHomePage - Receipt Details Qty A TO Z GOLD CAP 10
+[INFO ] 2020-05-15 14:37:10.199 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btncal']
+[INFO ] 2020-05-15 14:37:10.235 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:11.392 [main] FrontOfficeHomePage - Click on Calculate Button
+[INFO ] 2020-05-15 14:37:11.392 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='btnsyes']
+[INFO ] 2020-05-15 14:37:11.426 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:12.581 [main] FrontOfficeHomePage - Click on Scheme Details Ok Button
+[INFO ] 2020-05-15 14:37:17.358 [main] FrontOfficeHomePage - Enter Batch Number A TO Z GOLD CAP 1
+[INFO ] 2020-05-15 14:37:26.175 [main] FrontOfficeHomePage - Enter Batch Number A TO Z GOLD CAP 01/Dec/2110
+[INFO ] 2020-05-15 14:37:27.065 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnedit']
+[INFO ] 2020-05-15 14:37:27.096 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:28.229 [main] FrontOfficeHomePage - Click on Edit Button
+[INFO ] 2020-05-15 14:37:28.526 [main] FrontOfficeHomePage - Enter PR Rate A TO Z GOLD CAP 20
+[INFO ] 2020-05-15 14:37:28.526 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnedit']
+[INFO ] 2020-05-15 14:37:28.553 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:29.650 [main] FrontOfficeHomePage - Click on Edit Button
+[INFO ] 2020-05-15 14:37:30.054 [main] FrontOfficeHomePage - Enter Batch Number A TO Z GOLD CAP 100
+[INFO ] 2020-05-15 14:37:30.054 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnedit']
+[INFO ] 2020-05-15 14:37:30.079 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:31.169 [main] FrontOfficeHomePage - Click on Edit Button
+[INFO ] 2020-05-15 14:37:31.549 [main] FrontOfficeHomePage - Enter SGST Percentage A TO Z GOLD CAP 6
+[INFO ] 2020-05-15 14:37:31.549 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnedit']
+[INFO ] 2020-05-15 14:37:31.570 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:32.701 [main] FrontOfficeHomePage - Click on Edit Button
+[INFO ] 2020-05-15 14:37:32.995 [main] FrontOfficeHomePage - Enter CGST Percentage A TO Z GOLD CAP 6
+[INFO ] 2020-05-15 14:37:32.995 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btncal']
+[INFO ] 2020-05-15 14:37:33.029 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:34.174 [main] FrontOfficeHomePage - Click on Calculate Button
+[INFO ] 2020-05-15 14:37:34.175 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='btnsyes']
+[INFO ] 2020-05-15 14:37:34.208 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:35.448 [main] FrontOfficeHomePage - Click on Scheme Details Ok Button
+[INFO ] 2020-05-15 14:37:35.449 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='chkdraftsave']
+[INFO ] 2020-05-15 14:37:35.487 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:36.612 [main] FrontOfficeHomePage - Click on Draft Check Box
+[INFO ] 2020-05-15 14:37:36.612 [main] TTWebsiteDriver - wait started for By.xpath: //a[@title='Save']
+[INFO ] 2020-05-15 14:37:36.660 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:37.776 [main] FrontOfficeHomePage - Click on Save Button
+[INFO ] 2020-05-15 14:37:37.777 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btngrnno']
+[INFO ] 2020-05-15 14:37:37.822 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:38.926 [main] FrontOfficeHomePage - Click on Save Button
+[INFO ] 2020-05-15 14:37:38.926 [main] TTWebsiteDriver - wait started for By.xpath: //a[@title='Save']
+[INFO ] 2020-05-15 14:37:38.991 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:40.085 [main] FrontOfficeHomePage - Click on Save Button
+[INFO ] 2020-05-15 14:37:40.085 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btngrnyes']
+[INFO ] 2020-05-15 14:37:40.122 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:41.279 [main] FrontOfficeHomePage - Click on Save Button
+[INFO ] 2020-05-15 14:37:41.280 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-15 14:37:41.324 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:42.342 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-15 14:37:42.405 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:43.421 [main] TTWebsiteDriver - quick wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-15 14:37:43.468 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:43.704 [main] HISWebsiteBasePage - Menu Clicked
+[INFO ] 2020-05-15 14:37:47.714 [main] TTWebsiteDriver - wait started for By.xpath: //a[contains(text(),'HOME')]
+[INFO ] 2020-05-15 14:37:47.778 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:48.823 [main] TTWebsiteDriver - wait started for By.xpath: //a[contains(text(),'HOME')]
+[INFO ] 2020-05-15 14:37:48.871 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:49.886 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[contains(text(),'HOME')]
+[INFO ] 2020-05-15 14:37:49.916 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:50.414 [main] HISWebsiteBasePage - HOME ICON Clicked
+[INFO ] 2020-05-15 14:37:50.414 [main] TTWebsiteDriver - wait started for By.xpath: //span[@class='app_name' and contains(text(),'Inventory')]//preceding::span[1]
+[INFO ] 2020-05-15 14:37:50.435 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:51.589 [main] HISHomePage - Inventory Icon Clicked
+[INFO ] 2020-05-15 14:37:55.753 [main] HISHomePage - Following Station has been selected from Station Dropdown : Central Medicine Store
+[INFO ] 2020-05-15 14:37:55.753 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-15 14:37:55.770 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:56.773 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-15 14:37:56.794 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:57.424 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-15 14:37:57.424 [main] TTWebsiteDriver - wait started for By.xpath: //a[@href='#'][text()='GRN']
+[INFO ] 2020-05-15 14:37:57.446 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:58.458 [main] TTWebsiteDriver - wait started for By.xpath: //a[@href='#'][text()='GRN']
+[INFO ] 2020-05-15 14:37:58.490 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:59.514 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@href='#'][text()='GRN']
+[INFO ] 2020-05-15 14:37:59.545 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:37:59.691 [main] FrontOfficeHomePage - Indent Issue Section is Expanded
+[INFO ] 2020-05-15 14:38:00.431 [main] FrontOfficeHomePage - Following Option has been selected from Purchase Order Section Payment Advice
+[INFO ] 2020-05-15 14:38:00.431 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-15 14:38:30.458 [main] TTWebsiteDriver - wait started for By.xpath: //a[@title='Save']
+[INFO ] 2020-05-15 14:38:30.520 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:38:31.633 [main] FrontOfficeHomePage - Click on Save Button
+[INFO ] 2020-05-15 14:38:31.676 [main] PatientRegistrationPage - Please enter reason for returning the following Items:!
+[INFO ] 2020-05-15 14:38:31.805 [main] FrontOfficeHomePage - Supplier Name ANIL CHEMISTS
+[INFO ] 2020-05-15 14:38:31.805 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_Search']//i
+[INFO ] 2020-05-15 14:38:31.826 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:38:32.931 [main] FrontOfficeHomePage - Click on Payment Advice Search Button
+[INFO ] 2020-05-15 14:38:32.981 [main] PatientRegistrationPage - Please enter reason for returning the following Items:!
+[INFO ] 2020-05-15 14:38:33.081 [main] FrontOfficeHomePage - Supplier Name A.D AGENCIES
+[INFO ] 2020-05-15 14:38:33.081 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_Search']//i
+[INFO ] 2020-05-15 14:38:33.098 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:38:34.186 [main] FrontOfficeHomePage - Click on Payment Advice Search Button
+[INFO ] 2020-05-15 14:38:34.186 [main] TTWebsiteDriver - wait started for By.xpath: //input[@class='SelectedRow']
+[INFO ] 2020-05-15 14:38:38.247 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:38:42.285 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:38:46.344 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:38:50.363 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:38:54.430 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:38:58.510 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:02.571 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:06.613 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:10.662 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:14.722 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:14.722 [main] TTWebsiteDriver - ELEMENT NOT FOUND
+[INFO ] 2020-05-15 14:39:17.778 [main] TTWebsiteDriver - wait started for By.xpath: //a[@title='Save']
+[INFO ] 2020-05-15 14:39:17.806 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:39:18.856 [main] FrontOfficeHomePage - Click on Save Button
+[INFO ] 2020-05-15 14:39:18.856 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_Modify']//i
+[INFO ] 2020-05-15 14:39:18.874 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:39:19.910 [main] FrontOfficeHomePage - click on Modify Button
+[INFO ] 2020-05-15 14:39:19.910 [main] TTWebsiteDriver - wait started for By.xpath: //input[@ctype='InvNo']
+[INFO ] 2020-05-15 14:39:23.921 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:27.942 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:31.959 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:35.990 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:40.030 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:44.076 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:48.095 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:52.114 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:39:56.171 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:40:00.230 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-15 14:40:00.230 [main] TTWebsiteDriver - ELEMENT NOT FOUND
+[INFO ] 2020-05-15 14:40:03.277 [main] TTWebsiteDriver - wait started for By.xpath: //a[@title='Save']
+[INFO ] 2020-05-15 14:40:03.297 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:04.368 [main] FrontOfficeHomePage - Click on Save Button
+[INFO ] 2020-05-15 14:40:04.368 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_printYes']
+[INFO ] 2020-05-15 14:40:04.416 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:05.738 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_PaymentAdvicePrint']//i
+[INFO ] 2020-05-15 14:40:05.771 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:06.813 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='rbl_Summary']
+[INFO ] 2020-05-15 14:40:06.833 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:07.893 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_PaymentAdvicePrint']//i
+[INFO ] 2020-05-15 14:40:07.907 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:08.987 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnClear']
+[INFO ] 2020-05-15 14:40:09.006 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:10.078 [main] FrontOfficeHomePage - Click on Clear Button
+[INFO ] 2020-05-15 14:40:10.078 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_Search']//i
+[INFO ] 2020-05-15 14:40:10.098 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:11.198 [main] FrontOfficeHomePage - Click on Payment Advice Search Button
+[INFO ] 2020-05-15 14:40:11.310 [main] FrontOfficeHomePage - Supplier Name A.D AGENCIES
+[INFO ] 2020-05-15 14:40:11.310 [main] TTWebsiteDriver - wait started for By.xpath: //a[text()='Show Existing Advices']
+[INFO ] 2020-05-15 14:40:11.331 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:12.462 [main] FrontOfficeHomePage - Show Existing Advices Tab
+[INFO ] 2020-05-15 14:40:12.462 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_Search']//i
+[INFO ] 2020-05-15 14:40:12.484 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:13.581 [main] FrontOfficeHomePage - Click on Payment Advice Search Button
+[INFO ] 2020-05-15 14:40:13.581 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_PaymentAdvicePrint']//i
+[INFO ] 2020-05-15 14:40:13.608 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:14.691 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='rbl_Summary']
+[INFO ] 2020-05-15 14:40:14.714 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:15.745 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btn_PaymentAdvicePrint']//i
+[INFO ] 2020-05-15 14:40:15.759 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-15 14:40:16.836 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case InventoryPaymentAdvicesTestCase has passed]

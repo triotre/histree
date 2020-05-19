@@ -1,0 +1,1297 @@
+[INFO ] 2020-05-19 14:30:18.846 [main] TTBaseTest - Started execution with  null
+[INFO ] 2020-05-19 14:30:18.883 [main] TTBaseTest - Environment properties are not provided by the user ... loading the default properties
+[INFO ] 2020-05-19 14:30:18.883 [main] TTBaseTest - Default Browser is  ------ chrome
+[INFO ] 2020-05-19 14:30:18.883 [main] TTBaseTest - Default URL is  ------ http://206.19.38.8:8001/HISTreeTesting/Login/Login?ReturnUrl=%2fHistreetesting
+[INFO ] 2020-05-19 14:30:18.883 [main] TTBaseTest - Default loginname is  ------ null
+[INFO ] 2020-05-19 14:30:18.883 [main] TTBaseTest - Default username is  ------ null
+[INFO ] 2020-05-19 14:30:18.884 [main] TTBaseTest - Default user password is  ------ Deepak@1234
+[INFO ] 2020-05-19 14:30:26.996 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-19 14:30:27.024 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-19 14:30:28.076 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-19 14:30:28.205 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:30:28.205 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:30:28.205 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-19 14:30:29.022 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:30:29.022 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:30:29.022 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-19 14:30:29.120 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:30:29.121 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:30:29.121 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-19 14:30:29.208 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:30:29.208 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:30:29.208 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-19 14:30:29.317 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:30:29.317 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:30:29.318 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:30:29.394 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:30:29.394 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:30:29.395 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:30:29.463 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  patientRegistrationValidDataTest
+******************************************************************************************************************************
+[INFO ] 2020-05-19 14:30:29.687 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:30:29.752 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:30.755 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:30:30.782 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:31.679 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:30:31.701 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:32.705 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:30:32.740 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:34.020 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-19 14:30:34.020 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:30:34.044 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:35.246 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:30:35.372 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:30:35.372 [main] TTWebsiteDriver - wait started for By.id: btn_no_desh
+[INFO ] 2020-05-19 14:30:35.392 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:36.396 [main] TTWebsiteDriver - quick wait started for By.id: btn_no_desh
+[INFO ] 2020-05-19 14:30:36.423 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:36.509 [main] HISHomePage - NO has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:30:36.509 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:30:36.535 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:37.622 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:30:41.689 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:30:41.689 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:30:41.713 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:42.719 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:30:42.742 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:43.661 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:30:43.662 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:30:43.693 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:44.698 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:30:44.732 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:45.736 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:30:45.750 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:30:45.872 [main] FrontOfficeHomePage - Add Patient Section is Expanded
+[INFO ] 2020-05-19 14:30:55.387 [main] FrontOfficeHomePage - Following Option has been selected from Add Patient Section Patient Registration
+[INFO ] 2020-05-19 14:30:55.388 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:31:13.578 [main] PatientRegistrationPage - Following Title has been selected from Title Dropdown : Mr.
+[INFO ] 2020-05-19 14:31:13.579 [main] TTWebsiteDriver - wait started for By.id: firstName
+[INFO ] 2020-05-19 14:31:13.601 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:15.196 [main] PatientRegistrationPage - First Name has been added as : Automation
+[INFO ] 2020-05-19 14:31:15.197 [main] TTWebsiteDriver - wait started for By.id: middleName
+[INFO ] 2020-05-19 14:31:15.218 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:16.491 [main] PatientRegistrationPage - Middle Name has been added as : Test
+[INFO ] 2020-05-19 14:31:16.492 [main] TTWebsiteDriver - wait started for By.id: lastName
+[INFO ] 2020-05-19 14:31:16.513 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:17.802 [main] PatientRegistrationPage - Last Name has been added as : User
+[INFO ] 2020-05-19 14:31:17.802 [main] TTWebsiteDriver - wait started for By.id: gender
+[INFO ] 2020-05-19 14:31:17.824 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:18.930 [main] PatientRegistrationPage - Following Gender has been selected from Gender Dropdown : Male
+[INFO ] 2020-05-19 14:31:18.931 [main] TTWebsiteDriver - wait started for By.id: dob
+[INFO ] 2020-05-19 14:31:18.950 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:20.683 [main] PatientRegistrationPage - Following DOB has been added : 15-12-1991
+[INFO ] 2020-05-19 14:31:28.819 [main] TTWebsiteDriver - wait started for By.id: chkA
+[INFO ] 2020-05-19 14:31:28.869 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:29.906 [main] TTWebsiteDriver - wait started for By.id: age
+[INFO ] 2020-05-19 14:31:29.925 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:31.178 [main] PatientRegistrationPage - Following Age has been added : 16
+[INFO ] 2020-05-19 14:31:31.321 [main] PatientRegistrationPage - When User is entering age less than 18, alert message is showing up
+[INFO ] 2020-05-19 14:31:39.360 [main] TTWebsiteDriver - wait started for By.id: chkA
+[INFO ] 2020-05-19 14:31:39.381 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:40.418 [main] TTWebsiteDriver - wait started for By.id: age
+[INFO ] 2020-05-19 14:31:40.438 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:41.594 [main] PatientRegistrationPage - Following Age has been added : 23
+[INFO ] 2020-05-19 14:31:41.594 [main] TTWebsiteDriver - wait started for By.id: mStatus
+[INFO ] 2020-05-19 14:31:41.616 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:42.760 [main] PatientRegistrationPage - Following MArtial Status has been selected from MArtial Status  Dropdown : Single
+[INFO ] 2020-05-19 14:31:42.760 [main] TTWebsiteDriver - wait started for By.id: motherName
+[INFO ] 2020-05-19 14:31:42.781 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:44.682 [main] PatientRegistrationPage - Following Mother Maiden Name Has been Added: Automation Test Mother
+[INFO ] 2020-05-19 14:31:44.682 [main] TTWebsiteDriver - wait started for By.id: relName
+[INFO ] 2020-05-19 14:31:44.701 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:46.568 [main] PatientRegistrationPage - Following Fathers Name Has been Added: AutomationFather@123 
+[INFO ] 2020-05-19 14:31:46.568 [main] TTWebsiteDriver - wait started for By.id: nationality
+[INFO ] 2020-05-19 14:31:46.588 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:47.690 [main] PatientRegistrationPage - Following Nationality has been selected from Nationality Dropdown : Indian
+[INFO ] 2020-05-19 14:31:49.951 [main] PatientRegistrationPage - VIP Checkbox has been selected and Data has been added to VIP Text Box
+[INFO ] 2020-05-19 14:31:50.272 [main] PatientRegistrationPage - Remarks Checkbox has been selected and Data has been added to Remarks Text Box
+[INFO ] 2020-05-19 14:31:50.299 [main] PatientRegistrationPage - NRI Checkbox has been selected
+[INFO ] 2020-05-19 14:31:50.418 [main] PatientRegistrationPage - ID Card Drop down is enabled
+[INFO ] 2020-05-19 14:31:50.418 [main] TTWebsiteDriver - wait started for By.id: cardType
+[INFO ] 2020-05-19 14:31:50.439 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:51.586 [main] PatientRegistrationPage - Following ID Card has been selected from ID Card Dropdown : Passport Number
+[INFO ] 2020-05-19 14:31:51.847 [main] PatientRegistrationPage - Following National ID has been added : 12345
+[INFO ] 2020-05-19 14:31:52.479 [main] PatientRegistrationPage - Following TELEPHONE NO has been added in TELEPHONE No Text Box : 1234567891011123
+[INFO ] 2020-05-19 14:31:52.792 [main] PatientRegistrationPage - Following MOBILE NO has been added : 12345
+[INFO ] 2020-05-19 14:31:52.792 [main] TTWebsiteDriver - wait started for By.id: register
+[INFO ] 2020-05-19 14:31:52.831 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:53.885 [main] PatientRegistrationPage - Regsiter Icon Clicked
+[INFO ] 2020-05-19 14:31:54.060 [main] PatientRegistrationPage - Alert SHowing up when adding Invalid Message
+[INFO ] 2020-05-19 14:31:54.474 [main] PatientRegistrationPage - Following MOBILE NO has been added : 1234567890
+[INFO ] 2020-05-19 14:31:55.378 [main] PatientRegistrationPage - Following house Number has been added Automation Test Address
+[INFO ] 2020-05-19 14:31:55.379 [main] TTWebsiteDriver - wait started for By.id: city
+[INFO ] 2020-05-19 14:31:55.397 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:31:56.670 [main] PatientRegistrationPage - Following City  has been selected from City Dropdown : New Delhi
+[INFO ] 2020-05-19 14:32:08.831 [main] PatientRegistrationPage - Following City has been addedTest City4187Following District has been selected
+[INFO ] 2020-05-19 14:32:08.831 [main] TTWebsiteDriver - wait started for By.id: addlocal
+[INFO ] 2020-05-19 14:32:08.853 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:10.135 [main] TTWebsiteDriver - wait started for By.id: local
+[INFO ] 2020-05-19 14:32:10.159 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:20.782 [main] PatientRegistrationPage - Follwoing Locality has been added: Test local5180Following City has been selected: SaharanpurFollowing Pin Code has been added: 247001
+[INFO ] 2020-05-19 14:32:20.782 [main] TTWebsiteDriver - wait started for By.id: emailID
+[INFO ] 2020-05-19 14:32:20.822 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:22.523 [main] PatientRegistrationPage - Following email has been added: %^%^%^%^
+[INFO ] 2020-05-19 14:32:22.523 [main] TTWebsiteDriver - wait started for By.id: register
+[INFO ] 2020-05-19 14:32:22.542 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:23.619 [main] PatientRegistrationPage - Regsiter Icon Clicked
+[INFO ] 2020-05-19 14:32:23.620 [main] TTWebsiteDriver - wait started for By.id: emailID
+[INFO ] 2020-05-19 14:32:23.650 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:25.891 [main] PatientRegistrationPage - Following email has been added: test@automation.com
+[INFO ] 2020-05-19 14:32:26.223 [main] PatientRegistrationPage - Following Reffered By has been added: Self
+[INFO ] 2020-05-19 14:32:26.223 [main] TTWebsiteDriver - wait started for By.id: lang
+[INFO ] 2020-05-19 14:32:26.243 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:27.438 [main] PatientRegistrationPage - Following language  has been selected from language Dropdown : English
+[INFO ] 2020-05-19 14:32:27.439 [main] TTWebsiteDriver - wait started for By.id: occupation
+[INFO ] 2020-05-19 14:32:27.458 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:28.671 [main] PatientRegistrationPage - Following occupation  has been selected from occupation Dropdown : Student
+[INFO ] 2020-05-19 14:32:28.671 [main] TTWebsiteDriver - wait started for By.id: qualification
+[INFO ] 2020-05-19 14:32:28.689 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:29.893 [main] PatientRegistrationPage - Following qualification  has been selected from qualification Dropdown : Ph.D
+[INFO ] 2020-05-19 14:32:29.893 [main] TTWebsiteDriver - wait started for By.id: religion
+[INFO ] 2020-05-19 14:32:29.917 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:31.085 [main] PatientRegistrationPage - Following relegion  has been selected from relegion Dropdown : Hindu
+[INFO ] 2020-05-19 14:32:31.085 [main] TTWebsiteDriver - wait started for By.id: sref
+[INFO ] 2020-05-19 14:32:31.104 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:32.257 [main] PatientRegistrationPage - Following refer  has been selected from refer Dropdown : News Paper
+[INFO ] 2020-05-19 14:32:32.292 [main] PatientRegistrationPage - Financial Details Checkbox Checked
+[INFO ] 2020-05-19 14:32:32.292 [main] TTWebsiteDriver - wait started for By.id: companytype
+[INFO ] 2020-05-19 14:32:32.315 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:33.551 [main] PatientRegistrationPage - Following compType  has been selected from compType Dropdown : Corporate
+[INFO ] 2020-05-19 14:32:33.551 [main] TTWebsiteDriver - wait started for By.id: company
+[INFO ] 2020-05-19 14:32:33.569 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:34.737 [main] PatientRegistrationPage - First comp has been selected from comp Dropdown
+[INFO ] 2020-05-19 14:32:34.774 [main] PatientRegistrationPage - Show All checkbox under financial details has been selected
+[INFO ] 2020-05-19 14:32:34.774 [main] TTWebsiteDriver - wait started for By.id: rate
+[INFO ] 2020-05-19 14:32:34.792 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:35.992 [main] PatientRegistrationPage - First Rate has been selected from Rate Dropdown
+[INFO ] 2020-05-19 14:32:36.027 [main] PatientRegistrationPage - Scheme Checkbox Checked
+[INFO ] 2020-05-19 14:32:36.027 [main] TTWebsiteDriver - wait started for By.id: scheme
+[INFO ] 2020-05-19 14:32:36.050 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:37.243 [main] PatientRegistrationPage - First Scheme has been selected from Scheme Dropdown
+[INFO ] 2020-05-19 14:32:37.243 [main] TTWebsiteDriver - wait started for By.id: register
+[INFO ] 2020-05-19 14:32:37.256 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:38.320 [main] PatientRegistrationPage - Regsiter Icon Clicked
+[INFO ] 2020-05-19 14:32:38.367 [main] TTWebsiteDriver - wait started for By.id: btnyesss
+[INFO ] 2020-05-19 14:32:38.381 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:49.525 [main] PatientRegistrationPage - Yes button clicked on Confirm Patient Details Popup
+[INFO ] 2020-05-19 14:32:49.607 [main] PatientRegistrationPage - TEST US JHKJHKJHPSSH.260779
+
+[INFO ] 2020-05-19 14:32:49.608 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:32:49.652 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:50.655 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:32:50.706 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:32:51.709 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:32:51.753 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:00.724 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:33:00.748 [main] PatientRegistrationPage - REGISTERED SUCCESSFULLY POPUP Yes Button Clicked
+[INFO ] 2020-05-19 14:33:00.749 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:33:00.766 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:33:00.767 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:33:00.783 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:01.786 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:33:01.814 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:01.962 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case patientRegistrationValidDataTest has passed]
+[INFO ] 2020-05-19 14:33:05.681 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-19 14:33:05.721 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-19 14:33:06.163 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-19 14:33:06.164 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:33:06.164 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:33:06.164 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-19 14:33:06.246 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:33:06.246 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:33:06.247 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-19 14:33:06.312 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:33:06.312 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:33:06.312 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-19 14:33:06.421 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:33:06.421 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:33:06.422 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-19 14:33:06.489 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:33:06.489 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:33:06.489 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:33:06.552 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:33:06.553 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:33:06.553 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:33:06.631 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  frontOfficeDepositBySearchPatientTestSchedule1
+******************************************************************************************************************************
+[INFO ] 2020-05-19 14:33:06.942 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:33:06.961 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:07.964 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:33:07.987 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:08.223 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:33:08.244 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:09.246 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:33:09.269 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:09.800 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-19 14:33:09.801 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:33:09.823 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:10.995 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:33:15.094 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:33:15.095 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:33:15.116 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:16.118 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:33:16.132 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:16.882 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:33:16.882 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FODoctorScheduleMenu']//i[2]
+[INFO ] 2020-05-19 14:33:16.905 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:17.908 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FODoctorScheduleMenu']//i[2]
+[INFO ] 2020-05-19 14:33:17.922 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:18.925 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FODoctorScheduleMenu']//i[2]
+[INFO ] 2020-05-19 14:33:18.946 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:19.115 [main] FrontOfficeHomePage - Doctor Schedule Section is Expanded
+[INFO ] 2020-05-19 14:33:25.659 [main] FrontOfficeHomePage - Following Option has been selected from Doctor Schedule Section Generate Schedule
+[INFO ] 2020-05-19 14:33:25.659 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:33:43.717 [main] GenerateSchedulePage - Search Button Clicked
+[INFO ] 2020-05-19 14:33:43.774 [main] GenerateSchedulePage - Plus Button Clicked
+[INFO ] 2020-05-19 14:33:43.797 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='drpSpecilization']
+[INFO ] 2020-05-19 14:33:43.816 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:44.958 [main] GenerateSchedulePage - Following specialization  has been selected from specialization Dropdown : Ophthalmology
+[INFO ] 2020-05-19 14:33:44.958 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='drpdoctorname']
+[INFO ] 2020-05-19 14:33:44.987 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:46.110 [main] GenerateSchedulePage - Following doctor  has been selected from doctor Dropdown : Archana G Mahajan
+[INFO ] 2020-05-19 14:33:46.171 [main] GenerateSchedulePage - Search Button Clicked
+[INFO ] 2020-05-19 14:33:46.322 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='drpSpecilization']
+[INFO ] 2020-05-19 14:33:46.343 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:47.478 [main] GenerateSchedulePage - Following specialization  has been selected from specialization Dropdown : Cardiology
+[INFO ] 2020-05-19 14:33:47.479 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='drpdoctorname']
+[INFO ] 2020-05-19 14:33:47.496 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:48.628 [main] GenerateSchedulePage - Following doctor  has been selected from doctor Dropdown : Sameer Mehrotra
+[INFO ] 2020-05-19 14:33:49.033 [main] GenerateSchedulePage - Plus Button Clicked
+[INFO ] 2020-05-19 14:33:49.033 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='form_line generate_facility']//select[@name='Facility']
+[INFO ] 2020-05-19 14:33:49.083 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:50.178 [main] GenerateSchedulePage - Following facility  has been selected from facility Dropdown : TRIOTREE HOSPITAL
+[INFO ] 2020-05-19 14:33:53.104 [main] GenerateSchedulePage - Following Date  has been added in From Date Textbox : 13/Sep/2019
+[INFO ] 2020-05-19 14:33:57.140 [main] GenerateSchedulePage - Following Date  has been added in To Date Textbox : 13/Sep/2019
+[INFO ] 2020-05-19 14:33:58.274 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='sitting1fromtime']
+[INFO ] 2020-05-19 14:33:58.309 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:33:59.483 [main] GenerateSchedulePage - Following From Time  has been selected from From Time Dropdown for Sitting 1 : 15:30
+[INFO ] 2020-05-19 14:33:59.484 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='sitting1totime']
+[INFO ] 2020-05-19 14:33:59.505 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:34:00.669 [main] GenerateSchedulePage - Following To Time  has been selected from To Time Dropdown for Sitting 1 : 15:40
+[INFO ] 2020-05-19 14:34:16.982 [main] GenerateSchedulePage - Right Check clicked For Sitting 1
+[INFO ] 2020-05-19 14:34:25.762 [main] TTWebsiteDriver - waiting for locator By.xpath: //select[@id='sitting2fromtime']
+[INFO ] 2020-05-19 14:34:25.787 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:34:25.926 [main] GenerateSchedulePage - Following From Time  has been selected from From Time Dropdown for Sitting 2 : 16:30
+[INFO ] 2020-05-19 14:34:25.926 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='sitting2totime']
+[INFO ] 2020-05-19 14:34:25.955 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:34:27.118 [main] GenerateSchedulePage - Following To Time  has been selected from To Time Dropdown for Sitting 2 : 16:45
+[INFO ] 2020-05-19 14:34:27.234 [main] GenerateSchedulePage - Right Check clicked For Sitting 2
+[INFO ] 2020-05-19 14:34:34.120 [main] GenerateSchedulePage - Save button on header clicked
+[INFO ] 2020-05-19 14:34:34.302 [main] GenerateSchedulePage - Save Button on Save Popup Clicked
+[INFO ] 2020-05-19 14:34:34.303 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case frontOfficeDepositBySearchPatientTestSchedule1 has passed]
+[INFO ] 2020-05-19 14:34:47.820 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-19 14:34:47.829 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-19 14:34:49.131 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-19 14:34:49.131 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:34:49.131 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:34:49.132 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-19 14:34:49.201 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:34:49.202 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:34:49.202 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-19 14:34:49.277 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:34:49.277 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:34:49.277 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-19 14:34:49.344 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:34:49.344 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:34:49.344 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-19 14:34:49.412 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:34:49.412 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:34:49.412 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:34:49.513 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:34:49.514 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:34:49.514 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:34:49.684 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  frontOfficeBillingenterChequeDetailsAndSaveDetailsTestCase
+******************************************************************************************************************************
+[INFO ] 2020-05-19 14:34:50.108 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:34:50.132 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:34:51.136 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:34:51.152 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:34:51.397 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:34:51.420 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:34:52.423 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:34:52.447 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:04.273 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-19 14:35:04.273 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:35:04.309 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:05.479 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:35:09.574 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:35:09.574 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:35:09.594 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:10.597 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:35:10.619 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:11.493 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:35:11.493 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:35:11.524 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:12.529 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:35:12.551 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:13.553 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:35:13.567 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:13.658 [main] FrontOfficeHomePage - Add Patient Section is Expanded
+[INFO ] 2020-05-19 14:35:22.905 [main] FrontOfficeHomePage - Following Option has been selected from Add Patient Section Patient Registration
+[INFO ] 2020-05-19 14:35:22.905 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:35:41.080 [main] PatientRegistrationPage - Following Title has been selected from Title Dropdown : New Delhi
+[INFO ] 2020-05-19 14:35:41.081 [main] TTWebsiteDriver - wait started for By.id: firstName
+[INFO ] 2020-05-19 14:35:41.099 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:42.683 [main] PatientRegistrationPage - First Name has been added as : Automation
+[INFO ] 2020-05-19 14:35:42.683 [main] TTWebsiteDriver - wait started for By.id: middleName
+[INFO ] 2020-05-19 14:35:42.701 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:44.036 [main] PatientRegistrationPage - Middle Name has been added as : Test
+[INFO ] 2020-05-19 14:35:44.037 [main] TTWebsiteDriver - wait started for By.id: lastName
+[INFO ] 2020-05-19 14:35:44.052 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:45.329 [main] PatientRegistrationPage - Last Name has been added as : User
+[INFO ] 2020-05-19 14:35:45.329 [main] TTWebsiteDriver - wait started for By.id: gender
+[INFO ] 2020-05-19 14:35:45.347 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:46.424 [main] PatientRegistrationPage - Following Gender has been selected from Gender Dropdown : Male
+[INFO ] 2020-05-19 14:35:46.424 [main] TTWebsiteDriver - wait started for By.id: dob
+[INFO ] 2020-05-19 14:35:46.446 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:48.237 [main] PatientRegistrationPage - Following DOB has been added : 15-12-1991
+[INFO ] 2020-05-19 14:35:56.287 [main] TTWebsiteDriver - wait started for By.id: chkA
+[INFO ] 2020-05-19 14:35:56.306 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:57.357 [main] TTWebsiteDriver - wait started for By.id: age
+[INFO ] 2020-05-19 14:35:57.376 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:58.649 [main] PatientRegistrationPage - Following Age has been added : 23
+[INFO ] 2020-05-19 14:35:58.649 [main] TTWebsiteDriver - wait started for By.id: mStatus
+[INFO ] 2020-05-19 14:35:58.670 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:35:59.856 [main] PatientRegistrationPage - Following MArtial Status has been selected from MArtial Status  Dropdown : Single
+[INFO ] 2020-05-19 14:35:59.856 [main] TTWebsiteDriver - wait started for By.id: motherName
+[INFO ] 2020-05-19 14:35:59.876 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:02.027 [main] PatientRegistrationPage - Following Mother Maiden Name Has been Added: Automation Test Mother
+[INFO ] 2020-05-19 14:36:02.027 [main] TTWebsiteDriver - wait started for By.id: relName
+[INFO ] 2020-05-19 14:36:02.050 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:04.097 [main] PatientRegistrationPage - Following Fathers Name Has been Added: AutomationFather@123 
+[INFO ] 2020-05-19 14:36:04.098 [main] TTWebsiteDriver - wait started for By.id: nationality
+[INFO ] 2020-05-19 14:36:04.121 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:05.200 [main] PatientRegistrationPage - Following Nationality has been selected from Nationality Dropdown : Indian
+[INFO ] 2020-05-19 14:36:07.780 [main] PatientRegistrationPage - VIP Checkbox has been selected and Data has been added to VIP Text Box
+[INFO ] 2020-05-19 14:36:08.205 [main] PatientRegistrationPage - Remarks Checkbox has been selected and Data has been added to Remarks Text Box
+[INFO ] 2020-05-19 14:36:08.232 [main] PatientRegistrationPage - NRI Checkbox has been selected
+[INFO ] 2020-05-19 14:36:08.391 [main] PatientRegistrationPage - ID Card Drop down is enabled
+[INFO ] 2020-05-19 14:36:08.392 [main] TTWebsiteDriver - wait started for By.id: cardType
+[INFO ] 2020-05-19 14:36:08.458 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:09.635 [main] PatientRegistrationPage - Following ID Card has been selected from ID Card Dropdown : Passport Number
+[INFO ] 2020-05-19 14:36:09.921 [main] PatientRegistrationPage - Following National ID has been added : 12345
+[INFO ] 2020-05-19 14:36:10.559 [main] PatientRegistrationPage - Following TELEPHONE NO has been added in TELEPHONE No Text Box : 1234567891011123
+[INFO ] 2020-05-19 14:36:11.033 [main] PatientRegistrationPage - Following MOBILE NO has been added : 1234567890
+[INFO ] 2020-05-19 14:36:12.053 [main] PatientRegistrationPage - Following house Number has been added Automation Test Address
+[INFO ] 2020-05-19 14:36:12.053 [main] TTWebsiteDriver - wait started for By.id: city
+[INFO ] 2020-05-19 14:36:12.069 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:13.391 [main] PatientRegistrationPage - Following City  has been selected from City Dropdown : New Delhi
+[INFO ] 2020-05-19 14:36:26.134 [main] PatientRegistrationPage - Following City has been addedTest City7696Following District has been selected
+[INFO ] 2020-05-19 14:36:26.134 [main] TTWebsiteDriver - wait started for By.id: addlocal
+[INFO ] 2020-05-19 14:36:26.761 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:28.034 [main] TTWebsiteDriver - wait started for By.id: local
+[INFO ] 2020-05-19 14:36:28.051 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:38.551 [main] PatientRegistrationPage - Follwoing Locality has been added: Test local3076Following City has been selected: SaharanpurFollowing Pin Code has been added: 247001
+[INFO ] 2020-05-19 14:36:38.551 [main] TTWebsiteDriver - wait started for By.id: emailID
+[INFO ] 2020-05-19 14:36:38.674 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:41.474 [main] PatientRegistrationPage - Following email has been added: test@automation.com
+[INFO ] 2020-05-19 14:36:41.828 [main] PatientRegistrationPage - Following Reffered By has been added: Self
+[INFO ] 2020-05-19 14:36:41.829 [main] TTWebsiteDriver - wait started for By.id: lang
+[INFO ] 2020-05-19 14:36:41.851 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:43.033 [main] PatientRegistrationPage - Following language  has been selected from language Dropdown : English
+[INFO ] 2020-05-19 14:36:43.033 [main] TTWebsiteDriver - wait started for By.id: occupation
+[INFO ] 2020-05-19 14:36:43.051 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:44.227 [main] PatientRegistrationPage - Following occupation  has been selected from occupation Dropdown : Student
+[INFO ] 2020-05-19 14:36:44.227 [main] TTWebsiteDriver - wait started for By.id: qualification
+[INFO ] 2020-05-19 14:36:44.246 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:45.447 [main] PatientRegistrationPage - Following qualification  has been selected from qualification Dropdown : Ph.D
+[INFO ] 2020-05-19 14:36:45.447 [main] TTWebsiteDriver - wait started for By.id: religion
+[INFO ] 2020-05-19 14:36:45.467 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:46.714 [main] PatientRegistrationPage - Following relegion  has been selected from relegion Dropdown : Hindu
+[INFO ] 2020-05-19 14:36:46.715 [main] TTWebsiteDriver - wait started for By.id: sref
+[INFO ] 2020-05-19 14:36:46.737 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:47.884 [main] PatientRegistrationPage - Following refer  has been selected from refer Dropdown : News Paper
+[INFO ] 2020-05-19 14:36:47.927 [main] PatientRegistrationPage - Financial Details Checkbox Checked
+[INFO ] 2020-05-19 14:36:47.928 [main] TTWebsiteDriver - wait started for By.id: companytype
+[INFO ] 2020-05-19 14:36:47.953 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:49.171 [main] PatientRegistrationPage - Following compType  has been selected from compType Dropdown : Corporate
+[INFO ] 2020-05-19 14:36:49.171 [main] TTWebsiteDriver - wait started for By.id: company
+[INFO ] 2020-05-19 14:36:49.190 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:50.484 [main] PatientRegistrationPage - First comp has been selected from comp Dropdown
+[INFO ] 2020-05-19 14:36:50.545 [main] PatientRegistrationPage - Show All checkbox under financial details has been selected
+[INFO ] 2020-05-19 14:36:50.545 [main] TTWebsiteDriver - wait started for By.id: rate
+[INFO ] 2020-05-19 14:36:50.566 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:51.759 [main] PatientRegistrationPage - First Rate has been selected from Rate Dropdown
+[INFO ] 2020-05-19 14:36:51.786 [main] PatientRegistrationPage - Scheme Checkbox Checked
+[INFO ] 2020-05-19 14:36:51.786 [main] TTWebsiteDriver - wait started for By.id: scheme
+[INFO ] 2020-05-19 14:36:51.807 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:52.992 [main] PatientRegistrationPage - First Scheme has been selected from Scheme Dropdown
+[INFO ] 2020-05-19 14:36:52.992 [main] TTWebsiteDriver - wait started for By.id: register
+[INFO ] 2020-05-19 14:36:53.019 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:36:54.084 [main] PatientRegistrationPage - Regsiter Icon Clicked
+[INFO ] 2020-05-19 14:36:54.190 [main] PatientRegistrationPage - COnfirm Patient Details Popup is showing up
+[INFO ] 2020-05-19 14:36:54.220 [main] TTWebsiteDriver - wait started for By.id: btnyesss
+[INFO ] 2020-05-19 14:36:54.235 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:37:05.399 [main] PatientRegistrationPage - Yes button clicked on Confirm Patient Details Popup
+[INFO ] 2020-05-19 14:37:05.399 [main] TTWebsiteDriver - wait started for By.xpath: //header[contains(text(),'Registered Successfully')]
+[INFO ] 2020-05-19 14:37:05.485 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:37:06.617 [main] PatientRegistrationPage - REGISTERED SUCCESSFULLY POPUP is showing up
+[INFO ] 2020-05-19 14:37:06.712 [main] PatientRegistrationPage - TEST US JHKJHKJHPSSH.260780
+
+[INFO ] 2020-05-19 14:37:06.712 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:37:06.834 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:37:07.838 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:37:07.917 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:37:08.925 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:37:08.989 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:37:13.139 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:37:13.153 [main] PatientRegistrationPage - REGISTERED SUCCESSFULLY POPUP Yes Button Clicked
+[INFO ] 2020-05-19 14:37:13.153 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:37:13.199 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:37:13.199 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:37:13.225 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:37:14.231 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyes']
+[INFO ] 2020-05-19 14:37:14.252 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:37:14.336 [main] PatientRegistrationPage - User is On Billing Screen
+[INFO ] 2020-05-19 14:37:16.337 [main] TTWebsiteDriver - wait started for By.xpath: //span[@id='modelclose123']//i
+[INFO ] 2020-05-19 14:37:20.404 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:24.420 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:28.461 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:32.470 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:36.499 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:40.552 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:44.609 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:48.651 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:52.737 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:56.765 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:37:56.765 [main] TTWebsiteDriver - ELEMENT NOT FOUND
+[INFO ] 2020-05-19 14:37:59.910 [main] BillingPage - Check Box Unchecked on Scheme Details Popup
+[INFO ] 2020-05-19 14:37:59.910 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='schemeclose']//i[@class='fa fa-times']
+[INFO ] 2020-05-19 14:37:59.941 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:01.050 [main] TTWebsiteDriver - wait started for By.xpath: //span[@id='remarks_close']//i[@class='fa fa-times']
+[INFO ] 2020-05-19 14:38:01.067 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:02.134 [main] BillingPage - Remarks Popup Button Closed
+[INFO ] 2020-05-19 14:38:02.134 [main] TTWebsiteDriver - wait started for By.xpath: //select[@name='ddlspecialization']
+[INFO ] 2020-05-19 14:38:02.158 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:03.338 [main] BillingPage - Following speciality  has been selected from speciality Dropdown : Pathologist
+[INFO ] 2020-05-19 14:38:03.338 [main] TTWebsiteDriver - wait started for By.xpath: //li[contains(text(),'Megha')]
+[INFO ] 2020-05-19 14:38:03.385 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:05.166 [main] BillingPage - Following Doctor Name has been Selected : Megha
+[INFO ] 2020-05-19 14:38:20.236 [main] TTWebsiteDriver - wait started for By.xpath: //select[@name='ddlspecialization']
+[INFO ] 2020-05-19 14:38:20.266 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:21.432 [main] BillingPage - Following speciality  has been selected from speciality Dropdown : Cardiology
+[INFO ] 2020-05-19 14:38:21.432 [main] TTWebsiteDriver - wait started for By.xpath: //li[contains(text(),'Deepak')]
+[INFO ] 2020-05-19 14:38:21.462 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:23.074 [main] BillingPage - Following Doctor Name has been Selected : Deepak
+[INFO ] 2020-05-19 14:38:38.282 [main] BillingPage - Diagnostic Icon Clicked
+[INFO ] 2020-05-19 14:38:40.055 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'24hrs Urinary Calcium')]
+[INFO ] 2020-05-19 14:38:40.084 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:44.136 [main] BillingPage - Following Test has been selcted 24hrs Urinary Calcium
+[INFO ] 2020-05-19 14:38:44.187 [main] BillingPage - Price Not Defined Message is showing up
+[INFO ] 2020-05-19 14:38:46.855 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'17-Hydroxycorticosteroids, 24hrs Urine')]
+[INFO ] 2020-05-19 14:38:46.895 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:50.176 [main] BillingPage - Following Test has been selcted 17-Hydroxycorticosteroids, 24hrs Urine
+[INFO ] 2020-05-19 14:38:52.024 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'17-Ketosteroids, 24hrs Urine')]
+[INFO ] 2020-05-19 14:38:52.050 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:38:55.333 [main] BillingPage - Following Test has been selcted 17-Ketosteroids, 24hrs Urine
+[INFO ] 2020-05-19 14:38:56.984 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'X-ray Both Leg Skyline')]
+[INFO ] 2020-05-19 14:38:57.011 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:00.289 [main] BillingPage - Following Test has been selcted X-ray Both Leg Skyline
+[INFO ] 2020-05-19 14:39:16.311 [main] TTWebsiteDriver - wait started for By.id: opbillmannual
+[INFO ] 2020-05-19 14:39:16.342 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:17.402 [main] BillingPage - Manual Icon Clicked
+[INFO ] 2020-05-19 14:39:20.403 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='ddlService']
+[INFO ] 2020-05-19 14:39:20.435 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:21.575 [main] BillingPage - Following Name of Service name has been selected from service name Dropdown : Cardiology Services
+[INFO ] 2020-05-19 14:39:21.766 [main] BillingPage - Following Description has been added in Description Text Box : Cardic
+[INFO ] 2020-05-19 14:39:21.928 [main] BillingPage - Following Quantity has been added in Quantity Text Box : 50
+[INFO ] 2020-05-19 14:39:22.066 [main] BillingPage - Following Price has been added in Price Text Box : 100
+[INFO ] 2020-05-19 14:39:27.202 [main] BillingPage - Verify Button Clicked
+[INFO ] 2020-05-19 14:39:27.580 [main] BillingPage - Other Services Icon Clicked
+[INFO ] 2020-05-19 14:39:27.581 [main] TTWebsiteDriver - wait started for By.xpath: //input[contains(@name,'otherServiceChk')]
+[INFO ] 2020-05-19 14:39:27.605 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:28.791 [main] BillingPage - Choose Services Check box checked
+[INFO ] 2020-05-19 14:39:28.791 [main] TTWebsiteDriver - wait started for By.id: ddotherservice
+[INFO ] 2020-05-19 14:39:28.814 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:29.852 [main] BillingPage - Choose Services Dropdown is not enabled
+[INFO ] 2020-05-19 14:39:29.852 [main] TTWebsiteDriver - wait started for By.id: ddotherservice
+[INFO ] 2020-05-19 14:39:29.877 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:31.048 [main] BillingPage - Following Service Name has been selected from service Dropdown : Dialysis Procedures
+[INFO ] 2020-05-19 14:39:31.358 [main] BillingPage - Following Item has been selected from Services: AV Fistula Day Care Package With Anesthesia
+[INFO ] 2020-05-19 14:39:31.723 [main] BillingPage - Speciality And Doctor Selected
+[INFO ] 2020-05-19 14:39:31.916 [main] TTWebsiteDriver - wait started for By.xpath: //tbody[@id='tblrefdr']/tr/td[1]
+[INFO ] 2020-05-19 14:39:31.953 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:32.956 [main] TTWebsiteDriver - wait started for By.xpath: //tbody[@id='tblrefdr']/tr/td[1]
+[INFO ] 2020-05-19 14:39:32.972 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:33.977 [main] TTWebsiteDriver - quick wait started for By.xpath: //tbody[@id='tblrefdr']/tr/td[1]
+[INFO ] 2020-05-19 14:39:34.002 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:34.091 [main] BillingPage - Following Reffered By has been added : Self
+[INFO ] 2020-05-19 14:39:34.092 [main] TTWebsiteDriver - wait started for By.xpath: //div[contains(@class,'form_line facilitator-name')]//select
+[INFO ] 2020-05-19 14:39:34.119 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:35.300 [main] BillingPage - Following facilitator has been selected from facilitator  Dropdown : 1
+[INFO ] 2020-05-19 14:39:36.262 [main] BillingPage - Add to Bill Buttton Clicked
+[INFO ] 2020-05-19 14:39:36.262 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='modal-block-new']//button[text()='Yes']
+[INFO ] 2020-05-19 14:39:36.292 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:37.295 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='modal-block-new']//button[text()='Yes']
+[INFO ] 2020-05-19 14:39:37.318 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:38.321 [main] TTWebsiteDriver - quick wait started for By.xpath: //div[@class='modal-block-new']//button[text()='Yes']
+[INFO ] 2020-05-19 14:39:38.347 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:38.590 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Investigation Instruction')]
+[INFO ] 2020-05-19 14:39:38.611 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:39.651 [main] BillingPage - Investigation Instruciton Popup is showing Up
+[INFO ] 2020-05-19 14:39:39.732 [main] TTWebsiteDriver - wait started for By.xpath: //button[@id='add_invInstruction']
+[INFO ] 2020-05-19 14:39:39.756 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:40.758 [main] TTWebsiteDriver - quick wait started for By.xpath: //button[@id='add_invInstruction']
+[INFO ] 2020-05-19 14:39:40.779 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:40.915 [main] BillingPage - Response has been added in Investigation Popup
+[INFO ] 2020-05-19 14:39:40.951 [main] BillingPage - Billing Button on header clicked
+[INFO ] 2020-05-19 14:39:40.951 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesbal2']
+[INFO ] 2020-05-19 14:39:40.974 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:41.976 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesbal2']
+[INFO ] 2020-05-19 14:39:42.000 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:43.003 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyesbal2']
+[INFO ] 2020-05-19 14:39:43.026 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:43.168 [main] BillingPage - Yes Button On Generate Bill Popup Clicked
+[INFO ] 2020-05-19 14:39:43.168 [main] TTWebsiteDriver - wait started for By.xpath: //input[@ctype='amount']
+[INFO ] 2020-05-19 14:39:43.297 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:39:44.553 [main] BillingPage - Following Amount has been added as patient Paid Amount: 500
+[INFO ] 2020-05-19 14:39:44.650 [main] BillingPage - New Payment Mode Button Clicked
+[INFO ] 2020-05-19 14:39:44.866 [main] BillingPage - Second Payment MOde selected as Cheque
+[INFO ] 2020-05-19 14:39:57.658 [main] BillingPage - Cheque Details has been filled
+[INFO ] 2020-05-19 14:40:07.658 [main] TTWebsiteDriver - wait started for By.xpath: //section[@id='report']
+[INFO ] 2020-05-19 14:40:07.697 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:08.758 [main] BillingPage - Bill Got Generated Successfully
+[INFO ] 2020-05-19 14:40:08.758 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesrep']
+[INFO ] 2020-05-19 14:40:08.780 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:09.782 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesrep']
+[INFO ] 2020-05-19 14:40:09.807 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:10.810 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyesrep']
+[INFO ] 2020-05-19 14:40:10.844 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:10.957 [main] BillingPage - Yes Button on Bill Got Generated Popup Clicked
+[INFO ] 2020-05-19 14:40:10.957 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case frontOfficeBillingenterChequeDetailsAndSaveDetailsTestCase has passed]
+[INFO ] 2020-05-19 14:40:29.476 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-19 14:40:29.487 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-19 14:40:30.532 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-19 14:40:30.532 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:40:30.532 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:40:30.532 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-19 14:40:30.625 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:40:30.625 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:40:30.625 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-19 14:40:30.693 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:40:30.693 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:40:30.693 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-19 14:40:30.782 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:40:30.783 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:40:30.783 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-19 14:40:30.854 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:40:30.855 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:40:30.855 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:40:30.924 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:40:30.924 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:40:30.924 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:40:30.995 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  mergeAndUnmergePatientDuplicateTest
+******************************************************************************************************************************
+[INFO ] 2020-05-19 14:40:31.264 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:40:31.289 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:32.291 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:40:32.311 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:32.515 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:40:32.535 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:33.537 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:40:33.563 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:34.177 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-19 14:40:34.177 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:40:34.208 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:35.380 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:40:39.474 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:40:39.475 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:40:39.510 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:40.513 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:40:40.552 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:41.355 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:40:41.356 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:40:41.382 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:42.384 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:40:42.397 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:43.400 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:40:43.412 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:40:43.519 [main] FrontOfficeHomePage - Add Patient Section is Expanded
+[INFO ] 2020-05-19 14:40:50.107 [main] FrontOfficeHomePage - Following Option has been selected from Add Patient Section Merge Duplicates
+[INFO ] 2020-05-19 14:40:50.107 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:41:08.125 [main] TTWebsiteDriver - wait started for By.id: firstaname_mearge
+[INFO ] 2020-05-19 14:41:08.144 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:09.270 [main] MergeAndUnmergeDuplicatePage - Following First Name has been added  
+[INFO ] 2020-05-19 14:41:09.270 [main] TTWebsiteDriver - wait started for By.id: firstaname_mearge
+[INFO ] 2020-05-19 14:41:09.284 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:10.404 [main] MergeAndUnmergeDuplicatePage - Following First Name has been added $#$!2131575
+[INFO ] 2020-05-19 14:41:10.441 [main] MergeAndUnmergeDuplicatePage - When User is entering no Data and clicking on Enter then Please fill Details message is displaying
+[INFO ] 2020-05-19 14:41:10.464 [main] MergeAndUnmergeDuplicatePage - When User is entering no Data and clicking on Enter then Please fill Details message is displaying
+[INFO ] 2020-05-19 14:41:10.465 [main] TTWebsiteDriver - wait started for By.id: firstaname_mearge
+[INFO ] 2020-05-19 14:41:10.476 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:11.680 [main] MergeAndUnmergeDuplicatePage - Following First Name has been added Automation
+[INFO ] 2020-05-19 14:41:11.680 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='checkBox_primary0']
+[INFO ] 2020-05-19 14:41:17.063 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:18.141 [main] MergeAndUnmergeDuplicatePage - First primary checkbox checked
+[INFO ] 2020-05-19 14:41:18.141 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='save_merge']//i[@class='fa fa-male']
+[INFO ] 2020-05-19 14:41:18.185 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:19.187 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='save_merge']//i[@class='fa fa-male']
+[INFO ] 2020-05-19 14:41:19.229 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:19.457 [main] MergeAndUnmergeDuplicatePage - Merge Button Clicked
+[INFO ] 2020-05-19 14:41:19.541 [main] MergeAndUnmergeDuplicatePage - SELECT UHID ALERT MESSAGE is Displaying
+[INFO ] 2020-05-19 14:41:19.541 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='checkBox_primary1']
+[INFO ] 2020-05-19 14:41:19.601 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:20.662 [main] MergeAndUnmergeDuplicatePage - Second primary checkbox checked
+[INFO ] 2020-05-19 14:41:20.662 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='save_merge']//i[@class='fa fa-male']
+[INFO ] 2020-05-19 14:41:20.697 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:21.699 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='save_merge']//i[@class='fa fa-male']
+[INFO ] 2020-05-19 14:41:21.757 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:21.973 [main] MergeAndUnmergeDuplicatePage - Merge Button Clicked
+[INFO ] 2020-05-19 14:41:22.704 [main] MergeAndUnmergeDuplicatePage - UHID Merged Message Is Present
+[INFO ] 2020-05-19 14:41:22.725 [main] MergeAndUnmergeDuplicatePage - Merged UHID Is  259495
+[INFO ] 2020-05-19 14:41:22.725 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:41:22.744 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:23.747 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:41:23.771 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:24.775 [main] TTWebsiteDriver - quick wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:41:24.788 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:24.871 [main] HISWebsiteBasePage - Menu Clicked
+[INFO ] 2020-05-19 14:41:28.885 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:41:28.937 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:29.938 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:41:29.958 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:30.960 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:41:30.973 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:41:31.056 [main] FrontOfficeHomePage - Add Patient Section is Expanded
+[INFO ] 2020-05-19 14:41:37.580 [main] FrontOfficeHomePage - Following Option has been selected from Add Patient Section UnMerge Duplicates
+[INFO ] 2020-05-19 14:41:37.580 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:41:55.590 [main] TTWebsiteDriver - wait started for By.id: uHid
+[INFO ] 2020-05-19 14:41:55.622 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:04.861 [main] PatientRegistrationPage - Following UHID has been searched from Search BoxPSSH.259495
+[INFO ] 2020-05-19 14:42:07.861 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='checkBox_selection0']
+[INFO ] 2020-05-19 14:42:07.886 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:08.888 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='checkBox_selection0']
+[INFO ] 2020-05-19 14:42:08.904 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:09.906 [main] TTWebsiteDriver - quick wait started for By.xpath: //input[@id='checkBox_selection0']
+[INFO ] 2020-05-19 14:42:09.926 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:10.029 [main] PatientRegistrationPage - Checkbox has been selected on Unmerge screen.
+[INFO ] 2020-05-19 14:42:10.029 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='save_unmerge']//i[@class='fa fa-male']
+[INFO ] 2020-05-19 14:42:10.048 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:11.051 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='save_unmerge']//i[@class='fa fa-male']
+[INFO ] 2020-05-19 14:42:11.070 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:12.073 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='save_unmerge']//i[@class='fa fa-male']
+[INFO ] 2020-05-19 14:42:12.086 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:12.190 [main] PatientRegistrationPage - User clicked on Unmerge button.
+[INFO ] 2020-05-19 14:42:20.191 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case mergeAndUnmergePatientDuplicateTest has passed]
+[INFO ] 2020-05-19 14:42:33.084 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-19 14:42:33.096 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-19 14:42:33.664 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-19 14:42:33.665 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:42:33.665 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:42:33.665 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-19 14:42:33.735 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:42:33.735 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:42:33.736 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-19 14:42:33.809 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:42:33.809 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:42:33.809 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-19 14:42:33.874 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:42:33.874 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:42:33.874 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-19 14:42:33.938 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:42:33.938 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:42:33.938 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:42:34.065 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:42:34.065 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:42:34.065 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:42:34.136 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  frontOfficeWithAvailDepositAmountTest
+******************************************************************************************************************************
+[INFO ] 2020-05-19 14:42:34.365 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:42:34.388 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:35.391 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:42:35.405 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:35.610 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:42:35.639 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:36.641 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:42:36.677 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:37.271 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-19 14:42:37.272 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:42:37.352 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:38.521 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:42:42.600 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:42:42.600 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:42:42.618 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:43.620 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:42:43.632 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:44.340 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:42:44.341 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:42:44.367 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:45.369 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:42:45.382 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:46.383 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:42:46.401 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:42:46.501 [main] FrontOfficeHomePage - Add Patient Section is Expanded
+[INFO ] 2020-05-19 14:42:55.323 [main] FrontOfficeHomePage - Following Option has been selected from Add Patient Section Patient Registration
+[INFO ] 2020-05-19 14:42:55.324 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:43:13.517 [main] PatientRegistrationPage - Following Title has been selected from Title Dropdown : New Delhi
+[INFO ] 2020-05-19 14:43:13.517 [main] TTWebsiteDriver - wait started for By.id: firstName
+[INFO ] 2020-05-19 14:43:13.534 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:15.095 [main] PatientRegistrationPage - First Name has been added as : Automation
+[INFO ] 2020-05-19 14:43:15.095 [main] TTWebsiteDriver - wait started for By.id: middleName
+[INFO ] 2020-05-19 14:43:15.113 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:16.443 [main] PatientRegistrationPage - Middle Name has been added as : Test
+[INFO ] 2020-05-19 14:43:16.443 [main] TTWebsiteDriver - wait started for By.id: lastName
+[INFO ] 2020-05-19 14:43:16.460 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:17.770 [main] PatientRegistrationPage - Last Name has been added as : User
+[INFO ] 2020-05-19 14:43:17.771 [main] TTWebsiteDriver - wait started for By.id: gender
+[INFO ] 2020-05-19 14:43:17.787 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:18.862 [main] PatientRegistrationPage - Following Gender has been selected from Gender Dropdown : Male
+[INFO ] 2020-05-19 14:43:18.862 [main] TTWebsiteDriver - wait started for By.id: dob
+[INFO ] 2020-05-19 14:43:18.893 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:20.682 [main] PatientRegistrationPage - Following DOB has been added : 15-12-1991
+[INFO ] 2020-05-19 14:43:28.733 [main] TTWebsiteDriver - wait started for By.id: chkA
+[INFO ] 2020-05-19 14:43:28.747 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:29.842 [main] TTWebsiteDriver - wait started for By.id: age
+[INFO ] 2020-05-19 14:43:29.860 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:31.137 [main] PatientRegistrationPage - Following Age has been added : 67
+[INFO ] 2020-05-19 14:43:31.137 [main] TTWebsiteDriver - wait started for By.id: mStatus
+[INFO ] 2020-05-19 14:43:31.162 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:32.630 [main] PatientRegistrationPage - Following MArtial Status has been selected from MArtial Status  Dropdown : Single
+[INFO ] 2020-05-19 14:43:32.630 [main] TTWebsiteDriver - wait started for By.id: motherName
+[INFO ] 2020-05-19 14:43:32.661 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:34.862 [main] PatientRegistrationPage - Following Mother Maiden Name Has been Added: Automation Test Mother
+[INFO ] 2020-05-19 14:43:34.862 [main] TTWebsiteDriver - wait started for By.id: relName
+[INFO ] 2020-05-19 14:43:34.880 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:36.892 [main] PatientRegistrationPage - Following Fathers Name Has been Added: AutomationFather@123 
+[INFO ] 2020-05-19 14:43:36.893 [main] TTWebsiteDriver - wait started for By.id: nationality
+[INFO ] 2020-05-19 14:43:36.912 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:37.991 [main] PatientRegistrationPage - Following Nationality has been selected from Nationality Dropdown : Indian
+[INFO ] 2020-05-19 14:43:40.333 [main] PatientRegistrationPage - VIP Checkbox has been selected and Data has been added to VIP Text Box
+[INFO ] 2020-05-19 14:43:40.689 [main] PatientRegistrationPage - Remarks Checkbox has been selected and Data has been added to Remarks Text Box
+[INFO ] 2020-05-19 14:43:40.715 [main] PatientRegistrationPage - NRI Checkbox has been selected
+[INFO ] 2020-05-19 14:43:40.836 [main] PatientRegistrationPage - ID Card Drop down is enabled
+[INFO ] 2020-05-19 14:43:40.837 [main] TTWebsiteDriver - wait started for By.id: cardType
+[INFO ] 2020-05-19 14:43:40.868 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:42.285 [main] PatientRegistrationPage - Following ID Card has been selected from ID Card Dropdown : Passport Number
+[INFO ] 2020-05-19 14:43:42.587 [main] PatientRegistrationPage - Following National ID has been added : 12345
+[INFO ] 2020-05-19 14:43:43.393 [main] PatientRegistrationPage - Following TELEPHONE NO has been added in TELEPHONE No Text Box : 1234567891011123
+[INFO ] 2020-05-19 14:43:43.897 [main] PatientRegistrationPage - Following MOBILE NO has been added : 1234567890
+[INFO ] 2020-05-19 14:43:45.189 [main] PatientRegistrationPage - Following house Number has been added Automation Test Address
+[INFO ] 2020-05-19 14:43:45.189 [main] TTWebsiteDriver - wait started for By.id: city
+[INFO ] 2020-05-19 14:43:45.223 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:43:46.490 [main] PatientRegistrationPage - Following City  has been selected from City Dropdown : New Delhi
+[INFO ] 2020-05-19 14:43:59.490 [main] PatientRegistrationPage - Following City has been addedTest City9863Following District has been selected
+[INFO ] 2020-05-19 14:43:59.490 [main] TTWebsiteDriver - wait started for By.id: addlocal
+[INFO ] 2020-05-19 14:44:00.243 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:01.584 [main] TTWebsiteDriver - wait started for By.id: local
+[INFO ] 2020-05-19 14:44:01.612 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:12.509 [main] PatientRegistrationPage - Follwoing Locality has been added: Test local5355Following City has been selected: SaharanpurFollowing Pin Code has been added: 247001
+[INFO ] 2020-05-19 14:44:12.509 [main] TTWebsiteDriver - wait started for By.id: emailID
+[INFO ] 2020-05-19 14:44:12.532 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:15.033 [main] PatientRegistrationPage - Following email has been added: test@automation.com
+[INFO ] 2020-05-19 14:44:15.419 [main] PatientRegistrationPage - Following Reffered By has been added: Self
+[INFO ] 2020-05-19 14:44:15.420 [main] TTWebsiteDriver - wait started for By.id: lang
+[INFO ] 2020-05-19 14:44:15.444 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:16.642 [main] PatientRegistrationPage - Following language  has been selected from language Dropdown : English
+[INFO ] 2020-05-19 14:44:16.642 [main] TTWebsiteDriver - wait started for By.id: occupation
+[INFO ] 2020-05-19 14:44:16.672 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:17.851 [main] PatientRegistrationPage - Following occupation  has been selected from occupation Dropdown : Student
+[INFO ] 2020-05-19 14:44:17.852 [main] TTWebsiteDriver - wait started for By.id: qualification
+[INFO ] 2020-05-19 14:44:17.871 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:19.086 [main] PatientRegistrationPage - Following qualification  has been selected from qualification Dropdown : Ph.D
+[INFO ] 2020-05-19 14:44:19.086 [main] TTWebsiteDriver - wait started for By.id: religion
+[INFO ] 2020-05-19 14:44:19.102 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:20.288 [main] PatientRegistrationPage - Following relegion  has been selected from relegion Dropdown : Hindu
+[INFO ] 2020-05-19 14:44:20.289 [main] TTWebsiteDriver - wait started for By.id: sref
+[INFO ] 2020-05-19 14:44:20.307 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:21.449 [main] PatientRegistrationPage - Following refer  has been selected from refer Dropdown : News Paper
+[INFO ] 2020-05-19 14:44:21.491 [main] PatientRegistrationPage - Financial Details Checkbox Checked
+[INFO ] 2020-05-19 14:44:21.491 [main] TTWebsiteDriver - wait started for By.id: companytype
+[INFO ] 2020-05-19 14:44:21.508 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:22.733 [main] PatientRegistrationPage - Following compType  has been selected from compType Dropdown : Corporate
+[INFO ] 2020-05-19 14:44:22.733 [main] TTWebsiteDriver - wait started for By.id: company
+[INFO ] 2020-05-19 14:44:22.758 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:23.929 [main] PatientRegistrationPage - Following comp has been selected from comp Dropdown: STATE BANK OF INDIA
+[INFO ] 2020-05-19 14:44:23.930 [main] TTWebsiteDriver - wait started for By.id: rate
+[INFO ] 2020-05-19 14:44:24.051 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:25.154 [main] PatientRegistrationPage - Following Rate has been selected from Rate Dropdown: STATE BANK OF INDIA - (CGHS)
+[INFO ] 2020-05-19 14:44:25.184 [main] PatientRegistrationPage - Scheme Checkbox Checked
+[INFO ] 2020-05-19 14:44:25.184 [main] TTWebsiteDriver - wait started for By.id: scheme
+[INFO ] 2020-05-19 14:44:25.203 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:26.366 [main] PatientRegistrationPage - First Scheme has been selected from Scheme Dropdown
+[INFO ] 2020-05-19 14:44:26.366 [main] TTWebsiteDriver - wait started for By.id: register
+[INFO ] 2020-05-19 14:44:26.383 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:27.447 [main] PatientRegistrationPage - Regsiter Icon Clicked
+[INFO ] 2020-05-19 14:44:27.500 [main] TTWebsiteDriver - wait started for By.id: btnyesss
+[INFO ] 2020-05-19 14:44:27.519 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:38.707 [main] PatientRegistrationPage - Yes button clicked on Confirm Patient Details Popup
+[INFO ] 2020-05-19 14:44:38.707 [main] TTWebsiteDriver - wait started for By.xpath: //header[contains(text(),'Registered Successfully')]
+[INFO ] 2020-05-19 14:44:38.818 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:39.895 [main] PatientRegistrationPage - REGISTERED SUCCESSFULLY POPUP is showing up
+[INFO ] 2020-05-19 14:44:39.965 [main] PatientRegistrationPage - TEST US JHKJHKJHPSSH.260781
+
+[INFO ] 2020-05-19 14:44:39.965 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='popup-area']//div[@class='modal-block-new']//a[contains(text(),'No')]
+[INFO ] 2020-05-19 14:44:40.022 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:41.024 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='popup-area']//div[@class='modal-block-new']//a[contains(text(),'No')]
+[INFO ] 2020-05-19 14:44:41.085 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:42.088 [main] TTWebsiteDriver - quick wait started for By.xpath: //div[@class='popup-area']//div[@class='modal-block-new']//a[contains(text(),'No')]
+[INFO ] 2020-05-19 14:44:42.130 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:42.388 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:44:42.405 [main] PatientRegistrationPage - REGISTERED SUCCESSFULLY POPUP No Button Clicked
+[INFO ] 2020-05-19 14:44:42.405 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:44:42.476 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:43.477 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:44:43.539 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:44.541 [main] TTWebsiteDriver - quick wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:44:44.586 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:44.741 [main] HISWebsiteBasePage - Menu Clicked
+[INFO ] 2020-05-19 14:44:48.741 [main] TTWebsiteDriver - wait started for By.xpath: //a[contains(text(),'Billing')]//i[@class='fa fa-caret-down']
+[INFO ] 2020-05-19 14:44:48.791 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:49.793 [main] TTWebsiteDriver - wait started for By.xpath: //a[contains(text(),'Billing')]//i[@class='fa fa-caret-down']
+[INFO ] 2020-05-19 14:44:49.837 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:50.840 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[contains(text(),'Billing')]//i[@class='fa fa-caret-down']
+[INFO ] 2020-05-19 14:44:50.880 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:44:50.990 [main] FrontOfficeHomePage - Billing Section is Expanded
+[INFO ] 2020-05-19 14:44:57.021 [main] FrontOfficeHomePage - Following Option has been selected from Billing Section Deposits
+[INFO ] 2020-05-19 14:44:57.021 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:45:15.026 [main] TTWebsiteDriver - wait started for By.id: uHid
+[INFO ] 2020-05-19 14:45:15.044 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:20.479 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:45:20.499 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:45:20.499 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:45:20.513 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:21.515 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:45:21.528 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:21.621 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:45:21.648 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:22.649 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:45:22.666 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:23.669 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:45:23.690 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:23.793 [main] TTWebsiteDriver - wait started for By.xpath: //label[contains(text(),'Confirm Deposit?')]
+[INFO ] 2020-05-19 14:45:23.835 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:31.861 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:45:31.888 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:32.924 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:45:32.948 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:33.181 [main] DepositPage - Yes Button Clicked on Confirm Deposit Popup
+[INFO ] 2020-05-19 14:45:33.181 [main] TTWebsiteDriver - wait started for By.xpath: //p[contains(text(),'Amount cannot be zero!')]
+[INFO ] 2020-05-19 14:45:33.229 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:34.243 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Amount']
+[INFO ] 2020-05-19 14:45:34.269 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:35.645 [main] DepositPage - Following Amount has been added in Amount Text Box2000001
+[INFO ] 2020-05-19 14:45:41.055 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:45:41.066 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:45:41.067 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:45:41.080 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:42.083 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:45:42.098 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:42.214 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:45:42.228 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:43.230 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:45:43.254 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:44.255 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:45:44.268 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:44.325 [main] TTWebsiteDriver - wait started for By.xpath: //label[contains(text(),'Confirm Deposit?')]
+[INFO ] 2020-05-19 14:45:44.340 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:52.353 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:45:52.373 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:53.376 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:45:53.388 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:53.487 [main] DepositPage - Yes Button Clicked on Confirm Deposit Popup
+[INFO ] 2020-05-19 14:45:53.487 [main] TTWebsiteDriver - wait started for By.xpath: //p[contains(text(),'The total amount in cash is equal to or Exceeds 20')]
+[INFO ] 2020-05-19 14:45:53.508 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:54.526 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Amount']
+[INFO ] 2020-05-19 14:45:54.542 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:45:55.709 [main] DepositPage - Following Amount has been added in Amount Text Box1000
+[INFO ] 2020-05-19 14:46:00.833 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:00.851 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:46:00.851 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:00.862 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:01.863 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:01.882 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:01.955 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:01.971 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:02.974 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:02.987 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:03.990 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:04.087 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:04.201 [main] TTWebsiteDriver - wait started for By.xpath: //label[contains(text(),'Confirm Deposit?')]
+[INFO ] 2020-05-19 14:46:04.218 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:12.232 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:46:12.247 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:13.249 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:46:13.262 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:13.366 [main] DepositPage - Yes Button Clicked on Confirm Deposit Popup
+[INFO ] 2020-05-19 14:46:13.366 [main] TTWebsiteDriver - wait started for By.xpath: //p[contains(text(),'Deposit taken successfully!')]
+[INFO ] 2020-05-19 14:46:13.732 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:14.785 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Credit_']
+[INFO ] 2020-05-19 14:46:14.802 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:15.804 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Credit_']
+[INFO ] 2020-05-19 14:46:15.818 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:16.820 [main] TTWebsiteDriver - quick wait started for By.xpath: //input[@id='Credit_']
+[INFO ] 2020-05-19 14:46:16.832 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:16.962 [main] DepositPage - Credit Card Radio Button Clicked
+[INFO ] 2020-05-19 14:46:16.963 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Amount']
+[INFO ] 2020-05-19 14:46:16.982 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:18.169 [main] DepositPage - Following Amount has been added in Amount Text Box2000
+[INFO ] 2020-05-19 14:46:23.545 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='bhoechie-tab-content active']//div[4]//input[1]
+[INFO ] 2020-05-19 14:46:23.566 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:28.171 [main] DepositPage - Credit Card Details Entered
+[INFO ] 2020-05-19 14:46:28.172 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:28.185 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:46:28.185 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:28.198 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:29.199 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:29.211 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:29.263 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:29.276 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:30.278 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:30.294 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:31.296 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:31.319 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:31.401 [main] TTWebsiteDriver - wait started for By.xpath: //label[contains(text(),'Confirm Deposit?')]
+[INFO ] 2020-05-19 14:46:31.419 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:39.441 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:46:39.463 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:40.466 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:46:40.480 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:40.539 [main] DepositPage - Yes Button Clicked on Confirm Deposit Popup
+[INFO ] 2020-05-19 14:46:40.539 [main] TTWebsiteDriver - wait started for By.xpath: //p[contains(text(),'Deposit taken successfully!')]
+[INFO ] 2020-05-19 14:46:40.621 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:41.634 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Cheque_']
+[INFO ] 2020-05-19 14:46:41.657 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:42.661 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Cheque_']
+[INFO ] 2020-05-19 14:46:42.675 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:43.676 [main] TTWebsiteDriver - quick wait started for By.xpath: //input[@id='Cheque_']
+[INFO ] 2020-05-19 14:46:43.695 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:43.851 [main] DepositPage - Cheque Radio Button Clicked
+[INFO ] 2020-05-19 14:46:43.851 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='Amount']
+[INFO ] 2020-05-19 14:46:43.867 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:45.046 [main] DepositPage - Following Amount has been added in Amount Text Box2000
+[INFO ] 2020-05-19 14:46:50.137 [main] TTWebsiteDriver - wait started for By.xpath: //input[@id='cheque_no']
+[INFO ] 2020-05-19 14:46:50.154 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:51.723 [main] DepositPage - Cheque Details Entered
+[INFO ] 2020-05-19 14:46:51.723 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:51.738 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-19 14:46:51.739 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:51.753 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:52.756 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnremarksOk']
+[INFO ] 2020-05-19 14:46:52.768 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:52.827 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:52.841 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:53.843 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:53.875 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:54.877 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='Deposit_btn']
+[INFO ] 2020-05-19 14:46:54.890 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:46:54.959 [main] TTWebsiteDriver - wait started for By.xpath: //label[contains(text(),'Confirm Deposit?')]
+[INFO ] 2020-05-19 14:46:54.977 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:03.043 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:47:03.058 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:04.059 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnDepConfirmYes']
+[INFO ] 2020-05-19 14:47:04.076 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:04.151 [main] DepositPage - Yes Button Clicked on Confirm Deposit Popup
+[INFO ] 2020-05-19 14:47:04.151 [main] TTWebsiteDriver - wait started for By.xpath: //p[contains(text(),'Deposit taken successfully!')]
+[INFO ] 2020-05-19 14:47:04.224 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:05.245 [main] TTWebsiteDriver - wait started for By.xpath: //a[@title='Print Receipt']//i[@class='fa fa-print']
+[INFO ] 2020-05-19 14:47:05.265 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:06.266 [main] TTWebsiteDriver - wait started for By.xpath: //a[@title='Print Receipt']//i[@class='fa fa-print']
+[INFO ] 2020-05-19 14:47:06.282 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:07.284 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@title='Print Receipt']//i[@class='fa fa-print']
+[INFO ] 2020-05-19 14:47:07.299 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:07.434 [main] DepositPage - Print Button Clicked
+[INFO ] 2020-05-19 14:47:07.434 [main] TTWebsiteDriver - wait started for By.xpath: //p[contains(text(),'Please select the deposit receipt to be printed!')]
+[INFO ] 2020-05-19 14:47:07.463 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:08.478 [main] TTWebsiteDriver - wait started for By.xpath: //table/thead//following::tbody/tr[1]/td[1]
+[INFO ] 2020-05-19 14:47:08.501 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:09.502 [main] TTWebsiteDriver - wait started for By.xpath: //table/thead//following::tbody/tr[1]/td[1]
+[INFO ] 2020-05-19 14:47:09.517 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:10.518 [main] TTWebsiteDriver - quick wait started for By.xpath: //table/thead//following::tbody/tr[1]/td[1]
+[INFO ] 2020-05-19 14:47:10.536 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:10.655 [main] DepositPage - First Deposit Clicked
+[INFO ] 2020-05-19 14:47:10.655 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:47:10.673 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:11.675 [main] TTWebsiteDriver - wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:47:11.692 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:12.713 [main] TTWebsiteDriver - quick wait started for By.xpath: //i[@class='fa fa-bars']
+[INFO ] 2020-05-19 14:47:13.009 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:13.221 [main] HISWebsiteBasePage - Menu Clicked
+[INFO ] 2020-05-19 14:47:17.223 [main] TTWebsiteDriver - wait started for By.xpath: //a[contains(text(),'Billing')]//i[@class='fa fa-caret-down']
+[INFO ] 2020-05-19 14:47:17.241 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:18.243 [main] TTWebsiteDriver - wait started for By.xpath: //a[contains(text(),'Billing')]//i[@class='fa fa-caret-down']
+[INFO ] 2020-05-19 14:47:18.257 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:19.260 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[contains(text(),'Billing')]//i[@class='fa fa-caret-down']
+[INFO ] 2020-05-19 14:47:19.275 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:47:19.383 [main] FrontOfficeHomePage - Billing Section is Expanded
+[INFO ] 2020-05-19 14:47:27.575 [main] FrontOfficeHomePage - Following Option has been selected from Billing Section Billing
+[INFO ] 2020-05-19 14:47:27.575 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:47:45.607 [main] TTWebsiteDriver - wait started for By.id: uHid
+[INFO ] 2020-05-19 14:47:45.626 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:48:06.877 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='schemeRemarksPopupClose']
+[INFO ] 2020-05-19 14:48:06.894 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:48:07.895 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='schemeRemarksPopupClose']
+[INFO ] 2020-05-19 14:48:07.919 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:48:08.926 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='schemeRemarksPopupClose']
+[INFO ] 2020-05-19 14:48:08.942 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:48:15.090 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='modal-block-new top30']//i[@class='fa fa-save']
+[INFO ] 2020-05-19 14:48:15.122 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:48:16.254 [main] BillingPage - Save Button On Document Checklist popup Clicked
+[INFO ] 2020-05-19 14:48:18.254 [main] TTWebsiteDriver - wait started for By.xpath: //span[@id='modelclose123']//i
+[INFO ] 2020-05-19 14:48:22.304 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:26.342 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:30.360 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:34.437 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:38.444 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:42.490 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:46.551 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:50.606 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:54.658 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:58.693 [main] TTWebsiteDriver - waiting...
+[INFO ] 2020-05-19 14:48:58.693 [main] TTWebsiteDriver - ELEMENT NOT FOUND
+[INFO ] 2020-05-19 14:49:01.796 [main] BillingPage - Check Box Unchecked on Scheme Details Popup
+[INFO ] 2020-05-19 14:49:01.796 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='schemeclose']//i[@class='fa fa-times']
+[INFO ] 2020-05-19 14:49:01.820 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:02.966 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='schemeRemarksPopupClose']
+[INFO ] 2020-05-19 14:49:02.986 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:03.987 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='schemeRemarksPopupClose']
+[INFO ] 2020-05-19 14:49:04.004 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:05.006 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='schemeRemarksPopupClose']
+[INFO ] 2020-05-19 14:49:05.027 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:05.154 [main] TTWebsiteDriver - wait started for By.xpath: //span[@id='remarks_close']//i[@class='fa fa-times']
+[INFO ] 2020-05-19 14:49:05.173 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:06.288 [main] BillingPage - Remarks Popup Button Closed
+[INFO ] 2020-05-19 14:49:06.288 [main] TTWebsiteDriver - wait started for By.xpath: //select[@name='ddlspecialization']
+[INFO ] 2020-05-19 14:49:06.326 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:07.527 [main] BillingPage - Following speciality  has been selected from speciality Dropdown : Pathologist
+[INFO ] 2020-05-19 14:49:07.527 [main] TTWebsiteDriver - wait started for By.xpath: //li[contains(text(),'Megha')]
+[INFO ] 2020-05-19 14:49:07.563 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:08.790 [main] BillingPage - Following Doctor Name has been Selected : Megha
+[INFO ] 2020-05-19 14:49:23.808 [main] TTWebsiteDriver - wait started for By.xpath: //select[@name='ddlspecialization']
+[INFO ] 2020-05-19 14:49:23.832 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:24.977 [main] BillingPage - Following speciality  has been selected from speciality Dropdown : Cardiology
+[INFO ] 2020-05-19 14:49:24.978 [main] TTWebsiteDriver - wait started for By.xpath: //li[contains(text(),'Deepak')]
+[INFO ] 2020-05-19 14:49:25.011 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:26.258 [main] BillingPage - Following Doctor Name has been Selected : Deepak
+[INFO ] 2020-05-19 14:49:41.474 [main] BillingPage - Diagnostic Icon Clicked
+[INFO ] 2020-05-19 14:49:43.267 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'24hrs Urinary Calcium')]
+[INFO ] 2020-05-19 14:49:43.295 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:46.469 [main] BillingPage - Following Test has been selcted 24hrs Urinary Calcium
+[INFO ] 2020-05-19 14:49:46.535 [main] BillingPage - Price Not Defined Message is showing up
+[INFO ] 2020-05-19 14:49:49.246 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'17-Hydroxycorticosteroids, 24hrs Urine')]
+[INFO ] 2020-05-19 14:49:49.273 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:52.467 [main] BillingPage - Following Test has been selcted 17-Hydroxycorticosteroids, 24hrs Urine
+[INFO ] 2020-05-19 14:49:54.576 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'17-Ketosteroids, 24hrs Urine')]
+[INFO ] 2020-05-19 14:49:54.603 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:49:57.797 [main] BillingPage - Following Test has been selcted 17-Ketosteroids, 24hrs Urine
+[INFO ] 2020-05-19 14:50:00.177 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'X-ray Dorso Lumbar Spine LAT')]
+[INFO ] 2020-05-19 14:50:00.214 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:04.441 [main] BillingPage - Following Test has been selcted X-ray Dorso Lumbar Spine LAT
+[INFO ] 2020-05-19 14:50:06.282 [main] TTWebsiteDriver - wait started for By.xpath: //li[starts-with(@title,'X-ray Both Leg Skyline')]
+[INFO ] 2020-05-19 14:50:06.312 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:09.528 [main] BillingPage - Following Test has been selcted X-ray Both Leg Skyline
+[INFO ] 2020-05-19 14:50:29.903 [main] TTWebsiteDriver - wait started for By.id: opbillmannual
+[INFO ] 2020-05-19 14:50:29.935 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:30.999 [main] BillingPage - Manual Icon Clicked
+[INFO ] 2020-05-19 14:50:34.003 [main] TTWebsiteDriver - wait started for By.xpath: //select[@id='ddlService']
+[INFO ] 2020-05-19 14:50:34.029 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:35.158 [main] BillingPage - Following Name of Service name has been selected from service name Dropdown : Cardiology Services
+[INFO ] 2020-05-19 14:50:35.369 [main] BillingPage - Following Description has been added in Description Text Box : Testing
+[INFO ] 2020-05-19 14:50:35.461 [main] BillingPage - Following Quantity has been added in Quantity Text Box : 5
+[INFO ] 2020-05-19 14:50:35.636 [main] BillingPage - Following Price has been added in Price Text Box : 10.30
+[INFO ] 2020-05-19 14:50:40.774 [main] BillingPage - Verify Button Clicked
+[INFO ] 2020-05-19 14:50:41.207 [main] BillingPage - Other Services Icon Clicked
+[INFO ] 2020-05-19 14:50:41.208 [main] TTWebsiteDriver - wait started for By.xpath: //input[contains(@name,'otherServiceChk')]
+[INFO ] 2020-05-19 14:50:41.238 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:42.428 [main] BillingPage - Choose Services Check box checked
+[INFO ] 2020-05-19 14:50:42.428 [main] TTWebsiteDriver - wait started for By.id: ddotherservice
+[INFO ] 2020-05-19 14:50:42.449 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:43.475 [main] BillingPage - Choose Services Dropdown is not enabled
+[INFO ] 2020-05-19 14:50:43.475 [main] TTWebsiteDriver - wait started for By.id: ddotherservice
+[INFO ] 2020-05-19 14:50:43.487 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:44.674 [main] BillingPage - Following Service Name has been selected from service Dropdown : Dialysis Procedures
+[INFO ] 2020-05-19 14:50:44.892 [main] BillingPage - Following Item has been selected from Services: AV Fistula Day Care Package With Anesthesia
+[INFO ] 2020-05-19 14:50:45.256 [main] BillingPage - Speciality And Doctor Selected
+[INFO ] 2020-05-19 14:50:45.693 [main] TTWebsiteDriver - wait started for By.xpath: //tbody[@id='tblrefdr']/tr/td[1]
+[INFO ] 2020-05-19 14:50:45.716 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:46.717 [main] TTWebsiteDriver - wait started for By.xpath: //tbody[@id='tblrefdr']/tr/td[1]
+[INFO ] 2020-05-19 14:50:46.734 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:47.736 [main] TTWebsiteDriver - quick wait started for By.xpath: //tbody[@id='tblrefdr']/tr/td[1]
+[INFO ] 2020-05-19 14:50:47.750 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:47.840 [main] BillingPage - Following Reffered By has been added : Deepak Thakur
+[INFO ] 2020-05-19 14:50:47.840 [main] TTWebsiteDriver - wait started for By.xpath: //div[contains(@class,'form_line facilitator-name')]//select
+[INFO ] 2020-05-19 14:50:47.869 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:49.023 [main] BillingPage - Following facilitator has been selected from facilitator  Dropdown : 1
+[INFO ] 2020-05-19 14:50:49.296 [main] BillingPage - Add to Bill Buttton Clicked
+[INFO ] 2020-05-19 14:50:49.296 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='modal-block-new']//button[text()='Yes']
+[INFO ] 2020-05-19 14:50:49.318 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:50.320 [main] TTWebsiteDriver - wait started for By.xpath: //div[@class='modal-block-new']//button[text()='Yes']
+[INFO ] 2020-05-19 14:50:50.335 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:51.337 [main] TTWebsiteDriver - quick wait started for By.xpath: //div[@class='modal-block-new']//button[text()='Yes']
+[INFO ] 2020-05-19 14:50:51.352 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:51.594 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Investigation Instruction')]
+[INFO ] 2020-05-19 14:50:51.631 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:52.686 [main] BillingPage - Investigation Instruciton Popup is showing Up
+[INFO ] 2020-05-19 14:50:52.771 [main] TTWebsiteDriver - wait started for By.xpath: //button[@id='add_invInstruction']
+[INFO ] 2020-05-19 14:50:52.793 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:53.795 [main] TTWebsiteDriver - quick wait started for By.xpath: //button[@id='add_invInstruction']
+[INFO ] 2020-05-19 14:50:53.813 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:53.975 [main] BillingPage - Response has been added in Investigation Popup
+[INFO ] 2020-05-19 14:50:53.975 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesbal1']
+[INFO ] 2020-05-19 14:50:54.004 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:55.007 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesbal1']
+[INFO ] 2020-05-19 14:50:55.029 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:56.030 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyesbal1']
+[INFO ] 2020-05-19 14:50:56.050 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:56.171 [main] TTWebsiteDriver - wait started for By.xpath: //input[@name='availdeposits']
+[INFO ] 2020-05-19 14:50:56.199 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:57.453 [main] BillingPage - Billing Button on header clicked
+[INFO ] 2020-05-19 14:50:57.453 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesbal2']
+[INFO ] 2020-05-19 14:50:57.487 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:58.490 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesbal2']
+[INFO ] 2020-05-19 14:50:58.504 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:59.506 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyesbal2']
+[INFO ] 2020-05-19 14:50:59.528 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:50:59.706 [main] BillingPage - Yes Button On Generate Bill Popup Clicked
+[INFO ] 2020-05-19 14:50:59.707 [main] TTWebsiteDriver - wait started for By.xpath: //input[@ctype='amount']
+[INFO ] 2020-05-19 14:50:59.814 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:01.073 [main] BillingPage - Following Amount has been added as patient Paid Amount: 5000
+[INFO ] 2020-05-19 14:51:01.237 [main] BillingPage - New Payment Mode Button Clicked
+[INFO ] 2020-05-19 14:51:01.453 [main] BillingPage - Second Payment MOde selected as Cheque
+[INFO ] 2020-05-19 14:51:01.453 [main] TTWebsiteDriver - wait started for By.xpath: //table[@class='mode_table table']//following::input[@ctype='amount'][2]
+[INFO ] 2020-05-19 14:51:01.552 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:02.850 [main] BillingPage - Following Cheque Amount has been added as patient Paid Amount: 1000
+[INFO ] 2020-05-19 14:51:14.528 [main] BillingPage - Cheque Details has been filled
+[INFO ] 2020-05-19 14:51:14.528 [main] TTWebsiteDriver - wait started for By.xpath: //select[@name='ddlAuthorised']
+[INFO ] 2020-05-19 14:51:14.568 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:15.783 [main] BillingPage - Following Authorised By Has been selected from Authorised By Dropdown : Management Decision
+[INFO ] 2020-05-19 14:51:16.274 [main] BillingPage - Verify Button on Process Payment Popup Clicked
+[INFO ] 2020-05-19 14:51:26.275 [main] TTWebsiteDriver - wait started for By.xpath: //section[@id='report']
+[INFO ] 2020-05-19 14:51:26.299 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:27.338 [main] BillingPage - Bill Got Generated Successfully
+[INFO ] 2020-05-19 14:51:27.338 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnnorep']
+[INFO ] 2020-05-19 14:51:27.359 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:28.373 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnnorep']
+[INFO ] 2020-05-19 14:51:28.396 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:29.398 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnnorep']
+[INFO ] 2020-05-19 14:51:29.414 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:29.505 [main] BillingPage - No Button on Bill Got Generated Popup Clicked
+[INFO ] 2020-05-19 14:51:29.505 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesopd']
+[INFO ] 2020-05-19 14:51:29.535 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:30.536 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnyesopd']
+[INFO ] 2020-05-19 14:51:30.562 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:31.563 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnyesopd']
+[INFO ] 2020-05-19 14:51:31.581 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:31.658 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case frontOfficeWithAvailDepositAmountTest has passed]
+[INFO ] 2020-05-19 14:51:35.659 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-19 14:51:35.678 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-19 14:51:36.530 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-19 14:51:36.530 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:51:36.530 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:51:36.530 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-19 14:51:36.614 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:51:36.614 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:51:36.614 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-19 14:51:36.689 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:51:36.689 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:51:36.689 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-19 14:51:36.765 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:51:36.765 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:51:36.765 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-19 14:51:36.838 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:51:36.838 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:51:36.838 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:51:36.914 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-19 14:51:36.914 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-19 14:51:36.914 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-19 14:51:37.159 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  patientRegistrationValidDataTest
+******************************************************************************************************************************
+[INFO ] 2020-05-19 14:51:37.555 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:51:37.592 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:38.602 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-19 14:51:38.613 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:38.826 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:51:38.843 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:39.844 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-19 14:51:39.854 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:40.449 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-19 14:51:40.450 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:51:40.469 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:41.618 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:51:41.688 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:51:41.689 [main] TTWebsiteDriver - wait started for By.id: btn_no_desh
+[INFO ] 2020-05-19 14:51:41.708 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:42.710 [main] TTWebsiteDriver - quick wait started for By.id: btn_no_desh
+[INFO ] 2020-05-19 14:51:42.721 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:42.791 [main] HISHomePage - NO has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:51:42.791 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-19 14:51:42.808 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:43.887 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-19 14:51:47.974 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-19 14:51:47.974 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:51:47.995 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:48.996 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-19 14:51:49.035 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:50.004 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-19 14:51:50.005 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:51:50.027 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:51.029 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:51:51.040 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:52.041 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-19 14:51:52.055 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:51:52.143 [main] FrontOfficeHomePage - Add Patient Section is Expanded
+[INFO ] 2020-05-19 14:52:01.380 [main] FrontOfficeHomePage - Following Option has been selected from Add Patient Section Patient Registration
+[INFO ] 2020-05-19 14:52:01.380 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-19 14:52:19.556 [main] PatientRegistrationPage - Following Title has been selected from Title Dropdown : New Delhi
+[INFO ] 2020-05-19 14:52:19.557 [main] TTWebsiteDriver - wait started for By.id: firstName
+[INFO ] 2020-05-19 14:52:19.574 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:52:21.179 [main] PatientRegistrationPage - First Name has been added as : Automation
+[INFO ] 2020-05-19 14:52:21.179 [main] TTWebsiteDriver - wait started for By.id: middleName
+[INFO ] 2020-05-19 14:52:21.195 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:52:22.491 [main] PatientRegistrationPage - Middle Name has been added as : Test
+[INFO ] 2020-05-19 14:52:22.491 [main] TTWebsiteDriver - wait started for By.id: lastName
+[INFO ] 2020-05-19 14:52:22.509 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:52:23.850 [main] PatientRegistrationPage - Last Name has been added as : User
+[INFO ] 2020-05-19 14:52:23.850 [main] TTWebsiteDriver - wait started for By.id: gender
+[INFO ] 2020-05-19 14:52:23.869 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:52:24.944 [main] PatientRegistrationPage - Following Gender has been selected from Gender Dropdown : Male
+[INFO ] 2020-05-19 14:52:24.944 [main] TTWebsiteDriver - wait started for By.id: dob
+[INFO ] 2020-05-19 14:52:24.963 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-19 14:52:26.848 [main] PatientRegistrationPage - Following DOB has been added : 15-12-1991

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite parallel="none" name="Failed suite [Failed suite [Default suite]]">
+  <test parallel="none" name="Default test(failed)(failed)">
+    <classes>
+      <class name="com.triotree.test.website.InventroyModule.InventoryModuleTest">
+        <methods>
+          <include name="beforeclass"/>
+          <include name="purchaseRequisitionApprovalTest"/>
+          <include name="purchaseorderapprovaltestcase"/>
+          <include name="beforeSuite"/>
+          <include name="tearDownSession"/>
+          <include name="setUp"/>
+          <include name="inventoryDirectIssueTest"/>
+          <include name="afterSuite"/>
+        </methods>
+      </class> <!-- com.triotree.test.website.InventroyModule.InventoryModuleTest -->
+    </classes>
+  </test> <!-- Default test(failed)(failed) -->
+</suite> <!-- Failed suite [Failed suite [Default suite]] -->
