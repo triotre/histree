@@ -1,0 +1,95 @@
+[INFO ] 2020-05-20 10:25:16.583 [main] TTBaseTest - Started execution with  null
+[INFO ] 2020-05-20 10:25:16.594 [main] TTBaseTest - Environment properties are not provided by the user ... loading the default properties
+[INFO ] 2020-05-20 10:25:16.594 [main] TTBaseTest - Default Browser is  ------ chrome
+[INFO ] 2020-05-20 10:25:16.595 [main] TTBaseTest - Default URL is  ------ http://206.19.38.8:8001/HISTreeTesting/Login/Login?ReturnUrl=%2fHistreetesting
+[INFO ] 2020-05-20 10:25:16.595 [main] TTBaseTest - Default loginname is  ------ null
+[INFO ] 2020-05-20 10:25:16.595 [main] TTBaseTest - Default username is  ------ null
+[INFO ] 2020-05-20 10:25:16.595 [main] TTBaseTest - Default user password is  ------ Deepak@1234
+[INFO ] 2020-05-20 10:25:20.994 [main] TTWebsiteDriver - Window is maximized
+[INFO ] 2020-05-20 10:25:21.035 [main] TTWebsiteDriver - All cookies deleted
+[INFO ] 2020-05-20 10:25:22.545 [main] TTWebsiteBaseTest - Application loaded
+[INFO ] 2020-05-20 10:25:22.647 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-20 10:25:22.647 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-20 10:25:22.648 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_IdCardType where Deleted=0
+
+[INFO ] 2020-05-20 10:25:23.143 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-20 10:25:23.144 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-20 10:25:23.144 [main] DBUtil - QUERY TRIGGERED IS select top 1 name from M_OCCUPATION where Deleted=0
+
+[INFO ] 2020-05-20 10:25:23.238 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-20 10:25:23.238 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-20 10:25:23.239 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from M_QUALIFICATION where Deleted=0
+
+[INFO ] 2020-05-20 10:25:23.330 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-20 10:25:23.330 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-20 10:25:23.331 [main] DBUtil - QUERY TRIGGERED IS select top 1 Name from m_SourceOfInfo where Deleted=0
+
+[INFO ] 2020-05-20 10:25:23.426 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-20 10:25:23.426 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-20 10:25:23.427 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-20 10:25:23.520 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-05-20 10:25:23.521 [main] DBUtil - ConnectionString::jdbc:sqlserver://206.19.38.4;databaseName=SIT_HISTree_TestingAuto;instance=MSSQLSERVER;domain=null
+[INFO ] 2020-05-20 10:25:23.521 [main] DBUtil - QUERY TRIGGERED IS select top 1 NAME from m_city where deleted=0
+
+[INFO ] 2020-05-20 10:25:23.916 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  frontOfficeDOBSearchFieldInAllScreenTest
+******************************************************************************************************************************
+[INFO ] 2020-05-20 10:25:24.166 [main] TTWebsiteDriver - wait started for By.id: btnLogin
+[INFO ] 2020-05-20 10:25:24.192 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:25.197 [main] TTWebsiteDriver - quick wait started for By.id: btnLogin
+[INFO ] 2020-05-20 10:25:25.222 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:25.425 [main] TTWebsiteDriver - wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-20 10:25:25.447 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:26.451 [main] TTWebsiteDriver - quick wait started for By.xpath: //a[@id='btnYesAlreadyLogedinPopup']
+[INFO ] 2020-05-20 10:25:26.477 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:28.217 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-05-20 10:25:28.218 [main] TTWebsiteDriver - wait started for By.xpath: //span[contains(text(),'Front Office')]//ancestor::a
+[INFO ] 2020-05-20 10:25:28.255 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:29.444 [main] HISHomePage - Front Office Icon Clicked
+[INFO ] 2020-05-20 10:25:33.532 [main] HISHomePage - Following Station has been selected from Station Dropdown : Front Office
+[INFO ] 2020-05-20 10:25:33.533 [main] TTWebsiteDriver - wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-20 10:25:33.555 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:34.558 [main] TTWebsiteDriver - quick wait started for By.id: btn_yes_desh
+[INFO ] 2020-05-20 10:25:34.582 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:36.748 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-05-20 10:25:36.748 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-20 10:25:36.777 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:37.781 [main] TTWebsiteDriver - wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-20 10:25:37.806 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:38.812 [main] TTWebsiteDriver - quick wait started for By.xpath: //li[@id='FOAddPatientMenu']//i[2]
+[INFO ] 2020-05-20 10:25:38.842 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:25:38.932 [main] FrontOfficeHomePage - Add Patient Section is Expanded
+[INFO ] 2020-05-20 10:25:49.462 [main] FrontOfficeHomePage - Following Option has been selected from Add Patient Section Patient Registration
+[INFO ] 2020-05-20 10:25:49.463 [main] TTWebsiteDriver - Waiting For Page load via JS
+[INFO ] 2020-05-20 10:26:07.482 [main] TTWebsiteDriver - waiting for locator By.xpath: //i[@id='searchnew']
+[INFO ] 2020-05-20 10:26:07.541 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-20 10:26:07.541 [main] TTWebsiteDriver - wait started for By.xpath: //i[@id='searchnew']
+[INFO ] 2020-05-20 10:26:07.564 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:26:08.567 [main] TTWebsiteDriver - quick wait started for By.xpath: //i[@id='searchnew']
+[INFO ] 2020-05-20 10:26:08.606 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:26:08.712 [main] TTWebsiteDriver - waiting for locator By.xpath: //input[@id='modal_DOB']
+[INFO ] 2020-05-20 10:26:08.754 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-20 10:26:09.350 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='search_button']//i[@class='fa fa-search']
+[INFO ] 2020-05-20 10:26:09.381 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-20 10:26:09.437 [main] TTWebsiteDriver - waiting for locator By.xpath: //input[@id='modal_DOB']
+[INFO ] 2020-05-20 10:26:09.465 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-20 10:26:09.760 [main] TTWebsiteDriver - waiting for locator By.xpath: //a[@id='search_button']//i[@class='fa fa-search']
+[INFO ] 2020-05-20 10:26:09.778 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-20 10:26:09.801 [main] TTWebsiteDriver - waiting for locator By.xpath: //table[@id='searchResultsTable']//tr[@class='patient_row'][1]
+[INFO ] 2020-05-20 10:26:18.015 [main] TTWebsiteDriver - Element found
+[INFO ] 2020-05-20 10:26:18.016 [main] TTWebsiteDriver - wait started for By.xpath: //table[@id='searchResultsTable']//tr[@class='patient_row'][1]
+[INFO ] 2020-05-20 10:26:18.042 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:26:19.045 [main] TTWebsiteDriver - quick wait started for By.xpath: //table[@id='searchResultsTable']//tr[@class='patient_row'][1]
+[INFO ] 2020-05-20 10:26:19.081 [main] TTWebsiteDriver - wait over,element found
+[INFO ] 2020-05-20 10:26:19.696 [main] TestListner - Test has failed with TestResult status = 2
+[INFO ] 2020-05-20 10:26:19.696 [main] TestListner - [TEST HAS FAILED-------- Test case frontOfficeDOBSearchFieldInAllScreenTest has failed]. The reason is org.openqa.selenium.WebDriverException: unknown error: Element <tr onclick="fillw(&quot;PSSH.37848&quot;)" class="patient_row">...</tr> is not clickable at point (635, 334). Other element would receive the click: <div class="modal"></div>
+  (Session info: chrome=83.0.4103.61)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'NISHANTSHARMA', ip: '206.19.38.23', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 83.0.4103.61, webStorageEnabled: true}
+Session ID: 8878346829afef63c3075b98f8174aa3

@@ -35,7 +35,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 	private String desc1 = null;
 
 
-	@Test(priority = 1)
+	@Test(priority=1)
 	public void patientRegistrationValidDataTest() throws Throwable {
 		
 		test=extent.createTest("PatientRegistrationValidDataTest", "This test case is verifies Patient Registration Valid Data");
@@ -106,7 +106,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
 	}
 
-	@Test(priority = 2)
+	@Test(priority=2)
 	public void patientRegistrationAliasName() throws Throwable {
 		
 		test=extent.createTest("PatientRegistrationAliasName", "This test case is verifies Patient Registration AliasName");
@@ -189,7 +189,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 3)
+	@Test(priority=3)
 	public void frontOfficeSearchPatientTest() throws Throwable {
 		test=extent.createTest("FrontOfficeSearchPatientTest", "This test case is verifies Front Office Search Patient");
 		test.assignCategory("Front Office");
@@ -249,7 +249,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 		driver.waitForPageLoad();
 	}
 
-	@Test(priority = 4)
+	@Test(priority=4)
 	public void patientRegistrationSimilarSoundingClosePopupTest() throws Throwable {
 		test=extent.createTest("PatientRegistrationSimilarSoundingClosePopupTest", "This test case is verifies Patient Registration Similar Sounding Close Popup");
 		test.assignCategory("Front Office");
@@ -322,7 +322,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
 	}
 
-	@Test(priority = 5)
+	@Test(priority=5)
 	public void patientRegistrationSimilarSoundingSelectPreviousPatientTest() throws Throwable {
 		
 		test=extent.createTest("PatientRegistrationSimilarSoundingSelectPreviousPatientTest", "This test case is verifies Patient Registration Similar Sounding Select Previous Patient");
@@ -354,7 +354,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
 	}
 
-	@Test(priority = 6)
+	@Test(priority=6)
 	public void frontOfficeDocumentUploadTest() throws Throwable {
 		
 		test=extent.createTest("FrontOfficeDocumentUploadTest", "This test case is verifies Front Office Document Upload");
@@ -377,7 +377,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 	}
 
 
-	@Test(priority = 7)
+	@Test(priority=7)
 	public void registrationFormInFrontOfficeWithKinDetailsTest() throws Throwable {
 		
 		test=extent.createTest("RegistrationFormInFrontOfficeWithKinDetailsTest", "This test case is verifies registration Form in Front Office With Kin Details");
@@ -448,7 +448,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
 	}
 
-	@Test(priority = 8)
+	@Test(priority=8)
 	public void frontOfficeRegistrationWithKinDetailsTest() throws Throwable {
 		
 		test=extent.createTest("FrontOfficeRegistrationWithKinDetailsTest", "This test case is verifies Front Office Registration With Kin Details");
@@ -520,7 +520,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 9)
+	@Test(priority =9)
 	public void frontOfficeDOBSearchFieldInAllScreenTest() throws Throwable {
 		
 		test=extent.createTest("FrontOfficeDOBSearchFieldInAllScreenTest", "This test case is verifies Front Office DOB Search Field");
@@ -628,7 +628,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 	}
 
 
-	@Test(priority = 10)
+	@Test(priority=10)
 	public void frontOfficeCapturePurposeOfVisitOnRegistrationTest() throws Throwable {
 		test=extent.createTest("FrontOfficeCapturePurposeOfVisitOnRegistrationTest", "This test case is verifies Front Office Capture Purpose Of Visit On Registration");
 		test.assignCategory("Front Office");
@@ -701,7 +701,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 11)
+	@Test(priority=11)
 	public void frontOfficeCaptureModificationRemarksChangingDemographicDetailsTest() throws Exception
 	{
 		test=extent.createTest("CaptureModificationRemarksChangingDemographicDetailsTest", "This test case is verifies Changing Demographic Details");

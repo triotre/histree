@@ -39,10 +39,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 	private String desc1 = null;
 
 
-	@Test(priority = 1)
+	@Test(priority=1)
 	public void frontOfficeBillingenterChequeDetailsAndSaveDetailsTestCase() throws Throwable 
 	{
-		test=extent.createTest("frontOfficeBillingFirstTestCase", "This test case verify the Fornt Office Billing First Test Case");
+		test=extent.createTest("frontOfficeBillingenterChequeDetailsAndSaveDetailsTestCase", "This test case verify the Fornt Office Billing First Test Case");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -140,10 +140,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickonYesButtonOnBillGotGenertedPopup(); //add by nishant
 
 	}
-	@Test(priority = 2)
+	@Test(priority =2)
 	public void frontOfficeBillingclickOnAddToBillButtonTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingSecondTestCase", "This test case verify the Fornt Office Billing Second Test Case");
+		test=extent.createTest("frontOfficeBillingclickOnAddToBillButtonTestCase", "This test case verify front Office Billing click On Add To Bill Button Test Case");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -250,10 +250,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyDailyDiscountLimitMessage("Daily discount limit for the patient in this schem"), "Daily Discount Limit Message is not showing up");
 
 	}
-	@Test(priority = 3)
+	@Test(priority=3)
 	public void frontOfficeBillingandselectSecondPaymentModeAsChequeTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingThirdTestCase", "This test case verify the Fornt Office Billing Third Test Case");
+		test=extent.createTest("frontOfficeBillingandselectSecondPaymentModeAsChequeTestCase", "This test case verify the front Office Billing and select Second Payment Mode As Cheque Test Case");
 		test.assignCategory("Front Office Billing");
 
 		hisHomePage = new HISHomePage(driver);
@@ -376,10 +376,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnYesButtonOnOpdPopup();
 
 	}
-	@Test(priority = 4)
+	@Test(priority=4)
 	public void frontOfficeBillingclickOnNoButtonOnBillGotGeneratedPopupTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingFourTestCase", "This test case verify the Fornt Office Billing Four Test Case");
+		test=extent.createTest("frontOfficeBillingclickOnNoButtonOnBillGotGeneratedPopupTestCase", "This test case verify the front Office Billing click On No Button On Bill Got Generated Popup Test Case");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -501,10 +501,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 5)
-	public void frontOfficeBillingclickOnYesBtnPercentageProcessDiscountPopupTestCase() throws Throwable {
+	@Test(priority=5)
+	public void frontOfficeBillingPercentageProcessDiscountTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingFiveTestCase", "This test case verify the Fornt Office Billing Five Test Case");
+		test=extent.createTest("frontOfficeBillingPercentageProcessDiscountTestCase", "This test case verify the front Office Billing Percentage Process Discount TestCase");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -647,10 +647,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 6)
-	public void frontOfficeBillingclickOnVerifyButtonOnProcessPaymentTestCase() throws Throwable {
+	@Test(priority=6)
+	public void frontOfficeBillingProcessPaymentTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingSixTestCase", "This test case verify the Fornt Office Billing Six Test Case");
+		test=extent.createTest("frontOfficeBillingProcessPaymentTestCase", "This test case verify the front Office Billing Process Payment Test Case");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -775,10 +775,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 	}
 
 
-	@Test(priority = 7)
+	@Test(priority=7)
 	public void frontOfficeBillingverifyPrintOPDMessageIsDisplayingTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingSevenTestCase", "This test case verify the Fornt Office Billing Seven Test Case");
+		test=extent.createTest("frontOfficeBillingverifyPrintOPDMessageIsDisplayingTestCase", "This test case verify the front Office Billing verify Print OPD Message Is Displaying Test Case");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -875,10 +875,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
 	
-	@Test(priority = 8)
-	public void frontOfficeBillingclickOnNewPaymentModeButtonTestCase() throws Throwable {
+	@Test(priority=8)
+	public void frontOfficeBillingNewPaymentModeTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingEightTestCase", "This test case verify the Fornt Office Billing Eight Test Case");
+		test=extent.createTest("frontOfficeBillingNewPaymentModeTestCase", "This test case verify the front Office Billing New Payment Mode Test Case");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -1048,10 +1048,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
 		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
-	@Test(priority = 9)
+	@Test(priority=9)
 	public void frontOfficeBillingMarkPatientDeceasedTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingNineTestCase", "This test case verify the Fornt Office Billing Nine Test Case");
+		test=extent.createTest("frontOfficeBillingMarkPatientDeceasedTestCase", "This test case verify the front Office Billing Mark Patient Deceased Test Case");
 		test.assignCategory("Front Office Billing");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -1216,11 +1216,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 10 )
+	@Test(priority=10)
 	public void frontOfficeBillingsearchPatientWithMobileNumberTestCase() throws Throwable {
 
-
-		test=extent.createTest("frontOfficeBillingTenTestCase", "This test case verify the Fornt Office Billing Ten Test Case");
+		test=extent.createTest("frontOfficeBillingsearchPatientWithMobileNumberTestCase", "This test case verify the front Office Billing search Patient With Mobile Number Test Case");
 		test.assignCategory("Front Office Billing");
 
 		hisHomePage = new HISHomePage(driver);
@@ -1389,10 +1388,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
 
-	@Test(priority = 11)
+	@Test(priority=11)
 	public void frontOfficeBillingMergeDuplicatesTestCase() throws Throwable {
 
-		test=extent.createTest("frontOfficeBillingElevenTestCase", "This test case verify the Fornt Office Billing Eleven Test Case");
+		test=extent.createTest("frontOfficeBillingMergeDuplicatesTestCase", "This test case verify the front Office Billing Merge Duplicates Test Case");
 		test.assignCategory("Front Office Billing");
 
 		hisHomePage = new HISHomePage(driver);
@@ -1589,6 +1588,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 			billingPage.clickOnCloseButtonOnDocumentChecklistPopup();
 		} catch (Exception e1) {
 			// TODO Auto-generated catch block
+			billingPage.clickOnCloseButtonOnDocumentChecklistPopup();
 			e1.printStackTrace();
 		}
 		//billingPage.clickClearButtonCompDetails();
@@ -1597,6 +1597,14 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
+		try {
+			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
+		}
+		catch (Exception e) {}
+//		billingPage.checkCaseRecordCheckboxFromDocumentCheckList();
+//		billingPage.checkPanCardCheckboxFromDocumentCheckList();
+//		billingPage.checkForm60CheckboxFromDocumentCheckList();
+//		billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 		billingPage.closeCompanyDetailsPopup();
 		try {
 			billingPage.unCheckSchemeDetailsPopup();
@@ -1681,10 +1689,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnYesButtonOnOpdPopup();
 
 	}
-	@Test(priority = 12)
-	public void frontOfficeBillingselectInsuranceCompRadioButtonTestCase() throws Throwable {	
+	@Test(priority=12)
+	public void frontOfficeBillingselectInsuranceCompTestCase() throws Throwable {	
 
-		test=extent.createTest("frontOfficeBillingTwelveTestCase", "This test case verify the Fornt Office Billing Twelve Test Case");
+		test=extent.createTest("frontOfficeBillingselectInsuranceCompTestCase", "This test case verify the front Office Billing select Insurance Comp Test Case");
 		test.assignCategory("Front Office Billing");
 
 		hisHomePage = new HISHomePage(driver);

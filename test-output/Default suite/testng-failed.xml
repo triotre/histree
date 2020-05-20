@@ -3,20 +3,16 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.triotree.test.website.InventroyModule.InventoryModuleTest">
+      <class name="com.triotree.test.website.FrontOffice.DepositBillingTest">
         <methods>
           <include name="beforeclass"/>
-          <include name="purchaseRequisitionApprovalTest"/>
-          <include name="purchaseorderapprovaltestcase"/>
+          <include name="frontOfficeScheduling1Test"/>
           <include name="beforeSuite"/>
-          <include name="InventoryGRNReturnwithoutGRNTestCase"/>
           <include name="tearDownSession"/>
           <include name="setUp"/>
-          <include name="inventoryDirectIssueTest"/>
-          <include name="InventoryGRNTestCase1"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.triotree.test.website.InventroyModule.InventoryModuleTest -->
+      </class> <!-- com.triotree.test.website.FrontOffice.DepositBillingTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

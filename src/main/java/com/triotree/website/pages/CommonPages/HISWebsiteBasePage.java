@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 
 import com.triotree.driver.website.TTWebsiteDriver;
 import com.triotree.utils.PropertyFile;
@@ -38,7 +39,8 @@ public class HISWebsiteBasePage extends TTBasePage{
 	
 	public void clickOnMenu() throws InterruptedException {
 		driver.waitForElementPresent(MENU);
-		driver.click(MENU);
+		WebElement clickOnMenu_element = driver.findElement(MENU);
+		driver.clickByJS(TTWebsiteDriver.driver, clickOnMenu_element);
 		logger.info("Menu Clicked");
 		Thread.sleep(4000);
 	}

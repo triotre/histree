@@ -938,12 +938,15 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		driver.waitForElementPresent(By.xpath("//input[@id='modal_DOB']"), 120);
 		driver.findElement(By.xpath("//input[@id='modal_DOB']")).clear();
 		driver.findElement(By.xpath("//input[@id='modal_DOB']")).sendKeys(dob);
+		driver.findElement(By.xpath("//input[@id='modal_DOB']")).sendKeys(Keys.ENTER);
 	}
 
 	public void clickOnSearchButtonOnSearchPopup() {
 		try {
 			driver.waitForElementPresent(By.xpath("//a[@id='search_button']//i[@class='fa fa-search']"), 120);
-			driver.click(By.xpath("//a[@id='search_button']//i[@class='fa fa-search']"));	
+			 WebElement clickOnSearchButton_element = driver.findElement(By.xpath("//a[@id='search_button']//i[@class='fa fa-search']"));
+			 driver.clickByJS(TTWebsiteDriver.driver, clickOnSearchButton_element);
+			 Thread.sleep(3000);
 		} 
 		catch (Exception e) {}
 
@@ -967,9 +970,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		}
 	}
 
-	public void selectFirstSearchedPatientRow() {
+	public void selectFirstSearchedPatientRow() 
+	{
 		driver.waitForElementPresent(By.xpath("//table[@id='searchResultsTable']//tr[@class='patient_row'][1]"), 120);
-		driver.click(By.xpath("//table[@id='searchResultsTable']//tr[@class='patient_row'][1]"));
+		WebElement selectFirstSearchedPatient = driver.findElement(By.xpath("//table[@id='searchResultsTable']//tr[@class='patient_row'][1]"));
+		driver.clickByJS(TTWebsiteDriver.driver, selectFirstSearchedPatient);
 	}
 
 	public void selectPurposeOfVisit(String visit) {

@@ -1,0 +1,809 @@
+<html>
+<head>
+<title>TestNG:  Test3</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test3</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>14/13/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue May 19 19:26:42 IST 2020</td>
+</tr>
+<tr><td>Total time:</td><td>9200 seconds (9200419 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingUtilityWithCreditPartialCoPayPatientRefundWithDueSettlementTest()'><b>frontOfficeBillingUtilityWithCreditPartialCoPayPatientRefundWithDueSettlementTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt; is not clickable at point (31, 25). Other element would receive the click: &lt;div id=&quot;ADD_CITY&quot; class=&quot;popupContainer1 popup-area&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: 808424e35eb74a305e46112d33fba94f
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at com.triotree.driver.website.TTWebsiteDriver.retryingFindClick(TTWebsiteDriver.java:285)
+	at com.triotree.driver.website.TTWebsiteDriver.click(TTWebsiteDriver.java:277)
+	at com.triotree.website.pages.CommonPages.HISWebsiteBasePage.clickOnMenu(HISWebsiteBasePage.java:41)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingUtilityWithCreditPartialCoPayPatientRefundWithDueSettlementTest(DepositBillingTest.java:2432)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace423344137", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace423344137'><pre>org.openqa.selenium.WebDriverException: unknown error: Element &lt;i class=&quot;fa fa-bars&quot;&gt;&lt;/i&gt; is not clickable at point (31, 25). Other element would receive the click: &lt;div id=&quot;ADD_CITY&quot; class=&quot;popupContainer1 popup-area&quot; style=&quot;display: block;&quot;&gt;...&lt;/div&gt;
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: 808424e35eb74a305e46112d33fba94f
+	at jdk.internal.reflect.GeneratedConstructorAccessor37.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:279)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:83)
+	at com.triotree.driver.website.TTWebsiteDriver.retryingFindClick(TTWebsiteDriver.java:285)
+	at com.triotree.driver.website.TTWebsiteDriver.click(TTWebsiteDriver.java:277)
+	at com.triotree.website.pages.CommonPages.HISWebsiteBasePage.clickOnMenu(HISWebsiteBasePage.java:41)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingUtilityWithCreditPartialCoPayPatientRefundWithDueSettlementTest(DepositBillingTest.java:2432)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>145</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeCreditPatientBillingWithAvaialDiscountAndWithoutCoPayTest()'><b>frontOfficeCreditPatientBillingWithAvaialDiscountAndWithoutCoPayTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[contains(text(),&apos;Price not defined for this service&apos;)]&quot;}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: 0622442a929a2ad5bee1414967b1e600
+*** Element info: {Using=xpath, value=//p[contains(text(),&apos;Price not defined for this service&apos;)]}
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:472)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.triotree.driver.website.TTWebsiteDriver.findElement(TTWebsiteDriver.java:505)
+	at com.triotree.website.pages.FrontOffice.BillingPage.verifyPriceNotDefinedMessage(BillingPage.java:334)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeCreditPatientBillingWithAvaialDiscountAndWithoutCoPayTest(DepositBillingTest.java:369)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1515282013", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1515282013'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//p[contains(text(),&apos;Price not defined for this service&apos;)]&quot;}
+  (Session info: chrome=81.0.4044.138)
+  (Driver info: chromedriver=2.40.565498 (ea082db3280dd6843ebfb08a625e3eb905c4f5ab),platform=Windows NT 6.1.7601 SP1 x86_64) (WARNING: The server did not provide any stacktrace information)
+Command duration or timeout: 0 milliseconds
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, acceptSslCerts: false, applicationCacheEnabled: false, browserConnectionEnabled: false, browserName: chrome, chrome: {chromedriverVersion: 2.40.565498 (ea082db3280dd6..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, cssSelectorsEnabled: true, databaseEnabled: false, handlesAlerts: true, hasTouchScreen: false, javascriptEnabled: true, locationContextEnabled: true, mobileEmulationEnabled: false, nativeEvents: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: XP, platformName: XP, rotatable: false, setWindowRect: true, takesHeapSnapshot: true, takesScreenshot: true, unexpectedAlertBehaviour: , unhandledPromptBehavior: , version: 81.0.4044.138, webStorageEnabled: true}
+Session ID: 0622442a929a2ad5bee1414967b1e600
+*** Element info: {Using=xpath, value=//p[contains(text(),&apos;Price not defined for this service&apos;)]}
+	at jdk.internal.reflect.GeneratedConstructorAccessor36.newInstance(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:214)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:166)
+	at org.openqa.selenium.remote.http.JsonHttpResponseCodec.reconstructValue(JsonHttpResponseCodec.java:40)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:80)
+	at org.openqa.selenium.remote.http.AbstractHttpResponseCodec.decode(AbstractHttpResponseCodec.java:44)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:370)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:472)
+	at org.openqa.selenium.By$ByXPath.findElement(By.java:361)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+	at com.triotree.driver.website.TTWebsiteDriver.findElement(TTWebsiteDriver.java:505)
+	at com.triotree.website.pages.FrontOffice.BillingPage.verifyPriceNotDefinedMessage(BillingPage.java:334)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeCreditPatientBillingWithAvaialDiscountAndWithoutCoPayTest(DepositBillingTest.java:369)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>411</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDepositBySearchPatientTest()'><b>frontOfficeDepositBySearchPatientTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>java.lang.AssertionError: Registered Successfully Popup is not showing Up
+	at com.triotree.test.website.TTWebsiteBaseTest.assertTrue(TTWebsiteBaseTest.java:180)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDepositBySearchPatientTest(DepositBillingTest.java:450)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1196550329", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1196550329'><pre>java.lang.AssertionError: Registered Successfully Popup is not showing Up
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.triotree.test.website.TTWebsiteBaseTest.assertTrue(TTWebsiteBaseTest.java:180)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDepositBySearchPatientTest(DepositBillingTest.java:450)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>111</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDepositBySearchPatientTestSchedule1()'><b>frontOfficeDepositBySearchPatientTestSchedule1</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting2(GenerateSchedulePage.java:149)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDepositBySearchPatientTestSchedule1(DepositBillingTest.java:763)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1700960966", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1700960966'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting2(GenerateSchedulePage.java:149)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDepositBySearchPatientTestSchedule1(DepositBillingTest.java:763)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>95</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorScheduleWithGenerateScheduleAndLinkToExistingUHIDTest()'><b>frontOfficeDoctorScheduleWithGenerateScheduleAndLinkToExistingUHIDTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorScheduleWithGenerateScheduleAndLinkToExistingUHIDTest(DepositBillingTest.java:2157)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace253988431", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace253988431'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorScheduleWithGenerateScheduleAndLinkToExistingUHIDTest(DepositBillingTest.java:2157)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>107</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest()'><b>frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest(DepositBillingTest.java:2046)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1732146867", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1732146867'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest(DepositBillingTest.java:2046)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>109</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingCancelAppointmentTest()'><b>frontOfficeDoctorSchedulingCancelAppointmentTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>java.lang.AssertionError: Registered Successfully Popup is not showing Up
+	at com.triotree.test.website.TTWebsiteBaseTest.assertTrue(TTWebsiteBaseTest.java:180)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingCancelAppointmentTest(DepositBillingTest.java:1323)
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace903218049", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace903218049'><pre>java.lang.AssertionError: Registered Successfully Popup is not showing Up
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.triotree.test.website.TTWebsiteBaseTest.assertTrue(TTWebsiteBaseTest.java:180)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingCancelAppointmentTest(DepositBillingTest.java:1323)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>121</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingWithAddPatientTest()'><b>frontOfficeDoctorSchedulingWithAddPatientTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingWithAddPatientTest(DepositBillingTest.java:1481)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1938377818", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1938377818'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingWithAddPatientTest(DepositBillingTest.java:1481)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>118</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingWithLinkUHIDTest()'><b>frontOfficeDoctorSchedulingWithLinkUHIDTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingWithLinkUHIDTest(DepositBillingTest.java:1589)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2053647669", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2053647669'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDoctorSchedulingWithLinkUHIDTest(DepositBillingTest.java:1589)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>110</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule1Test()'><b>frontOfficeGenerateSchedule1Test</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule1Test(DepositBillingTest.java:1105)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace272220100", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace272220100'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule1Test(DepositBillingTest.java:1105)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>68</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule2Test()'><b>frontOfficeGenerateSchedule2Test</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule2Test(DepositBillingTest.java:1176)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1155300221", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1155300221'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule2Test(DepositBillingTest.java:1176)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>70</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule3Test()'><b>frontOfficeGenerateSchedule3Test</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule3Test(DepositBillingTest.java:1245)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1872905355", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1872905355'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting1(GenerateSchedulePage.java:114)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeGenerateSchedule3Test(DepositBillingTest.java:1245)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>68</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeScheduling1Test()'><b>frontOfficeScheduling1Test</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting2(GenerateSchedulePage.java:149)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeScheduling1Test(DepositBillingTest.java:909)
+... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace201484047", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace201484047'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate element with text: 21:30
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
+System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.selectByVisibleText(Select.java:151)
+	at com.triotree.website.pages.FrontOffice.GenerateSchedulePage.selectFromTimeForSitting2(GenerateSchedulePage.java:149)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeScheduling1Test(DepositBillingTest.java:909)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+</pre></div></td>
+<td>257</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillUtilityCashPatientRefundWithDueSettlementTest()'><b>frontOfficeBillUtilityCashPatientRefundWithDueSettlementTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>701</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillUtilityCashPatientWithDiscountDueAmountAndRefundBillWithDueSettlementTest()'><b>frontOfficeBillUtilityCashPatientWithDiscountDueAmountAndRefundBillWithDueSettlementTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>736</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillUtilitySearchPatientbyDateRangeAndRefundTheBillTest()'><b>frontOfficeBillUtilitySearchPatientbyDateRangeAndRefundTheBillTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>452</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillUtilityShowIpEmBillDetailsTest()'><b>frontOfficeBillUtilityShowIpEmBillDetailsTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>61</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingFullyCreditBillPatientRefundWithRefundApprovalTest()'><b>frontOfficeBillingFullyCreditBillPatientRefundWithRefundApprovalTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>589</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingFullyCreditPatientRefundApprovalAndAlsoRejectApprovalTest()'><b>frontOfficeBillingFullyCreditPatientRefundApprovalAndAlsoRejectApprovalTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>724</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingUtilityFindAllBillForOnePatientTest()'><b>frontOfficeBillingUtilityFindAllBillForOnePatientTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>400</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingWithBillingModeCashPatientTest()'><b>frontOfficeBillingWithBillingModeCashPatientTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>387</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeBillingWithBillingModeCreditPatientTest()'><b>frontOfficeBillingWithBillingModeCreditPatientTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>419</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDeposit3Test()'><b>frontOfficeDeposit3Test</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>533</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDeposit6Test()'><b>frontOfficeDeposit6Test</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>472</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeDepositAndRefundTest()'><b>frontOfficeDepositAndRefundTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>532</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeToAddDOBMobileNoAddressGaurdianNameTest()'><b>frontOfficeToAddDOBMobileNoAddressGaurdianNameTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>587</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+<tr>
+<td title='com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeWithAvailDepositAmountTest()'><b>frontOfficeWithAvailDepositAmountTest</b><br>Test class: com.triotree.test.website.FrontOffice.DepositBillingTest</td>
+<td></td>
+<td>539</td>
+<td>com.triotree.test.website.FrontOffice.DepositBillingTest@2f40a43</td></tr>
+</table><p>
+</body>
+</html>

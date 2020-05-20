@@ -829,7 +829,8 @@ public class BillingPage extends HISWebsiteBasePage{
 		driver.clickByJS(TTWebsiteDriver.driver, checkall_element);
 		Thread.sleep(3000);
 		driver.waitForElementPresent(SAVE_BUTTON_DOCUMENT_CHECKLIST_POPUP);
-		driver.findElement(SAVE_BUTTON_DOCUMENT_CHECKLIST_POPUP).click();
+		WebElement SAVE_BUTTON_element = driver.findElement(SAVE_BUTTON_DOCUMENT_CHECKLIST_POPUP);
+		driver.clickByJS(TTWebsiteDriver.driver, SAVE_BUTTON_element);
 		logger.info("Save Button On Document Checklist popup Clicked");
 		}
 		catch (Exception e) {
@@ -891,7 +892,8 @@ public class BillingPage extends HISWebsiteBasePage{
 
 	public void clickOnInsuranceCompanyButton() {
 		try {
-			driver.click(INSURANCE_COMPANY_BUTTON);
+			WebElement InsuranceCompanyButton = driver.findElement(INSURANCE_COMPANY_BUTTON);
+			driver.clickByJS(TTWebsiteDriver.driver, InsuranceCompanyButton);
 			logger.info("Insurance Company Button Clicked");
 		}
 		catch (Exception e) {
