@@ -6,9 +6,9 @@
       <class name="com.triotree.test.website.FrontOffice.DepositBillingTest">
         <methods>
           <include name="beforeclass"/>
-          <include name="frontOfficeScheduling1Test"/>
           <include name="beforeSuite"/>
           <include name="tearDownSession"/>
+          <include name="frontOfficeWithAvailDepositAmountTest"/>
           <include name="setUp"/>
           <include name="afterSuite"/>
         </methods>

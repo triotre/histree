@@ -1,5 +1,6 @@
 package com.triotree.website.pages.FrontOffice;
 
+import java.util.Arrays;
 import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -23,8 +24,7 @@ public class BillingPage extends HISWebsiteBasePage{
 
 
 	private final By ADD_PATIENT_SECTION = By.xpath("//li[@id='FOAddPatientMenu']//i[2]");
-	private final By CLOSE_ICON_COMP_DETAIL_POPUP =By.xpath("//span[@id='modelclose123']//i");
-	//By.xpath("//a[@id='cancelinsurance']//i[@class='fa fa-times']");
+	private final By CLOSE_ICON_COMP_DETAIL_POPUP =By.xpath("//a[@id='cancelinsurance']//i[@class='fa fa-times']");
 	private final By CLOSE_ICON_SCHEME_DETAILS_POPUP = By.xpath("//a[@id='schemeclose']//i[@class='fa fa-times']");
 	private final By CLOSE_ICON_REMARKS_POPUP = By.xpath("//span[@id='remarks_close']//i[@class='fa fa-times']");
 	private final By SPECIALITY_DROPDOWN = By.xpath("//select[@name='ddlspecialization']");
@@ -55,6 +55,8 @@ public class BillingPage extends HISWebsiteBasePage{
 	private final By ADD_BTN_INVESTIGATION_INSTRUCTION_POPUP  = By.xpath("//button[@id='add_invInstruction']");
 	private final By BILLING_BTN_HEADER = By.xpath("//a[@title='Billing']");
 	private final By YES_BUTTON_GENERATE_BILL_POPUP = By.xpath("//a[@id='btnyesbal2']");
+	private final By NO_BUTTON_GENERATE_BILL_POPUP = By.xpath("//a[@id='btnnobal2']");
+
 	private final By PATIENT_PAID_AMOUNT_PROCESS_PAYMENT_POPUP = By.xpath("//input[@ctype='amount']");
 	private final By NEW_MODE_BUTTON = By.xpath("//button[@id='new_payment_mode']");
 	private final By SECOND_PAYMENT_MODE = By.xpath("//select[@id='paymentMode2']");
@@ -286,6 +288,7 @@ public class BillingPage extends HISWebsiteBasePage{
 
 	public void selectTestsByName(String Testsname) throws InterruptedException {
 		try {
+			driver.findElement(By.xpath("//input[@id='autocomplete_tests']")).clear();
 			driver.findElement(By.xpath("//input[@id='autocomplete_tests']")).sendKeys(Testsname);
 			driver.findElement(By.xpath("//input[@id='autocomplete_tests']")).sendKeys(Keys.ENTER);
 
@@ -330,6 +333,57 @@ public class BillingPage extends HISWebsiteBasePage{
 		}
 	}
 
+	public void selectScheduleSlotAndToken(String token) throws InterruptedException 
+	{
+		//String lastvalue="";
+		List<WebElement> Diagnostics_table_list = driver.findElements(By.xpath("//table[@id='tblconsultation']//tbody//tr"));
+		for(int i=1;i<=Diagnostics_table_list.size();i++) 
+		{
+			Thread.sleep(2000);
+			WebElement scheduleslot_element = driver.findElement(By.xpath("(//table[@id='tblconsultation']//tbody//tr)["+i+"]//select[contains(@id,'ddlschedule')]"));
+
+			Select scheduleslotDropdown = new Select(scheduleslot_element);
+			if(scheduleslotDropdown.getOptions().size()>0) 
+			{
+				List<WebElement> option = scheduleslotDropdown.getOptions();
+				for(int k=1;k<option.size();k++) {
+
+					if(option.get(k)!=null && option.get(k).getText().isEmpty()) 
+					{
+						WebElement selectedValueInDropDown = option.get(k);
+						String option_text=selectedValueInDropDown.getText();
+						scheduleslotDropdown.selectByVisibleText(option_text);
+						logger.info("scheduleslotDropdown");
+						Thread.sleep(2000);
+						break;
+					}
+					String token_attribute = driver.findElement(By.xpath("(//table[@id='tblconsultation']//tbody//tr)["+i+"]//select[contains(@id,'ddlschedule')]/..//following-sibling::td//select[contains(@id,'ddtoken')]")).getAttribute("disabled");
+
+					WebElement token_element = driver.findElement(By.xpath("(//table[@id='tblconsultation']//tbody//tr)["+i+"]//select[contains(@id,'ddlschedule')]/..//following-sibling::td//select[contains(@id,'ddtoken')]"));
+					Select tokenDropdown = new Select(token_element);
+					List<WebElement> token_option = tokenDropdown.getOptions();
+					for(WebElement tokennumber:token_option) 
+					{
+						String lastvalue=tokennumber.getText();
+
+						if(!token_attribute.equals("disabled")) 
+						{
+							if(lastvalue!=null) {
+								int num=Integer.parseInt(lastvalue)+1;
+								lastvalue=Integer.toString(num);
+								tokenDropdown.selectByVisibleText(lastvalue);	
+							}
+							if(lastvalue==null) {
+								tokenDropdown.selectByVisibleText(token);	
+							}
+						}
+					}
+				}
+				//WebElement option = scheduleslotDropdown.getFirstSelectedOption();
+
+			}
+		}
+	}
 	public boolean verifyPriceNotDefinedMessage(String message) throws InterruptedException{
 		if(driver.findElement(PRICE_NOT_DEFINED_MESSAGE).getText().contains(message))
 		{
@@ -417,8 +471,15 @@ public class BillingPage extends HISWebsiteBasePage{
 		driver.waitForElementPresent(CHOOSE_SERVICES_DROPDOWN_IN_OTHER_SERVICES);
 		Select serviceDropdown = new Select(driver.findElement(CHOOSE_SERVICES_DROPDOWN_IN_OTHER_SERVICES));
 		serviceDropdown.selectByVisibleText(services);
+		
 		logger.info("Following Service Name has been selected from service Dropdown : " + services);
 		driver.findElement(By.xpath("//li[contains(text(),'"+item+"')]")).click();
+		try {
+			driver.click(PATIENT_MAPPED_POPUP_YES_BUTTON);
+		}
+		catch (Exception e) {
+		
+		}
 		logger.info("Following Item has been selected from Services: " +item);
 	}
 
@@ -490,6 +551,19 @@ public class BillingPage extends HISWebsiteBasePage{
 		}
 	}
 
+	public void clickonschemedetails() throws InterruptedException 
+	{
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='btnscheme']"));
+		driver.findElement(By.xpath("//a[@id='btnscheme']")).click();
+		Thread.sleep(2000);
+	}
+	catch (Exception e) {}
+	driver.findElement(By.xpath("//input[@id='chkscheme']")).click();
+	Thread.sleep(2000);
+	driver.findElement(By.xpath("//a[@id='btnokscheme']//i[@class='fa fa-check']")).click();
+
+	}
 	public boolean verifyInvestigationInstructionPopupIsPresent() throws InterruptedException{
 		driver.waitForElementPresent(INVESTIGATION_INSTRUCTION_POPUP);
 		if(driver.findElement(INVESTIGATION_INSTRUCTION_POPUP).isDisplayed())
@@ -530,6 +604,11 @@ public class BillingPage extends HISWebsiteBasePage{
 		logger.info("Yes Button On Generate Bill Popup Clicked");
 	}
 
+	public void clickOnNoBtnOnGenrateBillPopup() {
+		driver.waitForElementPresent(NO_BUTTON_GENERATE_BILL_POPUP);
+		driver.click(NO_BUTTON_GENERATE_BILL_POPUP);
+		logger.info("NO Button On Generate Bill Popup Clicked");
+	}
 	public void enterPatientPaidAmount(String amount) {
 		driver.waitForElementPresent(PATIENT_PAID_AMOUNT_PROCESS_PAYMENT_POPUP);
 		driver.findElement(PATIENT_PAID_AMOUNT_PROCESS_PAYMENT_POPUP).clear();
@@ -652,38 +731,52 @@ public class BillingPage extends HISWebsiteBasePage{
 		catch (Exception e) {
 			// TODO: handle exception
 		}
+		//		try {
+		//			if(driver.findElements(By.xpath("//div[@class='modal-block-new top30']//span[text()='Document Check List']")).size()>0) 
+		//			{
+		//				driver.findElement(By.xpath("//span//a[@id='_closelistpop']")).click();
+		//			}
+		//		}
+		//		catch (Exception e) {
+		//			// TODO: handle exception
+		//		}
+		Thread.sleep(2000);
+
+		//		try {
+		//
+		//			driver.click(By.xpath("//a[@id='_savelist']//i[@class='fa fa-save']"));
+		//		} catch (Exception e) {
+		//			// TODO Auto-generated catch block
+		//			e.printStackTrace();
+		//		}
 		try {
-			if(driver.findElements(By.xpath("//div[@class='modal-block-new top30']//span[text()='Document Check List']")).size()>0) 
-			{
-				driver.findElement(By.xpath("//span//a[@id='_closelistpop']")).click();
-			}
+			driver.findElement(STANDARD_DEDUCTABLE_COMP_DETAILS_POPUP).clear();
+			driver.findElement(STANDARD_DEDUCTABLE_COMP_DETAILS_POPUP).sendKeys(standardDeductible);
+		}
+		catch (Exception e) {}
+		try {
+			Thread.sleep(2000);
+			driver.findElement(STANDARD_CO_PAY_COMP_DETAILS_POPUP).clear();
+			driver.findElement(STANDARD_CO_PAY_COMP_DETAILS_POPUP).sendKeys(standardCoPay);
+		}
+		catch (Exception e) {}
+		//		try {
+		//			driver.click(By.xpath("//a[@id='_savelist']//i[@class='fa fa-save']"));
+		//		} catch (Exception e) {
+		//			// TODO Auto-generated catch block
+		//			///e.printStackTrace();
+		//		}
+		try {
+			WebElement PLUS_BUTTON = driver.findElement(PLUS_BUTTON_COMP_DETAILS_POPUP);
+			driver.clickByJS(TTWebsiteDriver.driver, PLUS_BUTTON);
+			Thread.sleep(2000);
+			driver.waitForElementPresent(YES_BUTTON_CONFIRM_COMP_DETAILS);
+			WebElement YES_BUTTON_CONFIRM = driver.findElement(YES_BUTTON_CONFIRM_COMP_DETAILS);
+			driver.clickByJS(TTWebsiteDriver.driver, YES_BUTTON_CONFIRM);
 		}
 		catch (Exception e) {
 			// TODO: handle exception
 		}
-		Thread.sleep(4000);
-
-		try {
-
-			driver.click(By.xpath("//a[@id='_savelist']//i[@class='fa fa-save']"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		driver.findElement(STANDARD_DEDUCTABLE_COMP_DETAILS_POPUP).clear();
-		driver.findElement(STANDARD_DEDUCTABLE_COMP_DETAILS_POPUP).sendKeys(standardDeductible);
-		Thread.sleep(2000);
-		driver.findElement(STANDARD_CO_PAY_COMP_DETAILS_POPUP).clear();
-		driver.findElement(STANDARD_CO_PAY_COMP_DETAILS_POPUP).sendKeys(standardCoPay);
-		try {
-			driver.click(By.xpath("//a[@id='_savelist']//i[@class='fa fa-save']"));
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			///e.printStackTrace();
-		}
-		driver.click(PLUS_BUTTON_COMP_DETAILS_POPUP);
-		driver.waitForElementPresent(YES_BUTTON_CONFIRM_COMP_DETAILS);
-		driver.click(YES_BUTTON_CONFIRM_COMP_DETAILS);
 		logger.info("Details Entered In Comp Details Popup And Pressed Yes Button");
 
 	}
@@ -737,16 +830,16 @@ public class BillingPage extends HISWebsiteBasePage{
 
 	public void selectSchemeAuthorisedSchemeDetailsPopup(String scheme, String authorisedBy, String schemeForPatient) throws InterruptedException {
 		try {
-		Select schemeName = new Select(driver.findElement(SCHEME_SCHEME_DETAIL_POPUP));
-		schemeName.selectByVisibleText(scheme);
-		Thread.sleep(3000);
+			Select schemeName = new Select(driver.findElement(SCHEME_SCHEME_DETAIL_POPUP));
+			schemeName.selectByVisibleText(scheme);
+			Thread.sleep(3000);
 		}
 		catch (Exception e) {
 		}
 		try {
-		Select authorised = new Select(driver.findElement(AUTHORISED_BY_DROPDOWN_SCHEME_DETAIL_POPUP));
-		authorised.selectByVisibleText(authorisedBy);
-		Thread.sleep(3000);
+			Select authorised = new Select(driver.findElement(AUTHORISED_BY_DROPDOWN_SCHEME_DETAIL_POPUP));
+			authorised.selectByVisibleText(authorisedBy);
+			Thread.sleep(3000);
 		}
 		catch (Exception e) {
 		}
@@ -824,14 +917,14 @@ public class BillingPage extends HISWebsiteBasePage{
 
 	public void clickOnSaveButtonOnDocumentChecklistPopup() throws InterruptedException {
 		try {
-		Thread.sleep(3000);
-		WebElement checkall_element = driver.findElement(By.xpath("//input[@id='_alldoccheck']"));
-		driver.clickByJS(TTWebsiteDriver.driver, checkall_element);
-		Thread.sleep(3000);
-		driver.waitForElementPresent(SAVE_BUTTON_DOCUMENT_CHECKLIST_POPUP);
-		WebElement SAVE_BUTTON_element = driver.findElement(SAVE_BUTTON_DOCUMENT_CHECKLIST_POPUP);
-		driver.clickByJS(TTWebsiteDriver.driver, SAVE_BUTTON_element);
-		logger.info("Save Button On Document Checklist popup Clicked");
+			Thread.sleep(3000);
+			WebElement checkall_element = driver.findElement(By.xpath("//input[@id='_alldoccheck']"));
+			driver.clickByJS(TTWebsiteDriver.driver, checkall_element);
+			Thread.sleep(3000);
+			driver.waitForElementPresent(SAVE_BUTTON_DOCUMENT_CHECKLIST_POPUP);
+			WebElement SAVE_BUTTON_element = driver.findElement(SAVE_BUTTON_DOCUMENT_CHECKLIST_POPUP);
+			driver.clickByJS(TTWebsiteDriver.driver, SAVE_BUTTON_element);
+			logger.info("Save Button On Document Checklist popup Clicked");
 		}
 		catch (Exception e) {
 		}
@@ -998,7 +1091,10 @@ public class BillingPage extends HISWebsiteBasePage{
 
 	public void clickOnSchemeButtonNearAddToBill() {
 		driver.waitForElementPresent(SCHEME_BUTTON_NEAR_ADD_TO_BILL);
-		driver.click(SCHEME_BUTTON_NEAR_ADD_TO_BILL);
+		WebElement SCHEME_BUTTON = driver.findElement(SCHEME_BUTTON_NEAR_ADD_TO_BILL);
+		if(!SCHEME_BUTTON.isSelected()) {
+			driver.findElement(SCHEME_BUTTON_NEAR_ADD_TO_BILL).click();
+		}
 		logger.info("Scheme Button near add to bill button clicked");
 	}
 
@@ -1256,7 +1352,8 @@ public class BillingPage extends HISWebsiteBasePage{
 
 	public void closeSchemeForPatientPopup() {
 		driver.waitForElementPresent(By.xpath("//span[@id='remarks_close1']//i[@class='fa fa-times']"), 120);
-		driver.click(By.xpath("//span[@id='remarks_close1']//i[@class='fa fa-times']"));
+		WebElement closeScheme_element = driver.findElement(By.xpath("//span[@id='remarks_close1']//i[@class='fa fa-times']"));
+		driver.clickByJS(TTWebsiteDriver.driver, closeScheme_element);
 	}
 
 	public void saveprocesspayment() {
@@ -1265,7 +1362,26 @@ public class BillingPage extends HISWebsiteBasePage{
 		driver.clickByJS(TTWebsiteDriver.driver, saveprocesspayment_element);
 	}
 	public void closepopup() {
-		driver.findElement(By.xpath("(//a[@title='Close']//i)[1]")).click();
+		WebElement closepopup = driver.findElement(By.xpath("(//a[@title='Close']//i)[1]"));
+		driver.clickByJS(TTWebsiteDriver.driver, closepopup);
+	}
+	
+	public void closeprocessdiscountpopup() 
+	{
+		driver.findElement(By.xpath("//i[@class='fa fa-times Diacount_close']")).click();
+		logger.info("Close Process Discount Popup");
+	}
+	
+	public void closevalidityschemepopup() {
+		
+		driver.findElement(By.xpath("//a[@id='schemeRemarksPopupClose']//i")).click();
+		logger.info("Close validity scheme Popup");
+	}
+	
+	public void clickonProcesspaymentsavebutton() 
+	{
+		WebElement element = driver.findElement(By.xpath("//a[@id='verify_modes']//i[@class='fa fa-save']"));
+		driver.clickByJS(TTWebsiteDriver.driver, element);
 	}
 }
 

@@ -210,7 +210,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectMartialStatusFromDropDown(String status) {
-		driver.waitForElementPresent(MARIAL_STATUS_DROPDOWN);
+		driver.waitForElementPresent(MARIAL_STATUS_DROPDOWN,60);
 		Select statusDropDown = new Select(driver.findElement(MARIAL_STATUS_DROPDOWN));
 		statusDropDown.selectByVisibleText(status);
 		logger.info("Following MArtial Status has been selected from MArtial Status  Dropdown : " + status);
@@ -236,13 +236,15 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void checkVipCheckBoxAndEnterData(String data) {
-		WebElement checkBox = driver.findElement(VIP_CHECKBOX);
+		//driver.waitForElementPresent(By.xpath("//input[@id='vip']"),60);
+		WebElement checkBox = driver.findElement(By.xpath("//input[@id='vip']"));
 		driver.clickByJS(TTWebsiteDriver.driver, checkBox);
 		driver.findElement(VIP_TEXT_BOX).sendKeys(data);
 		logger.info("VIP Checkbox has been selected and Data has been added to VIP Text Box");
 	}
 
 	public void checkRemarksCheckBoxAndEnterData(String data) {
+		driver.waitForElementPresent(REMARKS_CHECKBOX,60);
 		WebElement checkBox = driver.findElement(REMARKS_CHECKBOX);
 		driver.clickByJS(TTWebsiteDriver.driver, checkBox);
 		driver.findElement(REMARKS_TEXT_BOX).sendKeys(data);
@@ -1009,5 +1011,13 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 			return false;
 		}
 
+	}
+	
+	public void clickonAdvancedButton()
+	{
+		driver.waitForElementPresent(By.xpath("//button[@id='details-button']"));
+		WebElement advanced_btn = driver.findElement(By.xpath("//button[@id='details-button']"));
+		driver.clickByJS(TTWebsiteDriver.driver, advanced_btn);
+		logger.info("Click on Advanced Button");
 	}
 }

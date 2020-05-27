@@ -32,7 +32,8 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 	private final By SPECIALITY_DROPDOWN = By.xpath("//select[@name='Speciality']");
 	private final By SPECIALITY_DOCTOR_GRID = By.xpath("//table[@id='scheduleTable']");
 	private final By CLEAR_BUTTON = By.xpath("//a[@id='Clear']//i[@class='fa fa-refresh']");
-	private final By SEARCH_BUTTON_NEAR_DATE = By.xpath("//body[@class='patient_registration_demo_body']/div[@class='master_panel']/form[@class='doctor_schedule_area']/div[@class='outer_panel_docter']/div[@class='appointment_criteria']/fieldset/div[@class='form_line spidiv123']/a[@title='Show Schedule']/i[1]");
+	private final By SEARCH_BUTTON_NEAR_DATE = By.xpath("//a[@id='display_schedules']//i");
+			//By.xpath("//body[@class='patient_registration_demo_body']/div[@class='master_panel']/form[@class='doctor_schedule_area']/div[@class='outer_panel_docter']/div[@class='appointment_criteria']/fieldset/div[@class='form_line spidiv123']/a[@title='Show Schedule']/i[1]");
 	private final By NO_SCHEDULE_FOR_DOCTOR_MESSAGE = By.xpath("//p[contains(text(),'No schedule for the doctor!')]");
 	private final By DOCTOR_DROPDOWN = By.xpath("//select[@name='Doctor']");
 	private final By GREEN_GENERATED_SCHEDULE_PREVIOUS_TIME = By.xpath("//table[@id='scheduleTable']//tbody/tr[1]//td[@style='background-color:#87EB87;'][1]");

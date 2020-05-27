@@ -38,7 +38,8 @@ public class MarkPatientDeceasedPage extends HISWebsiteBasePage{
 	
 	public void clickOnSaveIcon() {
 		driver.waitForElementPresent(SAVE_ICON);
-		driver.click(SAVE_ICON);
+		WebElement SaveIcon_element = driver.findElement(SAVE_ICON);
+		driver.clickByJS(TTWebsiteDriver.driver, SaveIcon_element);
 		logger.info("Save Icon Clicked");
 	}
 	

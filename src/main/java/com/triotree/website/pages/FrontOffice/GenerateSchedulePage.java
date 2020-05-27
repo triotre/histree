@@ -3,6 +3,7 @@ package com.triotree.website.pages.FrontOffice;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -25,7 +26,7 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	private final By SPECIALIZATION_DROPDOWN = By.xpath("//select[@id='drpSpecilization']");
 	private final By DOCTOR_DROPDOWN = By.xpath("//select[@id='drpdoctorname']");
 	private final By NO_SCHEDULE_EXIST_MESSAGE = By.xpath("//p[contains(text(),'No schedule exists!')]");
-	private final By FACILITY_DROPDOWN = By.xpath("//div[@class='form_line generate_facility']//select[@name='Facility']");
+	private final By FACILITY_DROPDOWN = By.xpath("//select[@name='Facility']");
 	private final By FROM_DATE_TEXT_BOX = By.xpath("//input[@id='txtfrmdate']");
 	private final By FROM_DATE_MESSAGE = By.xpath("//p[contains(text(),'FROM DATE cannot be less than current date!')]");
 	private final By TO_DATE_TEXT_BOX = By.xpath("//input[@id='txtTodate']");
@@ -67,7 +68,6 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 		specDropdown.selectByVisibleText(specialization);
 		logger.info("Following specialization  has been selected from specialization Dropdown : " + specialization);
 	}
-
 	public void selectDoctorFromDropdown(String doctor) {
 		driver.waitForElementPresent(DOCTOR_DROPDOWN);
 		Select doctorDorpdown = new Select(driver.findElement(DOCTOR_DROPDOWN));
@@ -82,6 +82,14 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	public void selectFacilityFromDropdown(String facility) {
 		driver.waitForElementPresent(FACILITY_DROPDOWN);
 		Select facilityDropdown = new Select(driver.findElement(FACILITY_DROPDOWN));
+		facilityDropdown.selectByVisibleText(facility);
+		logger.info("Following facility  has been selected from facility Dropdown : " + facility);
+	}
+	
+	public void selectGenerateScheduledropdown(String facility) 
+	{
+		driver.waitForElementPresent(By.xpath("//div[@class='form_line generate_facility']//select[@name='Facility']"));
+		Select facilityDropdown = new Select(driver.findElement(By.xpath("//div[@class='form_line generate_facility']//select[@name='Facility']")));
 		facilityDropdown.selectByVisibleText(facility);
 		logger.info("Following facility  has been selected from facility Dropdown : " + facility);
 	}
@@ -138,9 +146,12 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 		logger.info("Right Check clicked For Sitting 2");
 	}
 
-	public void enterRemarksForCurrentDayForSitting1(String remarks, String currentDay) {
+	
+	public void enterRemarksForCurrentDayForSitting1(String remarks, String currentDay) throws InterruptedException {
 		driver.pauseExecutionFor(7000);
-		driver.findElement(By.xpath("//td[contains(text(),'"+currentDay+"')]//following::td[3]/input")).sendKeys(remarks);
+		driver.findElement(By.xpath("(//td[contains(text(),'"+currentDay+"')]//following::td//input)[1]")).sendKeys(remarks);
+
+
 	}
 
 	public void selectFromTimeForSitting2(String fromTime) {
@@ -157,8 +168,10 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 		logger.info("Following To Time  has been selected from To Time Dropdown for Sitting 2 : " + toTime);
 	}
 
-	public void enterRemarksForCurrentDayForSitting2(String remarks, String currentDay) {
-		driver.findElement(By.xpath("//td[contains(text(),'"+currentDay+"')]//following::td[6]/input")).sendKeys(remarks);
+	public void enterRemarksForCurrentDayForSitting2(String remarks, String currentDay) 
+	{
+		driver.pauseExecutionFor(7000);
+		driver.findElement(By.xpath("(//td[contains(text(),'"+currentDay+"')]//following::td//input)[2]")).sendKeys(remarks);
 	}
 
 	public void clickOnSaveButtonOnHeader() throws InterruptedException {

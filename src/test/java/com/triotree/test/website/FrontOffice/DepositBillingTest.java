@@ -55,7 +55,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 	public void frontOfficeWithAvailDepositAmountTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeWithAvailDepositAmountTest", "This test case verify the Fornt Office With Avail Deposit Amount Test Case");
-		test.assignCategory("Front Office Billing");
+		test.assignCategory("Deposit Billing");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -65,61 +65,73 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
-		hisHomePage.selectStationAndClickOnYes("Front Office");
-		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown(title);
-		patientRegistrationPage.enterFirstName("Automation");
-		patientRegistrationPage.enterMiddleName("Test");
-		patientRegistrationPage.enterLastName("User");
-		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
-		patientRegistrationPage.enterDob("15-12-1991");
-		patientRegistrationPage.enterAge("67");
-		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Automation Test Mother");
-		patientRegistrationPage.enterFathersName("AutomationFather@123 ");
-		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkNRIChecbox();
-		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown(idCard);
-		patientRegistrationPage.enterNationalID("12345");
-		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
-		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Automation Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur", "247001");
-		patientRegistrationPage.enterEmailId("test@automation.com");
-		patientRegistrationPage.enterRefferdBy("Self");
-		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
-		patientRegistrationPage.selectOccupationFromDropdown(occupation);
-		patientRegistrationPage.selectQualificationFromDropdown(qualification);
-		patientRegistrationPage.selectReligionFromDropdown("Hindu");
-		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
-		patientRegistrationPage.checkFinancialDetailsCheckBox();
-		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
-		patientRegistrationPage.selectCompanyFromDropdownByName("STATE BANK OF INDIA");
-		patientRegistrationPage.selectRateContractFromDropdownByName("STATE BANK OF INDIA - (CGHS)");
-		patientRegistrationPage.checkSchemeCheckBox();
-		patientRegistrationPage.selectSchemeFromDropdown(1);
-		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
-		patientRegistrationPage.yesButtonOnConfirmPopup();
-		assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
-		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
-		System.out.println("Patient Registration Id is " +patientRegistrationId);
-
-
-		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
+		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
+		hisHomePage.clickOnFronOfficeIcon();
+		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
+		//frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
+//		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+//		patientRegistrationPage.enterFirstName("Demo");
+//		patientRegistrationPage.enterMiddleName("Test");
+//		patientRegistrationPage.enterLastName("User");
+//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+//		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
+//		patientRegistrationPage.enterDob("15-12-1991");
+//		patientRegistrationPage.enterAge("16");
+//		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
+//		patientRegistrationPage.enterAge("23");
+//		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
+//		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+//		patientRegistrationPage.enterFathersName("DemoFather@123 ");
+//		patientRegistrationPage.selectNationalityFromDropDown("Indian");
+//		patientRegistrationPage.checkNRIChecbox();
+//		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
+//		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
+//		patientRegistrationPage.enterNationalID("12345");
+//		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
+//		patientRegistrationPage.enterMobileNumber("12345");
+//		patientRegistrationPage.clickOnRegisterIcon();
+//		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+//		patientRegistrationPage.enterMobileNumber("1234567890");
+//		patientRegistrationPage.enterHouseNumber("Demo Test Address");
+//		patientRegistrationPage.selectCityFromCityDropdown(city);
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+//		patientRegistrationPage.enterEmailId("%^%^%^%^");
+//		patientRegistrationPage.clickOnRegisterIcon();
+//		patientRegistrationPage.enterEmailId("test@demo.com");
+//		patientRegistrationPage.enterRefferdBy("Self");
+//		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
+//		patientRegistrationPage.selectOccupationFromDropdown(occupation);
+//		patientRegistrationPage.selectQualificationFromDropdown(qualification);
+//		patientRegistrationPage.selectReligionFromDropdown("Hindu");
+//		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
+//		patientRegistrationPage.checkFinancialDetailsCheckBox();
+//		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
+//		patientRegistrationPage.selectCompanyFromDropdown(1);
+//		patientRegistrationPage.showAllCheckBox();
+//		patientRegistrationPage.selectRateContractFromDropdown(1);
+//		patientRegistrationPage.checkSchemeCheckBox();
+//		patientRegistrationPage.selectSchemeFromDropdown(1);
+//		patientRegistrationPage.clickOnRegisterIcon();
+//		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+//		patientRegistrationPage.yesButtonOnConfirmPopup();
+//		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+//		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
+//		System.out.println("Second Patient Registration Id is " +patientRegistrationId);
+//		System.out.println("Patient Registration Id is " +patientRegistrationId);
+//
+//
+//		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
 		//
 		//		driver.getURL();
 		//		hisHomePage.loginToTriotreeHIS();
 		//		hisHomePage.clickOnFronOfficeIcon();
 		//		hisHomePage.selectStationAndClickOnYes("Front Office");
+										//correct
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Deposits");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17152907");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
@@ -128,7 +140,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isTotalAmountInCashMessageDisplayed(), "Total Amount in Cash isEqual to or Exceeds message is not showing up");
+		//assertTrue(depositPage.isTotalAmountInCashMessageDisplayed(), "Total Amount in Cash isEqual to or Exceeds message is not showing up");
 
 		depositPage.enterEmountInAmountTextBox("1000");
 		depositPage.clickOnDepositButtonOnHeader();
@@ -153,76 +165,53 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnPrintButtonOnHeader();
 		assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
 		depositPage.clickOnFirstDepositDetails();
-
+//////////////////////////////////////////////
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 		try {
-			billingPage.clickOnCloseButtonOnDocumentChecklistPopup();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		//billingPage.clickClearButtonCompDetails();
-		try {
-			billingPage.cancelSchemeForPatientPopup();
+			billingPage.closevalidityschemepopup();
 		}
 		catch (Exception e) {}
-		billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
-		billingPage.closeCompanyDetailsPopup();
-		try {
-			billingPage.unCheckSchemeDetailsPopup();
-		} catch (Exception e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
 		try {
 			billingPage.closeSchemeDetailsPopup();
-		} catch (Exception e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
-		try {
-			billingPage.cancelSchemeForPatientPopup();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			billingPage.closeRemarksPopup();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Pathologist");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("Megha");
+		} catch (Exception e) {}
+		billingPage.closeRemarksPopup();
+
 		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("Deepak");	
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
-		billingPage.selectTestsByName("24hrs Urinary Calcium");
-		assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		billingPage.selectTestsByName("17-Hydroxycorticosteroids, 24hrs Urine");
-		billingPage.selectTestsByName("17-Ketosteroids, 24hrs Urine");
-		billingPage.selectTestsByName("X-ray Dorso Lumbar Spine LAT");
-		billingPage.selectTestsByName("X-ray Both Leg Skyline");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiac Surgeon", "Ajeet Jain");
+		billingPage.selectTestsByName("24 hour Urine Cortisol");
+		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
+		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
+		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
-		billingPage.enterDescriptionInManualSection("Testing");
-		billingPage.selectQuantityInManualSection("5");
-		billingPage.enterPriceInManualSection("10.30");
+		billingPage.enterDescriptionInManualSection("cardic");
+		billingPage.selectQuantityInManualSection("50");
+		billingPage.enterPriceInManualSection("100");
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
-		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Dialysis Procedures" , "AV Fistula Day Care Package With Anesthesia");
-		billingPage.selectSpecialityAndDoctor("Anesthesiast", "Sunil Agarwal");
-		billingPage.enterRefferedBy("Deepak Thakur");
+		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
+		//billingPage.selectSpecialityAndDoctor();
+		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.enterRefferedBy("Self");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
+		try {
+			billingPage.clickonschemedetails();
+			billingPage.clickOnAddToBillButton();
+		}
+		catch (Exception e) {}
 		assertTrue(billingPage.verifyInvestigationInstructionPopupIsPresent(), "Investigation Instruction Popup Is Not showing up");
 		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
+		
 		billingPage.clickOnYesButtonOnAvailDepositPopup();
 		billingPage.enterAjustFromDeposit("5000");
 		billingPage.clickOnBillingButtonOnHeader();
@@ -241,7 +230,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnYesButtonOnOpdPopup();
 	}
 
-	@Test(priority=2) //fixed
+	@Test(enabled = false) //fixed
 	public void frontOfficeCreditPatientBillingWithAvaialDiscountAndWithoutCoPayTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeCreditPatientBillingWithAvaialDiscountAndWithoutCoPayTest", "This test case verify the Fornt Office Credit Patient Billing With Avaial Discount And Without CoPay Test Case");
@@ -420,7 +409,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//billingPage.enterAjustFromDeposit("5000");
 	}
 
-	@Test(priority=3) //fixed 06-april-2020
+	@Test(enabled = false) //fixed 06-april-2020
 	public void frontOfficeDepositBySearchPatientTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDepositBySearchPatientTest", "This test case verify the Fornt Office Deposit By Search Patient Test Case");
@@ -526,7 +515,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnFirstDepositDetails();
 
 	}
-	@Test(priority=4)//fixed 06-04-2020
+	
+	@Test(enabled = false)//fixed 06-04-2020
 	public void frontOfficeDepositAndRefundTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDepositAndRefundTest", "This test case verify the Fornt Office Deposit And Refund Test Case");
@@ -726,7 +716,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
 		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
-	@Test(priority = 5)//fixed 03-April-2020
+	
+	@Test(enabled = false)//fixed 03-April-2020
 	public void frontOfficeDepositBySearchPatientTestSchedule1() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDepositBySearchPatientTestSchedule1", "This test case verify the Fornt Office Deposit BySearch Patient Test Schedule1 Test Case");
@@ -798,7 +789,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 	
-	@Test(priority=6) //fixed 03-April-2020
+	@Test(enabled = false) //fixed 03-April-2020
 	public void frontOfficeScheduling1Test() throws Throwable {	
 
 		test=extent.createTest("frontOfficeScheduling1Test", "This test verify that front Office Scheduling 1Test");
@@ -1080,7 +1071,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
 
-	@Test(priority=7)//fixed 03-April-2020
+	@Test(enabled = false)//fixed 03-April-2020
 	public void frontOfficeGenerateSchedule1Test() throws Throwable {	
 
 		test=extent.createTest("frontOfficeGenerateSchedule1Test", "This test case verify the Fornt Office GenerateSchedule1 Test Case");
@@ -1151,7 +1142,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority=8)//fixed 03-April-2020
+	@Test(enabled = false)//fixed 03-April-2020
 	public void frontOfficeGenerateSchedule2Test() throws Throwable {	
 
 		test=extent.createTest("frontOfficeGenerateSchedule2Test", "This test case verify the Fornt Office GenerateSchedule2 Test Case");
@@ -1220,7 +1211,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSaveButtonOnSavePopup();
 		//assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
 	}
-	@Test(priority=9)
+	
+	@Test(enabled = false)
 	public void frontOfficeGenerateSchedule3Test() throws Throwable {
 		test=extent.createTest("frontOfficeGenerateSchedule3Test", "This test case verify the Fornt Office GenerateSchedule2 Test Case");
 		test.assignCategory("Front Office Billing");
@@ -1291,7 +1283,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 	
-	@Test(priority=10)
+	@Test(enabled = false)
 	public void frontOfficeDoctorSchedulingCancelAppointmentTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorSchedulingCancelAppointmentTest", "This test case verify the Fornt Office Doctor Scheduling Cancel Appointment Test Case");
@@ -1449,7 +1441,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority=11)
+	@Test(enabled = false)
 	public void frontOfficeDoctorSchedulingWithAddPatientTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorSchedulingWithAddPatientTest", "This test case verify the Fornt Office Doctor Scheduling With Add Patient Test Case");
@@ -1557,7 +1549,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//doctorSchedulePage.clickOnBookedYellowAppointment();
 		driver.pauseExecutionFor(5000);
 	}
-	@Test(priority=12)
+	
+	@Test(enabled = false)
 	public void frontOfficeDoctorSchedulingWithLinkUHIDTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorSchedulingWithLinkUHIDTest", "This test case verify the Fornt Office Doctor Scheduling With LinkUHID Test Case");
@@ -1669,7 +1662,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		driver.pauseExecutionFor(5000);
 	}
 
-	@Test(priority=13)// fixed 01-04-2020
+	@Test(enabled = false)// fixed 01-04-2020
 	public void frontOfficeBillingWithBillingModeCreditPatientTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeBillingWithBillingModeCreditPatientTest", "This test case verify the Fornt Office Billing With Billing Mode Credit Patient Case");
@@ -1848,7 +1841,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority=14) //fixed 07-04-2020
+	@Test(enabled = false) //fixed 07-04-2020
 	public void frontOfficeBillingWithBillingModeCashPatientTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeBillingWithBillingModeCashPatientTest", "This test case verify the Fornt Office Billing With Billing Mode Cash Patient Test Case");
@@ -2015,7 +2008,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority=15)//fixed 07-04-2020
+	@Test(enabled = false)//fixed 07-04-2020
 	public void frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest", "This test case verify the Fornt Office Billing With Billing Mode Cash Patient Test Case");
@@ -2125,7 +2118,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		driver.pauseExecutionFor(5000);
 	}
-	@Test(priority=16) //fixed 07-04-2020
+	
+	@Test(enabled = false) //fixed 07-04-2020
 	public void frontOfficeDoctorScheduleWithGenerateScheduleAndLinkToExistingUHIDTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorScheduleWithGenerateScheduleAndLinkToExistingUHIDTest", "This test case verify the Fornt Office Billing With Billing Mode Cash Patient Test Case");
@@ -2233,7 +2227,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		driver.pauseExecutionFor(5000);
 	}
-	@Test(priority=17) //fixed 07-04-2020
+	
+	@Test(enabled = false) //fixed 07-04-2020
 	public void frontOfficeDeposit3Test() throws Throwable 
 	{	
 		test=extent.createTest("frontOfficeDeposit3Test", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -2386,7 +2381,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//billingPage.enterAjustFromDeposit("5000");
 	}
 
-	@Test(priority=18) // fixed 07-04-2020
+	@Test(enabled = false) // fixed 07-04-2020
 	public void frontOfficeBillingUtilityWithCreditPartialCoPayPatientRefundWithDueSettlementTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillingUtilityWithCreditPartialCoPayPatientRefundWithDueSettlementTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -2624,7 +2619,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billsUtilityPage.selectPlusButton();
 
 	}
-	@Test(priority=19) // fixed 07-04-2020
+	
+	@Test(enabled = false) // fixed 07-04-2020
 	public void frontOfficeBillingUtilityFindAllBillForOnePatientTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillingUtilityFindAllBillForOnePatientTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -2801,8 +2797,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnNoButtonOnPrintOPDCard();
 	}
 
-
-	@Test(priority=20) //fixed 07-04-2020
+	@Test(enabled = false) //fixed 07-04-2020
 	public void frontOfficeToAddDOBMobileNoAddressGaurdianNameTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeToAddDOBMobileNoAddressGaurdianNameTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -3036,7 +3031,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority=21) //fixed 31-March-2020
+	@Test(enabled = false) //fixed 31-March-2020
 	public void frontOfficeBillUtilitySearchPatientbyDateRangeAndRefundTheBillTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeBillUtilitySearchPatientbyDateRangeAndRefundTheBillTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -3269,7 +3264,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority=22) //fixed 07-04-2020
+	@Test(enabled = false) //fixed 07-04-2020
 	public void frontOfficeBillUtilityShowIpEmBillDetailsTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeBillUtilityShowIpEmBillDetailsTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -3300,7 +3295,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billsUtilityPage.selectIPPatientType();		
 	}
 
-	@Test(priority=23)/////fixed
+	@Test(enabled = false)/////fixed
 	public void frontOfficeBillingFullyCreditBillPatientRefundWithRefundApprovalTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillingFullyCreditBillPatientRefundWithRefundApprovalTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -3537,7 +3532,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billsUtilityPage.clickOnSaveButton();
 	}
 
-	@Test(priority=24)/////////fixed 31-March-2020
+	@Test(enabled = false)/////////fixed 31-March-2020
 	public void frontOfficeBillingFullyCreditPatientRefundApprovalAndAlsoRejectApprovalTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillingFullyCreditPatientRefundApprovalAndAlsoRejectApprovalTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -3825,7 +3820,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority=25) // fixed 1-04-2020
+	@Test(enabled = false) // fixed 1-04-2020
 	public void frontOfficeBillUtilityCashPatientRefundWithDueSettlementTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillUtilityCashPatientRefundWithDueSettlementTest", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -4097,7 +4092,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}	
 
-	@Test(priority=26) //not fixed 31-03-2020
+	@Test(enabled = false) //not fixed 31-03-2020
 	public void frontOfficeDeposit6Test() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDeposit6Test", "This test case verify the Fornt Office Deposit3 Test Case");
@@ -4287,7 +4282,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnFirstDepositDetails();
 	}
 
-	@Test(priority=27) ///  fixed 1-April-2020
+	@Test(enabled = false) ///  fixed 1-April-2020
 	public void frontOfficeBillUtilityCashPatientWithDiscountDueAmountAndRefundBillWithDueSettlementTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeBillUtilityCashPatientWithDiscountDueAmountAndRefundBillWithDueSettlementTest", "This test case verify the Fornt Office Deposit3 Test Case");

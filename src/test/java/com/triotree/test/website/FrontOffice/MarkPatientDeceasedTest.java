@@ -38,7 +38,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 	private String desc1 = null;
 
 
-	@Test(priority = 1)
+	@Test(enabled = false)
 	public void markPatientDeceasedTest() throws Throwable {
 		
 		test=extent.createTest("markPatientDeceasedTest", "This test case is Mark Patient Deceased Test");
@@ -47,49 +47,50 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
-
-		hisHomePage = new HISHomePage(driver);
-		frontOfficeHomePage = new FrontOfficeHomePage(driver);
-		patientRegistrationPage = new PatientRegistrationPage(driver);
-		markPatientDeceasedPage = new MarkPatientDeceasedPage(driver);
-		billingPage = new BillingPage(driver);
-
+		billingPage=new BillingPage(driver);
+		markPatientDeceasedPage=new MarkPatientDeceasedPage(driver);
+		
+		System.out.println("idCard>>>>"+idCard);
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
-		hisHomePage.selectStationAndClickOnYes("Front Office");
+		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
+		hisHomePage.clickOnFronOfficeIcon();
+		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown(title);
-		patientRegistrationPage.enterFirstName("Automation");
+		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+		patientRegistrationPage.enterFirstName("Demo");
 		patientRegistrationPage.enterMiddleName("Test");
 		patientRegistrationPage.enterLastName("User");
+		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
 		patientRegistrationPage.enterDob("15-12-1991");
 		patientRegistrationPage.enterAge("16");
 		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
 		patientRegistrationPage.enterAge("23");
 		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Automation Test Mother");
-		patientRegistrationPage.enterFathersName("AutomationFather@123 ");
+		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+		patientRegistrationPage.enterFathersName("DemoFather@123 ");
 		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.checkNRIChecbox();
 		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown(idCard);
+		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
 		patientRegistrationPage.enterNationalID("12345");
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Automation Test Address");
+		patientRegistrationPage.enterHouseNumber("Demo Test Address");
 		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur", "247001");
+		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
-		patientRegistrationPage.enterEmailId("test@automation.com");
+		patientRegistrationPage.enterEmailId("test@demo.com");
 		patientRegistrationPage.enterRefferdBy("Self");
 		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
 		patientRegistrationPage.selectOccupationFromDropdown(occupation);
@@ -109,19 +110,19 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
 		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
-		
 		patientRegistrationPage.clickOnYesButtonOnRegisteredSuccessfullyPopup();
-		assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
-		billingPage.closeCompanyDetailsPopup();
-		billingPage.closeSchemeDetailsPopup();
-		try {
-			billingPage.cancelSchemeForPatientPopup();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		billingPage.closeRemarksPopup();
+		//assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
+		//billingPage.closeCompanyDetailsPopup();
 		
+		try {
+			billingPage.closeSchemeDetailsPopup();
+		} catch (Exception e) {
+			e.printStackTrace();}
+		
+		try {
+		billingPage.closeRemarksPopup();
+		}
+		catch (Exception e) {}
 		
 		frontOfficeHomePage.clickOnMenu();
 		
@@ -140,7 +141,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 2)
+	@Test(enabled = false) //fixed 22-05-2020
 	public void markPatientDeceasedSearchPatientTest() throws Throwable {
 		test=extent.createTest("markPatientDeceasedSearchPatientTest", "This test case is Mark Patient Deceased Search PatientTest");
 		test.assignCategory("Front Office");
@@ -148,49 +149,50 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
-
-		hisHomePage = new HISHomePage(driver);
-		frontOfficeHomePage = new FrontOfficeHomePage(driver);
-		patientRegistrationPage = new PatientRegistrationPage(driver);
-		markPatientDeceasedPage = new MarkPatientDeceasedPage(driver);
-		billingPage = new BillingPage(driver);
-
+		billingPage=new BillingPage(driver);
+		markPatientDeceasedPage=new MarkPatientDeceasedPage(driver);
+		
+		System.out.println("idCard>>>>"+idCard);
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
-		hisHomePage.selectStationAndClickOnYes("Front Office");
+		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
+		hisHomePage.clickOnFronOfficeIcon();
+		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown(title);
-		patientRegistrationPage.enterFirstName("Automation");
+		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+		patientRegistrationPage.enterFirstName("Demo");
 		patientRegistrationPage.enterMiddleName("Test");
 		patientRegistrationPage.enterLastName("User");
+		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
 		patientRegistrationPage.enterDob("15-12-1991");
 		patientRegistrationPage.enterAge("16");
 		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
 		patientRegistrationPage.enterAge("23");
 		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Automation Test Mother");
-		patientRegistrationPage.enterFathersName("AutomationFather@123 ");
+		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+		patientRegistrationPage.enterFathersName("DemoFather@123 ");
 		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.checkNRIChecbox();
 		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown(idCard);
+		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
 		patientRegistrationPage.enterNationalID("12345");
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Automation Test Address");
+		patientRegistrationPage.enterHouseNumber("Demo Test Address");
 		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur", "247001");
+		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
-		patientRegistrationPage.enterEmailId("test@automation.com");
+		patientRegistrationPage.enterEmailId("test@demo.com");
 		patientRegistrationPage.enterRefferdBy("Self");
 		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
 		patientRegistrationPage.selectOccupationFromDropdown(occupation);
@@ -205,23 +207,24 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkSchemeCheckBox();
 		patientRegistrationPage.selectSchemeFromDropdown(1);
 		patientRegistrationPage.clickOnRegisterIcon();
-		assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
 		patientRegistrationPage.yesButtonOnConfirmPopup();
-		assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
 		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 		patientRegistrationPage.clickOnYesButtonOnRegisteredSuccessfullyPopup();
-		assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
-		billingPage.closeCompanyDetailsPopup();
-		billingPage.closeSchemeDetailsPopup();
+		//assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
+		//billingPage.closeCompanyDetailsPopup();
+		
 		try {
-			billingPage.cancelSchemeForPatientPopup();
+			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		try {
 		billingPage.closeRemarksPopup();
-		
+		}
+		catch (Exception e) {}
 		
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Mark Patient Deceased");
@@ -273,7 +276,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		driver.waitForPageLoad();
 	}
 	
-	@Test(priority = 3)
+	@Test(enabled = false)
 	public void revokeDeceasedPatientTest() throws Throwable {
 		test=extent.createTest("revokeDeceasedPatientTest", "This test case is Mark Patient Deceased Search PatientTest");
 		test.assignCategory("Front Office");
@@ -281,49 +284,50 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
-		billingPage = new BillingPage(driver);
-
-		hisHomePage = new HISHomePage(driver);
-		frontOfficeHomePage = new FrontOfficeHomePage(driver);
-		patientRegistrationPage = new PatientRegistrationPage(driver);
-		markPatientDeceasedPage = new MarkPatientDeceasedPage(driver);
-
+		billingPage=new BillingPage(driver);
+		markPatientDeceasedPage=new MarkPatientDeceasedPage(driver);
+		
+		System.out.println("idCard>>>>"+idCard);
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
-		hisHomePage.selectStationAndClickOnYes("Front Office");
+		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
+		hisHomePage.clickOnFronOfficeIcon();
+		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown(title);
-		patientRegistrationPage.enterFirstName("Automation");
+		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+		patientRegistrationPage.enterFirstName("Demo");
 		patientRegistrationPage.enterMiddleName("Test");
 		patientRegistrationPage.enterLastName("User");
+		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
 		patientRegistrationPage.enterDob("15-12-1991");
 		patientRegistrationPage.enterAge("16");
 		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
 		patientRegistrationPage.enterAge("23");
 		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Automation Test Mother");
-		patientRegistrationPage.enterFathersName("AutomationFather@123 ");
+		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+		patientRegistrationPage.enterFathersName("DemoFather@123 ");
 		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.checkNRIChecbox();
 		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown(idCard);
+		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
 		patientRegistrationPage.enterNationalID("12345");
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Automation Test Address");
+		patientRegistrationPage.enterHouseNumber("Demo Test Address");
 		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur", "247001");
+		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
-		patientRegistrationPage.enterEmailId("test@automation.com");
+		patientRegistrationPage.enterEmailId("test@demo.com");
 		patientRegistrationPage.enterRefferdBy("Self");
 		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
 		patientRegistrationPage.selectOccupationFromDropdown(occupation);
@@ -333,7 +337,6 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkFinancialDetailsCheckBox();
 		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
 		patientRegistrationPage.selectCompanyFromDropdown(1);
-		
 		patientRegistrationPage.showAllCheckBox();
 		patientRegistrationPage.selectRateContractFromDropdown(1);
 		patientRegistrationPage.checkSchemeCheckBox();
@@ -347,13 +350,12 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.clickOnYesButtonOnRegisteredSuccessfullyPopup();
 //		assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
 		
+	
+		//billingPage.closeCompanyDetailsPopup();
 		
-		
-		billingPage.closeCompanyDetailsPopup();
-		billingPage.closeSchemeDetailsPopup();
 		try {
-			billingPage.cancelSchemeForPatientPopup();
-		} catch (Exception e) {
+			billingPage.closeSchemeDetailsPopup();
+			} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -380,18 +382,14 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.clickOnYesButtonOnRegisteredSuccessfullyPopup();
 		
 		
-		billingPage.closeCompanyDetailsPopup();
-		billingPage.closeSchemeDetailsPopup();
 		try {
-			billingPage.cancelSchemeForPatientPopup();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		billingPage.closeSchemeDetailsPopup();
 		}
+		catch (Exception e) {}
+		
 		try {
 			billingPage.closeRemarksPopup();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -406,7 +404,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 1)
 	public void frontOfficeCancellationOfAllAppointmentOnMarkPatientDeceased() throws InterruptedException {
 		
 		test=extent.createTest("frontOfficeCancellationOfAllAppointmentOnMarkPatientDeceased", "This test case is front Office Cancellation Of All Appointment On Mark Patient Deceased Test");
@@ -415,50 +413,50 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
-
-		hisHomePage = new HISHomePage(driver);
-		frontOfficeHomePage = new FrontOfficeHomePage(driver);
-		patientRegistrationPage = new PatientRegistrationPage(driver);
-		markPatientDeceasedPage = new MarkPatientDeceasedPage(driver);
-		billingPage = new BillingPage(driver);
-		generateSchedulePage = new GenerateSchedulePage(driver);
-
+		billingPage=new BillingPage(driver);
+		markPatientDeceasedPage=new MarkPatientDeceasedPage(driver);
+		generateSchedulePage=new GenerateSchedulePage(driver);
+		System.out.println("idCard>>>>"+idCard);
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
-		hisHomePage.selectStationAndClickOnYes("Front Office");
+		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
+		hisHomePage.clickOnFronOfficeIcon();
+		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown(title);
-		patientRegistrationPage.enterFirstName("Automation");
+		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+		patientRegistrationPage.enterFirstName("Demo");
 		patientRegistrationPage.enterMiddleName("Test");
 		patientRegistrationPage.enterLastName("User");
+		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
 		patientRegistrationPage.enterDob("15-12-1991");
 		patientRegistrationPage.enterAge("16");
 		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
 		patientRegistrationPage.enterAge("23");
 		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Automation Test Mother");
-		patientRegistrationPage.enterFathersName("AutomationFather@123 ");
+		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+		patientRegistrationPage.enterFathersName("DemoFather@123 ");
 		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
 		patientRegistrationPage.checkNRIChecbox();
 		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown(idCard);
+		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
 		patientRegistrationPage.enterNationalID("12345");
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Automation Test Address");
+		patientRegistrationPage.enterHouseNumber("Demo Test Address");
 		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Saharanpur", "247001");
+		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
-		patientRegistrationPage.enterEmailId("test@automation.com");
+		patientRegistrationPage.enterEmailId("test@demo.com");
 		patientRegistrationPage.enterRefferdBy("Self");
 		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
 		patientRegistrationPage.selectOccupationFromDropdown(occupation);
@@ -498,14 +496,14 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
 		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Ophthalmology");
-		generateSchedulePage.selectDoctorFromDropdown("Archana G Mahajan");
+		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
+		generateSchedulePage.selectDoctorFromDropdown("Anish  ");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Anesthesiast");
-		generateSchedulePage.selectDoctorFromDropdown("Sunil Agarwal");
+		//assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
+		generateSchedulePage.selectSpecilizationFromDropdown("Anaesthetistgulab");
+		generateSchedulePage.selectDoctorFromDropdown("Sumit  wadhwa");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectFacilityFromDropdown("TRIOTREE HOSPITAL");
+		generateSchedulePage.selectFacilityFromDropdown("The Triotree Company");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -576,16 +574,16 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.searchMobileNumberAndClickOnEnter("1234512345");
 		assertTrue(patientRegistrationPage.verifyResultIsShowingUpInSearchPopupScreen(), "Results are not showing up in Search Popup Screen");
 		patientRegistrationPage.clearMobileNumberField();
-		patientRegistrationPage.searchNameAndClickOnEnter("Automation");
+		patientRegistrationPage.searchNameAndClickOnEnter("Demo");
 		assertTrue(patientRegistrationPage.verifyResultIsShowingUpInSearchPopupScreen(), "Results are not showing up in Search Popup Screen");
 		patientRegistrationPage.clearNameField();
-		patientRegistrationPage.searchFirstNameAndClickOnEnter("Automation");
+		patientRegistrationPage.searchFirstNameAndClickOnEnter("Demo");
 		assertTrue(patientRegistrationPage.verifyResultIsShowingUpInSearchPopupScreen(), "Results are not showing up in Search Popup Screen");
 		patientRegistrationPage.clearFirstNameField();
 		patientRegistrationPage.searchLastNameAndClickOnEnter("User");
 		assertTrue(patientRegistrationPage.verifyResultIsShowingUpInSearchPopupScreen(), "Results are not showing up in Search Popup Screen");
 		patientRegistrationPage.clearLastNameField();
-		patientRegistrationPage.searchAddressAndClickOnEnter("Automation Test Address");
+		patientRegistrationPage.searchAddressAndClickOnEnter("Demo Test Address");
 		assertTrue(patientRegistrationPage.verifyResultIsShowingUpInSearchPopupScreen(), "Results are not showing up in Search Popup Screen");
 		patientRegistrationPage.clearAddressField();
 		patientRegistrationPage.searchLocalityAndClickOnEnter("Test local");

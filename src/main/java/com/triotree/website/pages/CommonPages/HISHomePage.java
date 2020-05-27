@@ -11,6 +11,7 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.triotree.driver.TTDriver;
 import com.triotree.driver.website.TTWebsiteDriver;
+import com.triotree.pages.TTBasePage;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 
 public class HISHomePage extends HISWebsiteBasePage{
@@ -40,16 +41,23 @@ public class HISHomePage extends HISWebsiteBasePage{
 
 	}
 
-public void logOutFromApplication() {
-	WebElement element = driver.findElement(USER_ICON_ON_TOPRIGHT);
-	Actions action = new Actions(TTWebsiteDriver.driver);
-	action.moveToElement(element).build().perform();
-	driver.waitForElementPresent(LOGOUT_BUTTON);
-	driver.click(LOGOUT_BUTTON);
-	logger.info("User has been logged Out From  HIS Portal");
-}
-	
+	public void logOutFromApplication() {
+		WebElement element = driver.findElement(USER_ICON_ON_TOPRIGHT);
+		Actions action = new Actions(TTWebsiteDriver.driver);
+		action.moveToElement(element).build().perform();
+		driver.waitForElementPresent(LOGOUT_BUTTON);
+		driver.click(LOGOUT_BUTTON);
+		logger.info("User has been logged Out From  HIS Portal");
+	}
+
 	public void loginToTriotreeHIS() {
+		try {
+		driver.waitForElementPresent(By.xpath("//button[@id='details-button']"));
+		WebElement advanced_btn = driver.findElement(By.xpath("//button[@id='details-button']"));
+		driver.clickByJS(TTWebsiteDriver.driver, advanced_btn);
+		driver.findElement(By.xpath("//a[@id='proceed-link']")).click();
+		}
+		catch (Exception e) {}
 		driver.findElement(USERNAME).sendKeys(propertyFile.getProperty("userName"));
 		driver.findElement(PASSWORD).sendKeys(propertyFile.getProperty("password"));
 		driver.click(LOGIN_BTN);
@@ -61,14 +69,14 @@ public void logOutFromApplication() {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		/*
 		 * try {
 		 * if(driver.findElement(By.xpath("//a[@id='btnNoChangePass']")).isDisplayed()==
 		 * true) { driver.click(By.xpath("//a[@id='btnNoChangePass']")); } } catch
 		 * (Exception e) { // TODO Auto-generated catch block e.printStackTrace(); }
 		 */
-		
+
 		logger.info("User has been logged in to HIS Portal");
 	}
 
@@ -81,39 +89,39 @@ public void logOutFromApplication() {
 
 	public void clickOnFronOfficeIcon() {
 		driver.waitForElementPresent(FRONT_OFFICE_ICON);
-		
+
 		Select stationDropDown = new Select(driver.findElement(By.xpath("//select[@id='Facility']")));
-		stationDropDown.selectByVisibleText("TRIOTREE HOSPITAL");
-		
+		stationDropDown.selectByVisibleText("The Triotree Company");
+
 		WebElement element = driver.findElement(FRONT_OFFICE_ICON);
 		driver.clickByJS(TTWebsiteDriver.driver, element);
 		logger.info("Front Office Icon Clicked");
 	}
-	
-	
+
+
 	public void clickOnMISReportIcon() {
 		driver.waitForElementPresent(MIS_REPORT_ICON);
-		
+
 		Select stationDropDown = new Select(driver.findElement(By.xpath("//select[@id='Facility']")));
 		stationDropDown.selectByVisibleText("TRIOTREE HOSPITAL");
-		
+
 		WebElement element = driver.findElement(MIS_REPORT_ICON);
 		driver.clickByJS(TTWebsiteDriver.driver, element);
 		logger.info("MIS Report Icon Clicked");
 	}
-	
-	
+
+
 	public void clickOnInventoryIcon() {
 		driver.waitForElementPresent(INVENTORY_ICON);
-		
+
 		Select stationDropDown = new Select(driver.findElement(By.xpath("//select[@id='Facility']")));
 		stationDropDown.selectByVisibleText("TRIOTREE HOSPITAL");
-		
+
 		WebElement element = driver.findElement(INVENTORY_ICON);
 		driver.clickByJS(TTWebsiteDriver.driver, element);
 		logger.info("Inventory Icon Clicked");
 	}
-	
+
 	public void clickOnADTIcon() {
 		driver.waitForElementPresent(ADT_ICON);
 		driver.findElement(ADT_ICON);
@@ -130,9 +138,9 @@ public void logOutFromApplication() {
 		logger.info("NO has been clicked from Station Dropdown");
 
 	}
-	
+
 	public void selectStationAndClickOnYes(String station) {
-	//	driver.waitForElementNotPresent(STATION_DROPDOWN);
+		//	driver.waitForElementNotPresent(STATION_DROPDOWN);
 		Select stationDropDown = new Select(driver.findElement(STATION_DROPDOWN));
 		driver.pauseExecutionFor(4000);
 		stationDropDown.selectByVisibleText(station);
@@ -141,6 +149,6 @@ public void logOutFromApplication() {
 		logger.info("YES has been clicked from Station Dropdown");
 
 	}
-	
+
 
 }

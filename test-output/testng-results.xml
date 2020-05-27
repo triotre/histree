@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="4" passed="4" failed="0" skipped="0">
+<testng-results total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-05-20T09:43:43Z" name="Default suite" finished-at="2020-05-20T10:05:52Z" duration-ms="1329357">
+  <suite started-at="2020-05-27T10:43:37Z" name="Default suite" finished-at="2020-05-27T10:46:27Z" duration-ms="169562">
     <groups>
     </groups>
-    <test started-at="2020-05-20T09:43:43Z" name="Default test" finished-at="2020-05-20T10:05:52Z" duration-ms="1329357">
-      <class name="com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:13:43Z" name="beforeSuite" finished-at="2020-05-20T15:13:43Z" duration-ms="234" status="PASS">
+    <test started-at="2020-05-27T10:43:37Z" name="Default test" finished-at="2020-05-27T10:46:27Z" duration-ms="169562">
+      <class name="com.triotree.test.website.FrontOffice.DepositBillingTest">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.test.website.FrontOffice.DepositBillingTest@f8908f6]" started-at="2020-05-27T16:13:37Z" name="beforeSuite" finished-at="2020-05-27T16:13:37Z" duration-ms="233" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,63 +16,63 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:13:43Z" name="beforeclass" finished-at="2020-05-20T15:13:43Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.FrontOffice.DepositBillingTest@f8908f6]" started-at="2020-05-27T16:13:37Z" name="beforeclass" finished-at="2020-05-27T16:13:37Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:13:43Z" name="setUp" finished-at="2020-05-20T15:13:50Z" duration-ms="7449" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.FrontOffice.DepositBillingTest@f8908f6]" started-at="2020-05-27T16:13:37Z" name="setUp" finished-at="2020-05-27T16:13:43Z" duration-ms="6356" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="markPatientDeceasedTest()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:13:50Z" name="markPatientDeceasedTest" finished-at="2020-05-20T15:18:46Z" duration-ms="295141" status="PASS">
+        <test-method signature="frontOfficeWithAvailDepositAmountTest()[pri:0, instance:com.triotree.test.website.FrontOffice.DepositBillingTest@f8908f6]" started-at="2020-05-27T16:13:43Z" name="frontOfficeWithAvailDepositAmountTest" finished-at="2020-05-27T16:16:26Z" duration-ms="162797" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[Total Amount in Cash isEqual to or Exceeds message is not showing up]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: Total Amount in Cash isEqual to or Exceeds message is not showing up
+	at org.testng.Assert.fail(Assert.java:94)
+	at com.triotree.test.website.TTWebsiteBaseTest.assertTrue(TTWebsiteBaseTest.java:183)
+	at com.triotree.test.website.FrontOffice.DepositBillingTest.frontOfficeWithAvailDepositAmountTest(DepositBillingTest.java:143)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
+	at org.testng.TestNG.run(TestNG.java:1031)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- markPatientDeceasedTest -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:18:46Z" name="tearDownSession" finished-at="2020-05-20T15:18:46Z" duration-ms="0" status="PASS">
+        </test-method> <!-- frontOfficeWithAvailDepositAmountTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.FrontOffice.DepositBillingTest@f8908f6]" started-at="2020-05-27T16:16:27Z" name="tearDownSession" finished-at="2020-05-27T16:16:27Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:18:46Z" name="setUp" finished-at="2020-05-20T15:18:50Z" duration-ms="4794" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="markPatientDeceasedSearchPatientTest()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:18:50Z" name="markPatientDeceasedSearchPatientTest" finished-at="2020-05-20T15:23:36Z" duration-ms="285708" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- markPatientDeceasedSearchPatientTest -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:23:36Z" name="tearDownSession" finished-at="2020-05-20T15:23:36Z" duration-ms="4" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:23:36Z" name="setUp" finished-at="2020-05-20T15:23:41Z" duration-ms="4603" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="revokeDeceasedPatientTest()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:23:41Z" name="revokeDeceasedPatientTest" finished-at="2020-05-20T15:30:13Z" duration-ms="392046" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- revokeDeceasedPatientTest -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:30:13Z" name="tearDownSession" finished-at="2020-05-20T15:30:13Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:30:13Z" name="setUp" finished-at="2020-05-20T15:30:17Z" duration-ms="4465" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="frontOfficeCancellationOfAllAppointmentOnMarkPatientDeceased()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:30:17Z" name="frontOfficeCancellationOfAllAppointmentOnMarkPatientDeceased" finished-at="2020-05-20T15:35:52Z" duration-ms="335105" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- frontOfficeCancellationOfAllAppointmentOnMarkPatientDeceased -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:35:52Z" name="tearDownSession" finished-at="2020-05-20T15:35:52Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest@1a15b789]" started-at="2020-05-20T15:35:53Z" name="afterSuite" finished-at="2020-05-20T15:35:53Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.test.website.FrontOffice.DepositBillingTest@f8908f6]" started-at="2020-05-27T16:16:27Z" name="afterSuite" finished-at="2020-05-27T16:16:27Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest -->
+      </class> <!-- com.triotree.test.website.FrontOffice.DepositBillingTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
