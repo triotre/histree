@@ -20,7 +20,7 @@ public class DocumentUploadTest extends TTWebsiteBaseTest{
 	private PatientRegistrationPage patientRegistrationPage;
 	private ADTHomePage adtHomePage;
 
-	private String patientRegistrationId = "AHHS.8996";
+	private String patientRegistrationId = "RAJH.17152995";
 	private String desc = null;
 	private String title1 = null;
 	private String desc1 = null;

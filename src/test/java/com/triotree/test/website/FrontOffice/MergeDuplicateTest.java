@@ -23,17 +23,17 @@ public class MergeDuplicateTest extends TTWebsiteBaseTest{
 	private PatientRegistrationPage patientRegistrationPage;
 	private MergeAndUnmergeDuplicatePage mergeAndUnmergeDuplicatePage;
 
-	private String patientRegistrationId = "AHHS.8996";
+	private String patientRegistrationId = "RAJH.17152824";
 	private String mergedUHID = null;
 	private String title1 = null;
 	private String desc1 = null;
 
 
-	@Test(enabled = false)
+	@Test(priority = 1)
 	public void mergeAndUnmergePatientDuplicateTest() throws Throwable {
 		
 		test=extent.createTest("mergeAndUnmergePatientDuplicateTest", "This test case is merge And Unmerge Patient Duplicate Test");
-		test.assignCategory("Front Office");
+		test.assignCategory("Merge Duplicate");
 		
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -74,10 +74,10 @@ public class MergeDuplicateTest extends TTWebsiteBaseTest{
 
 	}
 	
-	@Test(priority = 1)
+	@Test(priority = 2)
 	public void frontOfficeMergeDuplicateWithDepositOnPatientTest() throws Throwable {
 		test=extent.createTest("mergeAndUnmergePatientDuplicateTest", "This test case is merge And Unmerge Patient Duplicate Test");
-		test.assignCategory("Front Office");
+		test.assignCategory("Merge Duplicate");
 		
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -191,8 +191,6 @@ public class MergeDuplicateTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.clickOnSelectCheckboxatUnmerge();
 		patientRegistrationPage.clickOnUnmergeButtonatUnmerge();
 
-	}
-	
-	
+	}	
 
 }

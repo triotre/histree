@@ -108,7 +108,7 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 	}
 
 	public void enterFromDate(String date) {
-		driver.clear(FROM_DATE);
+		driver.findElement(FROM_DATE).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 		driver.findElement(FROM_DATE).sendKeys(date);
 		driver.findElement(FROM_DATE).sendKeys(Keys.ENTER);
 	}
@@ -174,7 +174,8 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 
 	public void clickOnCSVButtonFromDepartmentWiseTestAndRevenueReport() {
 		driver.waitForElementPresent(CSV_BUTTON_DEP_TEST_REV_REPORT, 120);
-		driver.click(CSV_BUTTON_DEP_TEST_REV_REPORT);
+		WebElement CSV_BUTTO = driver.findElement(CSV_BUTTON_DEP_TEST_REV_REPORT);
+		driver.clickByJS(TTWebsiteDriver.driver, CSV_BUTTO);
 	}
 
 	public void enterFromDateFromUserWiseCollectionReport(String date) {
@@ -186,6 +187,8 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 	public void enterToDateFromUserWiseCollectionReport(String date) {
 		driver.clear(TO_DATE_USER_WISE_COLLECTION_REPORT);
 		driver.findElement(TO_DATE_USER_WISE_COLLECTION_REPORT).sendKeys(date);
+		driver.findElement(TO_DATE_USER_WISE_COLLECTION_REPORT).sendKeys(Keys.ENTER);
+
 	}
 
 	public void clickOPRadioButtonFromUserWiseCollectionReport() {
@@ -196,7 +199,8 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 
 	public void clickIPRadioButtonFromUserWiseCollectionReport() {
 		driver.waitForElementPresent(IP_RADIO_BUTTON_USER_WISE_COLLECTION_REPORT);
-		driver.click(IP_RADIO_BUTTON_USER_WISE_COLLECTION_REPORT);
+		WebElement IP_RADIO_BUTT = driver.findElement(IP_RADIO_BUTTON_USER_WISE_COLLECTION_REPORT);
+		driver.clickByJS(TTWebsiteDriver.driver, IP_RADIO_BUTT);
 		logger.info("IP Radio Button clicked");
 	}
 
@@ -216,7 +220,8 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 
 	public void selectDetailRadioButtonFromUserWiseCollectionReport() {
 		driver.pauseExecutionFor(8000);
-		driver.findElement(By.xpath("//input[@id='rDetail']")).click();
+		WebElement UserWiseCollection = driver.findElement(By.xpath("//input[@id='rDetail']"));
+		driver.clickByJS(TTWebsiteDriver.driver, UserWiseCollection);
 	}
 
 	public void selectDetailRadioButton() {
@@ -234,12 +239,14 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 
 	public void selectSummaryRadioButtonFromUserWiseCollectionReport() {
 		driver.pauseExecutionFor(4000);
-		driver.findElement(By.xpath("//input[@id='rdbSummarys']")).click();
+		WebElement CollectionReport = driver.findElement(By.xpath("//input[@id='rdbSummarys']"));
+		driver.clickByJS(TTWebsiteDriver.driver, CollectionReport);
 	}
 
 	public void selectWithScrollNoCheckboxFromUserWiseCollectionReport() {
 		driver.pauseExecutionFor(4000);
-		driver.findElement(By.xpath("//input[@id='chkScroll']")).click();
+		WebElement UserWiseCollectionReport = driver.findElement(By.xpath("//input[@id='chkScroll']"));
+		driver.clickByJS(TTWebsiteDriver.driver, UserWiseCollectionReport);
 	}
 
 	public void selectWithCommonScrollNoCheckboxFromUserWiseCollectionReport() {
@@ -251,17 +258,21 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 
 	public void selectPharmacyRadioButtonFromUserWiseCollectionReport() {
 		driver.pauseExecutionFor(4000);
-		driver.findElement(By.xpath("//input[@id='rPharmacy']")).click();
+		WebElement UserWiseCol = driver.findElement(By.xpath("//input[@id='rPharmacy']"));
+		driver.clickByJS(TTWebsiteDriver.driver, UserWiseCol);
 	}
 
 	public void selectErButtonFromUserWiseCollectionReport() {
 		driver.pauseExecutionFor(4000);
-		driver.findElement(By.xpath("//input[@id='rER']")).click();
+		WebElement ErButton = driver.findElement(By.xpath("//input[@id='rER']"));
+		driver.clickByJS(TTWebsiteDriver.driver, ErButton);
 	}
 
 	public void enterDateInMisDailyRevenueReport(String date) {
 		driver.clear(DATE_DAILY_REVENUE_REPORT);
 		driver.findElement(DATE_DAILY_REVENUE_REPORT).sendKeys(date);
+		driver.findElement(DATE_DAILY_REVENUE_REPORT).sendKeys(Keys.ENTER);
+
 	}
 
 
@@ -279,13 +290,15 @@ public class DepartmentWiseSubDepartmentWiseRevenuePage extends HISWebsiteBasePa
 
 	public void selectSpecificService(String service) {
 		driver.waitForElementPresent(By.xpath("(//td[contains(text(),'"+service+"')]//preceding::input[1])[1]"), 120);
-		driver.click(By.xpath("(//td[contains(text(),'"+service+"')]//preceding::input[1])[1]"));
+		WebElement Specific = driver.findElement(By.xpath("(//td[contains(text(),'"+service+"')]//preceding::input[1])[1]"));
+		driver.clickByJS(TTWebsiteDriver.driver, Specific);
 	}
 
 
 	public void selectSpecificDepartmentCheckbox() {
 		driver.waitForElementPresent(By.xpath("//input[@id='rdoSpecificdip']"), 120);
-		driver.click(By.xpath("//input[@id='rdoSpecificdip']"));
+		WebElement SpecificDepartment = driver.findElement(By.xpath("//input[@id='rdoSpecificdip']"));
+		driver.clickByJS(TTWebsiteDriver.driver, SpecificDepartment);
 
 	}
 

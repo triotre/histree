@@ -12,6 +12,7 @@ import org.testng.annotations.Test;
 
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
+import com.triotree.utils.PropertyFile;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 import com.triotree.website.pages.FrontOffice.ApproveRefundPage;
 import com.triotree.website.pages.FrontOffice.BillingPage;
@@ -50,12 +51,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 	private String title1 = null;
 	private String desc1 = null;
 
+	@Test(priority = 1)//fixed 04-05-2020 test to be run
+	public void frontOfficeDepositBySearchPatientTestSchedule() throws Throwable {	
 
-	@Test(enabled = false)//fixed 04-05-2020
-	public void frontOfficeDepositBySearchPatientTestSchedule1() throws Throwable {	
-
-		test=extent.createTest("frontOfficeDepositBySearchPatientTestSchedule1", "This test case verify the Fornt Office Deposit BySearch Patient Test Schedule1 Test Case");
-		test.assignCategory("Front Office Billing");
+		test=extent.createTest("frontOfficeDepositBySearchPatientTestSchedule", "This test case verify the Fornt Office Deposit BySearch Patient Test Schedule Test Case");
+		test.assignCategory("Generate Schedule Test");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -77,9 +77,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("Anish  ");
+		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -124,11 +124,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(enabled = false) //not fixed properly 25-05-2020
-	public void frontOfficeScheduling1Test() throws Throwable {	
+	@Test(priority =2) //fixed properly 25-05-2020
+	public void frontOfficeSchedulingTest() throws Throwable {	
 
-		test=extent.createTest("frontOfficeScheduling1Test", "This test verify that front Office Scheduling 1Test");
-		test.assignCategory("Front Office Billing");
+		test=extent.createTest("frontOfficeSchedulingTest", "This test verify that front Office Scheduling 1Test");
+		test.assignCategory("Generate Schedule Test");
 		String tomorrowDay = null;
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -220,7 +220,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
 		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -284,7 +284,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Doctor Schedule");
 
-		doctorSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		doctorSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
@@ -314,7 +314,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17152860");
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
 		try {
 			//billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS", "Trio Tree Noida", "DELHI VIDHUT BOARD", "5", "10");
@@ -344,17 +344,18 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
-		billingPage.selectTestsByName("24 hour Urine Cortisol");
+		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
+//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
 		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
-		billingPage.selectQuantityInManualSection("5");
-		billingPage.enterPriceInManualSection("10.43");
+		billingPage.selectQuantityInManualSection("50");
+		billingPage.enterPriceInManualSection("100");
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
@@ -364,7 +365,6 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
 		billingPage.enterRefferedBy("Self");
 		billingPage.selectFacilitatorFromDropdown(1);
-
 		billingPage.clickonschemedetails();
 		billingPage.clickOnAddToBillButton();
 		//assertTrue(billingPage.verifyInvestigationInstructionPopupIsPresent(), "Investigation Instruction Popup Is Not showing up");
@@ -406,11 +406,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
 
-	@Test(enabled = false)//fixed 25-05-2020
-	public void frontOfficeGenerateSchedule1Test() throws Throwable {	
+	@Test(priority =3)//fixed 25-05-2020 test to be run
+	public void frontOfficeGenerateScheduleTest() throws Throwable {	
 
-		test=extent.createTest("frontOfficeGenerateSchedule1Test", "This test case verify the Fornt Office GenerateSchedule1 Test Case");
-		test.assignCategory("Front Office Billing");
+		test=extent.createTest("frontOfficeGenerateScheduleTest", "This test case verify the Fornt Office GenerateSchedule Test Case");
+		test.assignCategory("Generate Schedule Test");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -431,9 +431,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("Anish  ");
+		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -478,11 +478,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(enabled = false)//fixed 25-05-2020
+	@Test(priority =4)//fixed 25-05-2020
 	public void frontOfficeGenerateSchedule2Test() throws Throwable {	
 
 		test=extent.createTest("frontOfficeGenerateSchedule2Test", "This test case verify the Fornt Office GenerateSchedule2 Test Case");
-		test.assignCategory("Front Office Billing");
+		test.assignCategory("Generate Schedule Test");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -503,9 +503,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("Anish  ");
+		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -548,10 +548,10 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		//assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
 	}
 
-	@Test(enabled = false)//similar to frontOfficeGenerateSchedule2Test
+	@Test(priority =5)//similar to frontOfficeGenerateSchedule2Test
 	public void frontOfficeGenerateSchedule3Test() throws Throwable {
 		test=extent.createTest("frontOfficeGenerateSchedule3Test", "This test case verify the Fornt Office GenerateSchedule2 Test Case");
-		test.assignCategory("Front Office Billing");
+		test.assignCategory("Generate Schedule Test");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -562,20 +562,20 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
-		hisHomePage.selectStationAndClickOnYes("Front Office");
+		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
 		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Ophthalmology");
-		generateSchedulePage.selectDoctorFromDropdown("Archana G Mahajan");
+		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
+		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Anesthesiast");
-		generateSchedulePage.selectDoctorFromDropdown("Sunil Agarwal");
+		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
+		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectFacilityFromDropdown("TRIOTREE HOSPITAL");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -619,11 +619,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(enabled = false) // fixed 25-05-2020
+	@Test(priority =6) // fixed 25-05-2020
 	public void frontOfficeDoctorSchedulingCancelAppointmentTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorSchedulingCancelAppointmentTest", "This test case verify the Fornt Office Doctor Scheduling Cancel Appointment Test Case");
-		test.assignCategory("Front Office Billing");
+		test.assignCategory("Generate Schedule Test");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -701,69 +701,66 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		//		hisHomePage.clickOnFronOfficeIcon();
 		//		hisHomePage.selectStationAndClickOnYes("Front Office");
 		frontOfficeHomePage.clickOnMenu();
+		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 
-		//		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
-		//		
-		////		doctorSchedulePage.clickOnLegendKey();
-		//		
-		//		
-		//		generateSchedulePage.clickOnSearchButton();
-		//		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
-		//		generateSchedulePage.clickOnPlusButton();
-		//		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
-		//		generateSchedulePage.selectSpecilizationFromDropdown("Ophthalmology");
-		//		generateSchedulePage.selectDoctorFromDropdown("Archana G Mahajan");
-		//		generateSchedulePage.clickOnSearchButton();
-		//		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		//		generateSchedulePage.selectSpecilizationFromDropdown("Paediatrician");
-		//		generateSchedulePage.selectDoctorFromDropdown("Ashish Gupta");
-		//		generateSchedulePage.clickOnPlusButton();
-		//		generateSchedulePage.selectFacilityFromDropdown("TRIOTREE HOSPITAL");
-		//		generateSchedulePage.enterFromDate("13/Feb/2019");
-		//		driver.clickAnyWhereOnScreen();
-		//		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
-		//		generateSchedulePage.enterToDate("13/Feb/2019");
-		//		driver.clickAnyWhereOnScreen();
-		//		assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
-		//
-		//		Date date = new Date();
-		//		int currenthour= date.getHours();
-		//		int fromHour = currenthour+1;
-		//		int toHour = currenthour+1;
-		//		String fromHourString = String.valueOf(fromHour);
-		//		String toHourString = String.valueOf(toHour);
-		//		String futureFromTime = fromHourString+":"+"30";
-		//		String futureToTime = toHourString+":"+"40";
-		//
-		//		int fromHourSitting2 = currenthour+2;
-		//		int toHourSitting2 = currenthour+2;
-		//		String fromHourStringSitting2 = String.valueOf(fromHourSitting2);
-		//		String toHourStringSitting2 = String.valueOf(toHourSitting2);
-		//		String futureFromTimeSitting2 = fromHourStringSitting2+":"+"30";
-		//		String futureToTimeSitting2 = toHourStringSitting2+":"+"45";
-		//		generateSchedulePage.selectFromTimeForSitting1(futureFromTime);
-		//		generateSchedulePage.selectToTimeForSitting1(futureToTime);
-		//		Calendar calendar = Calendar.getInstance();
-		//		Date date1 = calendar.getTime();
-		//		System.out.println(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime()));
-		//		String currentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime());
-		//		generateSchedulePage.selectDayCheckbox(currentDay);		
-		//		generateSchedulePage.selectDayCheckbox("Sunday");	
-		//		generateSchedulePage.selectRightCheckForSitting1();
-		//		generateSchedulePage.enterRemarksForCurrentDayForSitting1("Remarks added by Automation Scripts", currentDay);		
-		//		generateSchedulePage.selectFromTimeForSitting2(futureFromTimeSitting2);
-		//		generateSchedulePage.selectToTimeForSitting2(futureToTimeSitting2);
-		//		generateSchedulePage.selectRightCheckForSitting2();
-		//		generateSchedulePage.enterRemarksForCurrentDayForSitting2("Remarks added by Automation Scripts", currentDay);
-		//		generateSchedulePage.clickOnSaveButtonOnHeader();
-		//		assertTrue(generateSchedulePage.verifyDoYouWantToSavePopupMessage("Do you want to save?"), "Do you want to save popup didnt opened");
-		//		generateSchedulePage.clickOnSaveButtonOnSavePopup();
-		//		assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
+
+		generateSchedulePage.clickOnSearchButton();
+		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		generateSchedulePage.clickOnPlusButton();
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
+		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
+		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.clickOnSearchButton();
+		//assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
+		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
+		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		generateSchedulePage.clickOnPlusButton();
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.enterFromDate("13/Feb/2019");
+		driver.clickAnyWhereOnScreen();
+		//assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
+		generateSchedulePage.enterToDate("13/Feb/2019");
+		driver.clickAnyWhereOnScreen();
+		assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
+
+		Date date = new Date();
+		int currenthour= date.getHours();
+		int fromHour = currenthour+1;
+		int toHour = currenthour+1;
+		String fromHourString = String.valueOf(fromHour);
+		String toHourString = String.valueOf(toHour);
+		String futureFromTime = fromHourString+":"+"30";
+		String futureToTime = toHourString+":"+"40";
+
+		int fromHourSitting2 = currenthour+2;
+		int toHourSitting2 = currenthour+2;
+		String fromHourStringSitting2 = String.valueOf(fromHourSitting2);
+		String toHourStringSitting2 = String.valueOf(toHourSitting2);
+		String futureFromTimeSitting2 = fromHourStringSitting2+":"+"30";
+		String futureToTimeSitting2 = toHourStringSitting2+":"+"45";
+		generateSchedulePage.selectFromTimeForSitting1(futureFromTime);
+		generateSchedulePage.selectToTimeForSitting1(futureToTime);
+		Calendar calendar = Calendar.getInstance();
+		Date date1 = calendar.getTime();
+		System.out.println(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime()));
+		String currentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime());
+		generateSchedulePage.selectDayCheckbox(currentDay);		
+		generateSchedulePage.selectDayCheckbox("Sunday");	
+		generateSchedulePage.selectRightCheckForSitting1();
+		generateSchedulePage.enterRemarksForCurrentDayForSitting1("Remarks added by Automation Scripts", currentDay);		
+		generateSchedulePage.selectFromTimeForSitting2(futureFromTimeSitting2);
+		generateSchedulePage.selectToTimeForSitting2(futureToTimeSitting2);
+		generateSchedulePage.selectRightCheckForSitting2();
+		generateSchedulePage.enterRemarksForCurrentDayForSitting2("Remarks added by Automation Scripts", currentDay);
+		generateSchedulePage.clickOnSaveButtonOnHeader();
+		assertTrue(generateSchedulePage.verifyDoYouWantToSavePopupMessage("Do you want to save?"), "Do you want to save popup didnt opened");
+		generateSchedulePage.clickOnSaveButtonOnSavePopup();
+		assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
 
 
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Doctor Schedule");
 
-		doctorSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		doctorSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Cardiology");
@@ -790,11 +787,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(enabled = false) //fixed 26-05-2020
+	@Test(priority =7) //fixed 26-05-2020
 	public void frontOfficeDoctorSchedulingWithAddPatientTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorSchedulingWithAddPatientTest", "This test case verify the Fornt Office Doctor Scheduling With Add Patient Test Case");
-		test.assignCategory("Front Office Billing");
+		test.assignCategory("Generate Schedule Test");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -818,9 +815,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("Anish  ");
+		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("The Triotree Company");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -869,7 +866,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 
 
-		generateSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		generateSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
@@ -894,11 +891,12 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		//doctorSchedulePage.clickOnBookedYellowAppointment();
 		driver.pauseExecutionFor(5000);
 	}
-	@Test(enabled = false) //fixed 26-05-2020
+
+	@Test(priority =8) //fixed 26-05-2020 test to run
 	public void frontOfficeDoctorSchedulingWithLinkUHIDTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorSchedulingWithLinkUHIDTest", "This test case verify the Fornt Office Doctor Scheduling With LinkUHID Test Case");
-		test.assignCategory("Front Office Billing");
+		test.assignCategory("Generate Schedule Test");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -922,9 +920,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("Anish  ");
+		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("The Triotree Company");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -954,7 +952,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		Date date1 = calendar.getTime();
 		System.out.println(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime()));
 		String currentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime());
-		
+
 		generateSchedulePage.selectDayCheckbox(currentDay);		
 		generateSchedulePage.selectDayCheckbox("Sunday");	
 		generateSchedulePage.selectRightCheckForSitting1();
@@ -974,7 +972,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 
 
-		generateSchedulePage.selectFacilityFromDropdown("The Triotree Company");
+		generateSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
@@ -999,6 +997,5 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		//doctorSchedulePage.clickOnBookedYellowAppointment();
 		driver.pauseExecutionFor(5000);
 	}
-
 
 }

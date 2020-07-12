@@ -150,8 +150,11 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 	}
 
 	public void clickOnSaveButtonOnAppointmentSchedulingPopup() {
+		try {
 		driver.findElement(SAVE_BUTTON_APPOINTMENT_SCHEDULING).click();
 		logger.info("Save Button on Appointment scheduling clicked");
+		}
+		catch (Exception e) {}
 	}
 
 	public boolean isEnterValidUhidMessageShowingUp() {
@@ -159,6 +162,7 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 	}
 
 	public void enterUHIDInAppointmentschedulingTextBox(String uhid) {
+		try {
 		driver.pauseExecutionFor(6000);
 		driver.findElement(UHID_TEXTBOX_APPOINTMENT_SCHEDULING).clear();
 		driver.findElement(UHID_TEXTBOX_APPOINTMENT_SCHEDULING).sendKeys(uhid);
@@ -166,14 +170,18 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 
 		Actions action = new Actions(TTWebsiteDriver.driver);
 		action.sendKeys(Keys.ENTER);
-
+		}
+		catch (Exception e) {}
 	}
 
 	public void selectVisitTypeFromDropdown(String visitType) {
+		try {
 		driver.waitForElementPresent(VISIT_TYPE_DROPDOWN);
 		Select visitDropdown = new Select(driver.findElement(VISIT_TYPE_DROPDOWN));
 		visitDropdown.selectByVisibleText(visitType);
 		logger.info("Following visitType  has been selected from visitType Dropdown : " + visitType);
+		}
+		catch (Exception e) {}
 	}
 
 	public boolean isAppointmentBookedSuccessfullyMessageShowingUp() {
@@ -188,8 +196,11 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 		 * driver.pauseExecutionFor(3000);
 		 */
 		//driver.click(GOTO_BILL);
+		try {
 		WebElement YELLOW_GENERATED_SCHEDULE_element = driver.findElement(By.xpath("(//td[@style='background-color:Yellow'])[1]"));
 		driver.clickByJS(TTWebsiteDriver.driver, YELLOW_GENERATED_SCHEDULE_element);
+		}
+		catch (Exception e) {}
 	}
 
 	public void cancelTheAppointment() {
@@ -212,7 +223,10 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 		int randomValue = r.nextInt(listings.size()); //Getting a random value that is between 0 and (list's size)-1
 		listings.get(randomValue).click(); //Clicking on the random item in the list.
 
-
-
+	}
+	
+	public void clickonspeclialitysearchbutton() {
+		driver.findElement(By.xpath("//a[@id='specility_search']//i")).click();
+		logger.info("Click on specliality search button");
 	}
 }

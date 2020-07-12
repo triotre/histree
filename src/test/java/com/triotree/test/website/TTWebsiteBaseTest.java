@@ -35,7 +35,7 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	protected TTWebsiteDriver driver = new TTWebsiteDriver(propertyFile);
 	private static final Logger logger = LogManager
 			.getLogger(TTWebsiteBaseTest.class.getName());
-//	public String idCard = DBUtil.performDatabaseQuery("select top 1 Name from M_IdCardType where Deleted=0");
+	//	public String idCard = DBUtil.performDatabaseQuery("select top 1 Name from M_IdCardType where Deleted=0");
 	public String idCard = null;
 	public String occupation = null;
 	public String qualification = null;
@@ -53,7 +53,7 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	public void setUp() throws Exception {
 		driver.loadApplication();           
 		driver.getURL();
-		logger.info("Application loaded");
+		//logger.info("Application loaded");
 		idCard = getIDCardType();
 		occupation = getOccupation();
 		qualification = getQualification();
@@ -63,25 +63,26 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	}
 
 	@AfterMethod
-	public void tearDownSession() {
-		driver.quit();
+	public void tearDownSession() 
+	{
+		///driver.quit();
 	}
 
 	public String getIDCardType() {
 		String idCard = DBUtil.performDatabaseQuery(TestConstants.GET_ID_CARD_QUERY);
 		return idCard;
 	}
-	
+
 	public String getOccupation() {
 		String occupation = DBUtil.performDatabaseQuery(TestConstants.GET_OCCUPATION_QUERY);
 		return occupation;
 	}
-	
+
 	public String getQualification() {
 		String qualification = DBUtil.performDatabaseQuery(TestConstants.GET_QUALIFICATION_QUERY);
 		return qualification;
 	}
-	
+
 	public String getRefferedFrom() {
 		String referredFrom = DBUtil.performDatabaseQuery(TestConstants.GET_REFFERED_FROM_QUERY);
 		return referredFrom;
@@ -91,15 +92,15 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 		String city = DBUtil.performDatabaseQuery(TestConstants.GET_CITY_FROM_QUERY);
 		return city;
 	}
-	
+
 	public String getTitle() {
 		String title = DBUtil.performDatabaseQuery(TestConstants.GET_CITY_FROM_QUERY);
-		System.out.println("title="+title);
+		//System.out.println("title="+title);
 		return title;
 	}
 
 
-	
+
 
 	//	@BeforeTest(alwaysRun=true)
 	//	public void setUp() throws Exception {
@@ -226,6 +227,6 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 			Assert.fail(message);
 		}
 	}
-	
-	
+
+
 }

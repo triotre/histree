@@ -176,7 +176,8 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 
 	public void clickOnSaveButtonOnHeader() throws InterruptedException {
 		Thread.sleep(5000);
-		driver.findElement(SAVE_BUTTON_HEADER).click();
+		WebElement HEADER = driver.findElement(SAVE_BUTTON_HEADER);
+		driver.clickByJS(TTWebsiteDriver.driver, HEADER);
 		logger.info("Save button on header clicked");
 	}
 
@@ -196,5 +197,12 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 
 	public boolean isSaveSuccessfullyMessageShowsUp() {
 		return driver.isElementPresent(SAVE_SUCCESSFULLY_MESSAGE);
+	}
+	
+	public void selectspecility(String text) 
+	{
+	Select sl =new Select(driver.findElement(By.xpath("//select[@id='Speciality']")));
+	sl.selectByVisibleText(text);
+	logger.info("Specility of the doctor is selected: "+text);
 	}
 }

@@ -55,7 +55,7 @@ public class DBUtil {
 		//		else if(databaseAuthentication.equalsIgnoreCase("Windows Authentication")){
 		//			ConnectionString = "jdbc:jtds:sqlserver://"+dbIP+";instance=MSSQLSERVER;domain="+databaseDomain+";integratedSecurity=true;DatabaseName="+databaseName;
 		//		}
-		logger.info("ConnectionString::"+ConnectionString);
+		//logger.info("ConnectionString::"+ConnectionString);
 		return ConnectionString;
 	}
 
@@ -63,7 +63,7 @@ public class DBUtil {
 	public static List<Map<String, Object>> performDatabaseQuery(String sQuery,String databaseName){
 		JdbcTemplate jdbcTemplate;
 		jdbcTemplate = new JdbcTemplate(getDataSource(databaseName));
-		logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
+		//logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
 		ColumnMapRowMapper rowMapper = new ColumnMapRowMapper();		
 		List<Map<String, Object>> userDataList = jdbcTemplate.query(sQuery,rowMapper);		
 		return userDataList;
@@ -79,7 +79,7 @@ public class DBUtil {
 		//			jdbcTemplate = new JdbcTemplate(getDataSource("RFOperations", dbIP2));
 		//		}
 		jdbcTemplate = new JdbcTemplate(getDataSource(databaseName, dbIP));
-		logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
+		//logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
 		ColumnMapRowMapper rowMapper = new ColumnMapRowMapper();  
 		List<Map<String, Object>> userDataList = jdbcTemplate.query(sQuery,rowMapper);  
 		return userDataList;
@@ -90,7 +90,7 @@ public class DBUtil {
 	{
 		JdbcTemplate jdbcTemplate;
 		jdbcTemplate = new JdbcTemplate(getDataSource(databaseName, databaseIP, databaseUserName, databasePassword));
-		logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
+		//logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
 		ColumnMapRowMapper rowMapper = new ColumnMapRowMapper();  
 		List<Map<String, Object>> userDataList = jdbcTemplate.query(sQuery,rowMapper);  
 		try {
@@ -133,7 +133,7 @@ public class DBUtil {
 	public static void performDatabaseQueryForUpdate(String sQuery,String databaseName){
 		JdbcTemplate jdbcTemplate;
 		jdbcTemplate = new JdbcTemplate(getDataSource(databaseName));
-		logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
+		//logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
 		jdbcTemplate.execute(sQuery);
 	}
 
@@ -141,7 +141,7 @@ public class DBUtil {
 	public static void performDatabaseQueryForUpdate(String sQuery,String databaseName,String dbIP){
 		JdbcTemplate jdbcTemplate;
 		jdbcTemplate = new JdbcTemplate(getDataSource(databaseName,dbIP));
-		logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
+		//logger.info("QUERY TRIGGERED IS "+sQuery+"\n");
 		jdbcTemplate.execute(sQuery);
 	}
 

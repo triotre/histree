@@ -4,6 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ISelect;
 import org.openqa.selenium.support.ui.Select;
 
@@ -59,8 +60,8 @@ public class DepositPage extends HISWebsiteBasePage{
 		return driver.isElementPresent(CONFIRM_DEPOSIT_POPUP_MESSAGE);
 	}
 
-	public void clickOnYesButtonOnConfirmDepositPopup() {
-		driver.pauseExecutionFor(7000);
+	public void clickOnYesButtonOnConfirmDepositPopup() throws InterruptedException {
+		Thread.sleep(4000);	
 		driver.click(CONFIRM_DEPOSIT_YES_BUTTON);
 		logger.info("Yes Button Clicked on Confirm Deposit Popup");
 	}
@@ -97,9 +98,14 @@ public class DepositPage extends HISWebsiteBasePage{
 	}
 
 	public void clickOnCreditCardRadioButton() {
+		try {
 		driver.waitForElementPresent(CREDIT_CARD_RADIO_BUTTON);
 		driver.click(CREDIT_CARD_RADIO_BUTTON);
 		logger.info("Credit Card Radio Button Clicked");
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void enterCreditCardDetails(int cardNo, String cardName, String bankName, String transactionNo) throws InterruptedException {
@@ -171,5 +177,19 @@ public class DepositPage extends HISWebsiteBasePage{
 		driver.click(By.xpath("//a[@id='btnMergedUhidNo']"));
 	}
 	
+	public void clickonwalltreecheckbox() {
+		
+		WebElement walltree = driver.findElement(By.xpath("//input[@id='Rechrge']"));
+		if(walltree.isSelected()) 
+		{
+			driver.findElement(By.xpath("//input[@id='Rechrge']")).click();
+		}
+	}
 	
+	public void closesearchpopup() throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@id='fosearch_patient']//a[@class='modal_close']")).click();
+		logger.info("Close Search Popup");
+	}
 }

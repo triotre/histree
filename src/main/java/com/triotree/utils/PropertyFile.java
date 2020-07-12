@@ -25,7 +25,8 @@ public class PropertyFile {
 		}
 	}
 
-	public static String getProperty(String key) {
+	public static String getProperty(String key) 
+	{
 		return props.getProperty(key);
 	}
 

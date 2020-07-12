@@ -59,8 +59,12 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 	}
 
 	public void clickOnYesButtonOnSaveThisRecordPopup() {
+		try {
 		driver.waitForElementPresent(YES_BTN_SAVE_THIS_RECORD_POPUP);
 		driver.click(YES_BTN_SAVE_THIS_RECORD_POPUP);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public boolean verifyIndentCreatedSuccessMessage(String message) {
@@ -90,9 +94,14 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 	
 	
 	public void clickOnClearButton() {
+		try {
 		WebElement element =driver.findElement(CLEAR_BUTTON);
 		driver.clickByJS(TTWebsiteDriver.driver, element);
 		logger.info("Clear Button clicked");
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void clickOnPendingRadioButton() {
@@ -108,8 +117,13 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 	}
 	
 	public void clickOnSaveFloppyIcon() {
+		try {
 		driver.waitForElementPresent(SAVE_FLOPPY_ICON);
 		driver.click(SAVE_FLOPPY_ICON);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 	public void enterFromDate(String date) {

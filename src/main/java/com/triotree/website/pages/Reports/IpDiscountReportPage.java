@@ -3,6 +3,7 @@ package com.triotree.website.pages.Reports;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 
 import com.triotree.driver.website.TTWebsiteDriver;
@@ -26,7 +27,8 @@ public class IpDiscountReportPage extends HISWebsiteBasePage{
 
 
 	public void enterFromDate(String date) {
-		driver.clear(FROM_DATE);
+		
+		driver.findElement(FROM_DATE).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 		driver.findElement(FROM_DATE).sendKeys(date);
 	}
 

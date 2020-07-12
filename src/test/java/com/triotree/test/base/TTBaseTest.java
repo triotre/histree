@@ -63,9 +63,9 @@ public class TTBaseTest {
 	@Parameters({"envproperties"})
 	public void beforeSuite(@Optional String envproperties) throws Exception {
 		extent=createInstance(reportpath);
-		System.out.println("Started execution with " + " " + envproperties);
+		//System.out.println("Started execution with " + " " + envproperties);
 		//Changed debug to Info
-		logger.info("Started execution with " + " " + envproperties);
+		//logger.info("Started execution with " + " " + envproperties);
 		if (!StringUtils.isEmpty(envproperties)) {
 			propertyFile.loadProps(envproperties);
 			logger.debug("Environment properties recieved and preparing the environment for "
@@ -74,12 +74,12 @@ public class TTBaseTest {
 
 		} else {
 			propertyFile.loadProps(defaultProps);
-			logger.info("Environment properties are not provided by the user ... loading the default properties");
-			logger.info("Default Browser is  ------ "+propertyFile.getProperty("browser"));
-			logger.info("Default URL is  ------ "+propertyFile.getProperty("baseUrl"));
-			logger.info("Default loginname is  ------ "+propertyFile.getProperty("loginname"));
-			logger.info("Default username is  ------ "+propertyFile.getProperty("username"));
-			logger.info("Default user password is  ------ "+propertyFile.getProperty("password"));
+//			logger.info("Environment properties are not provided by the user ... loading the default properties");
+//			logger.info("Default Browser is  ------ "+propertyFile.getProperty("browser"));
+//			logger.info("Default URL is  ------ "+propertyFile.getProperty("baseUrl"));
+//			logger.info("Default loginname is  ------ "+propertyFile.getProperty("loginname"));
+//			logger.info("Default username is  ------ "+propertyFile.getProperty("username"));
+//			logger.info("Default user password is  ------ "+propertyFile.getProperty("password"));
 
 		}
 		// clear screenshots folder
@@ -111,7 +111,7 @@ public class TTBaseTest {
 		endTime =  System.currentTimeMillis();
 		//create a time stamp to be added to new logs,output and test-output folders
 		Date date = new Date();
-		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss") ;
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
 		String timeStamp = String.valueOf(dateFormat.format(date));
 
 		// set the location of the source directories of logs,output and test-output folder
@@ -153,6 +153,8 @@ public class TTBaseTest {
 		htmlreport.config().setEncoding("utf-8");
 		htmlreport.config().setReportName("Trio Tree Launchpad Automation Report");
 		htmlreport.config().setAutoCreateRelativePathMedia(true);
+		
+
 		String browser = propertyFile.getProperty("browser");
 
 		extent=new ExtentReports();

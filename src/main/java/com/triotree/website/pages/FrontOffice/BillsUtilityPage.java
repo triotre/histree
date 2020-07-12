@@ -7,8 +7,6 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-
-import com.oracle.tools.packager.Log;
 import com.triotree.driver.website.TTWebsiteDriver;
 import com.triotree.website.pages.CommonPages.HISWebsiteBasePage;
 
@@ -34,10 +32,12 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 	}
 
 	public void selectServices(String services) {
+		try {
 		//driver.waitForElementPresent(By.xpath("//label[contains(text(),'"+services+"')]//preceding::input[1]"), 120);
-		driver.waitForElementPresent(By.xpath("//label[text()='"+services+"']/../input"), 120);
+		driver.waitForElementPresent(By.xpath("//label[text()='"+services+"']/../input"), 10);
 		driver.click(By.xpath("//label[text()='"+services+"']/../input"));
-
+		}
+		catch (Exception e) {}
 	}
 	public void closerefund() 
 	{
@@ -47,11 +47,9 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 		List<WebElement> list = driver.findElements(By.xpath("//input[@class='checkbox1 uncheckall12']"));
 
 		for(int i =1; i<=list.size(); i++) {
-			driver.pauseExecutionFor(3000);
+			//driver.pauseExecutionFor(3000);
 			driver.findElement(By.xpath("(//input[@class='checkbox1 uncheckall12'])["+i+"]")).click();
 		}
-
-
 	}
 
 	public void clickOnSaveButton() {
@@ -89,8 +87,11 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 	}
 
 	public void clickOnYesButtonApprovalAgainstBillNoPopup() {
+		try {
 		driver.waitForElementPresent(By.xpath("//a[@id='btnyesupdateapproval']"), 120);
 		driver.click(By.xpath("//a[@id='btnyesupdateapproval']"));
+		}
+		catch (Exception e) {}
 	}
 
 	public void selectDueSettlementTab() {
@@ -125,7 +126,7 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 	public void enterCreditCardDetails() {
 		driver.waitForElementPresent(By.xpath("//select[@id='creditCardname']"), 100);
 		Select serviceDropdown = new Select(driver.findElement(By.xpath("//select[@id='creditCardname']")));
-		serviceDropdown.selectByVisibleText("DINERS");
+		serviceDropdown.selectByVisibleText("MASTERCARD");
 		driver.findElement(By.xpath("//input[@id='cardNumber1']")).sendKeys("12345678");
 		driver.findElement(By.xpath("//input[@id='batchNumber1']")).sendKeys("Testing");
 		Select serviceDropdown1 = new Select(driver.findElement(By.xpath("//select[@id='cardBankName']")));
@@ -138,11 +139,13 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 
 	public void selectPlusButton() {
 		driver.pauseExecutionFor(5000);
-		driver.click(By.xpath("//i[@class='fa fa-plus']"));
+		WebElement PlusButton = driver.findElement(By.xpath("//i[@class='fa fa-plus']"));
+		driver.clickByJS(TTWebsiteDriver.driver, PlusButton);
 
 	}
 
 	public void searchPatientDetails() {
+		try {
 		driver.waitForElementPresent(SEARCH_BUTTON, 120);
 		driver.click(SEARCH_BUTTON);
 		driver.waitForElementPresent(By.xpath("//input[@id='modal_chkfromdate']"));
@@ -150,6 +153,8 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 		driver.findElement(By.xpath("//input[@id='frmdate']")).clear();
 		driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys("01/Aug/2019");
 		driver.findElement(By.xpath("//a[@id='search_buttondata']//i[@class='fa fa-search search_buttondata']")).click();
+		}
+		catch (Exception e) {}
 	}
 
 	public void searchPatientDetailsWithoutClickingSearchButton() {
@@ -272,20 +277,31 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 	}
 
 	public void clickSendApprovalRequestButton() {
+		try {
 		driver.waitForElementPresent(By.xpath("//button[@id='btnsendReqApproval']"), 120);
 		driver.click(By.xpath("//button[@id='btnsendReqApproval']"));
+		}
+		catch (Exception e) {}
 	}
 
 	public void selectReasonForRefund() {
+		try {
 		driver.pauseExecutionFor(4000);
 		Select serviceDropdown = new Select(driver.findElement(By.xpath("//select[@id='ReasonForRefund']")));
 		serviceDropdown.selectByVisibleText("Automation Refund Reason");
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 
 	}
 
 	public void closeRefundPopup() {
+		try {
 		driver.waitForElementPresent(By.xpath("//a[@id='modalcloserefund']//i[@class='fa fa-times']"));
 		driver.click(By.xpath("//a[@id='modalcloserefund']//i[@class='fa fa-times']"));
+		}
+		catch (Exception e) {}
 	}
 
 	public void enterAmountToBeSettled(String amount) {
@@ -309,6 +325,10 @@ public class BillsUtilityPage extends HISWebsiteBasePage{
 		}
 	}
 	
+	public void clickonyes() {
+		
+		driver.findElement(By.xpath("//a[@id='duepaymentyes']")).click();
+	}
 
 }
 

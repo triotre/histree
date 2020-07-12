@@ -27,7 +27,8 @@ public class IndentItemsPage extends HISWebsiteBasePage{
 	private final By SMART_SEARCH_CHECKBOX = By.xpath("//input[@id='chkSmart']");
 	private final By REFRESH_STOCK_LABEL = By.xpath("//a[@id='btnRefreshStock']");
 	private final By MEDICINE_TAB = By.xpath("//a[contains(text(),'Medicine')]");
-	private final By SELECT_ALL_LABEL = By.xpath("//a[@id='btnSelectAll']");
+	private final By SELECT_ALL_LABEL = By.xpath("//a[@id='btnAllItem']");
+	//By.xpath("//a[@id='btnSelectAll']");
 	private final By CONSUMABLES_TAB = By.xpath("//li[@id='liConsumables']//a[contains(text(),'Consumables')]");
 	private final By OTHERS_TAB = By.xpath("//a[contains(text(),'Others')]");
 	private final By SAVE_POPUP = By.xpath("//label[contains(text(),'Do you want to Save this Record?')]");
@@ -122,14 +123,17 @@ public class IndentItemsPage extends HISWebsiteBasePage{
 	public void selectMedicineTab() {
 		driver.waitForElementPresent(MEDICINE_TAB);
 		driver.pauseExecutionFor(25000);
-		driver.click(MEDICINE_TAB);
+		WebElement MEDICINE_element = driver.findElement(MEDICINE_TAB);
+		driver.clickByJS(TTWebsiteDriver.driver, MEDICINE_element);
+
 		logger.info("Medicine Tab clicked");
 	}
 
 	public void selectConsumablesTab() {
 		driver.waitForElementPresent(CONSUMABLES_TAB, 120);
 		driver.pauseExecutionFor(2000);
-		driver.click(CONSUMABLES_TAB);
+		WebElement tab = driver.findElement(CONSUMABLES_TAB);
+		driver.clickByJS(TTWebsiteDriver.driver, tab);
 		logger.info("Consumables Tab clicked");
 	}
 
@@ -315,8 +319,12 @@ public class IndentItemsPage extends HISWebsiteBasePage{
 	}
 
 	public void selectStoreFromDropdownDirectIssuePage(String department) {
+		//driver.findElements(STORE_DROPDOWN_DIRECT_ISSUE);
 		Select departmentDropDown = new Select(driver.findElement(STORE_DROPDOWN_DIRECT_ISSUE));
-		departmentDropDown.selectByVisibleText(department);
+		List<WebElement> department_list = departmentDropDown.getOptions();
+		if(department_list.size()>0) {
+			departmentDropDown.selectByVisibleText(department);
+		}
 		logger.info("Following Store has been selected from department Dropdown : " + department);
 	}
 
@@ -336,596 +344,666 @@ public class IndentItemsPage extends HISWebsiteBasePage{
 	}
 
 	public void selectItemsDirectIssuePage(String items) {
-		driver.waitForElementPresent(By.xpath("//input[@id='searchDirectIssueDrugs']"), 120);
-		driver.findElement(By.xpath("//input[@id='searchDirectIssueDrugs']")).clear();
-		driver.findElement(By.xpath("//input[@id='searchDirectIssueDrugs']")).sendKeys(items);
-		driver.pauseExecutionFor(5000);
-		driver.findElement(By.xpath("//td[contains(text(),'"+items+"')]")).click();
-		driver.pauseExecutionFor(5000);
-	}
-
-	public void clickOnClearButtonOnDirectIssuePage() {
-		WebElement element =driver.findElement(By.xpath("//a[@id='btnsubtitute']//i[@class='fa fa-refresh']"));
-		driver.clickByJS(TTWebsiteDriver.driver, element);
-		logger.info("Save Button clicked");
-	}
-
-	public void selectFirstBatchNoFromBatchDetailsDirectIssuePage() {
-		driver.pauseExecutionFor(5000);
-		WebElement element =driver.findElement(By.xpath("//table[@id='tbldrugdtaillist']//tbody/tr[1]"));
-		driver.clickByJS(TTWebsiteDriver.driver, element);
-		logger.info("First Batch No Clicked");
-	}
-
-	public void selectConsumablesTabDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[contains(text(),'Consumables')]"), 120);
-		driver.click(By.xpath("//a[contains(text(),'Consumables')]"));
-	}
-
-	public void selectBatchNoFromBatchDetailsDirectIssuePage(String batchNo) {
-		driver.pauseExecutionFor(5000);
-		WebElement element =driver.findElement(By.xpath("//td[contains(text(),'"+batchNo+"')]"));
-		driver.clickByJS(TTWebsiteDriver.driver, element);
-		logger.info("Batch No Clicked");
-	}
-
-	public void selectOthersTabDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[contains(text(),'Other')]"), 120);
-		driver.click(By.xpath("//a[contains(text(),'Other')]"));
-	}
-
-	public void selectThirdSerialNumberDirectIssuePage() {
-		driver.pauseExecutionFor(5000);
-		WebElement element =driver.findElement(By.xpath("//table[@id='tbldrugitemdesc']//tbody/tr[3]/td[contains(text(),'3')][1]"));
-		driver.clickByJS(TTWebsiteDriver.driver, element);
-		logger.info("Third Serial No Clicked");
-	}
-
-	public void clickNoButtonOnDeletePopupDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='NoCheckfordeleterow']"), 120);
-		driver.findElement(By.xpath("//a[@id='NoCheckfordeleterow']")).click();
-	}
-
-	public void clickYesButtonOnDeletePopupDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='YesCheckfordeleterow']"), 120);
-		driver.findElement(By.xpath("//a[@id='YesCheckfordeleterow']")).click();
-	}
-
-	public void selectSubstitudeDirectIssuePage(String substitude) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblSubstitute']//td[contains(text(),'"+substitude+"')]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblSubstitute']//td[contains(text(),'"+substitude+"')]")).click();
-
-	}
-
-	public void enterIssueQuantityDirectIssuePage(String item, String quantity) {
-		driver.pauseExecutionFor(5000);
-		driver.waitForElementPresent(By.xpath("//table[@id='tbldrugitemdesc']//td[contains(text(),'"+item+"')]//following::input[1]"), 120);
-		driver.findElement(By.xpath("//table[@id='tbldrugitemdesc']//td[contains(text(),'"+item+"')]//following::input[1]")).sendKeys(quantity);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void clickNoButtonOnSavePopupDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnsaveno']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnsaveno']")).click();
-	}
-
-	public void clickYesButtonOnSavePopupDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnyessaveModal']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnyessaveModal']")).click();
-	}
-
-	public void clickYesButtonOnSaveItemReceiptPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnSaveYes']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnSaveYes']")).click();
-	}
-
-	public void clickNoButtonOnPrintPopupDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnno']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnno']")).click();
-	}
-
-	public void clickClearButtonOnheaderDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='repeat']//i[@class='fa fa-refresh']"), 120);
-		driver.findElement(By.xpath("//a[@id='repeat']//i[@class='fa fa-refresh']")).click();
-		driver.pauseExecutionFor(7000);
-	}
-
-	public void clickClearButtonOnItemReceiptPage() {
-		driver.waitForElementPresent(By.xpath("//i[@class='fa fa-refresh']"), 120);
-		WebElement clear_btn_element = driver.findElement(By.xpath("//i[@class='fa fa-refresh']"));
-		driver.clickByJS(TTWebsiteDriver.driver, clear_btn_element);
-		driver.pauseExecutionFor(7000);
-	}
-
-	public void enterFromDateDirectIssuePage(String date) {
-		driver.clear(FROM_DATE);
-		driver.findElement(FROM_DATE).sendKeys(date);
-	}
-
-
-
-	public void enterToDateDirectIssuePage(String date) {
-		driver.clear(TO_DATE);
-		driver.findElement(TO_DATE).sendKeys(date);
-	}
-
-	public void selectIssuedToFromDropdownDirectIssuePage(String department) {
-		Select departmentDropDown = new Select(driver.findElement(By.xpath("//select[@id='ddlisssuestostation']")));
-		departmentDropDown.selectByVisibleText(department);
-		logger.info("Following Issued to has been selected from Dropdown : " + department);
-	}
-
-	public void clickSearchButtonDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//i[@class='fa fa-search fa-lg faactnicn']"), 120);
-		driver.findElement(By.xpath("//i[@class='fa fa-search fa-lg faactnicn']")).click();
-	}
-
-	public void clickOnFirstOrderFromSearchDirectIssuePage() {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblschIssued']//tbody/tr[1]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblschIssued']//tbody/tr[1]")).click();
-	}
-
-
-	// Below Methods are for Direct Receipt Page
-
-	public void searchAndSelectItemsDirectReceiptPage(String items) {
-		driver.waitForElementPresent(By.xpath("//input[@id='txtSearch']"), 120);
-		driver.findElement(By.xpath("//input[@id='txtSearch']")).clear();
-		driver.findElement(By.xpath("//input[@id='txtSearch']")).sendKeys(items);
-		driver.pauseExecutionFor(5000);
-		driver.findElement(By.xpath("//td[contains(text(),'"+items+"')]")).click();
-		driver.pauseExecutionFor(5000);
-	}
-
-	public void selectConsumablesTabDirectReceiptPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='tbConsumables']"), 120);
-		driver.click(By.xpath("//a[@id='tbConsumables']"));
-	}
-
-	public void selectOthersTabDirectReceiptPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='tbOthers']"), 120);
-		driver.click(By.xpath("//a[@id='tbOthers']"));
-	}
-
-	public void clickDeleteButtonAgainstAnItem(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::i[1]"), 120);
-		driver.click(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::i[1]"));
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void clickNoButtonOnDeletePopupDirectReceiptPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnDeleteNo']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnDeleteNo']")).click();
-	}
-
-	public void clickYesButtonOnDeletePopupDirectReceiptPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnDeleteYes']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnDeleteYes']")).click();
-	}
-
-	public void clickCalculateButtonOnHeaderDirectReceiptPage() {
-		driver.waitForElementPresent(By.xpath("//i[@class='fa fa-calculator']"), 120);
-		driver.findElement(By.xpath("//i[@class='fa fa-calculator']")).click();
-	}
-
-	public void enterQuantityAgainstAnItem(String item, String qty) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[2]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[2]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[2]")).sendKeys(qty);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void removePurRateAgainstAnItem(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]")).clear();
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void enterPurRateAgainstAnItem(String item, String rate) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]")).sendKeys(rate);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void removeMRPAgainstAnItem(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]")).clear();
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void enterMRPAgainstAnItem(String item, String rate) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]")).sendKeys(rate);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void selectBatchTextBoxAgainstAnItemAndClosePopup(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]")).click();
-		driver.pauseExecutionFor(3000);
 		try {
-			driver.waitForElementPresent(By.xpath("//i[@id='batchpop']"));
-			driver.findElement(By.xpath("//i[@id='batchpop']")).click();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			driver.waitForElementPresent(By.xpath("//input[@id='searchDirectIssueDrugs']"), 10);
+			driver.findElement(By.xpath("//input[@id='searchDirectIssueDrugs']")).clear();
+			driver.findElement(By.xpath("//input[@id='searchDirectIssueDrugs']")).sendKeys(items);
+			Thread.sleep(2000);		
+			driver.findElement(By.xpath("//td[contains(text(),'"+items+"')]")).click();
+			Thread.sleep(2000);		
 		}
+		catch (Exception e) {}
 	}
-
-	public void enterBatchTextBoxAgainstAnItemAndClosePopup(String item, String message) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]")).click();
-		driver.pauseExecutionFor(3000);
-		try {
-			driver.waitForElementPresent(By.xpath("//i[@id='batchpop']"));
-			driver.findElement(By.xpath("//i[@id='batchpop']")).click();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		public void clickOnClearButtonOnDirectIssuePage() {
+			try {
+			WebElement element =driver.findElement(By.xpath("//a[@id='btnsubtitute']//i[@class='fa fa-refresh']"));
+			driver.clickByJS(TTWebsiteDriver.driver, element);
+			logger.info("Save Button clicked");
+			}
+			catch (Exception e) {}
 		}
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]")).sendKeys(message);
-		driver.pauseExecutionFor(3000);
-	}
 
-	public void enterExpiryDateAgainstAnItem(String item, String date) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[12]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[12]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[12]")).sendKeys(date);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void enterMRPForSPMarkUpAgainstAnItem(String item, String rate) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[13]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[13]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[13]")).sendKeys(rate);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void enterSGSTAgainstAnItem(String item, String rate) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]")).sendKeys(rate);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void enterCGSTAgainstAnItem(String item, String rate) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]")).sendKeys(rate);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void enterIGSTAgainstAnItem(String item, String rate) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[9]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[9]")).clear();
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[9]")).sendKeys(rate);
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void removeSGSTAgainstAnItem(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]")).clear();
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void removeCGSTAgainstAnItem(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]")).clear();
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void removeIGSTAgainstAnItem(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[9]"), 120);
-		driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[9]")).clear();
-		driver.pauseExecutionFor(3000);
-	}
-
-	public void clickSaveButtonOnHeaderDirectReceiptPage() {
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//i[@id='btnsave']"), 120);
-		driver.findElement(By.xpath("//i[@id='btnsave']")).click();
-	}
-
-	public void clickNoButtonOnSavePopupDirectReceiptPage() {
-		try {
-			driver.waitForElementPresent(By.xpath("//a[@id='btnSaveNo']"), 120);
-			driver.findElement(By.xpath("//a[@id='btnSaveNo']")).click();
+		public void selectFirstBatchNoFromBatchDetailsDirectIssuePage() {
+			driver.pauseExecutionFor(5000);
+			WebElement element =driver.findElement(By.xpath("//table[@id='tbldrugdtaillist']//tbody/tr[1]"));
+			driver.clickByJS(TTWebsiteDriver.driver, element);
+			logger.info("First Batch No Clicked");
 		}
-		catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
 
-	public void clickYesButtonOnSavePopupDirectReceiptPage() {
-		try {
+		public void selectConsumablesTabDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//li[@class='active']//a[contains(text(),'Consumables')]"), 120);
+			driver.click(By.xpath("//li[@class='active']//a[contains(text(),'Consumables')]"));
+		}
+
+		public void selectBatchNoFromBatchDetailsDirectIssuePage(String batchNo) {
+			driver.pauseExecutionFor(5000);
+			WebElement element =driver.findElement(By.xpath("//td[contains(text(),'"+batchNo+"')]"));
+			driver.clickByJS(TTWebsiteDriver.driver, element);
+			logger.info("Batch No Clicked");
+		}
+
+		public void selectOthersTabDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("(//a[contains(text(),'Other')])[2]"), 10);
+			driver.click(By.xpath("(//a[contains(text(),'Other')])[2]"));
+		}
+
+		public void selectThirdSerialNumberDirectIssuePage() {
+			try {
+			driver.pauseExecutionFor(5000);
+			WebElement element =driver.findElement(By.xpath("//table[@id='tbldrugitemdesc']//tbody/tr[3]/td[contains(text(),'3')][1]"));
+			driver.clickByJS(TTWebsiteDriver.driver, element);
+			logger.info("Third Serial No Clicked");
+			}
+			catch (Exception e) {}
+		}
+
+		public void clickNoButtonOnDeletePopupDirectIssuePage() {
+			try {
+			driver.waitForElementPresent(By.xpath("//a[@id='NoCheckfordeleterow']"), 10);
+			driver.findElement(By.xpath("//a[@id='NoCheckfordeleterow']")).click();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+		public void clickYesButtonOnDeletePopupDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='YesCheckfordeleterow']"), 120);
+			driver.findElement(By.xpath("//a[@id='YesCheckfordeleterow']")).click();
+		}
+
+		public void selectSubstitudeDirectIssuePage(String substitude) {
+			try {
+				driver.waitForElementPresent(By.xpath("//table[@id='tblSubstitute']//td[contains(text(),'"+substitude+"')]"), 120);
+				driver.findElement(By.xpath("//table[@id='tblSubstitute']//td[contains(text(),'"+substitude+"')]")).click();
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+
+		}
+
+		public void enterIssueQuantityDirectIssuePage(String item, String quantity) {
+			driver.pauseExecutionFor(5000);
+			driver.waitForElementPresent(By.xpath("//table[@id='tbldrugitemdesc']//td[contains(text(),'"+item+"')]//following::input[1]"), 120);
+			driver.findElement(By.xpath("//table[@id='tbldrugitemdesc']//td[contains(text(),'"+item+"')]//following::input[1]")).sendKeys(quantity);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void clickNoButtonOnSavePopupDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnsaveno']"), 120);
+			driver.findElement(By.xpath("//a[@id='btnsaveno']")).click();
+		}
+
+		public void clickYesButtonOnSavePopupDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnyessaveModal']"), 120);
+			driver.findElement(By.xpath("//a[@id='btnyessaveModal']")).click();
+		}
+
+		public void clickYesButtonOnSaveItemReceiptPage() {
 			driver.waitForElementPresent(By.xpath("//a[@id='btnSaveYes']"), 120);
 			driver.findElement(By.xpath("//a[@id='btnSaveYes']")).click();
 		}
-		catch (Exception e) {
+
+		public void clickNoButtonOnPrintPopupDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnno']"), 120);
+			driver.findElement(By.xpath("//a[@id='btnno']")).click();
 		}
-	}
 
-	public void clickNoButtonOnPrintPopupDirectReceiptPage() {
-		try {
-			driver.waitForElementPresent(By.xpath("//a[@id='btnPrintNo']"), 120);
-			driver.findElement(By.xpath("//a[@id='btnPrintNo']")).click();
+		public void clickClearButtonOnheaderDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='repeat']//i[@class='fa fa-refresh']"), 120);
+			driver.findElement(By.xpath("//a[@id='repeat']//i[@class='fa fa-refresh']")).click();
+			driver.pauseExecutionFor(7000);
 		}
-		catch (Exception e) {	
+
+		public void clickClearButtonOnItemReceiptPage() {
+			driver.waitForElementPresent(By.xpath("//i[@class='fa fa-refresh']"), 120);
+			WebElement clear_btn_element = driver.findElement(By.xpath("//i[@class='fa fa-refresh']"));
+			driver.clickByJS(TTWebsiteDriver.driver, clear_btn_element);
+			driver.pauseExecutionFor(7000);
 		}
-	}
 
-	public void enterFromDateIntendItemsScreen(String date) {
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//input[@id='TxtFrom']"));
-		driver.findElement(By.xpath("//input[@id='TxtFrom']")).clear();
-		driver.findElement(By.xpath("//input[@id='TxtFrom']")).sendKeys(date);
-		driver.findElement(By.xpath("//input[@id='TxtFrom']")).sendKeys(Keys.ENTER);
-	}
-
-	public void enterToDateIntendItemsScreen(String date) {
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//input[@id='TxtTo']"));
-		driver.findElement(By.xpath("//input[@id='TxtTo']")).sendKeys(date);
-	}
-
-	public void enterFromDateItemReceiptScreen(String date) {
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//input[@id='frmdate']"));
-		driver.findElement(By.xpath("//input[@id='frmdate']")).clear();
-		driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(date);
-		driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(Keys.ENTER);
-	}
-
-	public void selectQOHGreaterThanZeroTab() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnQOHgraterthenZero']"), 60);
-		driver.click(By.xpath("//a[@id='btnQOHgraterthenZero']"));
-	}
-
-	public void selectQOHLessThanROLTab() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnQOHlessthenROL']"), 60);
-		driver.click(By.xpath("//a[@id='btnQOHlessthenROL']"));
-	}
-
-	public void selectQOHGreaterThanROLTab() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnQOHgreaterthenROL']"), 60);
-		driver.click(By.xpath("//a[@id='btnQOHgreaterthenROL']"));
-	}
-
-	public void selectAllItemsTab() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnAllItem']"), 60);
-		driver.click(By.xpath("//a[@id='btnAllItem']"));
-	}
-	public void clickOnnewIndentreturnRadioButton() 
-	{
-		driver.waitForElementPresent(NEW_INDENT_RETURN);
-		driver.click(NEW_INDENT_RETURN);
-		if(!driver.findElement(By.xpath("//a[@id='btnreturnackprint']")).isDisplayed()) 
-		{
-			//logger.info("NEW_INDENT_RETURN Data Found");
-			driver.findElement(By.xpath("//input[@id='indretack']")).click();
+		public void enterFromDateDirectIssuePage(String date) {
+			driver.clear(FROM_DATE);
+			driver.findElement(FROM_DATE).sendKeys(date);
 		}
-	}
 
-	public void clickonprintbutton() 
-	{
-		driver.waitForElementPresent(By.xpath("//i[@id='RcvprintdataforSave']"),60);
-		WebElement print_element = driver.findElement(By.xpath("//i[@id='RcvprintdataforSave']"));
-		driver.clickByJS(TTWebsiteDriver.driver, print_element);
-	}
 
-	public void EnterFromDate(String date) {
 
-		driver.waitForElementPresent(By.xpath("//input[@id='txtfrmdate']"),60);
-		driver.findElement(By.xpath("//input[@id='txtfrmdate']")).clear();
-		driver.findElement(By.xpath("//input[@id='txtfrmdate']")).sendKeys(date);
-		driver.findElement(By.xpath("//input[@id='txtfrmdate']")).sendKeys(Keys.ENTER);
-
-	}
-	public void EnterTODate(String date)
-	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txttodate']"),60);
-		driver.findElement(By.xpath("//input[@id='txttodate']")).clear();
-		driver.findElement(By.xpath("//input[@id='txttodate']")).sendKeys(date);
-		driver.findElement(By.xpath("//input[@id='txttodate']")).sendKeys(Keys.ENTER);
-	}
-
-	public void SelectRegularStockRadioButton() 
-	{
-		driver.waitForElementPresent(By.xpath("//input[@id='rbladdtoregstock']"),60);
-		WebElement RegularStockRadioButton_element = driver.findElement(By.xpath("//input[@id='rbladdtoregstock']"));
-		driver.clickByJS(TTWebsiteDriver.driver, RegularStockRadioButton_element);
-	}
-
-	public void selectIndentReturnAcknowledge()
-	{
-		driver.waitForElementPresent(By.xpath("//input[@id='indretack']"),60);
-		driver.findElement(By.xpath("//input[@id='indretack']")).click();	
-	}
-
-	public void clickonNewIndentReturn() 
-	{
-		driver.waitForElementPresent(By.xpath("(//table[@id='newackitemreceipt']//following::tbody//tr[@onclick])[1]"),60);
-		driver.findElement(By.xpath("(//table[@id='newackitemreceipt']//following::tbody//tr[@onclick])[1]")).click();	
-	}
-	public void clickonPrintNoButton() 
-	{	
-		try 
-		{
-			driver.waitForElementPresent(By.xpath("//a[@id='btnnoAckRetPrint']"),60);
-			driver.findElement(By.xpath("//a[@id='btnnoAckRetPrint']")).click();	
+		public void enterToDateDirectIssuePage(String date) {
+			driver.clear(TO_DATE);
+			driver.findElement(TO_DATE).sendKeys(date);
 		}
-		catch (Exception e) {}
-	}
-	public void EnterUHIDnumber(String uhidnumber) {
-		driver.waitForElementPresent(By.xpath("//input[@id='uHidtxt']"),60);
-		driver.findElement(By.xpath("//input[@id='uHidtxt']")).clear();
-		driver.findElement(By.xpath("//input[@id='uHidtxt']")).sendKeys(uhidnumber);
-		driver.findElement(By.xpath("//input[@id='uHidtxt']")).sendKeys(Keys.ENTER);
-	}
 
-	public void selectDoctorName(String doctorname) 
-	{
-		Select sl=new Select(driver.findElement(By.xpath("//select[@id='ddlDoctor']")));
-		sl.selectByVisibleText(doctorname);
-	}
+		public void selectIssuedToFromDropdownDirectIssuePage(String department) {
+			Select departmentDropDown = new Select(driver.findElement(By.xpath("//select[@id='ddlisssuestostation']")));
+			departmentDropDown.selectByVisibleText(department);
+			logger.info("Following Issued to has been selected from Dropdown : " + department);
+		}
 
-	public void clickonZeroStockItems() 
-	{
-		driver.waitForElementPresent(By.id("chkzerostock"),60);
-		driver.findElement(By.id("chkzerostock")).click();
-	}
-	public void selectdrugandconsumables(String drug) 
-	{
-		driver.waitForElementPresent(By.xpath("//td[text()='"+drug+"']"),60);
-		driver.findElement(By.xpath("//td[text()='"+drug+"']")).click();
-	}
+		public void clickSearchButtonDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//i[@class='fa fa-search fa-lg faactnicn']"), 120);
+			driver.findElement(By.xpath("//i[@class='fa fa-search fa-lg faactnicn']")).click();
+		}
 
-	public void clickonBatchNumber(String batchno) 
-	{
-		driver.waitForElementPresent(By.xpath("(//table[@id='tbldrugdtaillist']//tr//td[text()='"+batchno +"'])[1]"),60);
-		driver.findElement(By.xpath("(//table[@id='tbldrugdtaillist']//tr//td[text()='"+batchno +"'])[1]")).click();
-	}
+		public void clickOnFirstOrderFromSearchDirectIssuePage() {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblschIssued']//tbody/tr[1]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblschIssued']//tbody/tr[1]")).click();
+		}
 
-	public void Itemdescriptionquantity(String quantity) 
-	{
-		driver.waitForElementPresent(By.xpath("//input[@id='qty_26769']"),60);
-		driver.findElement(By.xpath("//input[@id='qty_26769']")).sendKeys(quantity);
-	}
 
-	public void saveNothisrecord() 
-	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnno']"),60);
-		driver.findElement(By.xpath("//a[@id='btnno']")).click();
+		// Below Methods are for Direct Receipt Page
 
-	}
-	public void saveYesthisrecord() 
-	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnyes']"),60);
-		driver.findElement(By.xpath("//a[@id='btnyes']")).click();
-	}
+		public void searchAndSelectItemsDirectReceiptPage(String items) {
+			driver.waitForElementPresent(By.xpath("//input[@id='txtSearch']"), 10);
+			driver.findElement(By.xpath("//input[@id='txtSearch']")).clear();
+			driver.findElement(By.xpath("//input[@id='txtSearch']")).sendKeys(items);
+			driver.pauseExecutionFor(5000);
+			driver.findElement(By.xpath("//td[contains(text(),'"+items+"')]")).click();
+			driver.pauseExecutionFor(5000);
+		}
 
-	public void clickonOKbutton() 
-	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnyesPrintModal']"),60);
-		driver.findElement(By.xpath("//a[@id='btnyesPrintModal']")).click();
-	}
+		public void selectConsumablesTabDirectReceiptPage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='tbConsumables']"), 120);
+			driver.click(By.xpath("//a[@id='tbConsumables']"));
+		}
 
-	public void printrecordYesbutton() 
-	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnprintyes']"),60);
-		driver.findElement(By.xpath("//a[@id='btnprintyes']")).click();
-	}
+		public void selectOthersTabDirectReceiptPage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='tbOthers']"), 120);
+			driver.click(By.xpath("//a[@id='tbOthers']"));
+		}
 
-	public void opbillableTODate(String date) 
-	{
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//input[@id='todate']"));
-		driver.findElement(By.xpath("//input[@id='todate']")).clear();
-		driver.findElement(By.xpath("//input[@id='todate']")).sendKeys(date);
-		driver.findElement(By.xpath("//input[@id='todate']")).sendKeys(Keys.ENTER);
-	}
+		public void clickDeleteButtonAgainstAnItem(String item) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::i[1]"), 120);
+			driver.click(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::i[1]"));
+			driver.pauseExecutionFor(3000);
+		}
 
-	public void clickonsearchButton() 
-	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnsearch']//i"),60);
-		WebElement searchButton_element = driver.findElement(By.xpath("//a[@id='btnsearch']//i"));
-		driver.clickByJS(TTWebsiteDriver.driver, searchButton_element);
-		logger.info("Click on Search Button");
-	}
+		public void clickNoButtonOnDeletePopupDirectReceiptPage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnDeleteNo']"), 120);
+			driver.findElement(By.xpath("//a[@id='btnDeleteNo']")).click();
+		}
 
-	public void clickonpatientdetails() 
-	{
-		try {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblPatientDetail']//tr[@onclick]//td"),60);
+		public void clickYesButtonOnDeletePopupDirectReceiptPage() {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnDeleteYes']"), 120);
+			driver.findElement(By.xpath("//a[@id='btnDeleteYes']")).click();
+		}
 
-		List<WebElement> onpatientdetails_list = driver.findElements(By.xpath("//table[@id='tblPatientDetail']//tr[@onclick]//td"));
-		for(int i=1;i<=onpatientdetails_list.size();i++) 
-		{
-			String onpatientdetails_text = driver.findElement(By.xpath("(//table[@id='tblPatientDetail']//tr[@onclick]//td)["+i+"]")).getText();
-			Boolean statusfound=false;
-			if(onpatientdetails_text.equals("Active")) 
-			{
-				driver.findElement(By.xpath("(//table[@id='tblPatientDetail']//tr[@onclick]//td)["+i+"]")).click();
-				statusfound=true;
-				break;
+		public void clickCalculateButtonOnHeaderDirectReceiptPage() {
+			try {
+				driver.waitForElementPresent(By.xpath("//i[@class='fa fa-calculator']"), 10);
+				WebElement cal_btn = driver.findElement(By.xpath("//i[@class='fa fa-calculator']"));
+				driver.clickByJS(TTWebsiteDriver.driver, cal_btn);
 			}
-			if(statusfound==false) 
-			{
-				driver.findElement(By.xpath("//a[@id='btnclosePatientDetail']//i")).click();
+			catch (Exception e) {
+				// TODO: handle exception
 			}
 		}
+
+		public void enterQuantityAgainstAnItem(String item, String qty) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[2]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[2]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[2]")).sendKeys(qty);
+			driver.pauseExecutionFor(3000);
 		}
-		catch (Exception e) {
-			// TODO: handle exception
+
+		public void removePurRateAgainstAnItem(String item) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]")).clear();
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void enterPurRateAgainstAnItem(String item, String rate) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[3]")).sendKeys(rate);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void removeMRPAgainstAnItem(String item) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]")).clear();
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void enterMRPAgainstAnItem(String item, String rate) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[4]")).sendKeys(rate);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void selectBatchTextBoxAgainstAnItemAndClosePopup(String item) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]")).click();
+			driver.pauseExecutionFor(3000);
+			try {
+				driver.waitForElementPresent(By.xpath("//i[@id='batchpop']"));
+				driver.findElement(By.xpath("//i[@id='batchpop']")).click();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
+		public void enterBatchTextBoxAgainstAnItemAndClosePopup(String item, String message) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]")).click();
+			driver.pauseExecutionFor(3000);
+			try {
+				driver.waitForElementPresent(By.xpath("//i[@id='batchpop']"));
+				driver.findElement(By.xpath("//i[@id='batchpop']")).click();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[11]")).sendKeys(message);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void enterExpiryDateAgainstAnItem(String item, String date) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[12]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[12]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[12]")).sendKeys(date);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void enterMRPForSPMarkUpAgainstAnItem(String item, String rate) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[13]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[13]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[13]")).sendKeys(rate);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void enterSGSTAgainstAnItem(String item, String rate) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]")).sendKeys(rate);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void enterCGSTAgainstAnItem(String item, String rate) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]")).sendKeys(rate);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void enterIGSTAgainstAnItem(String item, String rate) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[10]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[10]")).clear();
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[10]")).sendKeys(rate);
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void removeSGSTAgainstAnItem(String item) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[5]")).clear();
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void removeCGSTAgainstAnItem(String item) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[7]")).clear();
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void removeIGSTAgainstAnItem(String item) {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[10]"), 120);
+			driver.findElement(By.xpath("//table[@id='tblgrid']//td[contains(text(),'"+item+"')]//following::input[10]")).clear();
+			driver.pauseExecutionFor(3000);
+		}
+
+		public void clickSaveButtonOnHeaderDirectReceiptPage() {
+			try {
+				driver.pauseExecutionFor(4000);
+				driver.waitForElementPresent(By.xpath("//i[@id='btnsave']"), 10);
+				WebElement SaveBut = driver.findElement(By.xpath("//i[@id='btnsave']"));
+				driver.clickByJS(TTWebsiteDriver.driver, SaveBut);
+			}
+			catch (Exception e) {
+			}
+		}
+
+		public void clickNoButtonOnSavePopupDirectReceiptPage() {
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnSaveNo']"), 10);
+				driver.findElement(By.xpath("//a[@id='btnSaveNo']")).click();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+		public void clickYesButtonOnSavePopupDirectReceiptPage() {
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnSaveYes']"), 10);
+				driver.findElement(By.xpath("//a[@id='btnSaveYes']")).click();
+			}
+			catch (Exception e) {
+			}
+		}
+
+		public void clickNoButtonOnPrintPopupDirectReceiptPage() {
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnPrintNo']"), 10);
+				driver.findElement(By.xpath("//a[@id='btnPrintNo']")).click();
+			}
+			catch (Exception e) {	
+			}
+		}
+
+		public void enterFromDateIntendItemsScreen(String date) {
+			driver.pauseExecutionFor(4000);
+			driver.waitForElementPresent(By.xpath("//input[@id='TxtFrom']"));
+			driver.findElement(By.xpath("//input[@id='TxtFrom']")).clear();
+			driver.findElement(By.xpath("//input[@id='TxtFrom']")).sendKeys(date);
+			driver.findElement(By.xpath("//input[@id='TxtFrom']")).sendKeys(Keys.ENTER);
+		}
+
+		public void enterToDateIntendItemsScreen(String date) {
+			driver.pauseExecutionFor(4000);
+			driver.waitForElementPresent(By.xpath("//input[@id='TxtTo']"));
+			driver.findElement(By.xpath("//input[@id='TxtTo']")).sendKeys(date);
+		}
+
+		public void enterFromDateItemReceiptScreen(String date) {
+			driver.pauseExecutionFor(4000);
+			driver.waitForElementPresent(By.xpath("//input[@id='frmdate']"));
+			driver.findElement(By.xpath("//input[@id='frmdate']")).clear();
+			driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(date);
+			driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(Keys.ENTER);
+		}
+
+		public void selectQOHGreaterThanZeroTab() {
+			driver.pauseExecutionFor(3000);
+			driver.waitForElementPresent(By.xpath("//a[@id='btnQOHgraterthenZero']"), 60);
+			driver.click(By.xpath("//a[@id='btnQOHgraterthenZero']"));
+		}
+
+		public void selectQOHLessThanROLTab() {
+			driver.pauseExecutionFor(3000);
+			driver.waitForElementPresent(By.xpath("//a[@id='btnQOHlessthenROL']"), 60);
+			driver.click(By.xpath("//a[@id='btnQOHlessthenROL']"));
+		}
+
+		public void selectQOHGreaterThanROLTab() {
+			driver.pauseExecutionFor(3000);
+			driver.waitForElementPresent(By.xpath("//a[@id='btnQOHgreaterthenROL']"), 60);
+			driver.click(By.xpath("//a[@id='btnQOHgreaterthenROL']"));
+		}
+
+		public void selectAllItemsTab() {
+			driver.pauseExecutionFor(3000);
+			driver.waitForElementPresent(By.xpath("//a[@id='btnAllItem']"), 60);
+			driver.click(By.xpath("//a[@id='btnAllItem']"));
+		}
+		public void clickOnnewIndentreturnRadioButton() 
+		{
+			driver.waitForElementPresent(NEW_INDENT_RETURN);
+			driver.click(NEW_INDENT_RETURN);
+			if(!driver.findElement(By.xpath("//a[@id='btnreturnackprint']")).isDisplayed()) 
+			{
+				//logger.info("NEW_INDENT_RETURN Data Found");
+				driver.findElement(By.xpath("//input[@id='indretack']")).click();
+			}
+		}
+
+		public void clickonprintbutton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//i[@id='RcvprintdataforSave']"),10);
+				WebElement print_element = driver.findElement(By.xpath("//i[@id='RcvprintdataforSave']"));
+				driver.clickByJS(TTWebsiteDriver.driver, print_element);
+			}
+			catch (Exception e) {}
+		}
+
+		public void EnterFromDate(String date) {
+
+			driver.waitForElementPresent(By.xpath("//input[@id='txtfrmdate']"),10);
+			driver.findElement(By.xpath("//input[@id='txtfrmdate']")).clear();
+			driver.findElement(By.xpath("//input[@id='txtfrmdate']")).sendKeys(date);
+			driver.findElement(By.xpath("//input[@id='txtfrmdate']")).sendKeys(Keys.ENTER);
+
+		}
+		public void EnterTODate(String date)
+		{
+			driver.waitForElementPresent(By.xpath("//input[@id='txttodate']"),10);
+			driver.findElement(By.xpath("//input[@id='txttodate']")).clear();
+			driver.findElement(By.xpath("//input[@id='txttodate']")).sendKeys(date);
+			driver.findElement(By.xpath("//input[@id='txttodate']")).sendKeys(Keys.ENTER);
+		}
+
+		public void SelectRegularStockRadioButton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//input[@id='rbladdtoregstock']"),10);
+				WebElement RegularStockRadioButton_element = driver.findElement(By.xpath("//input[@id='rbladdtoregstock']"));
+				driver.clickByJS(TTWebsiteDriver.driver, RegularStockRadioButton_element);
+			}
+			catch (Exception e) {
+			}
+		}
+
+		public void selectIndentReturnAcknowledge()
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//input[@id='indretack']"),10);
+				driver.findElement(By.xpath("//input[@id='indretack']")).click();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+		public void clickonNewIndentReturn() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("(//table[@id='newackitemreceipt']//following::tbody//tr[@onclick])[1]"),10);
+				driver.findElement(By.xpath("(//table[@id='newackitemreceipt']//following::tbody//tr[@onclick])[1]")).click();
+			}
+			catch (Exception e) {
+			}
+		}
+		public void clickonPrintNoButton() 
+		{	
+			try 
+			{
+				driver.waitForElementPresent(By.xpath("//a[@id='btnnoAckRetPrint']"),10);
+				driver.findElement(By.xpath("//a[@id='btnnoAckRetPrint']")).click();	
+			}
+			catch (Exception e) {}
+		}
+		public void EnterUHIDnumber(String uhidnumber) {
+			driver.waitForElementPresent(By.xpath("//input[@id='uHidtxt']"),10);
+			driver.findElement(By.xpath("//input[@id='uHidtxt']")).clear();
+			driver.findElement(By.xpath("//input[@id='uHidtxt']")).sendKeys(uhidnumber);
+			driver.findElement(By.xpath("//input[@id='uHidtxt']")).sendKeys(Keys.ENTER);
+		}
+
+		public void selectDoctorName(String doctorname) 
+		{
+			Select sl=new Select(driver.findElement(By.xpath("//select[@id='ddlDoctor']")));
+			sl.selectByVisibleText(doctorname);
+		}
+
+		public void clickonZeroStockItems() 
+		{
+			driver.waitForElementPresent(By.id("chkzerostock"),60);
+			driver.findElement(By.id("chkzerostock")).click();
+		}
+		public void selectdrugandconsumables(String drug) 
+		{
+			driver.waitForElementPresent(By.xpath("//td[text()='"+drug+"']"),60);
+			driver.findElement(By.xpath("//td[text()='"+drug+"']")).click();
+		}
+
+		public void clickonBatchNumber(String batchno) 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("(//table[@id='tbldrugdtaillist']//tr//td[text()='"+batchno +"'])[1]"),60);
+				driver.findElement(By.xpath("(//table[@id='tbldrugdtaillist']//tr//td[text()='"+batchno +"'])[1]")).click();
+			}
+			catch (Exception e) {}
+		}
+
+		public void Itemdescriptionquantity(String quantity) 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//input[contains(@id,'qty_')]"),60);
+				driver.findElement(By.xpath("//input[contains(@id,'qty_')]")).sendKeys(quantity);
+			}
+			catch (Exception e) {}
+		}
+
+		public void saveNothisrecord() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnno']"),10);
+				driver.findElement(By.xpath("//a[@id='btnno']")).click();
+			}
+			catch (Exception e) {}
+
+		}
+		public void saveYesthisrecord() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnyes']"),10);
+				driver.findElement(By.xpath("//a[@id='btnyes']")).click();
+			}
+			catch (Exception e) {}
+		}
+
+		public void clickonOKbutton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnyesPrintModal']"),10);
+				driver.findElement(By.xpath("//a[@id='btnyesPrintModal']")).click();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+		public void printrecordYesbutton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnprintyes']"),10);
+				driver.findElement(By.xpath("//a[@id='btnprintyes']")).click();
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+		public void opbillableTODate(String date) throws InterruptedException 
+		{
+			Thread.sleep(2000);		
+			driver.waitForElementPresent(By.xpath("//input[@id='todate']"));
+			driver.findElement(By.xpath("//input[@id='todate']")).clear();
+			driver.findElement(By.xpath("//input[@id='todate']")).sendKeys(date);
+			driver.findElement(By.xpath("//input[@id='todate']")).sendKeys(Keys.ENTER);
+		}
+
+		public void clickonsearchButton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnsearch']//i"),10);
+				WebElement searchButton_element = driver.findElement(By.xpath("//a[@id='btnsearch']//i"));
+				driver.clickByJS(TTWebsiteDriver.driver, searchButton_element);
+				logger.info("Click on Search Button");
+			}
+			catch (Exception e) {}
+		}
+
+		public void clickonpatientdetails() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//table[@id='tblPatientDetail']//tr[@onclick]//td"),10);
+
+				List<WebElement> onpatientdetails_list = driver.findElements(By.xpath("//table[@id='tblPatientDetail']//tr[@onclick]//td"));
+				for(int i=1;i<=onpatientdetails_list.size();i++) 
+				{
+					String onpatientdetails_text = driver.findElement(By.xpath("(//table[@id='tblPatientDetail']//tr[@onclick]//td)["+i+"]")).getText();
+					Boolean statusfound=false;
+					if(onpatientdetails_text.equals("Active")) 
+					{
+						driver.findElement(By.xpath("(//table[@id='tblPatientDetail']//tr[@onclick]//td)["+i+"]")).click();
+						statusfound=true;
+						break;
+					}
+					if(statusfound==false) 
+					{
+						driver.findElement(By.xpath("//a[@id='btnclosePatientDetail']//i")).click();
+					}
+				}
+			}
+			catch (Exception e) {}
+		}
+
+		public void clickoncancelbutton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnCancleOrder']//i"),10);
+				WebElement cancel_btn_element = driver.findElement(By.xpath("//a[@id='btnCancleOrder']//i"));
+				driver.clickByJS(TTWebsiteDriver.driver, cancel_btn_element);
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
+		}
+
+		public void clickoncancelcheckbox()
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//input[@id='checked']"),10);
+				WebElement cancelcheckbox_element = driver.findElement(By.xpath("//input[@id='checked']"));
+				driver.clickByJS(TTWebsiteDriver.driver, cancelcheckbox_element);
+			}
+			catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+
+		public void clickonNoSaverecord() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnCancleno']"),10);
+				WebElement clickonNoSaverecord = driver.findElement(By.xpath("//a[@id='btnCancleno']"));
+				driver.clickByJS(TTWebsiteDriver.driver, clickonNoSaverecord);
+			}
+			catch (Exception e) {}
+		}
+
+		public void clickonYesSaverecord() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnCancleyes']"),10);
+				WebElement clickonYesSaverecord = driver.findElement(By.xpath("//a[@id='btnCancleyes']"));
+				driver.clickByJS(TTWebsiteDriver.driver, clickonYesSaverecord);
+			}
+			catch (Exception e) {}
+		}
+
+		public void clickonconsumptioncancelOKbutton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnyesCancleModelHide']"),10);
+				WebElement clickonconsumptioncancelOKbutton = driver.findElement(By.xpath("//a[@id='btnyesCancleModelHide']"));
+				driver.clickByJS(TTWebsiteDriver.driver, clickonconsumptioncancelOKbutton);
+			}
+			catch (Exception e) {}
+		}
+
+		public void clickonPrintButton() 
+		{
+			try {
+				driver.waitForElementPresent(By.xpath("//a[@id='btnPoPrint']"),10);
+				WebElement clickonPrintButton = driver.findElement(By.xpath("//a[@id='btnPoPrint']"));
+				driver.clickByJS(TTWebsiteDriver.driver, clickonPrintButton);
+			}
+			catch (Exception e) {}
 		}
 	}
-
-	public void clickoncancelbutton() 
-	{
-		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnCancleOrder']//i"),60);
-		WebElement cancel_btn_element = driver.findElement(By.xpath("//a[@id='btnCancleOrder']//i"));
-		driver.clickByJS(TTWebsiteDriver.driver, cancel_btn_element);
-		}
-		catch (Exception e) {
-			// TODO: handle exception
-		}
-	}
-
-	public void clickoncancelcheckbox()
-	{
-		try {
-			driver.waitForElementPresent(By.xpath("//input[@id='checked']"),60);
-			WebElement cancelcheckbox_element = driver.findElement(By.xpath("//input[@id='checked']"));
-			driver.clickByJS(TTWebsiteDriver.driver, cancelcheckbox_element);
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
-
-	public void clickonNoSaverecord() 
-	{
-		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnCancleno']"),60);
-		WebElement clickonNoSaverecord = driver.findElement(By.xpath("//a[@id='btnCancleno']"));
-		driver.clickByJS(TTWebsiteDriver.driver, clickonNoSaverecord);
-		}
-		catch (Exception e) {}
-	}
-
-	public void clickonYesSaverecord() 
-	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnCancleyes']"),60);
-		WebElement clickonYesSaverecord = driver.findElement(By.xpath("//a[@id='btnCancleyes']"));
-		driver.clickByJS(TTWebsiteDriver.driver, clickonYesSaverecord);
-
-	}
-
-	public void clickonconsumptioncancelOKbutton() 
-	{
-		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnyesCancleModelHide']"),60);
-		WebElement clickonconsumptioncancelOKbutton = driver.findElement(By.xpath("//a[@id='btnyesCancleModelHide']"));
-		driver.clickByJS(TTWebsiteDriver.driver, clickonconsumptioncancelOKbutton);
-		}
-		catch (Exception e) {}
-	}
-
-	public void clickonPrintButton() 
-	{
-		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnPoPrint']"),60);
-		WebElement clickonPrintButton = driver.findElement(By.xpath("//a[@id='btnPoPrint']"));
-		driver.clickByJS(TTWebsiteDriver.driver, clickonPrintButton);
-		}
-		catch (Exception e) {}
-	}
-}
 

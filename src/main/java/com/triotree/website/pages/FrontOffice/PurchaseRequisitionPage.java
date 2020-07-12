@@ -84,9 +84,13 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 	}
 
 	public void clickOnYesButtonOnSaveConfirmationPopup() {
-		driver.waitForElementPresent(YES_BTN_SAVE_CONFIRMATION_POPUP);
-		driver.click(YES_BTN_SAVE_CONFIRMATION_POPUP);
-		logger.info("Yes Button on save confirmation popup clicked");
+		try {
+			driver.waitForElementPresent(YES_BTN_SAVE_CONFIRMATION_POPUP);
+			driver.click(YES_BTN_SAVE_CONFIRMATION_POPUP);
+			logger.info("Yes Button on save confirmation popup clicked");
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public boolean verifyPurchaseSavedSuccessMessage(String message) {
@@ -100,7 +104,10 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 	}
 
 	public void selectInventory(String inventory) {
-		driver.findElement(By.xpath("//a[contains(text(),'"+inventory+"')]")).click();
+		try {
+			driver.findElement(By.xpath("//a[contains(text(),'"+inventory+"')]")).click();
+		}
+		catch (Exception e) {}
 	}
 
 	public void searchItemsFromSmartSearchAndSelect(String items) {
@@ -114,20 +121,24 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 
 	public void searchItems(String items) {
 		try {
-		driver.findElement(Item_Search).clear();
-		driver.findElement(Item_Search).sendKeys(items);
-		driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+items+"')]"));
-		driver.findElement(By.xpath("//td[contains(text(),'"+items+"')]")).click();
-		logger.info("Following item has been searched from Smart Search Text Box "+items);
+			driver.findElement(Item_Search).clear();
+			driver.findElement(Item_Search).sendKeys(items);
+			driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+items+"')]"));
+			driver.findElement(By.xpath("//td[contains(text(),'"+items+"')]")).click();
+			logger.info("Following item has been searched from Smart Search Text Box "+items);
 		}
 		catch (Exception e) {
 		}
 
 	}
 	public void selectTab(String tab) {
-		WebElement element =driver.findElement(By.xpath("//a[contains(text(),'"+tab+"')]"));
-		driver.clickByJS(TTWebsiteDriver.driver, element);
-		logger.info("Following tab has been clicked "+tab);
+		try {
+			WebElement element =driver.findElement(By.xpath("//a[contains(text(),'"+tab+"')]"));
+			driver.clickByJS(TTWebsiteDriver.driver, element);
+			logger.info("Following tab has been clicked "+tab);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void enterQuantityForSelectedItems() {		
@@ -142,20 +153,32 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 	}
 
 	public void clickNoButtonOnPrintAlertPopup() {
-		driver.waitForElementPresent(NO_BTN_PRINT_ALERT);
-		driver.click(NO_BTN_PRINT_ALERT);
-		logger.info("No Button on Print Alert Popup clicked");
+		try {
+			driver.waitForElementPresent(NO_BTN_PRINT_ALERT);
+			driver.click(NO_BTN_PRINT_ALERT);
+			logger.info("No Button on Print Alert Popup clicked");
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickOnClearButton() {
-		driver.waitForElementPresent(CLEAR_BUTTON);
-		driver.click(CLEAR_BUTTON);
-		logger.info("Clear Button Clicked");
+		try {
+			driver.waitForElementPresent(CLEAR_BUTTON);
+			driver.click(CLEAR_BUTTON);
+			logger.info("Clear Button Clicked");
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickOnSearchButtonOnPurchaseRequisitionList() {
-		driver.waitForElementPresent(SEARCH_BTN_REQ_LIST);
-		driver.click(SEARCH_BTN_REQ_LIST);
+		try {
+			driver.waitForElementPresent(SEARCH_BTN_REQ_LIST);
+			driver.click(SEARCH_BTN_REQ_LIST);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public boolean verifyPurchaseRequisitionPopupOpened() {
@@ -169,21 +192,29 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 	}
 
 	public void selectFirstPurchaseRequisitionFromPurchaseRequisitionPopup() {
-		driver.waitForElementPresent(FIRST_PURCHASE_REQ_FROM_POPUP);
-		driver.click(FIRST_PURCHASE_REQ_FROM_POPUP);
+		try {
+			driver.waitForElementPresent(FIRST_PURCHASE_REQ_FROM_POPUP);
+			driver.click(FIRST_PURCHASE_REQ_FROM_POPUP);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickOnModifyButton() {
-		driver.waitForElementPresent(MODIFY_BUTTON);
-		driver.click(MODIFY_BUTTON);
-		logger.info("Modify Button Clicked");
+		try {
+			driver.waitForElementPresent(MODIFY_BUTTON);
+			WebElement MODIFY_BU = driver.findElement(MODIFY_BUTTON);
+			driver.clickByJS(TTWebsiteDriver.driver, MODIFY_BU);
+			logger.info("Modify Button Clicked");
+		}
+		catch (Exception e) {}
 	}
 
 	public void clickOnYesButtonOnModifyAlertPopup() {
 		try {
-		driver.waitForElementPresent(YES_BUTTON_MODIFY_ALERT);
-		driver.click(YES_BUTTON_MODIFY_ALERT);
-		logger.info("Yes Button on Modify Alert Popup clicked");
+			driver.waitForElementPresent(YES_BUTTON_MODIFY_ALERT);
+			driver.click(YES_BUTTON_MODIFY_ALERT);
+			logger.info("Yes Button on Modify Alert Popup clicked");
 		}
 		catch (Exception e) {}
 	}
@@ -231,13 +262,13 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 
 	public void enterQuantityAgainstAnItem(String item, String qty) {
 		try {
-		driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+item+"')]//following::input[1]"), 120);
-		driver.findElement(By.xpath("//td[contains(text(),'"+item+"')]//following::input[1]")).clear();
-		driver.findElement(By.xpath("//td[contains(text(),'"+item+"')]//following::input[1]")).sendKeys(qty);
-		driver.pauseExecutionFor(3000);
+			driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+item+"')]//following::input[1]"), 120);
+			driver.findElement(By.xpath("//td[contains(text(),'"+item+"')]//following::input[1]")).clear();
+			driver.findElement(By.xpath("//td[contains(text(),'"+item+"')]//following::input[1]")).sendKeys(qty);
+			driver.pauseExecutionFor(3000);
 		}
 		catch (Exception e) {
-			
+
 		}
 	}
 
@@ -256,96 +287,155 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 	}
 
 	public void clickNoButtonOnApprovePopup() {
-		driver.waitForElementPresent(By.xpath("//a[@id='Rejectednoid']"), 120);
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='Rejectednoid']"), 10);
 		driver.findElement(By.xpath("//a[@id='Rejectednoid']")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickYesButtonOnApprovePopup() {
-		driver.waitForElementPresent(By.xpath("//a[@id='Rejectedyesid']"), 120);
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='Rejectedyesid']"), 10);
 		driver.findElement(By.xpath("//a[@id='Rejectedyesid']")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickRejectBtnPurchaseRequisitionApprovalPage() {
-		driver.pauseExecutionFor(5000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnreject']//i[@class='fa fa-times']"), 80);
+		try {
+		driver.pauseExecutionFor(4000);
+		driver.waitForElementPresent(By.xpath("//a[@id='btnreject']//i[@class='fa fa-times']"), 10);
 		driver.click(By.xpath("//a[@id='btnreject']//i[@class='fa fa-times']"));
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void enterRemarksPurchaseRequisitionApprovalPage() {
-		driver.pauseExecutionFor(5000);
-		driver.waitForElementPresent(By.xpath("//textarea[@id='txtpurchase']"), 80);
-		driver.findElement(By.xpath("//textarea[@id='txtpurchase']")).sendKeys("Testing Remarks");;
+		try {
+		driver.pauseExecutionFor(3000);
+		driver.waitForElementPresent(By.xpath("//textarea[@id='txtpurchase']"), 10);
+		driver.findElement(By.xpath("//textarea[@id='txtpurchase']")).sendKeys("Testing Remarks");
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickNoButtonOnRejectPopup() {
-		driver.waitForElementPresent(By.xpath("//a[@id='Rejectednoid']"), 120);
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='Rejectednoid']"), 10);
 		driver.findElement(By.xpath("//a[@id='Rejectednoid']")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickYesButtonOnRejectPopup() {
-		driver.waitForElementPresent(By.xpath("//a[@id='Rejectedyesid']"), 120);
-		driver.findElement(By.xpath("//a[@id='Rejectedyesid']")).click();
+		try {
+			driver.waitForElementPresent(By.xpath("//a[@id='Rejectedyesid']"), 10);
+			driver.findElement(By.xpath("//a[@id='Rejectedyesid']")).click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	//Below locators are for Purchase Order Test
 
 
 	public void clickSaveButtonOnPurchaseOrderPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='save']//i[@class='fa fa-save']"), 120);
-		driver.findElement(By.xpath("//a[@id='save']//i[@class='fa fa-save']")).click();
+		try {
+			driver.waitForElementPresent(By.xpath("//a[@id='save']//i[@class='fa fa-save']"), 10);
+			driver.findElement(By.xpath("//a[@id='save']//i[@class='fa fa-save']")).click();
+		}
+		catch (Exception e) {}
 	}
 
 	public void clickCalculateButtonOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(6000);
-		driver.waitForElementPresent(By.xpath("//i[@class='fa fa-calculator']"), 120);
-		driver.findElement(By.xpath("//i[@class='fa fa-calculator']")).click();
+		try {
+			driver.pauseExecutionFor(4000);
+			driver.waitForElementPresent(By.xpath("//i[@class='fa fa-calculator']"), 10);
+			driver.findElement(By.xpath("//i[@class='fa fa-calculator']")).click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void clickSchemeButtonOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(8000);
-		driver.waitForElementPresent(By.xpath("//i[@class='fa fa-gift']"), 120);
-		driver.findElement(By.xpath("//i[@class='fa fa-gift']")).click();
+		try {
+			driver.pauseExecutionFor(4000);
+			driver.waitForElementPresent(By.xpath("//i[@class='fa fa-gift']"), 10);
+			driver.findElement(By.xpath("//i[@class='fa fa-gift']")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 
 	public void clickConsumablesTabOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(8000);
-		driver.waitForElementPresent(By.xpath("//ul[@id='tabdrugs']//a[contains(text(),'Consumables')]"), 120);
-		driver.findElement(By.xpath("//ul[@id='tabdrugs']//a[contains(text(),'Consumables')]")).click();
+		try {
+			driver.pauseExecutionFor(4000);
+			driver.waitForElementPresent(By.xpath("//ul[@id='tabdrugs']//a[contains(text(),'Consumables')]"), 10);
+			driver.findElement(By.xpath("//ul[@id='tabdrugs']//a[contains(text(),'Consumables')]")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickMedicineTabOnPurchaseOrderPage() {
+		try {
 		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//a[contains(text(),'Medicine')]"), 120);
+		driver.waitForElementPresent(By.xpath("//a[contains(text(),'Medicine')]"), 10);
 		driver.findElement(By.xpath("//a[contains(text(),'Medicine')]")).click();
+		}
+		catch (Exception e) {}
 	}
 
 	public void clickOtherTabOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(8000);
-		driver.waitForElementPresent(By.xpath("//ul[@id='tabdrugs']//a[contains(text(),'Other')]"), 120);
+		try {
+		driver.pauseExecutionFor(4000);
+		driver.waitForElementPresent(By.xpath("//ul[@id='tabdrugs']//a[contains(text(),'Other')]"), 10);
 		driver.findElement(By.xpath("//ul[@id='tabdrugs']//a[contains(text(),'Other')]")).click();
+		}
+		catch (Exception e) {}
 	}
 
 
 	public void selectSuppliersFromPurchaseOrderPage(String station) {
-		driver.waitForElementPresent(By.xpath("//select[@id='ddlsupplierlist']"), 120);
+		try {
+		driver.waitForElementPresent(By.xpath("//select[@id='ddlsupplierlist']"), 10);
 		Select stationDropDown = new Select(driver.findElement(By.xpath("//select[@id='ddlsupplierlist']")));
 		stationDropDown.selectByVisibleText(station);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void searchItemsPurchaseOrderPageAndVerifyItsSearchable(String station) {
-		driver.pauseExecutionFor(8000);
-		driver.waitForElementPresent(By.xpath("//input[@id='searchDirectIssueDrugs']"), 120);
+		try {
+		driver.pauseExecutionFor(2000);
+		driver.waitForElementPresent(By.xpath("//input[@id='searchDirectIssueDrugs']"), 10);
 		driver.findElement(By.xpath("//input[@id='searchDirectIssueDrugs']")).clear();
 		driver.findElement(By.xpath("//input[@id='searchDirectIssueDrugs']")).sendKeys(station);
 		driver.pauseExecutionFor(3000);
 		driver.findElement(By.xpath("//table[@class='table']//td[contains(text(),'"+station+"')]")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickOnItemCode(String item) {
+		try {
 		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+item+"')]"), 120);
+		driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+item+"')]"), 10);
 		driver.click(By.xpath("//td[contains(text(),'"+item+"')]"));
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public boolean isDeletePopupDisplayedOnPurchaseOrderPage() {
@@ -355,115 +445,165 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 	public boolean isPrintPopupDisplayedOnPurchaseOrderPage() {
 		return driver.isElementPresent(By.xpath("//section[contains(text(),'generated successfully. Print?')]"), 60);
 	}
-	
+
 	public boolean isApprovalProcessPopupDisplayedOnPurchaseOrderPage() {
 		return driver.isElementPresent(By.xpath("//label[contains(text(),'On modifying this PO ,the approval process will st')]"), 60);
 	}
 
 	public void clickNoButtonPrintPopupOnPurchaseOrderPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnsavedprintpono']"), 60);
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='btnsavedprintpono']"), 10);
 		driver.click(By.xpath("//a[@id='btnsavedprintpono']"));
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
-	
+
 	public void clickNoButtonApprovalProcessPopupOnPurchaseOrderPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnisModifypono']"), 60);
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='btnisModifypono']"), 10);
 		driver.click(By.xpath("//a[@id='btnisModifypono']"));
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
-	
+
 	public void clickYesButtonApprovalProcessPopupOnPurchaseOrderPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnisModifypoyes']"), 60);
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='btnisModifypoyes']"), 10);
 		driver.click(By.xpath("//a[@id='btnisModifypoyes']"));
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void clickNoButtonOnPlaceMoreOrderPopupOnPurchaseOrderPage() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnplaceotherPOno']"), 60);
+		try {
+		driver.waitForElementPresent(By.xpath("//a[@id='btnplaceotherPOno']"), 10);
 		driver.click(By.xpath("//a[@id='btnplaceotherPOno']"));
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public boolean isSavePopupDisplayedOnPurchaseOrderPage() {
-		return driver.isElementPresent(By.xpath("//label[contains(text(),'Save this record ?')]"), 60);
+		return driver.isElementPresent(By.xpath("//label[contains(text(),'Save this record ?')]"), 10);
 	}
 
 	public boolean isFreeItemsPopupDisplayedOnPurchaseOrderPage() {
-		return driver.isElementPresent(By.xpath("//span[contains(text(),'Free Items')]"), 60);
+		return driver.isElementPresent(By.xpath("//span[contains(text(),'Free Items')]"), 10);
 	}
 
 	public void closeFreeItemsPopup() {
-		driver.isElementPresent(By.xpath("//div[@id='pofreeItems_Modal']//i[@class='fa fa-times']"), 70);
+		try {
+		driver.isElementPresent(By.xpath("//div[@id='pofreeItems_Modal']//i[@class='fa fa-times']"), 10);
 		driver.click(By.xpath("//div[@id='pofreeItems_Modal']//i[@class='fa fa-times']"));
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickNoOnDeletePopupOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnchkmrgno']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnchkmrgno']")).click();
+		try {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnchkmrgno']"), 10);
+			driver.findElement(By.xpath("//a[@id='btnchkmrgno']")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickYesOnDeletePopupOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnchkmrgyes']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnchkmrgyes']")).click();
+		try {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnchkmrgyes']"), 10);
+			driver.findElement(By.xpath("//a[@id='btnchkmrgyes']")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickNoOnSavePopupOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnsavepono']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnsavepono']")).click();
+		try {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnsavepono']"), 10);
+			driver.findElement(By.xpath("//a[@id='btnsavepono']")).click();
+		}
+		catch (Exception e) {}
 	}
 
 	public void clickYesOnSavePopupOnPurchaseOrderPage() {
-		driver.pauseExecutionFor(3000);
-		driver.waitForElementPresent(By.xpath("//a[@id='btnsavepoyes']"), 120);
-		driver.findElement(By.xpath("//a[@id='btnsavepoyes']")).click();
+		try {
+			driver.waitForElementPresent(By.xpath("//a[@id='btnsavepoyes']"), 10);
+			driver.findElement(By.xpath("//a[@id='btnsavepoyes']")).click();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void clickFreeButtonAgainstItem(String item) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tblpurchseOrder']//td[contains(text(),'"+item+"')]//following::input[@value='Free'][1]"), 60);
-		driver.findElement(By.xpath("//table[@id='tblpurchseOrder']//td[contains(text(),'"+item+"')]//following::input[@value='Free'][1]")).click();
+		try {
+			driver.waitForElementPresent(By.xpath("//table[@id='tblpurchseOrder']//td[contains(text(),'"+item+"')]//following::input[@value='Free'][1]"), 60);
+			driver.findElement(By.xpath("//table[@id='tblpurchseOrder']//td[contains(text(),'"+item+"')]//following::input[@value='Free'][1]")).click();
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickSameItemRadioButton() {
-		driver.waitForElementPresent(By.xpath("//div[@id='pofreeItems_Modal']//span[1]//input[1]"));
-		driver.click(By.xpath("//div[@id='pofreeItems_Modal']//span[1]//input[1]"));
+		try {
+			driver.waitForElementPresent(By.xpath("//div[@id='pofreeItems_Modal']//span[1]//input[1]"));
+			driver.click(By.xpath("//div[@id='pofreeItems_Modal']//span[1]//input[1]"));
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickDifferentItemRadioButton() {
-		driver.waitForElementPresent(By.xpath("//div[@id='pofreeItems_Modal']//span[2]//input[1]"));
-		driver.click(By.xpath("//div[@id='pofreeItems_Modal']//span[2]//input[1]"));
+		try {
+			driver.waitForElementPresent(By.xpath("//div[@id='pofreeItems_Modal']//span[2]//input[1]"));
+			driver.click(By.xpath("//div[@id='pofreeItems_Modal']//span[2]//input[1]"));
+		}
+		catch (Exception e) {}
 	}	
 
 	public void clickPurchaseDetailsTab() {
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//a[contains(text(),'Purchase Details')]"));
-		driver.click(By.xpath("//a[contains(text(),'Purchase Details')]"));
+		try {
+			driver.waitForElementPresent(By.xpath("//a[contains(text(),'Purchase Details')]"));
+			driver.click(By.xpath("//a[contains(text(),'Purchase Details')]"));
+		}
+		catch (Exception e) {}
 	}
 
 	public void enterFreeQuantityForSelectedMedicinesOnPurchaseOrderPage() {
+		try {
+			List<WebElement> elements = driver.findElements(By.xpath("//input[@name='txtFreeNewQuantity']"));
+			int totalMedicines = elements.size();
 
-
-		List<WebElement> elements = driver.findElements(By.xpath("//input[@name='txtFreeNewQuantity']"));
-		int totalMedicines = elements.size();
-
-		for(int i=totalMedicines;i>=1;i--) {
-			driver.pauseExecutionFor(3000);
-			driver.findElement(By.xpath("(//input[@name='txtFreeNewQuantity'])["+i+"]")).clear();
-			driver.findElement(By.xpath("(//input[@name='txtFreeNewQuantity'])["+i+"]")).sendKeys("20");
-			
-
+			for(int i=totalMedicines;i>=1;i--) {
+				driver.pauseExecutionFor(3000);
+				driver.findElement(By.xpath("(//input[@name='txtFreeNewQuantity'])["+i+"]")).clear();
+				driver.findElement(By.xpath("(//input[@name='txtFreeNewQuantity'])["+i+"]")).sendKeys("20");
+			}
 		}
+		catch (Exception e) {}
 	}
 
 	public void enterQuantityForSelectedMedicinesOnPurchaseDetailsTabS() {
+		try {
+			driver.pauseExecutionFor(3000);
+			List<WebElement> elements = driver.findElements(By.xpath("//input[@name='txtNewQuantity']"));
+			int totalMedicines = elements.size();
 
-		driver.pauseExecutionFor(3000);
-		List<WebElement> elements = driver.findElements(By.xpath("//input[@name='txtNewQuantity']"));
-		int totalMedicines = elements.size();
-
-		for(int i=totalMedicines;i>=1;i--) {
-			driver.findElement(By.xpath("(//input[@name='txtNewQuantity'])["+i+"]")).clear();
-			driver.findElement(By.xpath("(//input[@name='txtNewQuantity'])["+i+"]")).sendKeys("10");
+			for(int i=totalMedicines;i>=1;i--) {
+				driver.findElement(By.xpath("(//input[@name='txtNewQuantity'])["+i+"]")).clear();
+				driver.findElement(By.xpath("(//input[@name='txtNewQuantity'])["+i+"]")).sendKeys("10");
+			}
 		}
-
+		catch (Exception e) {
+		}
 	}
 
 	public void enterRPUForSelectedMedicinesOnPurchaseDetailsTabS() {
@@ -489,13 +629,21 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 	}
 
 	public void selectFirstPurchaseOrderFromPurchaseOrderPopup() {
+		try {
 		driver.waitForElementPresent(By.xpath("//div[@id='popup900']//section[@class='popupBody']//tbody//tr[1]/td[1]"));
 		driver.click(By.xpath("//div[@id='popup900']//section[@class='popupBody']//tbody//tr[1]/td[1]"));
+		}
+		catch (Exception e) {}
 	}
 
 	public void checkSmartCheckbox() {
-		driver.waitForElementPresent(By.xpath("//input[@id='Chksmart_search']"), 60);
+		try {
+		driver.waitForElementPresent(By.xpath("//input[@id='Chksmart_search']"), 10);
 		driver.click(By.xpath("//input[@id='Chksmart_search']"));
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void enterQuantityForSelectedMedicinesOnPurchaseDetailsTabS(String medicine) {
@@ -510,9 +658,9 @@ public class PurchaseRequisitionPage extends HISWebsiteBasePage{
 		driver.findElement(By.xpath("//table[@id='tblpurchseOrder']//td[contains(text(),'"+medicine+"')]//following::input[@class='txtPOInputBox clsnumeric'][2]")).clear();
 		driver.findElement(By.xpath("//table[@id='tblpurchseOrder']//td[contains(text(),'"+medicine+"')]//following::input[@class='txtPOInputBox clsnumeric'][2]")).sendKeys("50");
 	}
-public void printyesbutton() {
-	driver.pauseExecutionFor(3000);
-	driver.findElement(PRINT_YES).click();
-}
+	public void printyesbutton() {
+		driver.pauseExecutionFor(3000);
+		driver.findElement(PRINT_YES).click();
+	}
 
 }

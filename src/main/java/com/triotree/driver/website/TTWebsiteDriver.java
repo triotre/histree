@@ -29,6 +29,7 @@ import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.firefox.internal.ProfilesIni;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
@@ -123,10 +124,10 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		options.addArguments("disable-infobars"); 
 
 		driver.manage().window().maximize();
-		logger.info("Window is maximized");
+		//logger.info("Window is maximized");
 		// for clearing cookies
 		driver.manage().deleteAllCookies();
-		logger.info("All cookies deleted");
+		//logger.info("All cookies deleted");
 		//	driver.get(propertyFile.getProperty("baseUrl"));
 
 	}
@@ -152,9 +153,9 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 	public void waitForElementPresent(By locator, int timeout) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, timeout);
-			logger.info("waiting for locator " + locator);
+			//logger.info("waiting for locator " + locator);
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-			logger.info("Element found");
+			//logger.info("Element found");
 		} catch (Exception e) {
 			e.getStackTrace();
 		}	
@@ -196,7 +197,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 	public boolean waitForPageLoad() {
 		boolean isLoaded = false;
 		try {
-			logger.info("Waiting For Page load via JS");
+			//logger.info("Waiting For Page load via JS");
 			ExpectedCondition<Boolean> pageLoadCondition = new ExpectedCondition<Boolean>() {
 				public Boolean apply(WebDriver driver) {
 					return ((JavascriptExecutor) driver).executeScript(
@@ -215,17 +216,17 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 
 
 	public void quickWaitForElementPresent(By locator){
-		logger.info("quick wait started for "+locator);
+		//logger.info("quick wait started for "+locator);
 		int timeout = 2;
 		turnOffImplicitWaits();
 		for(int i=1;i<=timeout;i++){
 			try{
 				if(driver.findElements(locator).size()==0){
-					pauseExecutionFor(1000);
+					pauseExecutionFor(500);
 					logger.info("waiting...");
 					continue;
 				}else{
-					logger.info("wait over,element found");
+					//logger.info("wait over,element found");
 					turnOnImplicitWaits();
 					break;
 				}			
@@ -238,9 +239,9 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 	public void waitForElementNotPresent(By locator) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, DEFAULT_TIMEOUT);
-			logger.info("waiting for locator " + locator);
+			//logger.info("waiting for locator " + locator);
 			wait.until(ExpectedConditions.not(ExpectedConditions.presenceOfElementLocated(locator)));
-			logger.info("Element found");
+			//logger.info("Element found");
 		} catch (Exception e) {
 			e.getStackTrace();
 		}		
@@ -348,7 +349,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 
 	public void waitForElementPresent(By locator) {
 
-		logger.info("wait started for "+locator);
+		//logger.info("wait started for "+locator);
 		int timeout = 10;
 		turnOffImplicitWaits();
 		boolean isElementFound = false;
@@ -359,7 +360,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 					logger.info("waiting...");
 					continue;
 				}else{
-					logger.info("wait over,element found");
+					//logger.info("wait over,element found");
 					isElementFound =true;
 					turnOnImplicitWaits();
 					pauseExecutionFor(1000);
@@ -488,7 +489,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 
 
 	public void quit() {
-		//driver.quit();
+		driver.quit();
 	}
 
 	public List<WebElement> findElements(By by) {
@@ -664,7 +665,9 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 	 * @returnType: boolean
 	 */
 	public boolean waitForElementToBeInVisible(By locator, int timeOut) {
-		WebDriverWait wait = new WebDriverWait(driver, timeOut);
+		WebDriverWait wait = new WebDriverWait(driver, timeOut) {
+			
+		};
 		return wait.until(ExpectedConditions
 				.invisibilityOfElementLocated(locator));
 	}
@@ -710,4 +713,15 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		return null;
 	}
 	
+	public static void selectByvisibletext(By locator,String text) 
+	{
+		Select sl =new Select(driver.findElement(locator));
+		sl.selectByVisibleText(text);
+	}
+	
+	public static void doubleclick(WebElement element) 
+	{
+		Actions ac=new Actions(driver);
+		ac.doubleClick(element).click().perform();
+	}
 }

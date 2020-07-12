@@ -38,11 +38,15 @@ public class HISWebsiteBasePage extends TTBasePage{
 	}
 	
 	public void clickOnMenu() throws InterruptedException {
+		try {
 		driver.waitForElementPresent(MENU);
 		WebElement clickOnMenu_element = driver.findElement(MENU);
 		driver.clickByJS(TTWebsiteDriver.driver, clickOnMenu_element);
 		logger.info("Menu Clicked");
-		Thread.sleep(4000);
+		Thread.sleep(2000);
+		}
+		catch (Exception e) {
+		}
 	}
 	
 	public void clickOnHomeIcon() {
@@ -67,6 +71,5 @@ public class HISWebsiteBasePage extends TTBasePage{
 			return false;
 		}
 	}
-	
 }
 

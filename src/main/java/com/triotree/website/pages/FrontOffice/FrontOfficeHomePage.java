@@ -70,7 +70,8 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 		driver.waitForPageLoad();
 		Thread.sleep(30000);
 	}
-
+	
+	
 	public void clickOnIndentIssuesAndSelectAnOption(String option) throws InterruptedException {
 		driver.waitForElementPresent(INDENT_ISSUE);
 		driver.click(INDENT_ISSUE);
@@ -109,7 +110,8 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickOnBillingAndSelectAnOption(String option) throws InterruptedException {
 		driver.waitForElementPresent(BILLING_SECTION);
-		driver.click(BILLING_SECTION);
+		WebElement billsection = driver.findElement(BILLING_SECTION);
+		driver.clickByJS(TTWebsiteDriver.driver, billsection);
 		logger.info("Billing Section is Expanded");
 		Thread.sleep(5000);
 		WebElement options = driver.findElement(By.xpath("//a[text()='"+option+"']"));
@@ -252,9 +254,12 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	}
 	public void clickonSchemeDetailsOkButton() 
 	{
+		try {
 		driver.waitForElementPresent(By.xpath("//input[@id='btnsyes']"));
 		driver.findElement(By.xpath("//input[@id='btnsyes']")).click();
 		logger.info("Click on Scheme Details Ok Button");
+		}
+		catch (Exception e) {}
 	}
 
 	public void EnterBatchNumber(String itemname,String batchnumber) throws InterruptedException 
@@ -685,16 +690,19 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 			driver.waitForElementPresent(By.xpath("//td[text()='"+text+"']//following::td[@class='required'][1]"));
 			driver.findElement(By.xpath("//td[text()='"+text+"']//following::td[@class='required'][1]")).click();
 
-			List<WebElement> batchdetails_list =driver.findElements(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[text()='"+batchnumber+"']/.."));
-
-			for(int i=1;i<=batchdetails_list.size();i++) 
-			{
-				driver.findElement(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[text()='"+batchnumber+"']/..")).click();
-				break;
-			}
+//			List<WebElement> batchdetails_list =driver.findElements(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[text()='"+batchnumber+"']/.."));
+//
+//			for(int i=1;i<=batchdetails_list.size();i++) 
+//			{
+				WebElement clickbatch = driver.findElement(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[text()='"+batchnumber+"']/.."));
+				driver.clickByJS(TTWebsiteDriver.driver, clickbatch);
+				//break;
+			//}
 			logger.info("Click on Batch "+text+" "+batchnumber);
 		}
-		catch (Exception e) {}
+		catch (Exception e) {
+			driver.findElement(By.xpath("//div[@class='modal-block-new top30']//span[@class='inventory_close_modal']//i")).click();
+		}
 	}
 
 	public void clickonDoYouWantContinueNoOption() 
@@ -782,11 +790,20 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 		logger.info("GRN Return After Save Print Credit Note Alert Yes");
 	}
 
+	public void GRNReturnAfterSavePrintCreditNoteAlertNo() 
+	{	
+		driver.waitForElementPresent(By.xpath("//a[@id='btnAfterSavePrintCreditNoteAlertNo']"));
+		driver.findElement(By.xpath("//a[@id='btnAfterSavePrintCreditNoteAlertNo']")).click();	
+		logger.info("GRN Return After Save Print Credit Note Alert Yes");
+	}
 	public void clickonGRNReturnCloseReport() 
 	{
+		try {
 		driver.waitForElementPresent(By.xpath("//a[@id='printmodalclose']//i"));
 		driver.findElement(By.xpath("//a[@id='printmodalclose']//i")).click();	
 		logger.info("Click on GRN Return Close Report");
+		}
+		catch (Exception e) {}
 	}
 
 	public void clickonMainReportCloseButton() {

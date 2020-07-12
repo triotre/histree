@@ -3,6 +3,7 @@ package com.triotree.website.pages.FrontOffice;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 
@@ -64,7 +65,9 @@ public class MergeAndUnmergeDuplicatePage extends HISWebsiteBasePage{
 	}
 	
 	public void clickOnMergeButton() {
-		driver.click(MERGE_BUTTON);
+		
+		WebElement MERGE_BUTT = driver.findElement(MERGE_BUTTON);
+		driver.clickByJS(TTWebsiteDriver.driver, MERGE_BUTT);
 		logger.info("Merge Button Clicked");
 	}
 	
@@ -119,14 +122,16 @@ public class MergeAndUnmergeDuplicatePage extends HISWebsiteBasePage{
 	}
 	
 	public void checkPrimaryRadioButtonForSpecificPatient(String patient) {
-		driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='radio'][1]"));
+		driver.isElementPresent(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='radio'][1]"),10);
+		((JavascriptExecutor)TTWebsiteDriver.driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='radio'][1]"))); 
 		WebElement checkPrimaryRadioButton_element = driver.findElement(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='radio'][1]"));
 		driver.clickByJS(TTWebsiteDriver.driver, checkPrimaryRadioButton_element);
 		
 	}
 	
 	public void checkSelectCheckBoxForSpecificPatient(String patient) {
-		driver.waitForElementPresent(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='checkbox'][1]"));
+		driver.isElementPresent(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='checkbox'][1]"),10);
+		((JavascriptExecutor)TTWebsiteDriver.driver).executeScript("arguments[0].scrollIntoView(true);", driver.findElement(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='checkbox'][1]")));
 		WebElement checkSelectCheckBox_element = driver.findElement(By.xpath("//td[contains(text(),'"+patient+"')]//preceding::input[@type='checkbox'][1]"));
 		driver.clickByJS(TTWebsiteDriver.driver, checkSelectCheckBox_element);
 	}

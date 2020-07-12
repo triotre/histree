@@ -3,16 +3,16 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.triotree.test.website.FrontOffice.DepositBillingTest">
+      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheet">
         <methods>
+          <include name="PhysicianOPDcaseSheetOrdersTest"/>
           <include name="beforeclass"/>
           <include name="beforeSuite"/>
           <include name="tearDownSession"/>
-          <include name="frontOfficeWithAvailDepositAmountTest"/>
           <include name="setUp"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.triotree.test.website.FrontOffice.DepositBillingTest -->
+      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheet -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
