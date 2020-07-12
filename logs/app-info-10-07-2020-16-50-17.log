@@ -1,0 +1,24 @@
+[INFO ] 2020-07-10 16:50:23.908 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:50:24.497 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:50:24.588 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:50:24.677 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:50:24.760 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:50:24.842 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:50:24.932 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  PhysicianOPDcaseSheetOrdersTest
+******************************************************************************************************************************
+[INFO ] 2020-07-10 16:50:30.604 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-10 16:50:31.794 [main] HISHomePage - Physician Icon Clicked
+[INFO ] 2020-07-10 16:50:33.935 [main] HISHomePage - Following Station has been selected from Station Dropdown : 1st FLR T1 Transplant ICU
+[INFO ] 2020-07-10 16:50:40.529 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-10 16:50:40.598 [main] HISHomePage - Page Heading Name= Doctor's Worklist
+[INFO ] 2020-07-10 16:50:40.792 [main] HISHomePage - Click on OutPatient
+[INFO ] 2020-07-10 16:50:41.396 [main] HISHomePage - Doctor Name= Abhin  Lazar
+[INFO ] 2020-07-10 16:50:41.498 [main] HISHomePage - View= Summary
+[INFO ] 2020-07-10 16:50:42.288 [main] HISHomePage - Frome Date= 10/Feb/2020
+[INFO ] 2020-07-10 16:50:42.362 [main] HISHomePage - Click on Search Button
+[INFO ] 2020-07-10 16:50:46.045 [main] HISHomePage - Click on Patient
+[INFO ] 2020-07-10 16:50:52.764 [main] HISHomePage - Click on Order Tab
+[INFO ] 2020-07-10 16:50:53.728 [main] TestListner - Test has failed with TestResult status = 2
+[INFO ] 2020-07-10 16:50:53.729 [main] TestListner - [TEST HAS FAILED-------- Test case PhysicianOPDcaseSheetOrdersTest has failed]. The reason is java.lang.IllegalArgumentException: No enum constant org.openqa.selenium.support.Colors.RGB(22, 188, 192) NONE REPEAT SCROLL 0% 0% / AUTO PADDING-BOX BORDER-BOX

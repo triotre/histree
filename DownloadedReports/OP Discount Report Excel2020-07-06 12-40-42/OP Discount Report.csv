@@ -1,0 +1,48 @@
+S.NO,BillNo,Datetime,UHId,Patient Name,age,ItemName,Amount,DiscAmt,RateContract,Authorised By,newdiscountreason,REMARKS,username,DiscHead,IDType,ID
+1,RHCR7585,01/06/2020 09:34:15,RAJH.17153118,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+2,RHCR7592,01/06/2020 11:53:06,RAJH.17153134,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+3,RHCR7593,01/06/2020 12:02:18,RAJH.17153135,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+4,RHCR7594,01/06/2020 12:14:22,RAJH.17153136,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+5,RHCR7595,01/06/2020 12:28:17,RAJH.17153137,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+6,RHCR7597,01/06/2020 13:32:05,RAJH.17149081,CHANDU  VERMA,36 Year(s)/Male,Registration Charges,1222.000,488.800,Apollo Tyres Staff,anshul,40% discount,,shivani,Staff,,
+7,RHCR7597,01/06/2020 13:32:05,RAJH.17149081,CHANDU  VERMA,36 Year(s)/Male,edefewvdfv,1000.000,400.000,Apollo Tyres Staff,anshul,40% discount,,shivani,Staff,,
+8,RHCR7597,01/06/2020 13:32:05,RAJH.17149081,CHANDU  VERMA,36 Year(s)/Male,edefewvdfv,1000.000,400.000,Apollo Tyres Staff,anshul,40% discount,,shivani,Staff,,
+9,RHCR7598,01/06/2020 13:40:51,RAJH.17149082,SIMRAN   SHARMA,30 Year(s)/Female,regbfgbfb,1000.000,400.000,Apollo Tyres Staff,anshul agarwal,40% discount,,shivani,Staff,,
+10,RHCR7598,01/06/2020 13:40:51,RAJH.17149082,SIMRAN   SHARMA,30 Year(s)/Female,regbfgbfb,1000.000,400.000,Apollo Tyres Staff,anshul agarwal,40% discount,,shivani,Staff,,
+11,RHCR7598,01/06/2020 13:40:51,RAJH.17149082,SIMRAN   SHARMA,30 Year(s)/Female,regbfgbfb,1000.000,400.000,Apollo Tyres Staff,anshul agarwal,40% discount,,shivani,Staff,,
+12,RHCR7599,01/06/2020 14:19:12,RAJH.17153143,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+13,FB11,01/06/2020 14:44:56,RAJH.17151050,SUKHWINDER  SINGH,35 Year(s)/Male,MANNAT  DEVGAN,1500.000,1500.000,DHRC-Rate Contract,anshul agarwal,Abhishek_Scheme,,Abhishek Kumar,Scheme,,
+14,RHCR7602,01/06/2020 16:26:24,RAJH.17153145,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,Billing Remarks-Ratnesh,Ratnesh,Special Discount,PAN CARD,12345
+15,RHCR7606,01/06/2020 22:06:35,RAJH.17153149,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,Billing Remarks-Ratnesh,Ratnesh,Special Discount,PAN CARD,12345
+16,RHCR7611,02/06/2020 11:32:24,RAJH.17153158,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+17,RHCR7612,02/06/2020 11:42:05,RAJH.17153159,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+18,RHCR7613,02/06/2020 11:50:45,RAJH.17153160,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+19,RHCR7614,02/06/2020 12:02:21,RAJH.17153162,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+20,RHCR7615,02/06/2020 12:15:26,RAJH.17153163,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+21,RHCR7618,02/06/2020 14:51:56,RAJH.17153171,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,Billing Remarks-Ratnesh,Ratnesh,Special Discount,PAN CARD,12345
+22,RHCR7619,02/06/2020 15:06:33,RAJH.17153171,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,Billing Remarks-Ratnesh,Ratnesh,Special Discount,PAN CARD,12345
+23,RHCR7620,02/06/2020 15:57:46,RAJH.17153173,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,Billing Remarks-Ratnesh,Ratnesh,Special Discount,PAN CARD,12345
+24,RHCR7622,02/06/2020 17:55:57,RAJH.17153185,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+25,RHCS793138,08/06/2020 11:45:34,RAJH.17151753,STUTI  T,56 Year(s)/Female,Anshul  Mehta,750.000,150.000,,anshul agarwal,Investigation Discount,,Stuti Tripathi,Staff Dependent,,
+26,RHCR7629,10/06/2020 01:54:32,RAJH.17153236,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+27,RHCR7630,10/06/2020 04:48:58,RAJH.17153252,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,,Ratnesh,Special Discount,PAN CARD,12345
+28,RHCR7631,10/06/2020 05:13:09,RAJH.17153253,DEMO TEST USER,23 Year(s)/Male,24 hour urine 5HIAA,200.000,20.000,NEW CGHS,anshul agarwal,Specail Discount 10%,Billing Remarks-Ratnesh,Ratnesh,Special Discount,PAN CARD,12345
+29,RHCS793237,18/06/2020 10:30:46,RAJH.17141414,Fname143969  LNAME143969,3 Year(s)/Female,CARDIAC TEAM 1 CHANDRA CHANDRA,500.000,100.000,,sezal,20%,,sezal,Owais Zahid,,
+30,RHCS793237,18/06/2020 10:30:46,RAJH.17141414,Fname143969  LNAME143969,3 Year(s)/Female,Consumables,11.000,2.200,,sezal,20%,,sezal,Owais Zahid,,
+31,RHCR7649,26/06/2020 17:32:10,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+32,RHCR7649,26/06/2020 17:32:10,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+33,RHCR7650,26/06/2020 17:43:52,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+34,RHCR7651,26/06/2020 17:52:02,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+35,RHCR7653,29/06/2020 11:54:42,RAJH.17150097,ANKUR  SINGH,33 Year(s)/Male,ALIA   BHATT,1000.000,500.000,Cognizant Staff,anshul agarwal,CMI-SH (Relatives),,gaurav Sharma (Triotree technologies PVT LTD),Scheme,,
+36,RHCR7659,29/06/2020 17:43:01,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+37,RHCR7660,29/06/2020 17:50:35,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+38,RHCR7661,29/06/2020 17:54:04,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,75.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+39,RHCR7661,29/06/2020 17:54:04,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,75.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+40,RHCR7663,29/06/2020 18:20:03,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+41,RHCR7663,29/06/2020 18:20:03,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+42,RHCR7664,29/06/2020 18:31:40,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+43,RHCR7664,29/06/2020 18:31:40,RAJH.17152348,STUTI TRIPATHI TRIPATHI,31 Year(s)/Female,24 hour Urine 17 Ketosteroids,150.000,30.000,ayush,anshul agarwal,Investigation Discount,,Anish,Staff Dependent,,
+44,RHCR7667,02/07/2020 10:58:24,RAJH.16052382,ANURADHA  KUMAR,20 Year(s)/Female,*24 URINE COPPER,4800.000,720.000,YATHARTH RATE CONTRACT,sezal,no reas0n,,DHARAM,Special Discount,,
+45,RHCR7676,02/07/2020 12:50:31,RAJH.17150426, OWAIS  ZAHID,31 Year(s)/Male,24 hour Urine  Copper,527.000,50.000,Cognizant Staff Dependent,Raheel Zahid,Scheme More than fifty Inclusions,,Owais,Scheme,,
+46,RHCR7677,02/07/2020 12:54:27,RAJH.17150426, OWAIS  ZAHID,31 Year(s)/Male,24 hour Urine  Copper,527.000,50.000,Cognizant Staff Dependent,Raheel Zahid,Scheme More than fifty Inclusions,,Owais,Scheme,,
+47,RHCR7685,03/07/2020 12:50:44,RAJH.17149279,TIGHER  SHROFF,31 Year(s)/Male,*3T Mri,5500.000,500.000,CGHS,anshul agarwal,CMI-SH (Relatives),,BUNTY,Scheme,,

@@ -1,0 +1,68 @@
+[INFO ] 2020-07-10 14:05:58.961 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 14:06:00.082 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 14:06:00.174 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 14:06:00.276 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 14:06:00.359 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 14:06:00.444 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 14:06:00.543 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  surgeryMedicalEstimateTest
+******************************************************************************************************************************
+[INFO ] 2020-07-10 14:06:08.649 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-10 14:06:09.779 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-10 14:06:12.002 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-10 14:06:16.845 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-10 14:06:17.945 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-10 14:06:22.194 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-10 14:06:22.523 [main] ADTHomePage - Following Option has been selected from Indent Items Section Surgery / Medical Estimate
+[INFO ] 2020-07-10 14:06:33.923 [main] ADTHomePage - UHID field is enabled
+[INFO ] 2020-07-10 14:06:36.519 [main] ADTHomePage - After Press Enter Key UHID field is disabled
+[INFO ] 2020-07-10 14:06:36.588 [main] ADTHomePage - Patient details fetch on banner= Mr. Fname72130 Lname72130/79 Year(s)/Male
+[INFO ] 2020-07-10 14:06:36.650 [main] ADTHomePage - Click on Radio Button
+[INFO ] 2020-07-10 14:06:36.822 [main] ADTHomePage - Requested Bed Type= General Ward
+[INFO ] 2020-07-10 14:06:36.860 [main] ADTHomePage - Total No Of IP Days field is in disable form
+[INFO ] 2020-07-10 14:06:36.998 [main] ADTHomePage - ICU Days= 3
+[INFO ] 2020-07-10 14:06:37.143 [main] ADTHomePage - Required Ward Days= 2
+[INFO ] 2020-07-10 14:06:37.808 [main] ADTHomePage - Expected Date of Admission= 10-07-2020
+[INFO ] 2020-07-10 14:06:37.955 [main] ADTHomePage - Bed Type= Twin Bed is selected
+[INFO ] 2020-07-10 14:06:38.094 [main] ADTHomePage - Ward Days= 3
+[INFO ] 2020-07-10 14:06:38.269 [main] ADTHomePage - Bed Type2= Single Non-AC is selected
+[INFO ] 2020-07-10 14:06:38.403 [main] ADTHomePage - Ward Days2= 2
+[INFO ] 2020-07-10 14:06:38.588 [main] ADTHomePage - Diagnosis Problem= Typhoid
+[INFO ] 2020-07-10 14:06:38.787 [main] ADTHomePage - Primary/AttendingSpeciality= Dermatology is selected
+[INFO ] 2020-07-10 14:06:38.966 [main] ADTHomePage - Value of Primary Attending Consultant Employee268 is auto fetch on selection of Primary Attending speciality
+[INFO ] 2020-07-10 14:06:39.119 [main] ADTHomePage - VisitsDays= 7
+[INFO ] 2020-07-10 14:06:39.287 [main] ADTHomePage - Co-specility= Dermatology is selected
+[INFO ] 2020-07-10 14:06:54.529 [main] ADTHomePage - Co-Consultant= Preethy  Harrison is selected
+[INFO ] 2020-07-10 14:06:54.659 [main] ADTHomePage - CO-Visits Days= 2
+[INFO ] 2020-07-10 14:06:54.924 [main] ADTHomePage - Secondary Speciality= Endocrinology is selected
+[INFO ] 2020-07-10 14:06:55.098 [main] ADTHomePage - Value of Secondary Consultant Employee277 is auto fetch on selection of Secondary speciality
+[INFO ] 2020-07-10 14:06:55.253 [main] ADTHomePage - Secondary Visits Days= 3
+[INFO ] 2020-07-10 14:06:55.292 [main] ADTHomePage - Cash radio button is selected
+[INFO ] 2020-07-10 14:07:10.553 [main] ADTHomePage - Referred By=  AJITHA is selected
+[INFO ] 2020-07-10 14:07:10.983 [main] ADTHomePage - Billing Counselling done to= Demo person
+[INFO ] 2020-07-10 14:07:11.340 [main] ADTHomePage - Emergency Contacts= 9876543212
+[INFO ] 2020-07-10 14:07:11.447 [main] ADTHomePage - As per Actual check box is get checked 
+[INFO ] 2020-07-10 14:07:13.738 [main] ADTHomePage - Checkboxes is auto checked on selection of 'as per actual' checkbox and field is disable
+[INFO ] 2020-07-10 14:07:13.960 [main] ADTHomePage - Transfusion Medicine Amount= 5000
+[INFO ] 2020-07-10 14:07:14.167 [main] ADTHomePage - Equipment Charges Amount= 4500
+[INFO ] 2020-07-10 14:07:14.304 [main] ADTHomePage - Number of Referral Doctor Visits= 4
+[INFO ] 2020-07-10 14:07:14.491 [main] ADTHomePage - Cost Per Visit= 400
+[INFO ] 2020-07-10 14:07:14.862 [main] ADTHomePage - Implants= Demo  stent
+[INFO ] 2020-07-10 14:07:15.063 [main] ADTHomePage - Implants Amount= 7500
+[INFO ] 2020-07-10 14:07:15.100 [main] ADTHomePage - Pharm ICU Days Field is disabled
+[INFO ] 2020-07-10 14:07:15.303 [main] ADTHomePage - Amount Per Day= 6000
+[INFO ] 2020-07-10 14:07:15.745 [main] ADTHomePage - Other Item 1= Testing item 1
+[INFO ] 2020-07-10 14:07:15.992 [main] ADTHomePage - Other Item1 Amount= 450
+[INFO ] 2020-07-10 14:07:16.143 [main] ADTHomePage - Add Other Item Button is clicked
+[INFO ] 2020-07-10 14:07:16.179 [main] ADTHomePage - Data is added in Other item cart
+[INFO ] 2020-07-10 14:07:16.409 [main] ADTHomePage - Service= Cardiology Services is Selected
+[INFO ] 2020-07-10 14:07:16.542 [main] ADTHomePage - Item= ECG (Nos) is Selected
+[INFO ] 2020-07-10 14:07:16.683 [main] ADTHomePage - Qty= 3
+[INFO ] 2020-07-10 14:07:16.753 [main] ADTHomePage - Click on Add Service Iteam Button
+[INFO ] 2020-07-10 14:07:16.974 [main] ADTHomePage - Click on Calculate Surgery Button
+[INFO ] 2020-07-10 14:07:17.013 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-10 14:07:17.280 [main] ADTHomePage - Click on Do you want to save estimation for this patient?
+[INFO ] 2020-07-10 14:07:19.208 [main] ADTHomePage - SaveSuccessfully Click on Do you want to print estimation of this patient!
+[INFO ] 2020-07-10 14:07:25.371 [main] ADTHomePage - Print Window is Close
+[INFO ] 2020-07-10 14:07:25.373 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case surgeryMedicalEstimateTest has passed]

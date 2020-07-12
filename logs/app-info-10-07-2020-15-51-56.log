@@ -1,0 +1,30 @@
+[INFO ] 2020-07-10 15:52:02.434 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 15:52:03.072 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 15:52:03.184 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 15:52:03.281 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 15:52:03.386 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 15:52:03.498 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 15:52:03.586 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  PhysicianOPDcaseSheetOrdersTest
+******************************************************************************************************************************
+[INFO ] 2020-07-10 15:52:09.216 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-10 15:52:10.467 [main] HISHomePage - Physician Icon Clicked
+[INFO ] 2020-07-10 15:52:12.608 [main] HISHomePage - Following Station has been selected from Station Dropdown : 1st FLR T1 Transplant ICU
+[INFO ] 2020-07-10 15:52:19.674 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-10 15:52:19.749 [main] HISHomePage - Page Heading Name= Doctor's Worklist
+[INFO ] 2020-07-10 15:52:19.931 [main] HISHomePage - Click on OutPatient
+[INFO ] 2020-07-10 15:52:20.520 [main] HISHomePage - Doctor Name= [[[[ChromeDriver: chrome on WINDOWS (522cc63faea4cbae8e297b5d42e21bcb)] -> id: doctorsId]] -> tag name: option]
+[INFO ] 2020-07-10 15:52:20.602 [main] HISHomePage - View= [[[[ChromeDriver: chrome on WINDOWS (522cc63faea4cbae8e297b5d42e21bcb)] -> id: view_type]] -> tag name: option]
+[INFO ] 2020-07-10 15:52:21.491 [main] HISHomePage - Frome Date= 10/Feb/2020
+[INFO ] 2020-07-10 15:52:21.560 [main] HISHomePage - Click on Search Button
+[INFO ] 2020-07-10 15:52:36.695 [main] TestListner - Test has failed with TestResult status = 2
+[INFO ] 2020-07-10 15:52:36.699 [main] TestListner - [TEST HAS FAILED-------- Test case PhysicianOPDcaseSheetOrdersTest has failed]. The reason is org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[@id='op_queue']//div[@id='bill1084118']"}
+  (Session info: chrome=83.0.4103.116)
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.7.1', revision: '8a0099a', time: '2017-11-06T21:01:39.354Z'
+System info: host: 'DESKTOP-U1OL4JI', ip: '206.19.38.23', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '10.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\Nishant\AppData\Lo...}, goog:chromeOptions: {debuggerAddress: localhost:55814}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
+Session ID: 522cc63faea4cbae8e297b5d42e21bcb
+*** Element info: {Using=xpath, value=//div[@id='op_queue']//div[@id='bill1084118']}

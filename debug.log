@@ -1,0 +1,34 @@
+[0602/102644.311:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0602/102644.312:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0602/102644.312:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0602/102644.312:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0602/120527.097:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0602/120527.097:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0602/120527.097:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0602/120527.098:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0611/173148.492:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0611/173148.560:ERROR:exception_snapshot_win.cc(98)] thread ID 6000 not found in process
+[0611/173148.560:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0622/110643.092:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0622/110643.164:ERROR:exception_snapshot_win.cc(98)] thread ID 4504 not found in process
+[0622/110643.165:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0623/150848.344:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0623/150848.385:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0623/150848.385:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0623/150848.385:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0630/155114.528:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0630/155114.559:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0630/155114.560:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0703/123614.140:ERROR:process_reader_win.cc(151)] SuspendThread: Access is denied. (0x5)
+[0703/123614.195:ERROR:exception_snapshot_win.cc(98)] thread ID 5708 not found in process
+[0703/123614.195:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0706/104058.548:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0706/104058.586:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0706/104058.586:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0706/104058.586:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0706/150802.967:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0706/150802.985:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::RTL_USER_PROCESS_PARAMETERS<crashpad::process_types::internal::Traits64>]: Only part of a ReadProcessMemory or WriteProcessMemory request was completed. (0x12B)
+[0706/150802.985:ERROR:process_info.cc(551)] ReadProcessData failed
+[0706/161404.045:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0706/161404.108:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0706/161404.109:ERROR:process_info.cc(556)] ReadMemoryInfo failed

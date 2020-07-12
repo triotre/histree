@@ -1,0 +1,34 @@
+[INFO ] 2020-07-11 12:10:10.358 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-11 12:10:11.256 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-11 12:10:11.568 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-11 12:10:11.894 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-11 12:10:12.217 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-11 12:10:13.411 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-11 12:10:13.729 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  PhysicianOPDcaseSheetOrdersTest
+******************************************************************************************************************************
+[INFO ] 2020-07-11 12:10:20.339 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-11 12:10:21.570 [main] HISHomePage - Physician Icon Clicked
+[INFO ] 2020-07-11 12:10:23.715 [main] HISHomePage - Following Station has been selected from Station Dropdown : 1st FLR T1 Transplant ICU
+[INFO ] 2020-07-11 12:10:31.860 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-11 12:10:31.943 [main] HISHomePage - Page Heading Name= Doctor's Worklist
+[INFO ] 2020-07-11 12:10:32.055 [main] HISHomePage - Click on OutPatient
+[INFO ] 2020-07-11 12:10:32.455 [main] HISHomePage - Doctor Name= Abhin  Lazar
+[INFO ] 2020-07-11 12:10:32.596 [main] HISHomePage - View= Summary
+[INFO ] 2020-07-11 12:10:33.446 [main] HISHomePage - Frome Date= 10/Feb/2020
+[INFO ] 2020-07-11 12:10:33.518 [main] HISHomePage - Click on Search Button
+[INFO ] 2020-07-11 12:10:42.555 [main] HISHomePage - Click on Patient
+[INFO ] 2020-07-11 12:10:46.611 [main] HISHomePage - Click on Order Tab
+[INFO ] 2020-07-11 12:10:47.651 [main] HISHomePage - Selected Tab= #16bcc0
+[INFO ] 2020-07-11 12:10:47.713 [main] HISHomePage - Selected TAB Name= Favourites
+[INFO ] 2020-07-11 12:10:47.774 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:47.838 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:47.903 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:47.976 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:48.041 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:48.111 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:48.172 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:48.234 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:48.296 [main] HISHomePage - Selected Tab= #f6f6f6
+[INFO ] 2020-07-11 12:10:48.297 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case PhysicianOPDcaseSheetOrdersTest has passed]

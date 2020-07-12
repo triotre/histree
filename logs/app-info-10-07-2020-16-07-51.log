@@ -1,0 +1,24 @@
+[INFO ] 2020-07-10 16:07:57.570 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:07:58.282 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:07:58.398 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:07:58.484 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:07:58.569 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:07:58.654 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-10 16:07:58.753 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  PhysicianOPDcaseSheetOrdersTest
+******************************************************************************************************************************
+[INFO ] 2020-07-10 16:08:04.704 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-10 16:08:05.964 [main] HISHomePage - Physician Icon Clicked
+[INFO ] 2020-07-10 16:08:08.142 [main] HISHomePage - Following Station has been selected from Station Dropdown : 1st FLR T1 Transplant ICU
+[INFO ] 2020-07-10 16:08:14.977 [main] HISHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-10 16:08:15.066 [main] HISHomePage - Page Heading Name= Doctor's Worklist
+[INFO ] 2020-07-10 16:08:15.351 [main] HISHomePage - Click on OutPatient
+[INFO ] 2020-07-10 16:08:15.969 [main] HISHomePage - Doctor Name= [[[[ChromeDriver: chrome on WINDOWS (0381680fe452a59fac6409f9ca479f05)] -> id: doctorsId]] -> tag name: option]
+[INFO ] 2020-07-10 16:08:16.067 [main] HISHomePage - View= [[[[ChromeDriver: chrome on WINDOWS (0381680fe452a59fac6409f9ca479f05)] -> id: view_type]] -> tag name: option]
+[INFO ] 2020-07-10 16:08:16.983 [main] HISHomePage - Frome Date= 10/Feb/2020
+[INFO ] 2020-07-10 16:08:17.080 [main] HISHomePage - Click on Search Button
+[INFO ] 2020-07-10 16:08:21.099 [main] HISHomePage - Click on Patient
+[INFO ] 2020-07-10 16:08:29.142 [main] HISHomePage - Click on Order Tab
+[INFO ] 2020-07-10 16:08:30.066 [main] HISHomePage - Selected Tab= rgb(22, 188, 192) none repeat scroll 0% 0% / auto padding-box border-box
+[INFO ] 2020-07-10 16:08:30.068 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case PhysicianOPDcaseSheetOrdersTest has passed]
