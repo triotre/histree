@@ -29,13 +29,6 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 			.getLogger(ADTCashPatientRegistrationTest.class.getName());
 
 	private HISHomePage hisHomePage;
-	private FrontOfficeHomePage frontOfficeHomePage;
-	private PatientRegistrationPage patientRegistrationPage;
-	private IndentItemsPage indentItemsPage;
-	private IndentApprovalPage indentApprovalPage;
-	private IndentIssuePage indentIssuePage;
-	private PurchaseRequisitionPage purchaseRequisitionPage;
-	private BillingPage billingPage;
 	private ADTHomePage adtpage;
 	private BedStatusPage bedstatusPage;
 	private IPDepositRefundformPage ipdepositrefund;

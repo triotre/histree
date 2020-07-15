@@ -32,3 +32,5 @@
 [0706/161404.045:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: An attempt was made to access an exiting process. (0xc000010a)
 [0706/161404.108:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
 [0706/161404.109:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0714/135413.916:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)
+[0714/135413.923:ERROR:http_transport_win.cc(276)] WinHttpSendRequest: The operation completed successfully. (0x0)

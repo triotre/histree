@@ -2,12 +2,12 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-11T07:15:22Z" name="Default suite" finished-at="2020-07-11T07:16:04Z" duration-ms="42081">
+  <suite started-at="2020-07-15T11:21:05Z" name="Default suite" finished-at="2020-07-15T11:23:20Z" duration-ms="135740">
     <groups>
     </groups>
-    <test started-at="2020-07-11T07:15:22Z" name="Default test" finished-at="2020-07-11T07:16:04Z" duration-ms="42081">
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheet">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.website.Physician.PhysicianOPDCaseSheet@499b2a5c]" started-at="2020-07-11T12:45:22Z" name="beforeSuite" finished-at="2020-07-11T12:45:22Z" duration-ms="256" status="PASS">
+    <test started-at="2020-07-15T11:21:05Z" name="Default test" finished-at="2020-07-15T11:23:20Z" duration-ms="135740">
+      <class name="com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet@596df867]" started-at="2020-07-15T16:51:04Z" name="beforeSuite" finished-at="2020-07-15T16:51:05Z" duration-ms="242" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,27 +16,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.website.Physician.PhysicianOPDCaseSheet@499b2a5c]" started-at="2020-07-11T12:45:22Z" name="beforeclass" finished-at="2020-07-11T12:45:22Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet@596df867]" started-at="2020-07-15T16:51:05Z" name="beforeclass" finished-at="2020-07-15T16:51:05Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.website.Physician.PhysicianOPDCaseSheet@499b2a5c]" started-at="2020-07-11T12:45:22Z" name="setUp" finished-at="2020-07-11T12:45:30Z" duration-ms="7635" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet@596df867]" started-at="2020-07-15T16:51:05Z" name="setUp" finished-at="2020-07-15T16:51:11Z" duration-ms="6517" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="PhysicianOPDcaseSheetOrdersTest()[pri:0, instance:com.triotree.website.Physician.PhysicianOPDCaseSheet@499b2a5c]" started-at="2020-07-11T12:45:30Z" name="PhysicianOPDcaseSheetOrdersTest" finished-at="2020-07-11T12:46:04Z" duration-ms="34425" status="PASS">
+        <test-method signature="PhysicianExistingOrdersOPCasesheetTest()[pri:0, instance:com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet@596df867]" started-at="2020-07-15T16:51:11Z" name="PhysicianExistingOrdersOPCasesheetTest" finished-at="2020-07-15T16:53:20Z" duration-ms="129196" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PhysicianOPDcaseSheetOrdersTest -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.website.Physician.PhysicianOPDCaseSheet@499b2a5c]" started-at="2020-07-11T12:46:04Z" name="tearDownSession" finished-at="2020-07-11T12:46:04Z" duration-ms="0" status="PASS">
+        </test-method> <!-- PhysicianExistingOrdersOPCasesheetTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet@596df867]" started-at="2020-07-15T16:53:20Z" name="tearDownSession" finished-at="2020-07-15T16:53:20Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.website.Physician.PhysicianOPDCaseSheet@499b2a5c]" started-at="2020-07-11T12:46:04Z" name="afterSuite" finished-at="2020-07-11T12:46:04Z" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet@596df867]" started-at="2020-07-15T16:53:20Z" name="afterSuite" finished-at="2020-07-15T16:53:20Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheet -->
+      </class> <!-- com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -107,7 +107,7 @@ public class TTBaseTest {
 	}
 
 	@AfterSuite(alwaysRun=true)
-	public void afterSuite(){
+	public void afterSuite() throws IOException{
 		endTime =  System.currentTimeMillis();
 		//create a time stamp to be added to new logs,output and test-output folders
 		Date date = new Date();
@@ -186,7 +186,6 @@ public class TTBaseTest {
 
 		return (testObjArray);
 	}
-
-
+	
 
 }

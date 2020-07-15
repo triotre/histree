@@ -1,11 +1,13 @@
 package com.triotree.test.website;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.Iterator;
-import java.util.Set;
+import java.nio.file.Files;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
@@ -15,7 +17,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.springframework.util.FileCopyUtils;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterTest;
@@ -63,11 +67,12 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	}
 
 	@AfterMethod
-	public void tearDownSession() 
+	public void tearDownSession() throws IOException 
 	{
-		///driver.quit();
+		//driver.quit();
+		//renameLogfileName();
 	}
-
+	
 	public String getIDCardType() {
 		String idCard = DBUtil.performDatabaseQuery(TestConstants.GET_ID_CARD_QUERY);
 		return idCard;
@@ -227,6 +232,33 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 			Assert.fail(message);
 		}
 	}
+	
+	public  void renameLogfileName() throws IOException {
+		File f=new File("./logs");
+		File []listoffile=f.listFiles();
+		File chosenFile = null;
+		String className = this.getClass().getSimpleName();
+		System.out.println("className= "+className);
+		
+		long lastModifiedTime = Long.MIN_VALUE;
+		for(int i=0;i<listoffile.length;i++) 
+		{
+			if (listoffile[i].lastModified() > lastModifiedTime)
+			{
+				chosenFile = listoffile[i];
+				lastModifiedTime = listoffile[i].lastModified();
+			}
+		}
+		if(chosenFile.exists()) {
+		System.out.println(chosenFile);
+		System.out.println(chosenFile.renameTo(new File("./logfolder/"+className+".log")));
+		}
+		else {
+			System.out.println("not exists");
+		}
+		///return chosenFile.renameTo(new File("./logs/"+className+".log"));
 
+	}
 
+	
 }

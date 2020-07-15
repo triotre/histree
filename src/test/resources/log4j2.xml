@@ -6,6 +6,7 @@
 		<!-- <Property name="log-path">./logs</Property> -->
 	</Properties>
 	<Appenders>
+	
 		<RollingFile name="fileLogger"
 			fileName="logs/app-info-${date:dd-MM-yyyy-HH-mm-ss}.log"
 			append="true"

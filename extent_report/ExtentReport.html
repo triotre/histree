@@ -1,7 +1,5 @@
-
 <!DOCTYPE html>
 <html>
-
 
 <head>
 	<meta charset='utf-8' /> 
@@ -12,472 +10,457 @@
 	
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-
-		<link href='https://cdn.rawgit.com/anshooarora/extentreports-java/b4a58fcfd1e137bd9287244035a7c80d3d73b3af/dist/css/extent.css' type='text/css' rel='stylesheet' />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/99c671a/v3html/css/extent.css' type='text/css' rel='stylesheet' />
 	
 	<title>TrioTree Technologies Pvt. Ltd.</title>
 
 	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
 	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
 </head>
-
 	<body class='extent standard default hide-overflow '>
 		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
 			<span><i class='material-icons'>desktop_windows</i></span>
 		</div>
-
 <nav>
 	<div class="nav-wrapper">
-		<a href="#!" class="brand-logo blue darken-3">Extent</a>
-
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
 		<!-- slideout menu -->
 		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
 			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
 						<li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i class='material-icons'>label_outline</i></a></li>
-			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></i></a></li>
+			<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
 		</ul>
-
 		<!-- report name -->
 		<span class='report-name'>Trio Tree Launchpad Automation Report</span>
-		
 		<!-- report headline -->
 		<span class='report-headline'></span>
-
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
-			<li>
-                <a href='#!'>
-                    <span class='label suite-start-time blue darken-3'>Jul 10, 2020 02:05:50 PM</span>
-				</a>
-			</li>
-			<li>
-                <a href='#!'>
-                    <span class='label blue darken-3'>3.1.5</span>
-				</a>
-			</li>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Jul 15, 2020 12:47:33 PM</span>
+			</a>
 		</ul>
 	</div>
-</nav>
-
-		<!-- container -->
+</nav>		<!-- container -->
 		<div class='container'>
-
 <div id='test-view' class='view'>
-				
 	<section id='controls'>
 		<div class='controls grey lighten-4'>
 			<!-- test toggle -->
 			<div class='chip transparent'>
 				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
-					<i class='material-icons'>warning</i> Status
+				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-											<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
 			</div>
 			<!-- test toggle -->
-
 			<!-- category toggle -->
 			<div class='chip transparent'>
 				<a class='dropdown-button category-toggle' data-activates='category-toggle' data-constrainwidth='false' data-beloworigin='true' data-hover='true' href='#'>
-					<i class='material-icons'>local_offer</i> Category
+				<i class='material-icons'>local_offer</i> Category
 				</a>
 				<ul id='category-toggle' class='dropdown-content'>
-					<li><a href='#'>ADT</a></li>
+					<li><a href='#'>PhysicianOPD</a></li>
 					<li class='divider'></li>
 					<li class='clear'><a href='#!' clear='true'>Clear Filters</a></li>
 				</ul>
 			</div>
 			<!-- category toggle -->
-
 			<!-- clear filters -->
 			<div class='chip transparent hide'>
 				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
-					<i class='material-icons'>close</i> Clear
+				<i class='material-icons'>close</i> Clear
 				</a>
 			</div>
 			<!-- clear filters -->
-
 			<!-- enable dashboard -->
 			<div id='toggle-test-view-charts' class='chip transparent'>
 				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
-					<i class='material-icons'>track_changes</i> Dashboard
+				<i class='material-icons'>track_changes</i> Dashboard
 				</a>
 			</div>
 			<!-- enable dashboard -->
-
 			<!-- search -->
 			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
 				<a href="#" class='search-div'>
-					<i class='material-icons'>search</i> Search
+				<i class='material-icons'>search</i> Search
 				</a>
-
 				<div class='input-field left hide'>
 					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
 				</div>
-				
 			</div>
 			<!-- search -->
 		</div>
 	</section>
-
-
 <div id='test-view-charts' class='subview-full'>
-	<div id='charts-row' class='row nm-v nm-h'>
-		<div class='col s12 m6 l6 np-h'>
-			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Tests</div>
-				<div class='chart-box'>
-					<canvas id='parent-analysis' width='100' height='80'></canvas>
-				</div>
-				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
-				</div>
-				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
-				</div>
-			</div>
-		</div>
-		
-		<div class='col s12 m6 l6 np-h'>
-			<div class='card-panel nm-v'>
-				<div class='left panel-name'>Steps</div>
-				<div class='chart-box'>
-					<canvas id='child-analysis' width='100' height='80'></canvas>
-				</div>
-				<div class='block text-small'>
-					<span class='tooltipped' data-position='top' data-tooltip='3.704%'><span class='strong'>2</span> step(s) passed</span>
-				</div>
-				<div class='block text-small'>
-					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> step(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='96.296%'>52</span> others
-				</div>
-			</div>
-		</div>
-		
-	</div>
-</div>
-
-	<div class='subview-left left'>
-		
+    <div id='charts-row' class='row nm-v nm-h'>
+        <div class='col s12 m12 l12 np-h'>
+            <div class='card-panel nm-v'>
+                <div class='left panel-name'>Tests</div>
+                <div class='chart-box' style="max-height:94px;">
+                    <canvas id='parent-analysis' width='90' height='70'></canvas>
+                </div>
+                <div class='block text-small'>
+                    <span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>1</span> test(s) passed</span>
+                </div>
+                <div class='block text-small'>
+                    <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="timeline-chart" class="row nm-v nm-h">
+        <div class="col s12 m12 l12 np-h">
+            <div class="card-panel">
+                <div class='left panel-name'>Timeline (seconds)</div>
+                <div class="chart-box" style="width:98%;max-height:145px;">
+                    <canvas id="timeline" height="120"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>	<div class='subview-left left'>
 		<div class='view-summary'>
-			<h5>Tests</h5>
 			<ul id='test-collection' class='test-collection'>
-				
-				
 				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>surgeryMedicalEstimateTest</span>
-						<span class='test-time'>Jul 10, 2020 02:06:00 PM</span>
+						<span class='test-name'>PhysicianOPDcaseSheetOrdersTest</span>
+						<span class='test-time'>Jul 15, 2020 12:47:40 PM</span>
 						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Jul 10, 2020 02:06:00 PM</span>
-	<span class='label end-time'>Jul 10, 2020 02:07:25 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 1m 24s+792ms</span>
+	<span class='label start-time'>Jul 15, 2020 12:47:40 PM</span>
+	<span class='label end-time'>Jul 15, 2020 12:50:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 2m 42s+190ms</span>
 </div>
-	<div class='test-desc'>This test case is verifies Surgery Medical Estimate Test </div>
-	<div class='test-attributes'>
-			<div class='category-list'>
-				<span class='category label white-text'>ADT</span>
-			</div>
+<div class='test-desc'>This test case is verifies Physician OPD case Sheet Orders Test </div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>PhysicianOPD</span>
 	</div>
-	<div class='test-steps'>
-		<table class='bordered table-results'>
-			<thead>
-				<tr>
-					<th>Status</th>
-					<th>Timestamp</th>
-					<th>Details</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:11 PM</td>
-					<td class='step-details'><span class='label white-text green'>Following Station has been selected from Station Dropdown : IT</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>YES has been clicked from Station Dropdown</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:33 PM</td>
-					<td class='step-details'><span class='label white-text green'>UHID field is enabled</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:36 PM</td>
-					<td class='step-details'><span class='label white-text green'>After Press Enter Key UHID field is disabled</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:36 PM</td>
-					<td class='step-details'><span class='label white-text green'>Patient details fetch on banner= Mr. Fname72130 Lname72130/79 Year(s)/Male</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:36 PM</td>
-					<td class='step-details'><span class='label white-text green'>Click on Radio Button</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:36 PM</td>
-					<td class='step-details'><span class='label white-text green'>Requested Bed Type= General Ward</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:36 PM</td>
-					<td class='step-details'><span class='label white-text green'>Total No Of IP Days field is in disable form</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:36 PM</td>
-					<td class='step-details'><span class='label white-text green'>ICU Days= 3</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:37 PM</td>
-					<td class='step-details'><span class='label white-text green'>Required Ward Days= 2</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:37 PM</td>
-					<td class='step-details'><span class='label white-text green'>Expected Date of Admission= 10-07-2020</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:37 PM</td>
-					<td class='step-details'><span class='label white-text green'>Bed Type= Twin Bed is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:38 PM</td>
-					<td class='step-details'><span class='label white-text green'>Ward Days= 3</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:38 PM</td>
-					<td class='step-details'><span class='label white-text green'>Bed Type2= Single Non-AC is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:38 PM</td>
-					<td class='step-details'><span class='label white-text green'>Ward Days2= 2</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:38 PM</td>
-					<td class='step-details'><span class='label white-text green'>Diagnosis Problem= Typhoid</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:38 PM</td>
-					<td class='step-details'><span class='label white-text green'>Primary/AttendingSpeciality= Dermatology is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:39 PM</td>
-					<td class='step-details'><span class='label white-text green'>Value of Primary Attending Consultant Employee268 is auto fetch on selection of Primary Attending speciality</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:39 PM</td>
-					<td class='step-details'><span class='label white-text green'>VisitsDays= 7</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:39 PM</td>
-					<td class='step-details'><span class='label white-text green'>Co-specility= Dermatology is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:54 PM</td>
-					<td class='step-details'><span class='label white-text green'>Co-Consultant= Preethy  Harrison is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:54 PM</td>
-					<td class='step-details'><span class='label white-text green'>CO-Visits Days= 2</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:54 PM</td>
-					<td class='step-details'><span class='label white-text green'>Secondary Speciality= Endocrinology is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:55 PM</td>
-					<td class='step-details'><span class='label white-text green'>Value of Secondary Consultant Employee277 is auto fetch on selection of Secondary speciality</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:55 PM</td>
-					<td class='step-details'><span class='label white-text green'>Secondary Visits Days= 3</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:06:55 PM</td>
-					<td class='step-details'><span class='label white-text green'>Cash radio button is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:10 PM</td>
-					<td class='step-details'><span class='label white-text green'>Referred By=  AJITHA is selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:10 PM</td>
-					<td class='step-details'><span class='label white-text green'>Billing Counselling done to= Demo person</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:11 PM</td>
-					<td class='step-details'><span class='label white-text green'>Emergency Contacts= 9876543212</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:11 PM</td>
-					<td class='step-details'><span class='label white-text green'>As per Actual check box is get checked </span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:13 PM</td>
-					<td class='step-details'><span class='label white-text green'>Checkboxes is auto checked on selection of 'as per actual' checkbox and field is disable</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:13 PM</td>
-					<td class='step-details'><span class='label white-text green'>Transfusion Medicine Amount= 5000</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:14 PM</td>
-					<td class='step-details'><span class='label white-text green'>Equipment Charges Amount= 4500</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:14 PM</td>
-					<td class='step-details'><span class='label white-text green'>Number of Referral Doctor Visits= 4</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:14 PM</td>
-					<td class='step-details'><span class='label white-text green'>Cost Per Visit= 400</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:14 PM</td>
-					<td class='step-details'><span class='label white-text green'>Implants= Demo  stent</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:15 PM</td>
-					<td class='step-details'><span class='label white-text green'>Implants Amount= 7500</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:15 PM</td>
-					<td class='step-details'><span class='label white-text green'>Pharm ICU Days Field is disabled</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:15 PM</td>
-					<td class='step-details'><span class='label white-text green'>Amount Per Day= 6000</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:15 PM</td>
-					<td class='step-details'><span class='label white-text green'>Other Item 1= Testing item 1</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:15 PM</td>
-					<td class='step-details'><span class='label white-text green'>Other Item1 Amount= 450</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>Add Other Item Button is clicked</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>Data is added in Other item cart</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>Service= Cardiology Services is Selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>Item= ECG (Nos) is Selected</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>Qty= 3</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>Click on Add Service Iteam Button</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:16 PM</td>
-					<td class='step-details'><span class='label white-text green'>Click on Calculate Surgery Button</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:17 PM</td>
-					<td class='step-details'><span class='label white-text green'>Click on Save Button</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:17 PM</td>
-					<td class='step-details'><span class='label white-text green'>Click on Do you want to save estimation for this patient?</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:19 PM</td>
-					<td class='step-details'><span class='label white-text green'>SaveSuccessfully Click on Do you want to print estimation of this patient!</span></td>
-				</tr>
-				<tr class='log' status='info'>
-					<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-					<td class='timestamp'>2:07:25 PM</td>
-					<td class='step-details'><span class='label white-text green'>Print Window is Close</span></td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>2:07:25 PM</td>
-					<td class='step-details'><span class='label white-text green'>surgeryMedicalEstimateTest: Test Case Passed: </span></td>
-				</tr>
-				<tr class='log' status='pass'>
-					<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
-					<td class='timestamp'>2:07:25 PM</td>
-					<td class='step-details'>Test passed</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:47:49 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Following Station has been selected from Station Dropdown : 1st FLR T1 Transplant ICU</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:47:56 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>YES has been clicked from Station Dropdown</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:47:56 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Page Heading Name= Doctor's Worklist</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:47:56 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Click on OutPatient</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:12 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Doctor Name= Geena  Jacob </span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:12 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>View= Summary</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:13 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Frome Date= 10/Feb/2020</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:13 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Click on Search Button</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:16 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Click on Patient</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:44 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Click on Order Tab</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:44 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Page Heading Name= Orders</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:45 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Selected TAB Name= Favourites</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:45 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Laboratory and Laboratory Service Name= Blood Routine Examination ( CBC With ESR )</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:45 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Laboratory and Laboratory Service Name= Blood Sugar FBS</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:45 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Laboratory and Laboratory Service Name= TSH</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Laboratory and Laboratory Service Name= Lipid Profile</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Laboratory and Laboratory Service Name= *24 URINE COPPER</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Laboratory and Laboratory Service Name= SGOT/ AST</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Laboratory and Laboratory Service Name= 17 - Hydroxy - Progesterone</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Radiology and Laboratory Service Name= USG - Abdomen And Pelvis</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Radiology and Laboratory Service Name= 3T MRI Angiography Abdomen</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Radiology and Laboratory Service Name= Ivp</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Radiology and Laboratory Service Name= 3T MRI ( Brain,,,, Angiogram)</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Procedures and Laboratory Service Name= Echo Cardiogram</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Procedures and Laboratory Service Name= ECG (Nos)</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Procedures and Laboratory Service Name= Abcess Drainage- LIVER. ((3000)</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Reflected Service Name= Procedures and Laboratory Service Name= skd</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:48:47 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Laboratory Service Blood Routine Examination ( CBC With ESR ) get added in the below grid</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:49:33 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Radiology Service USG - Abdomen And Pelvis get added in the below grid</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:50:19 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Procedures Service Echo Cardiogram get added in the below grid</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:50:22 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>Click on Save Order Button</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:50:22 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>After click on Save Button Service Blood Routine Examination ( CBC With ESR ) is get saved</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:50:22 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>After click on Save Button Service USG - Abdomen And Pelvis is get saved</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:50:22 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>After click on Save Button Service Echo Cardiogram is get saved</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>12:50:22 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>PhysicianOPDcaseSheetOrdersTest: Test Case Passed: </span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>12:50:22 PM</td>
+				<td class='step-details'>
+						Test passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
 					</div>
 				</li>
 			</ul>
 		</div>
 	</div>
 	<!-- subview left -->
-
 	<div class='subview-right left'>
 		<div class='view-summary'>
 			<h5 class='test-name'></h5>
-
 			<div id='step-filters' class="right">
 				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
 				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
@@ -491,39 +474,30 @@
 		</div>
 	</div>
 	<!-- subview right -->
-
 </div>
-<!-- test view -->
-<div id='category-view' class='view hide'>
-
+<!-- test view --><div id='category-view' class='view hide'>
 	<section id='controls'>
 		<div class='controls grey lighten-4'>
 			<!-- search -->
 			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
 				<a href="#" class='search-div'>
-					<i class='material-icons'>search</i> Search
+				<i class='material-icons'>search</i> Search
 				</a>
-				
 				<div class='input-field left hide'>
 					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
 				</div>
-				
 			</div>
 			<!-- search -->
 		</div>
 	</section>
-
 	<div class='subview-left left'>
-		
 		<div class='view-summary'>
-			<h5>Categories</h3>
 			<ul id='category-collection' class='category-collection'>
-				
 				<li class='category displayed active'>
 					<div class='category-heading'>
-						<span class='category-name'>ADT</span>
+						<span class='category-name'>PhysicianOPD</span>
 						<span class='category-status right'>
-							<span class='label pass'>1</span>
+						<span class='label pass'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
@@ -532,7 +506,6 @@
 							
 							
 						</div>
-					
 						<div class='category-tests'>
 							<table class='bordered table-results'>
 								<thead>
@@ -544,8 +517,8 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Jul 10, 2020 02:06:00 PM</td>
-										<td class='linked' test-id='1'>surgeryMedicalEstimateTest</td>
+										<td>Jul 15, 2020 12:47:40 PM</td>
+										<td class='linked' test-id='1'>PhysicianOPDcaseSheetOrdersTest</td>
 										<td><span class='test-status pass'>pass</span></td>
 									</tr>
 								</tbody>
@@ -553,20 +526,16 @@
 						</div>
 					</div>
 				</li>
-
 			</ul>
 		</div>
 	</div>
-
 	<div class='subview-right left'>
 		<div class='view-summary'>
 			<h5 class='category-name'></h5>
 		</div>
 	</div>
 </div>
-<!-- category view -->
-<!-- exception view -->
-<div id='dashboard-view' class='view hide'>
+<!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
 	<div class='card-panel transparent np-v'>
 		<h5>Dashboard</h5>
 
@@ -580,25 +549,25 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Steps
-					<div class='panel-lead'>54</div>
+					<div class='panel-lead'>0</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Jul 10, 2020 02:05:50 PM</div>
+					<div class='panel-lead'>Jul 15, 2020 12:47:33 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Jul 10, 2020 02:07:25 PM</div>
+			 		<div class='panel-lead'>Jul 15, 2020 12:50:22 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 1m 34s+964ms</div>
+					<div class='panel-lead'>0h 2m 48s+684ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -638,7 +607,7 @@
 							<th>Passed %</th>
 						</tr>
 						<tr>
-							<td>ADT</td>
+							<td>PhysicianOPD</td>
 							<td>1</td>
 							<td>0</td>
 							<td>0</td>
@@ -653,12 +622,11 @@
 	</div>
 </div>
 <!-- dashboard view -->
-<!-- testrunner-logs view -->
-		</div>
+<!-- testrunner-logs view -->		</div>
 		<!-- container -->
-
 		<script>
 			var statusGroup = {
+                parentCount: 1,
 				passParent: 1,
 				failParent: 0,
 				fatalParent: 0,
@@ -666,16 +634,17 @@
 				warningParent: 0,
 				skipParent: 0,
 				exceptionsParent: 0,
-				
-				passChild: 2,
+				childCount: 0,
+				passChild: 0,
 				failChild: 0,
 				fatalChild: 0,
 				errorChild: 0,
 				warningChild: 0,
 				skipChild: 0,
-				infoChild: 52,
+				infoChild: 0,
+				debugChild: 0,
 				exceptionsChild: 0,
-				
+				grandChildCount: 0,
 				passGrandChild: 0,
 				failGrandChild: 0,
 				fatalGrandChild: 0,
@@ -683,15 +652,17 @@
 				warningGrandChild: 0,
 				skipGrandChild: 0,
 				infoGrandChild: 0,
+				debugGrandChild: 0,
 				exceptionsGrandChild: 0,
 			};
 		</script>
-		
-			<script src='https://cdn.rawgit.com/anshooarora/extentreports-java/fca20fb7653aade98810546ab96a2a4360e3e712/dist/js/extent.js' type='text/javascript'></script>
-		
-		
- 		<script type='text/javascript'>
- 		</script>
+		<script>
+			var timeline = {
+			        "PhysicianOPDcaseSheetOrdersTest":162.19
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/c23457b/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+		</script>
 	</body>
-	
 </html>

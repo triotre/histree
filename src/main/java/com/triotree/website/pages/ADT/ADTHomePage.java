@@ -337,7 +337,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			text = driver.findElement(POPUP_TEXT).getText();
 		}
 		catch (Exception e) {}
-		
+
 		if(text.equals("Please enter Date of Birth Age is less than 18 year")) 
 		{
 			//Test.class.
@@ -408,6 +408,12 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			Assert.assertEquals("Already transferred!","Already transferred!");
 			logger.info(text+" is equal to "+"Already transferred!");
 			Markup m=MarkupHelper.createLabel("Already transferred!", ExtentColor.GREEN);
+			test.info(m);
+		}
+		if(text.equals("Diagnosis details are mandatory before order")) {
+			Assert.assertEquals("Diagnosis details are mandatory before order","Diagnosis details are mandatory before order");
+			logger.info(text+" is equal to "+"Diagnosis details are mandatory before order");
+			Markup m=MarkupHelper.createLabel("Diagnosis details are mandatory before order", ExtentColor.GREEN);
 			test.info(m);
 		}
 	}
