@@ -29,7 +29,8 @@ import javafx.scene.control.ColorPicker;
 
 
 
-public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
+public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
+{
 	private static final Logger logger = LogManager
 			.getLogger(PhysicianOPDcaseSheetOrders.class.getName());
 	private final By STATION_DROPDOWN = By.id("Department"); 
@@ -40,8 +41,9 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 	private final By View=By.id("view_type");
 	private final By From_Date=By.id("FromDate");
 	private final By Search_Button=By.id("search_data");
-	private final By Patient=By.xpath("(//div[@id='op_queue']//div[@id])[1]");
+	private final By Patient=By.xpath("(//div[@id='op_queue']//div[@id])[3]");
 	private final By Order=By.xpath("//div[@id='ordersopphycomp']");
+	private final By Chief_Complaints=By.xpath("//div[@id='chiefcomplantopphycomp']");
 	private final By Diagnosis=By.xpath("//div[@id='diagnosisopphycomp']");
 	private final By Save_Order_Button=By.xpath("//i[@id='save_fav_orders']");
 	private final By Search_Laboratory=By.id("searchlaboratory");
@@ -60,11 +62,34 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 	private final By LandingOrder_Tab_Button=By.xpath("//a[@class='orders_link']");
 	private final By  Show_Drugs_Only=By.id("checkexist"); 
 	private final By Close_Banner_Button=By.id("closeidcseshet");
+	private final By Select_Department=By.id("opmanual");
+	private final By Manual_Service_Name=By.id("manualtext");
+	private final By Manual_Price=By.id("manual_price");
+	private final By Manual_Plus_Icon=By.id("add_manual_order");
+	private final By Facility=By.id("hospitalConsult");
+	private final By Consults_Speciality=By.id("speciality");
+	private final By Consults_Priority=By.id("priority");
+	private final By Consults_Location=By.id("location");
+	private final By Consults_Reason=By.id("consult_reason");
+	private final By Consults_Add_Row=By.id("add_consult_order");
+	private final By Chief_Complaints_Add_Row=By.id("addnewrow");
+	private final By Acquity_DropDown=By.id("acquity1");
+	private final By Characteristics=By.id("characteristics1");
+	private final By Duration=By.id("no1");
+	private final By Aggravating_Factors=By.id("agg_factors1");
+	private final By Relieving_Factors=By.id("relief_factors1");
+	private final By Meds_Taken=By.id("meds_taken1");
+	private final By Effect=By.id("effect1");
+	private final By Remark=By.id("remark1");
+	private final By Save_Chief_Complaints=By.id("save_chief_complaints");
+	private final By Description=By.xpath("//input[contains(@id,'item')]");
+
+
 	int f=0;
 
 	String servicename="";
 	String selected_Tab="";
-	///String chief_complaint_name ="";
+	Boolean found=false;
 
 	List<String> servicelist=new LinkedList<String>();
 	List<String> refletedservices=new LinkedList<String>();
@@ -155,23 +180,41 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 	}
 
 	public void clickonPatient(ExtentTest test) {
-		WebElement patient_element = driver.findElement(Patient);
-		driver.clickByJS(TTWebsiteDriver.driver, patient_element);
-		logger.info("Click on Patient");
-		Markup m=MarkupHelper.createLabel("Click on Patient", ExtentColor.GREEN);
-		test.info(m);
+		if(driver.findElements(Patient).size()>0) {
+			WebElement patient_element = driver.findElement(Patient);
+			driver.clickByJS(TTWebsiteDriver.driver, patient_element);
+			logger.info("Click on Patient");
+			Markup m=MarkupHelper.createLabel("Click on Patient", ExtentColor.GREEN);
+			test.info(m);
+			found=true;
+		}
+		else {
+			logger.info("Patient is not available in Patient Queue");
+			Markup m=MarkupHelper.createLabel("Patient is not available in Patient Queue", ExtentColor.RED);
+			test.info(m);
+			found=false;
+			Assert.assertTrue(found, "Patient is not available in Patient Queue");
+		}
 	}
 
-	public void clickonOrder(ExtentTest test) {
-
+	public void clickonOrder(ExtentTest test) 
+	{
 		WebElement order_element = driver.findElement(Order);
 		driver.clickByJS(TTWebsiteDriver.driver, order_element);
 		logger.info("Click on Order Tab");
 		Markup m=MarkupHelper.createLabel("Click on Order Tab", ExtentColor.GREEN);
 		test.info(m);
-
 	}
 
+	public void clickonChiefComplaints(ExtentTest test) {
+
+		WebElement Chief_Complaints_element = driver.findElement(Chief_Complaints);
+		driver.clickByJS(TTWebsiteDriver.driver, Chief_Complaints_element);
+		logger.info("Click on Chief Complaints Tab");
+		Markup m=MarkupHelper.createLabel("Click on Chief Complaints Tab", ExtentColor.GREEN);
+		test.info(m);
+
+	}
 	public void verifyselectedTab(ExtentTest test) {
 		List<WebElement> tab_list = driver.findElements(By.xpath("//div[@id='horizontalTab1']//ul[@class='resp-tabs-list']//li[text()]"));
 		for(int i=1;i<=tab_list.size();i++)
@@ -212,26 +255,6 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 				Markup m=MarkupHelper.createLabel("Reflected Service Name= "+refletedservices_name+" and Laboratory Service Name= "+chief_complaint_name, ExtentColor.GREEN);
 				test.info(m);
 			}
-
-
-			//			WebElement chief_complaint_element = driver.findElement(By.xpath("//div[@class='resp-tab-content resp-tab-content-active']//label//strong[text()='"+refletedservices_name+"']/..//following-sibling::ul//span[text()='"+chief_complaint_name+"']"));
-			//			driver.clickByJS(TTWebsiteDriver.driver, chief_complaint_element);
-			//			if(chief_complaint_name.equals("3T MRI Angiography Abdomen")) 
-			//			{
-			//				Thread.sleep(2000);
-			//				driver.findElement(By.xpath("//input[@id='txtOrderInvestigationResponse']")).sendKeys(text);
-			//				WebElement investigation_save = driver.findElement(By.xpath("//i[@id='OrderInvestAddResponse']"));
-			//				driver.clickByJS(TTWebsiteDriver.driver, investigation_save);
-			//			}
-			//
-			//			servicename = driver.findElement(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[starts-with(normalize-space(text()),'"+chief_complaint_name+"')]")).getText();
-			//			servicelist.add(servicename);
-			//			if(servicename.equals(chief_complaint_name)) 
-			//			{
-			//				logger.info(""+refletedservices_name+" Service "+servicename+" get added in the below grid");	
-			//				Markup m1=MarkupHelper.createLabel(""+refletedservices_name+" Service "+servicename+" get added in the below grid", ExtentColor.GREEN);
-			//				test.info(m1);
-			//			}
 		}
 	}
 
@@ -287,6 +310,11 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 					}
 				}	
 			}
+		}
+		else {
+			logger.info("After click on Save Button Service is not get saved");
+			Markup m1=MarkupHelper.createLabel("After click on Save Button Service is not get saved", ExtentColor.RED);
+			test.info(m1);
 		}
 	}
 
@@ -353,12 +381,19 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 
 	public void verifyAddedservices(ExtentTest test,String text) 
 	{
-		servicename = driver.findElement(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[starts-with(normalize-space(text()),'"+text+"')]")).getText();
-		servicelist.add(servicename);
-		logger.info(""+selected_Tab+" Service = "+servicename+" is get added in the below grid");
-		Markup m1=MarkupHelper.createLabel(""+selected_Tab+" Service = "+servicename+" is get added in the below grid", ExtentColor.GREEN);
-		test.info(m1);
-
+		if(driver.findElements(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[starts-with(normalize-space(text()),'"+text+"')]")).size()>0) 
+		{
+			servicename = driver.findElement(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[starts-with(normalize-space(text()),'"+text+"')]")).getText();
+			servicelist.add(servicename);
+			logger.info(""+selected_Tab+" Service = "+servicename+" is get added in the below grid");
+			Markup m1=MarkupHelper.createLabel(""+selected_Tab+" Service = "+servicename+" is get added in the below grid", ExtentColor.GREEN);
+			test.info(m1);
+		}
+		else {
+			logger.info(""+selected_Tab+" Service is not get added in the below grid");
+			Markup m1=MarkupHelper.createLabel(""+selected_Tab+" Service is not get added in the below grid", ExtentColor.RED);
+			test.info(m1);
+		}
 	}
 
 	public void verifyOrderSetAddedservices(ExtentTest test) 
@@ -399,26 +434,38 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 			logger.info("Medicine Search item= "+text);
 			Markup m1=MarkupHelper.createLabel("Medicine Search item= "+text, ExtentColor.GREEN);
 			test.info(m1);
+			try {
+				WebElement yes_btn = driver.findElement(By.id("ratcontractpopupyes"));
+				driver.clickByJS(TTWebsiteDriver.driver, yes_btn);
+			}
+			catch (Exception e) {
+				// TODO: handle exception
+			}
 		}
 		f++;
 	}
 
 
-	public void cancelAddedItembelowGrid(String text) 
+	public void cancelAddedItembelowGrid(ExtentTest test,String text) 
 	{
-		driver.findElement(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[text()='"+text+"']//following-sibling::td//i")).click();
+		WebElement cancelorder = driver.findElement(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[text()='"+text+"']//following-sibling::td//i"));
+		driver.clickByJS(TTWebsiteDriver.driver, cancelorder);
 		logger.info("Cancel selected Item in the below grid= "+text);
+		Markup m1=MarkupHelper.createLabel("Cancel selected Item in the below grid= "+text, ExtentColor.GREEN);
+		test.info(m1);
 	}
-	public void SelectedItemFrequencyandSelectedItemRoute(String text,String frequency,String route) 
+	public void SelectedItemFrequencyandSelectedItemRoute(ExtentTest test,String text,String frequency,String route) 
 	{
 
 		TTWebsiteDriver.selectByvisibletext(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[text()='"+text+"']//following-sibling::td//select[contains(@id,'OrdFreq')]"), frequency);
 		TTWebsiteDriver.selectByvisibletext(By.xpath("//table[@id='fav_orders_table']//tbody//tr//td[text()='"+text+"']//following-sibling::td//select[contains(@id,'OrdRoute')]"), route);
 		logger.info("Selected Item Name="+text+" Frequency Itemy= "+frequency+" and Route Item= "+route);
+		Markup m1=MarkupHelper.createLabel("Selected Item Name="+text+" Frequency Itemy= "+frequency+" and Route Item= "+route, ExtentColor.GREEN);
+		test.info(m1);
 
 	}
 
-	public void ClickandAddDiagnosis(String text) 
+	public void ClickandAddDiagnosis(ExtentTest test,String text) 
 	{
 		WebElement digno_element = driver.findElement(Diagnosis);
 		driver.clickByJS(TTWebsiteDriver.driver, digno_element);
@@ -426,50 +473,95 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 		if(driver.findElements(By.xpath("//table[@id='diagnosis_table']//tbody//tr")).size()>0) 
 		{
 			driver.findElement(Diganosis_CheckBox).click();
+			logger.info("Click on Diganosis CheckBox");
 			TTWebsiteDriver.selectByvisibletext(By.xpath("//td[contains(@id,'type')]//select"), "Final");
+			logger.info("Diganosis Type value is Final");
 			///driver.findElement(By.xpath("//input[@id='icd_code_input']")).sendKeys(text);
 			driver.findElement(By.xpath("//textarea[@id='diag_text']")).sendKeys(text);
+			logger.info("Add Diganosis remark= "+text);
 			driver.findElement(By.xpath("//textarea[@id='diag_text']")).sendKeys(Keys.ENTER);
+			checkDescriptionType(test);
 			WebElement save = driver.findElement(By.id("save_diagnosis"));
 			driver.clickByJS(TTWebsiteDriver.driver, save);
+			logger.info("Click on Save Button");
 		}
 		else {
 			WebElement row_element = driver.findElement(By.xpath("(//ul[@id='fav_diagnosis']//li//a)[1]"));
 			driver.clickByJS(TTWebsiteDriver.driver, row_element);
 			driver.findElement(Diganosis_CheckBox).click();
 			TTWebsiteDriver.selectByvisibletext(By.xpath("//td[contains(@id,'type')]//select"), "Final");
+			logger.info("Diganosis Type value is Final");
 			driver.findElement(By.xpath("//textarea[@id='diag_text']")).sendKeys(text);
+			logger.info("Add Diganosis remark= "+text);
 			driver.findElement(By.xpath("//textarea[@id='diag_text']")).sendKeys(Keys.ENTER);
+			checkDescriptionType(test);
 			WebElement save = driver.findElement(By.id("save_diagnosis"));
 			driver.clickByJS(TTWebsiteDriver.driver, save);
+			logger.info("Click on Save Button");
 		}
 
 	}
 
-	public void clickonExistingTabButton() {
+	public void checkDescriptionType(ExtentTest test) 
+	{
+		String description_type = driver.findElement(By.xpath("//table[@id='diagnosis_table']//tbody//td[@style]")).getCssValue("background-color");
+
+		String split=description_type.replace("rgba", "rgb");
+		System.out.println("description_type= "+split);
+		String[] numbers = split.replace("rgb(", "").replace(")", "").split(",");
+		int r = Integer.parseInt(numbers[0].trim());
+		int g = Integer.parseInt(numbers[1].trim());
+		int b = Integer.parseInt(numbers[2].trim());
+		String hex = "#" + Integer.toHexString(r) + Integer.toHexString(g) + Integer.toHexString(b);
+		//String code = Color.fromString(color).asRgba();
+		if(hex.equals("#EF7C7C")) {
+			logger.info("Diagnosis Description is complex");
+			Markup m=MarkupHelper.createLabel("Diagnosis Description is complex", ExtentColor.GREEN);
+			test.info(m);
+		}
+		else {
+			logger.info("Diagnosis Description is not complex");
+			Markup m=MarkupHelper.createLabel("Diagnosis Description is not complex", ExtentColor.GREEN);
+			test.info(m);	
+		}
+
+	}
+
+	public void clickonExistingTabButton(ExtentTest test) {
 		WebElement existing_element = driver.findElement(Existing_Tab_Button);
 		driver.clickByJS(TTWebsiteDriver.driver, existing_element);
 		logger.info("Click on Existing Tab Button");
+		Markup m1=MarkupHelper.createLabel("Click on Existing Tab Button", ExtentColor.GREEN);
+		test.info(m1);
 	}
 
-	public void checkstatusofOrderedItem() 
+	public void checkstatusofOrderedItem(ExtentTest test) 
 	{
-		List<WebElement> service_list = driver.findElements(By.xpath("//table[@id='existing_orders_table']//tbody//tr//td[2]"));
-		for(int s=1;s<=service_list.size();s++)
-		{
-			String service_name = driver.findElement(By.xpath("(//table[@id='existing_orders_table']//tbody//tr//td[2])["+s+"]")).getText();
+		if(driver.findElements(By.xpath("//table[@id='existing_orders_table']//tbody//tr")).size()>0) {
+			List<WebElement> service_list = driver.findElements(By.xpath("//table[@id='existing_orders_table']//tbody//tr//td[2]"));
+			for(int s=1;s<=service_list.size();s++)
+			{
+				String service_name = driver.findElement(By.xpath("(//table[@id='existing_orders_table']//tbody//tr//td[2])["+s+"]")).getText();
 
-			String orders_name = driver.findElement(By.xpath("(//table[@id='existing_orders_table']//tbody//tr//td[3])["+s+"]")).getText();
-			Existingorderlist.add(orders_name);
-			WebElement statusofOrderedItem_element = driver.findElement(By.xpath("(//table[@id='existing_orders_table']//tbody//tr["+s+"]//select[contains(@id,'ExistOrdStatus')])"));
-			Select sl=new Select(statusofOrderedItem_element);
-			WebElement item_text_element = sl.getFirstSelectedOption();
+				String orders_name = driver.findElement(By.xpath("(//table[@id='existing_orders_table']//tbody//tr//td[3])["+s+"]")).getText();
+				Existingorderlist.add(orders_name);
+				WebElement statusofOrderedItem_element = driver.findElement(By.xpath("(//table[@id='existing_orders_table']//tbody//tr["+s+"]//select[contains(@id,'ExistOrdStatus')])"));
+				Select sl=new Select(statusofOrderedItem_element);
+				WebElement item_text_element = sl.getFirstSelectedOption();
 
-			logger.info("Service Name= "+service_name+" Orders Name= "+orders_name+" Status= "+item_text_element.getText());
+				logger.info("Service Name= "+service_name+" Orders Name= "+orders_name+" Status= "+item_text_element.getText());
+				Markup m1=MarkupHelper.createLabel("Service Name= "+service_name+" Orders Name= "+orders_name+" Status= "+item_text_element.getText(), ExtentColor.GREEN);
+				test.info(m1);
+			}
+		}
+		else {
+			logger.info("No Data is available on Existing Order Tab");
+			Markup m1=MarkupHelper.createLabel("No Data is available on Existing Order Tab", ExtentColor.RED);
+			test.info(m1);
 		}
 	}
 
-	public void changeStatusDropdowncancel(String text,String status) 
+	public void changeStatusDropdowncancel(ExtentTest test,String text,String status) 
 	{
 		System.out.println(Existingorderlist);
 		for(String data:Existingorderlist) 
@@ -480,41 +572,222 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage{
 				Select sl=new Select(statusofOrderedItem_element);
 				sl.selectByVisibleText(status);
 				logger.info("Select Status Drop Down= "+status);
-			}
-			else {
-				//logger.info("else Select Status Drop Down");
+				Markup m1=MarkupHelper.createLabel("Select Status Drop Down= "+status, ExtentColor.GREEN);
+				test.info(m1);
 			}
 		}
 	}
 
-	public void checkCancelledStatusofItem(String text) {
+	public void checkCancelledStatusofItem(ExtentTest test,String text) {
 		if(driver.findElements(By.xpath("(//table[@id='existing_orders_table']//tbody//tr//td[text()='"+text+"']/..//select[contains(@id,'ExistOrdStatus')])")).size()>0) 
 		{
 			WebElement statusofOrderedItem_element = driver.findElement(By.xpath("(//table[@id='existing_orders_table']//tbody//tr//td[text()='"+text+"']/..//select[contains(@id,'ExistOrdStatus')])"));
 			Select sl=new Select(statusofOrderedItem_element);
 			logger.info("Status Drop Down of "+text+"= "+sl.getFirstSelectedOption().getText());
+			Markup m1=MarkupHelper.createLabel("Status Drop Down of "+text+"= "+sl.getFirstSelectedOption().getText(), ExtentColor.GREEN);
+			test.info(m1);
 		}
-
-
 	}
 
-	public void clickonLandingOrderTabButton() {
+	public void clickonLandingOrderTabButton(ExtentTest test) {
 		WebElement LandingOrder_element = driver.findElement(LandingOrder_Tab_Button);
 		driver.clickByJS(TTWebsiteDriver.driver, LandingOrder_element);
 		logger.info("Click on Landing Order Tab Button");
+		Markup m1=MarkupHelper.createLabel("Click on Landing Order Tab Button", ExtentColor.GREEN);
+		test.info(m1);
 	}
 
-	public void clickonShowsDrugsOnly() 
+	public void clickonShowsDrugsOnly(ExtentTest test) 
 	{	
 		WebElement ShowsDrugsOnly_element = driver.findElement(Show_Drugs_Only);
 		driver.clickByJS(TTWebsiteDriver.driver, ShowsDrugsOnly_element);
 		logger.info("Click on Shows Drugs Only Check Box");
+		Markup m1=MarkupHelper.createLabel("Click on Shows Drugs Only Check Box", ExtentColor.GREEN);
+		test.info(m1);
 	}
 
-	public void clickonCloseBannerButton() 
+	public void clickonCloseBannerButton(ExtentTest test) 
 	{
 		WebElement banner_element = driver.findElement(Close_Banner_Button);
 		driver.clickByJS(TTWebsiteDriver.driver, banner_element);
 		logger.info("Click on close banner button");
+		Markup m1=MarkupHelper.createLabel("Click on close banner button", ExtentColor.GREEN);
+		test.info(m1);
 	}
+
+	public void SelectDepartmentManual(ExtentTest test,String text) 
+	{
+		TTWebsiteDriver.selectByvisibletext(Select_Department, text);
+		logger.info("Select Department= "+text);
+		Markup m1=MarkupHelper.createLabel("Select Department= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterManualServiceName(ExtentTest test,String text) {
+		driver.findElement(Manual_Service_Name).sendKeys(text);
+		logger.info("Manual Service Name= "+text);
+		Markup m1=MarkupHelper.createLabel("Manual Service Name= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterManualPrice(ExtentTest test,String text) {
+		driver.findElement(Manual_Price).sendKeys(text);
+		logger.info("Manual Price= "+text);
+		Markup m1=MarkupHelper.createLabel("Manual Price= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void clickonManualPlusIcon(ExtentTest test) {
+		driver.findElement(Manual_Plus_Icon).click();
+		logger.info("Click on Manual Plus Icon");
+		Markup m1=MarkupHelper.createLabel("Click on Manual Plus Icon", ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void VerifyConsultsFacility(ExtentTest test) {
+		Select sl=new Select(driver.findElement(Facility));
+		logger.info("Consults Facility= "+sl.getFirstSelectedOption().getText());
+		Markup m1=MarkupHelper.createLabel("Consults Facility= "+sl.getFirstSelectedOption().getText(), ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void VerifyConsultsSpeciality(ExtentTest test,String text) {
+		TTWebsiteDriver.selectByvisibletext(Consults_Speciality, text);
+		logger.info("Consults Speciality= "+text);
+		Markup m1=MarkupHelper.createLabel("Consults Speciality= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void VerifyConsultsPriority(ExtentTest test,String text) {
+		TTWebsiteDriver.selectByvisibletext(Consults_Priority, text);
+		logger.info("Consults Priority= "+text);
+		Markup m1=MarkupHelper.createLabel("Consults Priority= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void VerifyConsultsLocation(ExtentTest test) {
+		Select sl=new Select(driver.findElement(Consults_Location));
+		logger.info("Consults Location= "+sl.getFirstSelectedOption().getText());
+		Markup m1=MarkupHelper.createLabel("Consults Location= "+sl.getFirstSelectedOption().getText(), ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+
+	//	private final By Consults_Add_Row=By.id("add_consult_order");
+
+	public void AddConsultsReason(ExtentTest test,String text) 
+	{
+		driver.findElement(Consults_Reason).sendKeys(text);
+		logger.info("Consults Reason= "+text);
+		Markup m1=MarkupHelper.createLabel("Consults Reason= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void clickonConsultAddRow() 
+	{
+		WebElement addrow = driver.findElement(Consults_Add_Row);
+		driver.clickByJS(TTWebsiteDriver.driver, addrow);
+		logger.info("Click on Consults Add Row");
+	}
+
+	public void clickonChiefComplaintsAddRow(ExtentTest test) 
+	{
+		int table_size = driver.findElements(By.xpath("//table[@id='chief_complaints_table']//tbody//tr")).size();
+		if(table_size>0) 
+		{
+			logger.info("Already Chief Complaints is exists= "+table_size);
+			Markup m1=MarkupHelper.createLabel("Already Chief Complaints is exists= "+table_size, ExtentColor.GREEN);
+			test.info(m1);
+			driver.findElement(By.xpath("//td[@class='delete_row']")).click();
+			clickonSaveChiefComplaints(test);
+			clickonChiefComplaints(test);
+		}
+		WebElement ChiefComplaintsaddrow = driver.findElement(Chief_Complaints_Add_Row);
+		driver.clickByJS(TTWebsiteDriver.driver, ChiefComplaintsaddrow);
+		logger.info("Click on Chief Complaints Add Row");
+		Markup m1=MarkupHelper.createLabel("Click on Chief Complaints Add Row", ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterChiefComplaintsDescription(ExtentTest test,String text) 
+	{
+		driver.findElement(Description).sendKeys(text);
+		logger.info("Chief Complaints Description= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Description= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void selectAcquity(ExtentTest test,String text) 
+	{
+		TTWebsiteDriver.selectByvisibletext(Acquity_DropDown, text);
+		logger.info("Chief Complaints Acquity= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Acquity= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterChiefComplaintsCharacteristics(ExtentTest test,String text) 
+	{
+		driver.findElement(Characteristics).sendKeys(text);
+		logger.info("Chief Complaints Characteristics= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Characteristics= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterChiefComplaintsDuration(ExtentTest test,String text) 
+	{
+		driver.findElement(Duration).sendKeys(text);
+		logger.info("Chief Complaints Duration= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Duration= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterChiefComplaintsAggravatingFactors(ExtentTest test,String text) 
+	{
+		driver.findElement(Aggravating_Factors).sendKeys(text);
+		logger.info("Chief Complaints Aggravating Factors= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Aggravating Factors= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterChiefComplaintsRelievingFactors(ExtentTest test,String text) 
+	{
+		driver.findElement(Relieving_Factors).sendKeys(text);
+		logger.info("Chief Complaints Relieving Factors= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Relieving Factors= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterChiefComplaintsMedsTaken(ExtentTest test,String text) 
+	{
+		driver.findElement(Meds_Taken).sendKeys(text);
+		logger.info("Chief Complaints Meds Taken= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Meds Taken= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void selectEffect(ExtentTest test,String text) 
+	{
+		TTWebsiteDriver.selectByvisibletext(Effect, text);
+		logger.info("Chief Complaints Effect= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Effect= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void enterChiefComplaintsRemark(ExtentTest test,String text) 
+	{
+		driver.findElement(Remark).sendKeys(text);
+		logger.info("Chief Complaints Remark= "+text);
+		Markup m1=MarkupHelper.createLabel("Chief Complaints Remark= "+text, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+	public void clickonSaveChiefComplaints(ExtentTest test) {
+		WebElement save_element = driver.findElement(Save_Chief_Complaints);
+		driver.clickByJS(TTWebsiteDriver.driver, save_element);
+		logger.info("Click on Save Button");
+		Markup m1=MarkupHelper.createLabel("Click on Save Button", ExtentColor.GREEN);
+		test.info(m1);
+	}
+
+
 }

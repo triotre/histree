@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Test1</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>3/3/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Jul 06 10:37:55 IST 2020</td>
+<td>Started on:</td><td>Fri Jul 17 16:44:41 IST 2020</td>
 </tr>
-<tr><td>Total time:</td><td>1569 seconds (1569920 ms)</td>
+<tr><td>Total time:</td><td>71 seconds (71491 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,177 +67,6 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-failed'>
-<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
-<tr><td><b>Test method</b></td>
-<td width="30%"><b>Exception</b></td>
-<td width="10%"><b>Time (seconds)</b></td>
-<td><b>Instance</b></td>
-</tr>
-<tr>
-<td title='com.triotree.test.website.MISReports.ReportsTest.misDsdMatchWithDeptWiseTestAndRevenueReportForIpEpisodeTest()'><b>misDsdMatchWithDeptWiseTestAndRevenueReportForIpEpisodeTest</b><br>Test class: com.triotree.test.website.MISReports.ReportsTest</td>
-<td><div><pre>java.lang.OutOfMemoryError: Java heap space
-	at java.base/java.util.Arrays.copyOf(Arrays.java:3744)
-	at java.base/java.io.ByteArrayOutputStream.grow(ByteArrayOutputStream.java:119)
-	at java.base/java.io.ByteArrayOutputStream.ensureCapacity(ByteArrayOutputStream.java:94)
-	at java.base/java.io.ByteArrayOutputStream.write(ByteArrayOutputStream.java:154)
-	at org.apache.poi.openxml4j.opc.internal.MemoryPackagePartOutputStream.write(MemoryPackagePartOutputStream.java:88)
-	at org.apache.xmlbeans.impl.store.Cursor._save(Cursor.java:590)
-	at org.apache.xmlbeans.impl.store.Cursor.save(Cursor.java:2544)
-	at org.apache.xmlbeans.impl.values.XmlObjectBase.save(XmlObjectBase.java:180)
-	at org.apache.poi.xssf.usermodel.XSSFSheet.write(XSSFSheet.java:2713)
-	at org.apache.poi.xssf.usermodel.XSSFSheet.commit(XSSFSheet.java:2673)
-	at org.apache.poi.POIXMLDocumentPart.onSave(POIXMLDocumentPart.java:329)
-	at org.apache.poi.POIXMLDocumentPart.onSave(POIXMLDocumentPart.java:333)
-	at org.apache.poi.POIXMLDocument.write(POIXMLDocument.java:173)
-	at com.triotree.utils.ExcelWriter.write(ExcelWriter.java:69)
-	at com.triotree.test.website.MISReports.ReportsTest.misDsdMatchWithDeptWiseTestAndRevenueReportForIpEpisodeTest(ReportsTest.java:451)
-... Removed 17 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace575779772", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace575779772'><pre>java.lang.OutOfMemoryError: Java heap space
-	at java.base/java.util.Arrays.copyOf(Arrays.java:3744)
-	at java.base/java.io.ByteArrayOutputStream.grow(ByteArrayOutputStream.java:119)
-	at java.base/java.io.ByteArrayOutputStream.ensureCapacity(ByteArrayOutputStream.java:94)
-	at java.base/java.io.ByteArrayOutputStream.write(ByteArrayOutputStream.java:154)
-	at org.apache.poi.openxml4j.opc.internal.MemoryPackagePartOutputStream.write(MemoryPackagePartOutputStream.java:88)
-	at org.apache.xmlbeans.impl.store.Cursor._save(Cursor.java:590)
-	at org.apache.xmlbeans.impl.store.Cursor.save(Cursor.java:2544)
-	at org.apache.xmlbeans.impl.values.XmlObjectBase.save(XmlObjectBase.java:180)
-	at org.apache.poi.xssf.usermodel.XSSFSheet.write(XSSFSheet.java:2713)
-	at org.apache.poi.xssf.usermodel.XSSFSheet.commit(XSSFSheet.java:2673)
-	at org.apache.poi.POIXMLDocumentPart.onSave(POIXMLDocumentPart.java:329)
-	at org.apache.poi.POIXMLDocumentPart.onSave(POIXMLDocumentPart.java:333)
-	at org.apache.poi.POIXMLDocument.write(POIXMLDocument.java:173)
-	at com.triotree.utils.ExcelWriter.write(ExcelWriter.java:69)
-	at com.triotree.test.website.MISReports.ReportsTest.misDsdMatchWithDeptWiseTestAndRevenueReportForIpEpisodeTest(ReportsTest.java:451)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-</pre></div></td>
-<td>205</td>
-<td>com.triotree.test.website.MISReports.ReportsTest@7544a1e4</td></tr>
-<tr>
-<td title='com.triotree.test.website.MISReports.ReportsTest.misOpDiscountReportAndDSDReportTest()'><b>misOpDiscountReportAndDSDReportTest</b><br>Test class: com.triotree.test.website.MISReports.ReportsTest</td>
-<td><div><pre>java.io.FileNotFoundException: D:\automationproject\qa-automation-triotree\Downloads\Department Wise SubDepartment Wise Revenue.csv (The system cannot find the file specified)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:220)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:158)
-	at com.triotree.test.website.MISReports.ReportsTest.misOpDiscountReportAndDSDReportTest(ReportsTest.java:353)
-... Removed 24 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1106510750", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1106510750'><pre>java.io.FileNotFoundException: D:\automationproject\qa-automation-triotree\Downloads\Department Wise SubDepartment Wise Revenue.csv (The system cannot find the file specified)
-	at java.base/java.io.FileInputStream.open0(Native Method)
-	at java.base/java.io.FileInputStream.open(FileInputStream.java:220)
-	at java.base/java.io.FileInputStream.&lt;init&gt;(FileInputStream.java:158)
-	at com.triotree.test.website.MISReports.ReportsTest.misOpDiscountReportAndDSDReportTest(ReportsTest.java:353)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>186</td>
-<td>com.triotree.test.website.MISReports.ReportsTest@7544a1e4</td></tr>
-<tr>
-<td title='com.triotree.test.website.MISReports.ReportsTest.misUserWiseCollectionReportTest()'><b>misUserWiseCollectionReportTest</b><br>Test class: com.triotree.test.website.MISReports.ReportsTest</td>
-<td><div><pre>org.openqa.selenium.ScriptTimeoutException: script timeout
-  (Session info: chrome=83.0.4103.116)
-Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
-System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51839}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 0c523aa6eac75f1f19c2929b82af7851
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:536)
-	at com.triotree.driver.website.TTWebsiteDriver.clickByJS(TTWebsiteDriver.java:310)
-	at com.triotree.website.pages.Reports.DepartmentWiseSubDepartmentWiseRevenuePage.clickOnCSVButtonFromDepartmentWiseTestAndRevenueReport(DepartmentWiseSubDepartmentWiseRevenuePage.java:178)
-	at com.triotree.test.website.MISReports.ReportsTest.misUserWiseCollectionReportTest(ReportsTest.java:671)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace265556987", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace265556987'><pre>org.openqa.selenium.ScriptTimeoutException: script timeout
-  (Session info: chrome=83.0.4103.116)
-Build info: version: &apos;3.7.1&apos;, revision: &apos;8a0099a&apos;, time: &apos;2017-11-06T21:01:39.354Z&apos;
-System info: host: &apos;NISHANTSHARMA&apos;, ip: &apos;206.19.38.23&apos;, os.name: &apos;Windows 7&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;6.1&apos;, java.version: &apos;10.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 83.0.4103.116, chrome: {chromedriverVersion: 83.0.4103.39 (ccbf011cb2d2b..., userDataDir: C:\Users\NISHAN~1\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:51839}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:virtualAuthenticators: true}
-Session ID: 0c523aa6eac75f1f19c2929b82af7851
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:488)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:164)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:600)
-	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:536)
-	at com.triotree.driver.website.TTWebsiteDriver.clickByJS(TTWebsiteDriver.java:310)
-	at com.triotree.website.pages.Reports.DepartmentWiseSubDepartmentWiseRevenuePage.clickOnCSVButtonFromDepartmentWiseTestAndRevenueReport(DepartmentWiseSubDepartmentWiseRevenuePage.java:178)
-	at com.triotree.test.website.MISReports.ReportsTest.misUserWiseCollectionReportTest(ReportsTest.java:671)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:80)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
-	at org.testng.TestRunner.privateRun(TestRunner.java:767)
-	at org.testng.TestRunner.run(TestRunner.java:617)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:334)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:329)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:291)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:240)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1198)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1123)
-	at org.testng.TestNG.run(TestNG.java:1031)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-</pre></div></td>
-<td>736</td>
-<td>com.triotree.test.website.MISReports.ReportsTest@7544a1e4</td></tr>
-</table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -246,20 +75,10 @@ Session ID: 0c523aa6eac75f1f19c2929b82af7851
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.triotree.test.website.MISReports.ReportsTest.misDSDAndUserWiseCollectionAndIpDiscountReportTest()'><b>misDSDAndUserWiseCollectionAndIpDiscountReportTest</b><br>Test class: com.triotree.test.website.MISReports.ReportsTest</td>
+<td title='com.triotree.website.Physician.PhysicianOPDCaseSheetMedicineOrder.PhysicianOPDCaseSheetMedicineOrderTest()'><b>PhysicianOPDCaseSheetMedicineOrderTest</b><br>Test class: com.triotree.website.Physician.PhysicianOPDCaseSheetMedicineOrder</td>
 <td></td>
-<td>161</td>
-<td>com.triotree.test.website.MISReports.ReportsTest@7544a1e4</td></tr>
-<tr>
-<td title='com.triotree.test.website.MISReports.ReportsTest.misOpDiscountReportTest()'><b>misOpDiscountReportTest</b><br>Test class: com.triotree.test.website.MISReports.ReportsTest</td>
-<td></td>
-<td>69</td>
-<td>com.triotree.test.website.MISReports.ReportsTest@7544a1e4</td></tr>
-<tr>
-<td title='com.triotree.test.website.MISReports.ReportsTest.patientRegistrationValidDataTest()'><b>patientRegistrationValidDataTest</b><br>Test class: com.triotree.test.website.MISReports.ReportsTest</td>
-<td></td>
-<td>177</td>
-<td>com.triotree.test.website.MISReports.ReportsTest@7544a1e4</td></tr>
+<td>64</td>
+<td>com.triotree.website.Physician.PhysicianOPDCaseSheetMedicineOrder@1a6f5124</td></tr>
 </table><p>
 </body>
 </html>

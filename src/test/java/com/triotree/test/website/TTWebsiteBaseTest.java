@@ -69,10 +69,10 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	@AfterMethod
 	public void tearDownSession() throws IOException 
 	{
-		//driver.quit();
-		//renameLogfileName();
+		///driver.quit();
+		renameLogfileName();
 	}
-	
+
 	public String getIDCardType() {
 		String idCard = DBUtil.performDatabaseQuery(TestConstants.GET_ID_CARD_QUERY);
 		return idCard;
@@ -232,14 +232,11 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 			Assert.fail(message);
 		}
 	}
-	
-	public  void renameLogfileName() throws IOException {
+
+	public  boolean renameLogfileName() throws IOException {
 		File f=new File("./logs");
 		File []listoffile=f.listFiles();
 		File chosenFile = null;
-		String className = this.getClass().getSimpleName();
-		System.out.println("className= "+className);
-		
 		long lastModifiedTime = Long.MIN_VALUE;
 		for(int i=0;i<listoffile.length;i++) 
 		{
@@ -249,16 +246,12 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 				lastModifiedTime = listoffile[i].lastModified();
 			}
 		}
-		if(chosenFile.exists()) {
-		System.out.println(chosenFile);
-		System.out.println(chosenFile.renameTo(new File("./logfolder/"+className+".log")));
+		if(chosenFile.exists()) 
+		{
+			FileUtils.copyFile(chosenFile, new File("./logfolder/"+this.getClass().getSimpleName()+".log"));
 		}
-		else {
-			System.out.println("not exists");
-		}
-		///return chosenFile.renameTo(new File("./logs/"+className+".log"));
-
+		File dd=new File("./logfolder/"+chosenFile);
+		boolean renamefile = chosenFile.renameTo(new File(dd+".log"));
+		return renamefile;
 	}
-
-	
 }

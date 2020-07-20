@@ -48,7 +48,7 @@ public class TTBaseTest {
 		SimpleDateFormat dateformate=new SimpleDateFormat("yyyy-MM-dd_hhmmss");
 		System.setProperty("current.date", dateformate.format(new Date()));
 	}
-	static String reportpath=System.getProperty("user.dir")+"/extent_report/ExtentReport.html";
+	String reportpath=System.getProperty("user.dir")+"/extent_report/"+this.getClass().getSimpleName()+"_"+"ExtentReport"+".html";
 	protected PropertyFile propertyFile = new PropertyFile();
 	private static final Logger logger = LogManager
 			.getLogger(TTBaseTest.class.getName());

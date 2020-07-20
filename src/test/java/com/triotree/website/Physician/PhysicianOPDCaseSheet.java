@@ -7,10 +7,6 @@ import org.testng.annotations.Test;
 
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
-import com.triotree.test.website.ADT.ADTCashPatientRegistrationTest;
-import com.triotree.website.pages.ADT.ADTHomePage;
-import com.triotree.website.pages.ADT.IPDepositRefundformPage;
-import com.triotree.website.pages.ADT.SurgeryMedicalEstimatePage;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 import com.triotree.website.pages.Physician.PhysicianOPDcaseSheetOrders;
 @Listeners(ResultListener.class)
@@ -41,7 +37,7 @@ public class PhysicianOPDCaseSheet extends TTWebsiteBaseTest
 		opdorder.enterFromDate(test,"10/Feb/2020");
 		opdorder.clickonSearchButton(test);
 		opdorder.clickonPatient(test);
-		opdorder.ClickandAddDiagnosis("Testing data");
+		opdorder.ClickandAddDiagnosis(test,"Testing data");
 
 		opdorder.clickonOrder(test);
 		opdorder.getHeading(test);
@@ -51,6 +47,7 @@ public class PhysicianOPDCaseSheet extends TTWebsiteBaseTest
 		opdorder.clickandverifyservices(test, "ababa", "USG - Abdomen And Pelvis");
 		opdorder.clickandverifyservices(test, "ababa", "Echo Cardiogram");
 		opdorder.clickonSaveOrder(test);
+		
 	}
 
 }

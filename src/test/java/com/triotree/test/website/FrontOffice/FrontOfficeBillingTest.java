@@ -139,8 +139,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" Abhin  Lazar");
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
