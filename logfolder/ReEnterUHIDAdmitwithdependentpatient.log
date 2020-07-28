@@ -1,0 +1,74 @@
+[INFO ] 2020-07-28 10:28:32.164 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:28:33.198 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:28:33.287 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:28:33.373 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:28:33.474 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:28:33.554 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:28:33.637 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  ReEnterUHIDandadmitwithdependentpatientsimultaneouslytransfer
+******************************************************************************************************************************
+[INFO ] 2020-07-28 10:28:40.181 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-28 10:28:41.320 [main] HISHomePage - Master Icon Clicked
+[INFO ] 2020-07-28 10:28:43.499 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-28 10:28:47.424 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-28 10:28:48.688 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-28 10:28:50.856 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed
+[INFO ] 2020-07-28 10:29:43.101 [main] ADTHomePage - Facility= L1-SANITY-T3 Bed Name= TrioBed63 Bed Type= Single AC Room Number= 1st FLR T1 Transplan
+[INFO ] 2020-07-28 10:29:43.288 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-28 10:29:43.637 [main] ADTHomePage - Click on Yes Button
+[INFO ] 2020-07-28 10:29:45.857 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-28 10:29:50.885 [main] HISWebsiteBasePage - HOME ICON Clicked
+[INFO ] 2020-07-28 10:29:51.990 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-28 10:29:54.127 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-28 10:29:57.869 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-28 10:29:58.949 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-28 10:30:02.156 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-28 10:30:05.865 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed Status
+[INFO ] 2020-07-28 10:30:08.957 [main] ADTHomePage - Form is getting open=Bed Status
+[INFO ] 2020-07-28 10:30:14.500 [main] ADTHomePage - Ward= 1st FLR T1 Transplant ICU Bed Type= Single ACBed Status= Vacant is selected
+[INFO ] 2020-07-28 10:30:14.550 [main] ADTHomePage - Bed Name= TrioBed63
+[INFO ] 2020-07-28 10:30:39.827 [main] ADTHomePage - IP Number= 40934
+[INFO ] 2020-07-28 10:30:39.941 [main] ADTHomePage - Click on Dependent ADM Button
+[INFO ] 2020-07-28 10:30:40.006 [main] ADTHomePage - Dependent_Admission popup window  is open
+[INFO ] 2020-07-28 10:30:40.127 [main] ADTHomePage - Dependent admission option is available only for females older than 14 years! is equal to Dependent admission option is available only for females older than 14 years!
+[INFO ] 2020-07-28 10:30:42.094 [main] ADTHomePage - IP Number= 15726
+[INFO ] 2020-07-28 10:30:42.376 [main] ADTHomePage - Details is fetch
+[INFO ] 2020-07-28 10:30:42.545 [main] ADTHomePage - Click on Modify Button
+[INFO ] 2020-07-28 10:30:42.581 [main] ADTHomePage - All details text box get enabled and user can be able to modify patient details
+[INFO ] 2020-07-28 10:30:42.824 [main] ADTHomePage - Title= Ms.
+[INFO ] 2020-07-28 10:30:42.942 [main] ADTHomePage - Click on Dependent ADM Button
+[INFO ] 2020-07-28 10:30:42.994 [main] ADTHomePage - Dependent_Admission popup window  is open
+[INFO ] 2020-07-28 10:30:43.214 [main] ADTHomePage - Sex= Male
+[INFO ] 2020-07-28 10:30:43.985 [main] ADTHomePage - Father Name= Testing
+[INFO ] 2020-07-28 10:30:44.472 [main] ADTHomePage - Delivery_type= Forceps Delivery Birth_Type= Live Birth
+[INFO ] 2020-07-28 10:30:44.689 [main] ADTHomePage - Gestational Age= 2
+[INFO ] 2020-07-28 10:30:44.962 [main] ADTHomePage - simultaneously transfer to Allotted Bed Type= Single AC
+[INFO ] 2020-07-28 10:30:45.230 [main] ADTHomePage - simultaneously transfer to Ward Name= 1st FLR T1 Transplant ICU
+[INFO ] 2020-07-28 10:30:45.300 [main] ADTHomePage - Bed Option size= 2
+[INFO ] 2020-07-28 10:30:47.560 [main] ADTHomePage - simultaneously transfer to Bed Type= TrioBed63 is selected
+[INFO ] 2020-07-28 10:30:49.665 [main] ADTHomePage - simultaneously transfer to Bed Type= TrioBed63 is selected
+[INFO ] 2020-07-28 10:31:06.198 [main] ADTHomePage - Speciality=Cardiology Primary_Consultant= Anish   Referring_Consultant= Anish
+[INFO ] 2020-07-28 10:31:06.256 [main] ADTHomePage - First Name= BABY OF  Fname79651
+[INFO ] 2020-07-28 10:31:06.312 [main] ADTHomePage - Last_Name= Lname79651
+[INFO ] 2020-07-28 10:31:06.425 [main] ADTHomePage - Click on Cancel Button
+[INFO ] 2020-07-28 10:31:06.575 [main] ADTHomePage - Admit Patient Updated First Name= Fname79651
+[INFO ] 2020-07-28 10:31:06.780 [main] ADTHomePage - Admit Patient Updated Last_Name= Lname79651
+[INFO ] 2020-07-28 10:31:06.780 [main] ADTHomePage - Name is updated
+[INFO ] 2020-07-28 10:31:08.894 [main] ADTHomePage - Tab Name= Package Details is selected
+[INFO ] 2020-07-28 10:31:09.431 [main] ADTHomePage - Package Details popup window  is open
+[INFO ] 2020-07-28 10:31:11.621 [main] ADTHomePage - Bed Type= Single Non-AC
+[INFO ] 2020-07-28 10:31:11.775 [main] ADTHomePage - Price= 7000
+[INFO ] 2020-07-28 10:31:11.964 [main] ADTHomePage - Package details is added in blow grid
+[INFO ] 2020-07-28 10:31:12.118 [main] ADTHomePage - Click on Plus Button Icon
+[INFO ] 2020-07-28 10:31:12.170 [main] ADTHomePage - system will be throwing a pop-up Assign new package?
+[INFO ] 2020-07-28 10:31:12.273 [main] ADTHomePage - Click on New Assign No Button
+[INFO ] 2020-07-28 10:31:12.381 [main] ADTHomePage - Click on Plus Button Icon
+[INFO ] 2020-07-28 10:31:12.512 [main] ADTHomePage - Click on New Assign Yes Button
+[INFO ] 2020-07-28 10:31:12.784 [main] ADTHomePage - Package assigned successfully! is equal to Package assigned successfully!
+[INFO ] 2020-07-28 10:31:12.941 [main] ADTHomePage - Click on Delete Button Icon
+[INFO ] 2020-07-28 10:31:13.000 [main] ADTHomePage - system will be throwing a pop-up Delete package?
+[INFO ] 2020-07-28 10:31:13.108 [main] ADTHomePage - Click on Delete Package NO Button
+[INFO ] 2020-07-28 10:31:13.234 [main] ADTHomePage - Click on Delete Button Icon
+[INFO ] 2020-07-28 10:31:13.421 [main] ADTHomePage - Click on Delete Package Yes Button
+[INFO ] 2020-07-28 10:31:13.423 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case ReEnterUHIDandadmitwithdependentpatientsimultaneouslytransfer has passed]

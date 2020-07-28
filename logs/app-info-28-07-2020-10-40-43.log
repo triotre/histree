@@ -1,0 +1,73 @@
+[INFO ] 2020-07-28 10:40:51.110 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:40:52.399 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:40:52.595 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:40:52.684 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:40:52.780 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:40:52.860 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-28 10:40:52.941 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  AdtIPDepositRefundformTest
+******************************************************************************************************************************
+[INFO ] 2020-07-28 10:40:58.504 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-28 10:40:59.670 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-28 10:41:01.877 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-28 10:41:06.316 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-28 10:41:07.405 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-28 10:41:11.652 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-28 10:41:12.042 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section IP Deposit/Refund
+[INFO ] 2020-07-28 10:41:24.756 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17150458
+[INFO ] 2020-07-28 10:41:25.214 [main] ADTHomePage - The patient has been discharged! is equal to The patient has been discharged!
+[INFO ] 2020-07-28 10:41:25.286 [main] ADTHomePage - Patient Details are getting fetched up= RAJH.17150458
+[INFO ] 2020-07-28 10:41:30.155 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-28 10:41:37.831 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17152257
+[INFO ] 2020-07-28 10:41:37.951 [main] ADTHomePage - Click on Side OP Button
+[INFO ] 2020-07-28 10:41:40.088 [main] ADTHomePage - Transfer To (IP) Check Box got selected 
+[INFO ] 2020-07-28 10:41:41.724 [main] ADTHomePage - Deposit is not got transferred in IP
+[INFO ] 2020-07-28 10:41:44.071 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-28 10:41:46.501 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-28 10:41:48.789 [main] ADTHomePage - Deposit Amount= 0
+[INFO ] 2020-07-28 10:41:52.833 [main] ADTHomePage - Click on Deposit Button
+[INFO ] 2020-07-28 10:41:54.907 [main] ADTHomePage - Amount cannot be zero! is equal to Amount cannot be zero!
+[INFO ] 2020-07-28 10:41:55.135 [main] ADTHomePage - Deposit Amount= 5
+[INFO ] 2020-07-28 10:41:59.199 [main] ADTHomePage - Click on Deposit Button
+[INFO ] 2020-07-28 10:42:01.397 [main] ADTHomePage - Click on Deposit yes Button
+[INFO ] 2020-07-28 10:42:01.695 [main] ADTHomePage - Deposit taken successfully! is equal to Deposit taken successfully!
+[INFO ] 2020-07-28 10:42:02.563 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-28 10:42:04.637 [main] ADTHomePage - Refund Data is getting fetched
+[INFO ] 2020-07-28 10:42:11.964 [main] ADTHomePage - Refund Amount= 5 Payable Name= anshul Refund Remark= Automation Remark
+[INFO ] 2020-07-28 10:42:12.099 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-28 10:42:14.135 [main] ADTHomePage - Header Refund Button is Clickable
+[INFO ] 2020-07-28 10:42:14.427 [main] ADTHomePage - Click Yes on Refund Deposit
+[INFO ] 2020-07-28 10:42:14.476 [main] ADTHomePage - Refund given successfully! is equal to Refund given successfully!
+[INFO ] 2020-07-28 10:42:17.531 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-28 10:42:19.660 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-28 10:42:19.809 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-28 10:42:25.082 [main] ADTHomePage - Click on Bill Detail Clear Button
+[INFO ] 2020-07-28 10:42:26.165 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-28 10:42:26.188 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-28 10:42:26.404 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-28 10:42:29.286 [main] ADTHomePage - Patient Details are getting fetched according to this IP Number= 40102
+[INFO ] 2020-07-28 10:42:30.256 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-28 10:42:30.322 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-28 10:42:37.796 [main] ADTHomePage - Click on Refersh Button
+[INFO ] 2020-07-28 10:42:38.855 [main] ADTHomePage - Recepit Number= RHDI46457
+[INFO ] 2020-07-28 10:42:38.875 [main] ADTHomePage - Patient Details are getting fetched according to this Recepit Number= RHDI46457
+[INFO ] 2020-07-28 10:42:39.544 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-28 10:42:39.639 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-28 10:42:47.360 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-28 10:42:47.473 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-28 10:42:54.748 [main] ADTHomePage - Click on Bill Detail Close Button
+[INFO ] 2020-07-28 10:42:55.863 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-28 10:43:00.164 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-28 10:43:00.647 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section Cheque In Hand Details
+[INFO ] 2020-07-28 10:43:05.790 [main] ADTHomePage - Form is getting open=Cheque In Hand Details
+[INFO ] 2020-07-28 10:43:06.357 [main] ADTHomePage - From Date= 01/Jun/2020
+[INFO ] 2020-07-28 10:43:06.892 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-28 10:43:06.991 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-28 10:43:07.042 [main] ADTHomePage - Data is getting fetched according to the selected date range
+[INFO ] 2020-07-28 10:43:07.169 [main] ADTHomePage - Click on CSV Button
+[INFO ] 2020-07-28 10:43:11.731 [main] ADTHomePage - From Date= 16/Jun/2020
+[INFO ] 2020-07-28 10:43:12.307 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-28 10:43:12.388 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-28 10:43:12.434 [main] ADTHomePage - From date Can not be Greater Then To Date is equal to From date Can not be Greater Then To Date
+[INFO ] 2020-07-28 10:43:12.435 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case AdtIPDepositRefundformTest has passed]
