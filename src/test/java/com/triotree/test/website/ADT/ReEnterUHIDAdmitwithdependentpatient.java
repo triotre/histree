@@ -14,7 +14,7 @@ import com.triotree.website.pages.CommonPages.HISHomePage;
 public class ReEnterUHIDAdmitwithdependentpatient extends TTWebsiteBaseTest
 {
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(ReEnterUHIDAdmitwithdependentpatient.class.getName());
 
 	private HISHomePage hisHomePage;
 	private BedStatusPage bedstatusPage;

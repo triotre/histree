@@ -42,6 +42,7 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 	private final By From_Date=By.id("FromDate");
 	private final By Search_Button=By.id("search_data");
 	private final By Patient=By.xpath("(//div[@id='op_queue']//div[@id])[3]");
+	//=By.xpath("(//div[@id='in_progress']//div[@id])[]");
 	private final By Order=By.xpath("//div[@id='ordersopphycomp']");
 	private final By Chief_Complaints=By.xpath("//div[@id='chiefcomplantopphycomp']");
 	private final By Diagnosis=By.xpath("//div[@id='diagnosisopphycomp']");
@@ -81,9 +82,13 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 	private final By Meds_Taken=By.id("meds_taken1");
 	private final By Effect=By.id("effect1");
 	private final By Remark=By.id("remark1");
-	private final By Save_Chief_Complaints=By.id("save_chief_complaints");
+	private final By Save_Chief_Complaints=By.xpath("//ul[@class='top-icon-list c-complaint-top-icon']//li//i[@id='save_chief_complaints']");
 	private final By Description=By.xpath("//input[contains(@id,'item')]");
-
+	private final By Note_Style=By.id("note_style_id_hopi");
+	private final By Physical_Note_Style=By.id("note_style_id_physical");
+	private final By Geneder_Save=By.xpath("//div[@class='modal-block-new top25']//a[@title='Save']");
+	private final By HOPI_Save=By.id("save_hopi");
+	private final By Save_Note=By.id("save_note");
 
 	int f=0;
 
@@ -206,13 +211,24 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 		test.info(m);
 	}
 
-	public void clickonChiefComplaints(ExtentTest test) {
-
-		WebElement Chief_Complaints_element = driver.findElement(Chief_Complaints);
-		driver.clickByJS(TTWebsiteDriver.driver, Chief_Complaints_element);
-		logger.info("Click on Chief Complaints Tab");
-		Markup m=MarkupHelper.createLabel("Click on Chief Complaints Tab", ExtentColor.GREEN);
+	public void clickonTab(ExtentTest test,String tabname) 
+	{
+		WebElement tab_element = driver.findElement(By.xpath("//div[text()='"+tabname+"']"));
+		driver.clickByJS(TTWebsiteDriver.driver, tab_element);
+		logger.info("Click on "+tabname+" Tab");
+		Markup m=MarkupHelper.createLabel("Click on "+tabname+" Tab", ExtentColor.GREEN);
 		test.info(m);
+	}
+
+	public void clickonChiefComplaints(ExtentTest test) {
+		try {
+			WebElement Chief_Complaints_element = driver.findElement(Chief_Complaints);
+			driver.clickByJS(TTWebsiteDriver.driver, Chief_Complaints_element);
+			logger.info("Click on Chief Complaints Tab");
+			Markup m=MarkupHelper.createLabel("Click on Chief Complaints Tab", ExtentColor.GREEN);
+			test.info(m);
+		}
+		catch (Exception e) {}
 
 	}
 	public void verifyselectedTab(ExtentTest test) {
@@ -711,83 +727,184 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 
 	public void enterChiefComplaintsDescription(ExtentTest test,String text) 
 	{
-		driver.findElement(Description).sendKeys(text);
-		logger.info("Chief Complaints Description= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Description= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			driver.findElement(Description).sendKeys(text);
+			logger.info("Chief Complaints Description= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Description= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void selectAcquity(ExtentTest test,String text) 
 	{
-		TTWebsiteDriver.selectByvisibletext(Acquity_DropDown, text);
-		logger.info("Chief Complaints Acquity= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Acquity= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			TTWebsiteDriver.selectByvisibletext(Acquity_DropDown, text);
+			logger.info("Chief Complaints Acquity= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Acquity= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {
+
+		}
 	}
 
 	public void enterChiefComplaintsCharacteristics(ExtentTest test,String text) 
 	{
-		driver.findElement(Characteristics).sendKeys(text);
-		logger.info("Chief Complaints Characteristics= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Characteristics= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			driver.findElement(Characteristics).sendKeys(text);
+			logger.info("Chief Complaints Characteristics= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Characteristics= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {}
 	}
 
 	public void enterChiefComplaintsDuration(ExtentTest test,String text) 
 	{
-		driver.findElement(Duration).sendKeys(text);
-		logger.info("Chief Complaints Duration= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Duration= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			driver.findElement(Duration).sendKeys(text);
+			logger.info("Chief Complaints Duration= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Duration= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {}
 	}
 
 	public void enterChiefComplaintsAggravatingFactors(ExtentTest test,String text) 
 	{
-		driver.findElement(Aggravating_Factors).sendKeys(text);
-		logger.info("Chief Complaints Aggravating Factors= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Aggravating Factors= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			driver.findElement(Aggravating_Factors).sendKeys(text);
+			logger.info("Chief Complaints Aggravating Factors= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Aggravating Factors= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void enterChiefComplaintsRelievingFactors(ExtentTest test,String text) 
 	{
-		driver.findElement(Relieving_Factors).sendKeys(text);
-		logger.info("Chief Complaints Relieving Factors= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Relieving Factors= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			driver.findElement(Relieving_Factors).sendKeys(text);
+			logger.info("Chief Complaints Relieving Factors= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Relieving Factors= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void enterChiefComplaintsMedsTaken(ExtentTest test,String text) 
 	{
-		driver.findElement(Meds_Taken).sendKeys(text);
-		logger.info("Chief Complaints Meds Taken= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Meds Taken= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			driver.findElement(Meds_Taken).sendKeys(text);
+			logger.info("Chief Complaints Meds Taken= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Meds Taken= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {}
 	}
 
 	public void selectEffect(ExtentTest test,String text) 
 	{
-		TTWebsiteDriver.selectByvisibletext(Effect, text);
-		logger.info("Chief Complaints Effect= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Effect= "+text, ExtentColor.GREEN);
-		test.info(m1);
+		try {
+			TTWebsiteDriver.selectByvisibletext(Effect, text);
+			logger.info("Chief Complaints Effect= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Effect= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void enterChiefComplaintsRemark(ExtentTest test,String text) 
-	{
-		driver.findElement(Remark).sendKeys(text);
-		logger.info("Chief Complaints Remark= "+text);
-		Markup m1=MarkupHelper.createLabel("Chief Complaints Remark= "+text, ExtentColor.GREEN);
-		test.info(m1);
+	{ 
+		try {
+			driver.findElement(Remark).sendKeys(text);
+			logger.info("Chief Complaints Remark= "+text);
+			Markup m1=MarkupHelper.createLabel("Chief Complaints Remark= "+text, ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {}
 	}
 
 	public void clickonSaveChiefComplaints(ExtentTest test) {
-		WebElement save_element = driver.findElement(Save_Chief_Complaints);
-		driver.clickByJS(TTWebsiteDriver.driver, save_element);
-		logger.info("Click on Save Button");
-		Markup m1=MarkupHelper.createLabel("Click on Save Button", ExtentColor.GREEN);
+		try {
+			WebElement save_element = driver.findElement(Save_Chief_Complaints);
+			driver.clickByJS(TTWebsiteDriver.driver, save_element);
+			logger.info("Click on Save Button");
+			Markup m1=MarkupHelper.createLabel("Click on Save Button", ExtentColor.GREEN);
+			test.info(m1);
+		}
+		catch (Exception e) {
+		}
+	}
+
+	public void selectNoteStyle(ExtentTest test) 
+	{
+		Select sl=new Select(driver.findElement(Note_Style));
+
+
+		List<WebElement> note_style_list = sl.getOptions();
+		for(int i=1;i<=note_style_list.size();i++) 
+		{
+			String note_style_text = note_style_list.get(i).getText();
+			if(!note_style_text.equals("Select")) {
+				sl.selectByVisibleText(note_style_text);
+				logger.info("Note Style= "+note_style_text);
+				Markup m1=MarkupHelper.createLabel("Note Style= "+note_style_text, ExtentColor.GREEN);
+				test.info(m1);
+				break;
+			}
+		}
+	}
+
+	public void selectPhysicalNoteStyle(ExtentTest test) 
+	{
+		Select sl=new Select(driver.findElement(Physical_Note_Style));
+		List<WebElement> note_style_list = sl.getOptions();
+		for(int i=1;i<=note_style_list.size();i++) 
+		{
+			String note_style_text = note_style_list.get(i).getText();
+			if(!note_style_text.equals("Select")) {
+				sl.selectByVisibleText(note_style_text);
+
+				logger.info("Physical Note Style= "+note_style_text);
+				Markup m1=MarkupHelper.createLabel("Physical Note Style= "+note_style_text, ExtentColor.GREEN);
+				test.info(m1);
+				break;
+			}
+		}
+
+	}
+
+	public void clickonGenederSaveButton(ExtentTest test) 
+	{
+		WebElement geneder_element = driver.findElement(Geneder_Save);
+		driver.clickByJS(TTWebsiteDriver.driver, geneder_element);
+		logger.info("Click on Geneder Save Button");
+		Markup m1=MarkupHelper.createLabel("Click on Geneder Save Button", ExtentColor.GREEN);
 		test.info(m1);
 	}
 
+	public void clickonHOPISaveButton(ExtentTest test) 
+	{
+		WebElement hopi_element = driver.findElement(HOPI_Save);
+		driver.clickByJS(TTWebsiteDriver.driver, hopi_element);
+		logger.info("Click on HOPI Save Button");
+		Markup m1=MarkupHelper.createLabel("Click on HOPI Save Button", ExtentColor.GREEN);
+		test.info(m1);
+	}
 
+	public void clickonSaveNoteButton(ExtentTest test) 
+	{
+		WebElement note_element = driver.findElement(Save_Note);
+		driver.clickByJS(TTWebsiteDriver.driver, note_element);
+		logger.info("Click on HOPI Save Button");
+		Markup m1=MarkupHelper.createLabel("Click on Save Note Button", ExtentColor.GREEN);
+		test.info(m1);
+	}
 }
