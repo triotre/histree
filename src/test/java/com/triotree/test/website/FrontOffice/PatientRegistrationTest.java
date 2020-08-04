@@ -29,7 +29,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 	private BillingPage billingPage;
 	private DepositPage depositPage;
 
-	private String patientRegistrationId = "AHHS.8996";
+	private String patientRegistrationId = "RAJH.17153173";
 	private String desc = null;
 	private String title1 = null;
 	private String desc1 = null;

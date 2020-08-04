@@ -16,7 +16,7 @@ import com.triotree.website.pages.CommonPages.HISHomePage;
 public class SurgeryMedicalEstimate extends TTWebsiteBaseTest
 {
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(SurgeryMedicalEstimate.class.getName());
 
 	private HISHomePage hisHomePage;
 	private ADTHomePage adtpage;
@@ -27,8 +27,8 @@ public class SurgeryMedicalEstimate extends TTWebsiteBaseTest
 	@Test
 	public void surgeryMedicalEstimateTest() throws InterruptedException 
 	{
-		test=extent.createTest("surgeryMedicalEstimateTest", "This test case is verifies Surgery Medical Estimate Test");
-		test.assignCategory("ADT");
+		test=extent.createTest("SurgeryMedicalEstimateTest", "This test case is verifies Surgery Medical Estimate Test");
+		test.assignCategory("ADT Surgery Medical Estimate");
 		hisHomePage = new HISHomePage(driver);
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);

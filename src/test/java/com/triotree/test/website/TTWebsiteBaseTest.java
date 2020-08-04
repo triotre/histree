@@ -69,7 +69,7 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	@AfterMethod
 	public void tearDownSession() throws IOException 
 	{
-		///driver.quit();
+		driver.quit();
 		renameLogfileName();
 	}
 

@@ -503,7 +503,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Anaesthetistgulab");
 		generateSchedulePage.selectDoctorFromDropdown("Sumit  wadhwa");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		//assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");

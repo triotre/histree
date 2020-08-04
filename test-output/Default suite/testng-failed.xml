@@ -3,16 +3,16 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.triotree.website.Physician.PhysicianPatientSpecificdocumentation">
+      <class name="com.triotree.test.website.ADT.OLDUHIDAdmissionFormSearch">
         <methods>
           <include name="beforeclass"/>
+          <include name="OLDUHIDAdmissionFormSearchTest"/>
           <include name="beforeSuite"/>
-          <include name="PhysicianPatientSpecificdocumentationTest"/>
           <include name="tearDownSession"/>
           <include name="setUp"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianPatientSpecificdocumentation -->
+      </class> <!-- com.triotree.test.website.ADT.OLDUHIDAdmissionFormSearch -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

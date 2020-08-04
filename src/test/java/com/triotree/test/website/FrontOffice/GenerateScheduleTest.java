@@ -79,7 +79,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
 		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -220,7 +220,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
 		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		//generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -283,8 +284,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		//assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Doctor Schedule");
-
-		doctorSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
+		
+		//doctorSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
+		doctorSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
@@ -433,7 +435,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
 		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -505,7 +507,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
 		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -575,7 +577,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
 		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -715,7 +717,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
 		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
 		//assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -760,7 +762,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Doctor Schedule");
 
-		doctorSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
+		doctorSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Cardiology");
@@ -817,7 +819,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
 		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -866,7 +868,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 
 
-		generateSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
@@ -922,7 +924,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
 		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
 		generateSchedulePage.clickOnPlusButton();
-		generateSchedulePage.selectGenerateScheduledropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
@@ -972,7 +974,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 
 
-		generateSchedulePage.selectFacilityFromDropdown("L1-ACCF-Guwahati");
+		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
 		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");

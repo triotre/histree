@@ -91,8 +91,6 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 
 
 
-	//Logger test = null;
-
 	public void clickOnAdmitPatientAndSelectAnOption(String option) throws InterruptedException {
 		driver.waitForElementPresent(IP_DEPOSIT_REFUND);
 		driver.click(IP_DEPOSIT_REFUND);
@@ -370,26 +368,10 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 				driver.findElement(OPDEPOSIT_BUTTON).click();
 			}
 			catch (Exception e) {
-				logger.info("Deposit is not got transferred in IP");
-				Markup m=MarkupHelper.createLabel("Deposit is not got transferred in IP", ExtentColor.RED);
+				logger.info("Deposit is not got transferred in IP Deposit/Refund");
+				Markup m=MarkupHelper.createLabel("Deposit is not got transferred in IP Deposit/Refund", ExtentColor.RED);
 				test.info(m);			
 			}
-			//			if(!balance_amount.equals(amount)) 
-			//			{
-			//				validatepopuptext(test);
-			//				logger.info("Balance Amount "+balance_amount+" is not equal to Transferring Amount "+amount);
-			//				Markup m=MarkupHelper.createLabel("Balance Amount "+balance_amount+" is not equal to Transferring Amount "+amount, ExtentColor.RED);
-			//				test.info(m);
-			//			}
-			//			if(!balance_amount.equals(amount) && amount.equals("0")) 
-			//			{
-			//				logger.info("Amount should not get deposited");
-			//			}
-			//			else {
-			//				logger.info("Balance Amount "+balance_amount+" is equal to Transferring Amount "+amount);
-			//				Markup m=MarkupHelper.createLabel("Balance Amount "+balance_amount+" is equal to Transferring Amount "+amount, ExtentColor.GREEN);
-			//				test.info(m);
-			//			}
 			break; 
 		}	
 
@@ -452,6 +434,8 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 
 	public void clickonReceiptUtility(ExtentTest test) {
 		try {
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+			wait.until(ExpectedConditions.elementToBeClickable(RECEPIT_UTILITY));
 			driver.findElement(RECEPIT_UTILITY).click();
 			logger.info("Click on Receipt Utility");
 			Markup m=MarkupHelper.createLabel("Receipt Utility got selected", ExtentColor.GREEN);
@@ -788,17 +772,8 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 			Markup m=MarkupHelper.createLabel("Refund Data is getting fetched", ExtentColor.GREEN);
 			test.info(m);	
 			Thread.sleep(2000);
-//			String refund_column = driver.findElement(By.xpath("(//table[@id='tbldeposit']//tbody//tr)["+depositsize+"]//td[@ctype='balance']")).getText();
-//			if(refund_column.equals("0"))
-//			{
-//				depositsize--;
-//			}
 			WebElement deposit = driver.findElement(By.xpath("(//table[@id='tbldeposit']//tbody//tr)["+depositsize+"]//td[@ctype='balance']"));
 			driver.clickByJS(TTWebsiteDriver.driver, deposit);
-
-
-			//			WebElement deposit = driver.findElement(By.xpath("(//table[@id='tbldeposit']//tbody//tr)["+depositsize+"]//td[@ctype='balance']"));
-			//			driver.clickByJS(TTWebsiteDriver.driver, deposit);
 
 		}
 		else {

@@ -1,74 +1,472 @@
-[INFO ] 2020-07-28 10:28:32.164 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
-[INFO ] 2020-07-28 10:28:33.198 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
-[INFO ] 2020-07-28 10:28:33.287 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
-[INFO ] 2020-07-28 10:28:33.373 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
-[INFO ] 2020-07-28 10:28:33.474 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
-[INFO ] 2020-07-28 10:28:33.554 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
-[INFO ] 2020-07-28 10:28:33.637 [main] TestListner - 
+[INFO ] 2020-07-31 12:34:42.793 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:34:43.889 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:34:43.970 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:34:44.050 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:34:44.137 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:34:44.213 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:34:44.291 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  AdtIPDepositRefundDebitCardformTest
+******************************************************************************************************************************
+[INFO ] 2020-07-31 12:34:50.216 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-31 12:34:51.372 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-31 12:34:53.567 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:34:57.814 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:34:58.906 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:35:03.138 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-31 12:35:03.498 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section IP Deposit/Refund
+[INFO ] 2020-07-31 12:35:16.205 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17150458
+[INFO ] 2020-07-31 12:35:16.635 [main] ADTHomePage - The patient has been discharged! is equal to The patient has been discharged!
+[INFO ] 2020-07-31 12:35:16.710 [main] ADTHomePage - Patient Details are getting fetched up= RAJH.17150458
+[INFO ] 2020-07-31 12:35:21.276 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:35:28.890 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17152257
+[INFO ] 2020-07-31 12:35:28.969 [main] ADTHomePage - Click on Side OP Button
+[INFO ] 2020-07-31 12:35:31.134 [main] ADTHomePage - Transfer To (IP) Check Box got selected 
+[INFO ] 2020-07-31 12:35:32.566 [main] ADTHomePage - Deposit is not got transferred in IP
+[INFO ] 2020-07-31 12:35:34.939 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:35:37.319 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-31 12:35:39.440 [main] ADTHomePage - Click on Deposit Debit Card Radio Button
+[INFO ] 2020-07-31 12:35:39.816 [main] ADTHomePage - Deposit Card Number= 123456789
+[INFO ] 2020-07-31 12:35:42.004 [main] ADTHomePage - Deposit Credit Card Name= MASTERCARD
+[INFO ] 2020-07-31 12:35:44.194 [main] ADTHomePage - Deposit Bank Name= Allahabad Bank
+[INFO ] 2020-07-31 12:35:46.468 [main] ADTHomePage - Deposit Trans Number= 1234
+[INFO ] 2020-07-31 12:35:46.670 [main] ADTHomePage - Deposit Number= 10
+[INFO ] 2020-07-31 12:35:46.723 [main] ADTHomePage - Click on Deposit Button
+[INFO ] 2020-07-31 12:35:48.897 [main] ADTHomePage - Click on Deposit yes Button
+[INFO ] 2020-07-31 12:35:49.178 [main] ADTHomePage - Deposit taken successfully! is equal to Deposit taken successfully!
+[INFO ] 2020-07-31 12:35:50.301 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-31 12:35:52.393 [main] ADTHomePage - Refund Data is getting fetched
+[INFO ] 2020-07-31 12:35:54.573 [main] ADTHomePage - Click on Refund Debit Card Radio Button
+[INFO ] 2020-07-31 12:35:55.038 [main] ADTHomePage - Refund Check Number= 123456789
+[INFO ] 2020-07-31 12:35:57.213 [main] ADTHomePage - Refund card Name= MASTERCARD
+[INFO ] 2020-07-31 12:35:59.386 [main] ADTHomePage - Refund Bank Name= Allahabad Bank
+[INFO ] 2020-07-31 12:36:01.655 [main] ADTHomePage - Refund Batch Number= 1234
+[INFO ] 2020-07-31 12:36:03.855 [main] ADTHomePage - Refund Amount= 5
+[INFO ] 2020-07-31 12:36:05.992 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-31 12:36:08.032 [main] ADTHomePage - Header Refund Button is Clickable
+[INFO ] 2020-07-31 12:36:08.419 [main] ADTHomePage - Click Yes on Refund Deposit
+[INFO ] 2020-07-31 12:36:08.479 [main] ADTHomePage - Refund given successfully! is equal to Refund given successfully!
+[INFO ] 2020-07-31 12:36:11.529 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:36:13.739 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-31 12:36:13.766 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-31 12:36:19.109 [main] ADTHomePage - Click on Bill Detail Clear Button
+[INFO ] 2020-07-31 12:36:20.191 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-31 12:36:20.209 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-31 12:36:20.422 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-31 12:36:23.907 [main] ADTHomePage - Patient Details are getting fetched according to this IP Number= 40102
+[INFO ] 2020-07-31 12:36:24.758 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:36:24.791 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-31 12:36:32.155 [main] ADTHomePage - Click on Refersh Button
+[INFO ] 2020-07-31 12:36:37.328 [main] ADTHomePage - Recepit Number= RHDI46457
+[INFO ] 2020-07-31 12:36:37.355 [main] ADTHomePage - Patient Details are getting fetched according to this Recepit Number= RHDI46457
+[INFO ] 2020-07-31 12:36:37.994 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:36:38.104 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-31 12:36:45.357 [main] ADTHomePage - Click on Bill Detail Close Button
+[INFO ] 2020-07-31 12:36:46.490 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:36:50.733 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-31 12:36:51.099 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section Cheque In Hand Details
+[INFO ] 2020-07-31 12:37:00.312 [main] ADTHomePage - Form is getting open=Cheque In Hand Details
+[INFO ] 2020-07-31 12:37:00.859 [main] ADTHomePage - From Date= 01/Jun/2020
+[INFO ] 2020-07-31 12:37:01.504 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-31 12:37:01.606 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-31 12:37:01.687 [main] ADTHomePage - Data is getting fetched according to the selected date range
+[INFO ] 2020-07-31 12:37:01.831 [main] ADTHomePage - Click on CSV Button
+[INFO ] 2020-07-31 12:37:06.397 [main] ADTHomePage - From Date= 16/Jun/2020
+[INFO ] 2020-07-31 12:37:06.919 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-31 12:37:07.016 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-31 12:37:07.073 [main] ADTHomePage - From date Can not be Greater Then To Date is equal to From date Can not be Greater Then To Date
+[INFO ] 2020-07-31 12:37:07.075 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case AdtIPDepositRefundDebitCardformTest has passed]
+[INFO ] 2020-07-31 12:37:14.697 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:37:14.782 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:37:14.861 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:37:14.935 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:37:15.005 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:37:15.079 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:37:15.160 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  updateadmissiondatetestcase
+******************************************************************************************************************************
+[INFO ] 2020-07-31 12:37:20.638 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-31 12:37:21.796 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-31 12:37:23.961 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:37:30.924 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:37:32.013 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:37:36.231 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-31 12:37:46.307 [main] ADTHomePage - Following Option has been selected from Indent Items Section Update Admission Date
+[INFO ] 2020-07-31 12:37:49.610 [main] ADTHomePage - IP Number= 15727
+[INFO ] 2020-07-31 12:37:50.672 [main] ADTHomePage - Discharge Type radio button is selected
+[INFO ] 2020-07-31 12:37:50.672 [main] ADTHomePage - Details of patient is fetch
+[INFO ] 2020-07-31 12:37:50.710 [main] ADTHomePage - Admission Date Radio att= disable_a_href
+[INFO ] 2020-07-31 12:37:50.710 [main] ADTHomePage - Admission Date Radio Button not get selected
+[INFO ] 2020-07-31 12:37:50.743 [main] ADTHomePage - New Admission Date Field should not be editable
+[INFO ] 2020-07-31 12:37:50.793 [main] ADTHomePage - Click on clear button
+[INFO ] 2020-07-31 12:37:50.959 [main] ADTHomePage - IP Number= 15729
+[INFO ] 2020-07-31 12:37:51.998 [main] ADTHomePage - Discharge Type radio button is selected
+[INFO ] 2020-07-31 12:37:51.998 [main] ADTHomePage - Details of patient is fetch
+[INFO ] 2020-07-31 12:37:52.050 [main] ADTHomePage - Patient has been discharged! is equal to Patient has been discharged!
+[INFO ] 2020-07-31 12:37:52.281 [main] ADTHomePage - New Discharge Type= LAMA is selected
+[INFO ] 2020-07-31 12:37:52.308 [main] ADTHomePage - Patient has been discharged! is equal to Patient has been discharged!
+[INFO ] 2020-07-31 12:37:52.345 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:37:52.384 [main] ADTHomePage - Discharge Type Can be Change Only Same Day Of Discharge is equal to Discharge Type Can be Change Only Same Day Of Discharge
+[INFO ] 2020-07-31 12:37:52.423 [main] ADTHomePage - Click on clear button
+[INFO ] 2020-07-31 12:37:52.595 [main] ADTHomePage - IP Number= 15729
+[INFO ] 2020-07-31 12:37:53.636 [main] ADTHomePage - Discharge Type radio button is selected
+[INFO ] 2020-07-31 12:37:53.636 [main] ADTHomePage - Details of patient is fetch
+[INFO ] 2020-07-31 12:37:53.696 [main] ADTHomePage - Patient has been discharged! is equal to Patient has been discharged!
+[INFO ] 2020-07-31 12:37:53.868 [main] ADTHomePage - New Discharge Type= LAMA is selected
+[INFO ] 2020-07-31 12:37:53.897 [main] ADTHomePage - Patient has been discharged! is equal to Patient has been discharged!
+[INFO ] 2020-07-31 12:37:53.921 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:37:53.961 [main] ADTHomePage - Discharge Type Can be Change Only Same Day Of Discharge is equal to Discharge Type Can be Change Only Same Day Of Discharge
+[INFO ] 2020-07-31 12:37:54.159 [main] ADTHomePage - New Discharge Type= Expired is selected
+[INFO ] 2020-07-31 12:37:54.184 [main] ADTHomePage - Discharge Type Can be Change Only Same Day Of Discharge is equal to Discharge Type Can be Change Only Same Day Of Discharge
+[INFO ] 2020-07-31 12:37:54.223 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:37:54.267 [main] ADTHomePage - Discharge Type Can be Change Only Same Day Of Discharge is equal to Discharge Type Can be Change Only Same Day Of Discharge
+[INFO ] 2020-07-31 12:37:54.268 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case updateadmissiondatetestcase has passed]
+[INFO ] 2020-07-31 12:38:01.348 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:38:01.434 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:38:01.506 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:38:01.581 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:38:01.647 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:38:01.710 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:38:01.783 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  AdtIPDepositRefundchequeformTest
+******************************************************************************************************************************
+[INFO ] 2020-07-31 12:38:07.180 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-31 12:38:08.301 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-31 12:38:10.419 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:38:14.930 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:38:16.027 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:38:20.225 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-31 12:38:20.583 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section IP Deposit/Refund
+[INFO ] 2020-07-31 12:38:36.516 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17150458
+[INFO ] 2020-07-31 12:38:36.879 [main] ADTHomePage - The patient has been discharged! is equal to The patient has been discharged!
+[INFO ] 2020-07-31 12:38:36.946 [main] ADTHomePage - Patient Details are getting fetched up= RAJH.17150458
+[INFO ] 2020-07-31 12:38:41.460 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:38:49.107 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17152257
+[INFO ] 2020-07-31 12:38:49.187 [main] ADTHomePage - Click on Side OP Button
+[INFO ] 2020-07-31 12:38:51.336 [main] ADTHomePage - Transfer To (IP) Check Box got selected 
+[INFO ] 2020-07-31 12:38:52.742 [main] ADTHomePage - Deposit is not got transferred in IP
+[INFO ] 2020-07-31 12:38:55.319 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:38:57.697 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-31 12:38:59.827 [main] ADTHomePage - Click on Cheque Radio Button
+[INFO ] 2020-07-31 12:39:03.190 [main] ADTHomePage - Check Number= 12345678
+[INFO ] 2020-07-31 12:39:04.850 [main] ADTHomePage - Issue Date= 22-06-2020
+[INFO ] 2020-07-31 12:39:06.034 [main] ADTHomePage - Bank Name= Bank of India
+[INFO ] 2020-07-31 12:39:07.315 [main] ADTHomePage - Branch Name= Nodia
+[INFO ] 2020-07-31 12:39:08.521 [main] ADTHomePage - Cheque Amount= 10
+[INFO ] 2020-07-31 12:39:08.603 [main] ADTHomePage - Click on Deposit Button
+[INFO ] 2020-07-31 12:39:10.791 [main] ADTHomePage - Click on Deposit yes Button
+[INFO ] 2020-07-31 12:39:10.965 [main] ADTHomePage - Deposit taken successfully! is equal to Deposit taken successfully!
+[INFO ] 2020-07-31 12:39:12.027 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-31 12:39:14.106 [main] ADTHomePage - Refund Data is getting fetched
+[INFO ] 2020-07-31 12:39:16.249 [main] ADTHomePage - Click on Cheque Radio Button
+[INFO ] 2020-07-31 12:39:18.624 [main] ADTHomePage - Deposit Cheque Number= 12345678
+[INFO ] 2020-07-31 12:39:21.323 [main] ADTHomePage - Deposit Issue Date= 22-06-2020
+[INFO ] 2020-07-31 12:39:22.500 [main] ADTHomePage - Deposit Bank Name= Bank of India
+[INFO ] 2020-07-31 12:39:23.779 [main] ADTHomePage - Deposit Branch Name= Nodia
+[INFO ] 2020-07-31 12:39:26.950 [main] ADTHomePage - Deposit Cheque Amount= 5
+[INFO ] 2020-07-31 12:39:29.098 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-31 12:39:31.122 [main] ADTHomePage - Header Refund Button is Clickable
+[INFO ] 2020-07-31 12:39:31.461 [main] ADTHomePage - Click Yes on Refund Deposit
+[INFO ] 2020-07-31 12:39:34.635 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:39:36.878 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-31 12:39:36.913 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-31 12:39:42.115 [main] ADTHomePage - Click on Bill Detail Clear Button
+[INFO ] 2020-07-31 12:39:43.205 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-31 12:39:43.224 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-31 12:39:43.434 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-31 12:39:46.466 [main] ADTHomePage - Patient Details are getting fetched according to this IP Number= 40102
+[INFO ] 2020-07-31 12:39:47.250 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:39:47.341 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-31 12:39:54.661 [main] ADTHomePage - Click on Refersh Button
+[INFO ] 2020-07-31 12:39:55.633 [main] ADTHomePage - Recepit Number= RHDI46457
+[INFO ] 2020-07-31 12:39:55.663 [main] ADTHomePage - Patient Details are getting fetched according to this Recepit Number= RHDI46457
+[INFO ] 2020-07-31 12:39:56.352 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:39:56.437 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-31 12:40:03.709 [main] ADTHomePage - Click on Bill Detail Close Button
+[INFO ] 2020-07-31 12:40:04.823 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:40:09.075 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-31 12:40:09.438 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section Cheque In Hand Details
+[INFO ] 2020-07-31 12:40:14.560 [main] ADTHomePage - Form is getting open=Cheque In Hand Details
+[INFO ] 2020-07-31 12:40:15.114 [main] ADTHomePage - From Date= 01/Jun/2020
+[INFO ] 2020-07-31 12:40:15.647 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-31 12:40:15.742 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-31 12:40:15.790 [main] ADTHomePage - Data is getting fetched according to the selected date range
+[INFO ] 2020-07-31 12:40:15.911 [main] ADTHomePage - Click on CSV Button
+[INFO ] 2020-07-31 12:40:20.508 [main] ADTHomePage - From Date= 16/Jun/2020
+[INFO ] 2020-07-31 12:40:21.037 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-31 12:40:21.128 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-31 12:40:21.172 [main] ADTHomePage - From date Can not be Greater Then To Date is equal to From date Can not be Greater Then To Date
+[INFO ] 2020-07-31 12:40:21.173 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case AdtIPDepositRefundchequeformTest has passed]
+[INFO ] 2020-07-31 12:40:28.150 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:40:28.222 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:40:28.288 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:40:28.354 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:40:28.431 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:40:28.498 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:40:28.562 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  actualDemographicswithcreditPatientAndScheme
+******************************************************************************************************************************
+[INFO ] 2020-07-31 12:40:34.353 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-31 12:40:35.490 [main] HISHomePage - Master Icon Clicked
+[INFO ] 2020-07-31 12:40:37.643 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:40:43.831 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:40:45.037 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-31 12:40:48.330 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed
+[INFO ] 2020-07-31 12:41:42.926 [main] ADTHomePage - Facility= L1-SANITY-T3 Bed Name= TrioBed88 Bed Type= Single AC Room Number= 1st FLR T1 Transplan
+[INFO ] 2020-07-31 12:41:43.112 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:41:43.453 [main] ADTHomePage - Click on Yes Button
+[INFO ] 2020-07-31 12:41:45.680 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:41:50.801 [main] HISWebsiteBasePage - HOME ICON Clicked
+[INFO ] 2020-07-31 12:41:51.928 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-31 12:41:54.069 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:41:58.077 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:41:59.153 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:42:02.358 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-31 12:42:12.634 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed Status
+[INFO ] 2020-07-31 12:42:15.739 [main] ADTHomePage - Form is getting open=Bed Status
+[INFO ] 2020-07-31 12:42:21.780 [main] ADTHomePage - Ward= 1st FLR T1 Transplant ICU Bed Type= Single ACBed Status= Vacant is selected
+[INFO ] 2020-07-31 12:42:21.830 [main] ADTHomePage - Bed Name= TrioBed88
+[INFO ] 2020-07-31 12:43:55.374 [main] ADTHomePage - Form is getting open=Admit Patient
+[INFO ] 2020-07-31 12:43:55.581 [main] ADTHomePage - VIP Check Box is selected
+[INFO ] 2020-07-31 12:43:57.551 [main] ADTHomePage - Check box is selected and VIP text box get enable= VIP Test Data
+[INFO ] 2020-07-31 12:43:57.812 [main] ADTHomePage - Remark Check Box is selected
+[INFO ] 2020-07-31 12:43:57.939 [main] ADTHomePage - Check box is selected and Remark text box get enable= Automation Remarks
+[INFO ] 2020-07-31 12:43:58.208 [main] ADTHomePage - Title= Mr.
+[INFO ] 2020-07-31 12:43:59.157 [main] ADTHomePage - First Name= Testing
+[INFO ] 2020-07-31 12:43:59.901 [main] ADTHomePage - Middle Name= Kumar
+[INFO ] 2020-07-31 12:44:00.729 [main] ADTHomePage - Last Name= Sharma
+[INFO ] 2020-07-31 12:44:00.833 [main] ADTHomePage - Gender Type is selected= Male
+[INFO ] 2020-07-31 12:44:04.221 [main] ADTHomePage - DOB= @#$%^&*":><
+[INFO ] 2020-07-31 12:44:06.210 [main] ADTHomePage - DOB= 15-12-1991
+[INFO ] 2020-07-31 12:44:25.781 [main] ADTHomePage - Time of Birth= 06:15 PM
+[INFO ] 2020-07-31 12:44:25.964 [main] ADTHomePage - Age Radio Button is selected
+[INFO ] 2020-07-31 12:44:26.485 [main] ADTHomePage - Age= 17
+[INFO ] 2020-07-31 12:44:26.584 [main] ADTHomePage - Please enter Date of Birth Age is less than 18 year is equal to Please enter Date of Birth Age is less than 18 year
+[INFO ] 2020-07-31 12:44:26.910 [main] ADTHomePage - Age= 23
+[INFO ] 2020-07-31 12:44:27.172 [main] ADTHomePage - Age Type= Year(s)
+[INFO ] 2020-07-31 12:44:27.337 [main] ADTHomePage - Father Radio Button is selected
+[INFO ] 2020-07-31 12:44:31.144 [main] ADTHomePage - Father Name= Testing Father
+[INFO ] 2020-07-31 12:44:33.440 [main] ADTHomePage - Marital Satus= Single
+[INFO ] 2020-07-31 12:44:37.320 [main] ADTHomePage - Address= Testing Address
+[INFO ] 2020-07-31 12:44:40.000 [main] ADTHomePage - City Name= DELHI
+[INFO ] 2020-07-31 12:44:42.262 [main] ADTHomePage - Locality= GJGJGH
+[INFO ] 2020-07-31 12:44:44.482 [main] ADTHomePage - PIN Number= 201001
+[INFO ] 2020-07-31 12:44:46.690 [main] ADTHomePage - NRI Check Box is Selected
+[INFO ] 2020-07-31 12:44:49.260 [main] ADTHomePage - National ID= 12345
+[INFO ] 2020-07-31 12:44:51.526 [main] ADTHomePage - HOWDIDYOUCOMETOKNOWUS= News Paper
+[INFO ] 2020-07-31 12:44:53.641 [main] ADTHomePage - NATIONALITY= Indian
+[INFO ] 2020-07-31 12:44:55.792 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:44:58.649 [main] ADTHomePage - Mobile Number= 1234567890
+[INFO ] 2020-07-31 12:45:06.884 [main] ADTHomePage - Occuption= Student
+[INFO ] 2020-07-31 12:45:24.241 [main] ADTHomePage - click on Permanent Address Check box
+[INFO ] 2020-07-31 12:45:26.385 [main] ADTHomePage - Tab Name= Consultant is selected
+[INFO ] 2020-07-31 12:45:26.613 [main] ADTHomePage - Doctor Speciality= Cardiology is selected
+[INFO ] 2020-07-31 12:45:41.873 [main] ADTHomePage - Admitting Consultant= Scheudle  Testing is selected
+[INFO ] 2020-07-31 12:45:57.097 [main] ADTHomePage - Primary Attending Consultant= Scheudle  Testing is selected
+[INFO ] 2020-07-31 12:45:58.382 [main] ADTHomePage - Reffer By=  A.G.RAJAN
+[INFO ] 2020-07-31 12:46:00.601 [main] ADTHomePage - Expected Length of stay= 5
+[INFO ] 2020-07-31 12:46:02.727 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:46:04.940 [main] ADTHomePage - Tab Name= Bed & Payment Details is selected
+[INFO ] 2020-07-31 12:46:05.440 [main] ADTHomePage - Requested Bed Type= Single AC is selected
+[INFO ] 2020-07-31 12:46:07.993 [main] ADTHomePage - Billable Bed Type= Single AC is selected
+[INFO ] 2020-07-31 12:46:08.224 [main] ADTHomePage - Bed Option size= 19
+[INFO ] 2020-07-31 12:46:08.547 [main] ADTHomePage - Alloted Bed Type= Single AC is selected
+[INFO ] 2020-07-31 12:46:08.810 [main] ADTHomePage - Bed Option size= 26
+[INFO ] 2020-07-31 12:46:08.890 [main] ADTHomePage - Ward Type= 1st FLR T1 Transplant ICU is selected
+[INFO ] 2020-07-31 12:46:08.994 [main] ADTHomePage - Bed Option size= 1
+[INFO ] 2020-07-31 12:46:11.102 [main] ADTHomePage - Bed Type= TrioBed88 is selected
+[INFO ] 2020-07-31 12:46:11.215 [main] ADTHomePage - Company Insurance Radio Button is selected
+[INFO ] 2020-07-31 12:46:15.802 [main] ADTHomePage - Scheme Company Type= Corporate Company= CGHS COMPANY Rate of Contract= NEW CGHS
+[INFO ] 2020-07-31 12:46:16.475 [main] ADTHomePage - Authorization Number= 123456
+[INFO ] 2020-07-31 12:46:16.675 [main] ADTHomePage - Credit Limit= 1
+[INFO ] 2020-07-31 12:46:18.779 [main] ADTHomePage - Click on Scheme Check Box
+[INFO ] 2020-07-31 12:46:21.061 [main] ADTHomePage - Scheme= Govt Scheme
+[INFO ] 2020-07-31 12:46:23.202 [main] ADTHomePage - Tab Name= Package Details is selected
+[INFO ] 2020-07-31 12:46:25.425 [main] ADTHomePage - Package Details Speciality= Cardiology is selected
+[INFO ] 2020-07-31 12:46:42.725 [main] ADTHomePage - Doctor Name= MANNAT  DEVGAN not selected
+[INFO ] 2020-07-31 12:46:44.868 [main] ADTHomePage - Tab Name= Next of Kin Details is selected
+[INFO ] 2020-07-31 12:46:47.910 [main] ADTHomePage - Kin Name= Auto Name
+[INFO ] 2020-07-31 12:46:50.184 [main] ADTHomePage - Relationship with Kin= Mother is selected
+[INFO ] 2020-07-31 12:46:52.362 [main] ADTHomePage - Click on Copy from present Address check box
+[INFO ] 2020-07-31 12:46:55.392 [main] ADTHomePage - Emergency Name= KIN FATHER
+[INFO ] 2020-07-31 12:46:58.791 [main] ADTHomePage - Emergency PhNumber= 1234567891011123
+[INFO ] 2020-07-31 12:47:01.752 [main] ADTHomePage - Billing Counselling= AUTO NAME
+[INFO ] 2020-07-31 12:47:05.219 [main] ADTHomePage - Clinical Counselling= Patient himself
+[INFO ] 2020-07-31 12:47:07.363 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:47:08.131 [main] ADTHomePage - Click on Accept Button
+[INFO ] 2020-07-31 12:47:08.764 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:47:15.168 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case actualDemographicswithcreditPatientAndScheme has passed]
+[INFO ] 2020-07-31 12:47:22.218 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:47:22.314 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:47:22.372 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:47:22.433 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:47:22.510 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:47:22.582 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:47:22.643 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  patientBedTranferTest
+******************************************************************************************************************************
+[INFO ] 2020-07-31 12:47:27.989 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-31 12:47:29.112 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-31 12:47:31.228 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:47:35.510 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:47:36.593 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:47:40.813 [main] ADTHomePage - Bed Transfer Section is Expanded
+[INFO ] 2020-07-31 12:47:50.433 [main] ADTHomePage - Following Option has been selected from Bed Transfer Section Bed Transfer
+[INFO ] 2020-07-31 12:47:55.700 [main] ADTHomePage - Click on View
+[INFO ] 2020-07-31 12:47:55.841 [main] ADTHomePage - Bed is not Release
+[INFO ] 2020-07-31 12:47:55.928 [main] ADTHomePage - Click on Transfer Tarcking close Button
+[INFO ] 2020-07-31 12:48:00.154 [main] ADTHomePage - Click on Pending Transfer Request
+[INFO ] 2020-07-31 12:48:00.408 [main] ADTHomePage - Occupied Bed Type= 813 is selected
+[INFO ] 2020-07-31 12:48:00.644 [main] ADTHomePage - Occupied Ward Type= 1st FLR T1 Transplant ICU is selected
+[INFO ] 2020-07-31 12:48:15.736 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case patientBedTranferTest has passed]
+[INFO ] 2020-07-31 12:48:22.711 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:48:22.781 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:48:22.851 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:48:22.918 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:48:22.988 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:48:23.055 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:48:23.119 [main] TestListner - 
+******************************************************************************************************************************
+					TEST CASE NAME:                  AdtIPDepositRefundformTest
+******************************************************************************************************************************
+[INFO ] 2020-07-31 12:48:28.546 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-31 12:48:29.675 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-31 12:48:31.821 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:48:36.053 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:48:37.130 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:48:41.359 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-31 12:48:41.714 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section IP Deposit/Refund
+[INFO ] 2020-07-31 12:48:54.403 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17150458
+[INFO ] 2020-07-31 12:48:54.841 [main] ADTHomePage - The patient has been discharged! is equal to The patient has been discharged!
+[INFO ] 2020-07-31 12:48:54.908 [main] ADTHomePage - Patient Details are getting fetched up= RAJH.17150458
+[INFO ] 2020-07-31 12:48:59.631 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:49:07.308 [main] ADTHomePage - Following UHID has been searched from Search BoxRAJH.17152257
+[INFO ] 2020-07-31 12:49:07.397 [main] ADTHomePage - Click on Side OP Button
+[INFO ] 2020-07-31 12:49:09.524 [main] ADTHomePage - Transfer To (IP) Check Box got selected 
+[INFO ] 2020-07-31 12:49:10.941 [main] ADTHomePage - Deposit is not got transferred in IP
+[INFO ] 2020-07-31 12:49:13.527 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:49:15.862 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-31 12:49:18.122 [main] ADTHomePage - Deposit Amount= 0
+[INFO ] 2020-07-31 12:49:22.169 [main] ADTHomePage - Click on Deposit Button
+[INFO ] 2020-07-31 12:49:24.247 [main] ADTHomePage - Amount cannot be zero! is equal to Amount cannot be zero!
+[INFO ] 2020-07-31 12:49:24.472 [main] ADTHomePage - Deposit Amount= 5
+[INFO ] 2020-07-31 12:49:28.536 [main] ADTHomePage - Click on Deposit Button
+[INFO ] 2020-07-31 12:49:30.745 [main] ADTHomePage - Click on Deposit yes Button
+[INFO ] 2020-07-31 12:49:30.997 [main] ADTHomePage - Deposit taken successfully! is equal to Deposit taken successfully!
+[INFO ] 2020-07-31 12:49:32.111 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-31 12:49:34.172 [main] ADTHomePage - Refund Data is getting fetched
+[INFO ] 2020-07-31 12:49:41.665 [main] ADTHomePage - Refund Amount= 5 Payable Name= anshul Refund Remark= Automation Remark
+[INFO ] 2020-07-31 12:49:41.822 [main] ADTHomePage - Click on Refund Button
+[INFO ] 2020-07-31 12:49:43.859 [main] ADTHomePage - Header Refund Button is Clickable
+[INFO ] 2020-07-31 12:49:44.216 [main] ADTHomePage - Click Yes on Refund Deposit
+[INFO ] 2020-07-31 12:49:44.260 [main] ADTHomePage - Refund given successfully! is equal to Refund given successfully!
+[INFO ] 2020-07-31 12:49:47.803 [main] ADTHomePage - Click on Clear button
+[INFO ] 2020-07-31 12:49:50.038 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-31 12:49:50.067 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-31 12:49:55.293 [main] ADTHomePage - Click on Bill Detail Clear Button
+[INFO ] 2020-07-31 12:49:56.311 [main] ADTHomePage - Click on Receipt Utility
+[INFO ] 2020-07-31 12:49:56.332 [main] ADTHomePage - Receipt Utility is form is opening
+[INFO ] 2020-07-31 12:49:56.545 [main] ADTHomePage - IP Number= 40102
+[INFO ] 2020-07-31 12:49:59.614 [main] ADTHomePage - Patient Details are getting fetched according to this IP Number= 40102
+[INFO ] 2020-07-31 12:50:00.428 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:50:00.483 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-31 12:50:07.878 [main] ADTHomePage - Click on Refersh Button
+[INFO ] 2020-07-31 12:50:08.856 [main] ADTHomePage - Recepit Number= RHDI46457
+[INFO ] 2020-07-31 12:50:08.893 [main] ADTHomePage - Patient Details are getting fetched according to this Recepit Number= RHDI46457
+[INFO ] 2020-07-31 12:50:09.537 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:50:09.634 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-31 12:50:17.366 [main] ADTHomePage - Click on Print Button
+[INFO ] 2020-07-31 12:50:17.427 [main] ADTHomePage - Receipt gets printed
+[INFO ] 2020-07-31 12:50:24.867 [main] ADTHomePage - Click on Bill Detail Close Button
+[INFO ] 2020-07-31 12:50:25.974 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:50:30.198 [main] ADTHomePage - IP Deposit/Refund Section is Expanded
+[INFO ] 2020-07-31 12:50:30.552 [main] ADTHomePage - Following Option has been selected from IP Deposit/Refund Section Cheque In Hand Details
+[INFO ] 2020-07-31 12:50:35.680 [main] ADTHomePage - Form is getting open=Cheque In Hand Details
+[INFO ] 2020-07-31 12:50:36.262 [main] ADTHomePage - From Date= 01/Jun/2020
+[INFO ] 2020-07-31 12:50:36.795 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-31 12:50:36.897 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-31 12:50:36.943 [main] ADTHomePage - Data is getting fetched according to the selected date range
+[INFO ] 2020-07-31 12:50:37.047 [main] ADTHomePage - Click on CSV Button
+[INFO ] 2020-07-31 12:50:41.573 [main] ADTHomePage - From Date= 16/Jun/2020
+[INFO ] 2020-07-31 12:50:42.130 [main] ADTHomePage - TO Date= 15/Jun/2020
+[INFO ] 2020-07-31 12:50:42.215 [main] ADTHomePage - Click on Search Button
+[INFO ] 2020-07-31 12:50:42.258 [main] ADTHomePage - From date Can not be Greater Then To Date is equal to From date Can not be Greater Then To Date
+[INFO ] 2020-07-31 12:50:42.259 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case AdtIPDepositRefundformTest has passed]
+[INFO ] 2020-07-31 12:50:49.168 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:50:49.239 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:50:49.309 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:50:49.374 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:50:49.442 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:50:49.527 [main] DriverManagerDataSource - Loaded JDBC driver: com.microsoft.sqlserver.jdbc.SQLServerDriver
+[INFO ] 2020-07-31 12:50:49.591 [main] TestListner - 
 ******************************************************************************************************************************
 					TEST CASE NAME:                  ReEnterUHIDandadmitwithdependentpatientsimultaneouslytransfer
 ******************************************************************************************************************************
-[INFO ] 2020-07-28 10:28:40.181 [main] HISHomePage - User has been logged in to HIS Portal
-[INFO ] 2020-07-28 10:28:41.320 [main] HISHomePage - Master Icon Clicked
-[INFO ] 2020-07-28 10:28:43.499 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
-[INFO ] 2020-07-28 10:28:47.424 [main] ADTHomePage - YES has been clicked from Station Dropdown
-[INFO ] 2020-07-28 10:28:48.688 [main] ADTHomePage - Admit Patient Section is Expanded
-[INFO ] 2020-07-28 10:28:50.856 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed
-[INFO ] 2020-07-28 10:29:43.101 [main] ADTHomePage - Facility= L1-SANITY-T3 Bed Name= TrioBed63 Bed Type= Single AC Room Number= 1st FLR T1 Transplan
-[INFO ] 2020-07-28 10:29:43.288 [main] ADTHomePage - Click on Save Button
-[INFO ] 2020-07-28 10:29:43.637 [main] ADTHomePage - Click on Yes Button
-[INFO ] 2020-07-28 10:29:45.857 [main] ADTHomePage - Menu Clicked
-[INFO ] 2020-07-28 10:29:50.885 [main] HISWebsiteBasePage - HOME ICON Clicked
-[INFO ] 2020-07-28 10:29:51.990 [main] HISHomePage - ADT Icon Clicked
-[INFO ] 2020-07-28 10:29:54.127 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
-[INFO ] 2020-07-28 10:29:57.869 [main] ADTHomePage - YES has been clicked from Station Dropdown
-[INFO ] 2020-07-28 10:29:58.949 [main] ADTHomePage - Menu Clicked
-[INFO ] 2020-07-28 10:30:02.156 [main] ADTHomePage - Admit Patient Section is Expanded
-[INFO ] 2020-07-28 10:30:05.865 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed Status
-[INFO ] 2020-07-28 10:30:08.957 [main] ADTHomePage - Form is getting open=Bed Status
-[INFO ] 2020-07-28 10:30:14.500 [main] ADTHomePage - Ward= 1st FLR T1 Transplant ICU Bed Type= Single ACBed Status= Vacant is selected
-[INFO ] 2020-07-28 10:30:14.550 [main] ADTHomePage - Bed Name= TrioBed63
-[INFO ] 2020-07-28 10:30:39.827 [main] ADTHomePage - IP Number= 40934
-[INFO ] 2020-07-28 10:30:39.941 [main] ADTHomePage - Click on Dependent ADM Button
-[INFO ] 2020-07-28 10:30:40.006 [main] ADTHomePage - Dependent_Admission popup window  is open
-[INFO ] 2020-07-28 10:30:40.127 [main] ADTHomePage - Dependent admission option is available only for females older than 14 years! is equal to Dependent admission option is available only for females older than 14 years!
-[INFO ] 2020-07-28 10:30:42.094 [main] ADTHomePage - IP Number= 15726
-[INFO ] 2020-07-28 10:30:42.376 [main] ADTHomePage - Details is fetch
-[INFO ] 2020-07-28 10:30:42.545 [main] ADTHomePage - Click on Modify Button
-[INFO ] 2020-07-28 10:30:42.581 [main] ADTHomePage - All details text box get enabled and user can be able to modify patient details
-[INFO ] 2020-07-28 10:30:42.824 [main] ADTHomePage - Title= Ms.
-[INFO ] 2020-07-28 10:30:42.942 [main] ADTHomePage - Click on Dependent ADM Button
-[INFO ] 2020-07-28 10:30:42.994 [main] ADTHomePage - Dependent_Admission popup window  is open
-[INFO ] 2020-07-28 10:30:43.214 [main] ADTHomePage - Sex= Male
-[INFO ] 2020-07-28 10:30:43.985 [main] ADTHomePage - Father Name= Testing
-[INFO ] 2020-07-28 10:30:44.472 [main] ADTHomePage - Delivery_type= Forceps Delivery Birth_Type= Live Birth
-[INFO ] 2020-07-28 10:30:44.689 [main] ADTHomePage - Gestational Age= 2
-[INFO ] 2020-07-28 10:30:44.962 [main] ADTHomePage - simultaneously transfer to Allotted Bed Type= Single AC
-[INFO ] 2020-07-28 10:30:45.230 [main] ADTHomePage - simultaneously transfer to Ward Name= 1st FLR T1 Transplant ICU
-[INFO ] 2020-07-28 10:30:45.300 [main] ADTHomePage - Bed Option size= 2
-[INFO ] 2020-07-28 10:30:47.560 [main] ADTHomePage - simultaneously transfer to Bed Type= TrioBed63 is selected
-[INFO ] 2020-07-28 10:30:49.665 [main] ADTHomePage - simultaneously transfer to Bed Type= TrioBed63 is selected
-[INFO ] 2020-07-28 10:31:06.198 [main] ADTHomePage - Speciality=Cardiology Primary_Consultant= Anish   Referring_Consultant= Anish
-[INFO ] 2020-07-28 10:31:06.256 [main] ADTHomePage - First Name= BABY OF  Fname79651
-[INFO ] 2020-07-28 10:31:06.312 [main] ADTHomePage - Last_Name= Lname79651
-[INFO ] 2020-07-28 10:31:06.425 [main] ADTHomePage - Click on Cancel Button
-[INFO ] 2020-07-28 10:31:06.575 [main] ADTHomePage - Admit Patient Updated First Name= Fname79651
-[INFO ] 2020-07-28 10:31:06.780 [main] ADTHomePage - Admit Patient Updated Last_Name= Lname79651
-[INFO ] 2020-07-28 10:31:06.780 [main] ADTHomePage - Name is updated
-[INFO ] 2020-07-28 10:31:08.894 [main] ADTHomePage - Tab Name= Package Details is selected
-[INFO ] 2020-07-28 10:31:09.431 [main] ADTHomePage - Package Details popup window  is open
-[INFO ] 2020-07-28 10:31:11.621 [main] ADTHomePage - Bed Type= Single Non-AC
-[INFO ] 2020-07-28 10:31:11.775 [main] ADTHomePage - Price= 7000
-[INFO ] 2020-07-28 10:31:11.964 [main] ADTHomePage - Package details is added in blow grid
-[INFO ] 2020-07-28 10:31:12.118 [main] ADTHomePage - Click on Plus Button Icon
-[INFO ] 2020-07-28 10:31:12.170 [main] ADTHomePage - system will be throwing a pop-up Assign new package?
-[INFO ] 2020-07-28 10:31:12.273 [main] ADTHomePage - Click on New Assign No Button
-[INFO ] 2020-07-28 10:31:12.381 [main] ADTHomePage - Click on Plus Button Icon
-[INFO ] 2020-07-28 10:31:12.512 [main] ADTHomePage - Click on New Assign Yes Button
-[INFO ] 2020-07-28 10:31:12.784 [main] ADTHomePage - Package assigned successfully! is equal to Package assigned successfully!
-[INFO ] 2020-07-28 10:31:12.941 [main] ADTHomePage - Click on Delete Button Icon
-[INFO ] 2020-07-28 10:31:13.000 [main] ADTHomePage - system will be throwing a pop-up Delete package?
-[INFO ] 2020-07-28 10:31:13.108 [main] ADTHomePage - Click on Delete Package NO Button
-[INFO ] 2020-07-28 10:31:13.234 [main] ADTHomePage - Click on Delete Button Icon
-[INFO ] 2020-07-28 10:31:13.421 [main] ADTHomePage - Click on Delete Package Yes Button
-[INFO ] 2020-07-28 10:31:13.423 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case ReEnterUHIDandadmitwithdependentpatientsimultaneouslytransfer has passed]
+[INFO ] 2020-07-31 12:50:55.164 [main] HISHomePage - User has been logged in to HIS Portal
+[INFO ] 2020-07-31 12:50:56.292 [main] HISHomePage - Master Icon Clicked
+[INFO ] 2020-07-31 12:50:58.406 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:51:02.783 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:51:04.014 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-31 12:51:06.430 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed
+[INFO ] 2020-07-31 12:52:00.810 [main] ADTHomePage - Facility= L1-SANITY-T3 Bed Name= TrioBed89 Bed Type= Single AC Room Number= 1st FLR T1 Transplan
+[INFO ] 2020-07-31 12:52:01.029 [main] ADTHomePage - Click on Save Button
+[INFO ] 2020-07-31 12:52:02.581 [main] ADTHomePage - Click on Yes Button
+[INFO ] 2020-07-31 12:52:04.867 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:52:09.964 [main] HISWebsiteBasePage - HOME ICON Clicked
+[INFO ] 2020-07-31 12:52:11.098 [main] HISHomePage - ADT Icon Clicked
+[INFO ] 2020-07-31 12:52:13.227 [main] ADTHomePage - Following Station has been selected from Station Dropdown : IT
+[INFO ] 2020-07-31 12:52:17.377 [main] ADTHomePage - YES has been clicked from Station Dropdown
+[INFO ] 2020-07-31 12:52:18.447 [main] ADTHomePage - Menu Clicked
+[INFO ] 2020-07-31 12:52:21.661 [main] ADTHomePage - Admit Patient Section is Expanded
+[INFO ] 2020-07-31 12:52:25.669 [main] ADTHomePage - Following Option has been selected from Indent Items Section Bed Status
+[INFO ] 2020-07-31 12:52:28.770 [main] ADTHomePage - Form is getting open=Bed Status
+[INFO ] 2020-07-31 12:52:34.558 [main] ADTHomePage - Ward= 1st FLR T1 Transplant ICU Bed Type= Single ACBed Status= Vacant is selected
+[INFO ] 2020-07-31 12:52:34.618 [main] ADTHomePage - Bed Name= TrioBed89
+[INFO ] 2020-07-31 12:53:00.345 [main] ADTHomePage - IP Number= 40934
+[INFO ] 2020-07-31 12:53:00.464 [main] ADTHomePage - Click on Dependent ADM Button
+[INFO ] 2020-07-31 12:53:00.531 [main] ADTHomePage - Dependent_Admission popup window  is open
+[INFO ] 2020-07-31 12:53:00.600 [main] ADTHomePage - Dependent admission option is available only for females older than 14 years! is equal to Dependent admission option is available only for females older than 14 years!
+[INFO ] 2020-07-31 12:53:02.912 [main] ADTHomePage - IP Number= 15726
+[INFO ] 2020-07-31 12:53:03.040 [main] ADTHomePage - Details is fetch
+[INFO ] 2020-07-31 12:53:03.143 [main] ADTHomePage - Click on Modify Button
+[INFO ] 2020-07-31 12:53:03.178 [main] ADTHomePage - All details text box get enabled and user can be able to modify patient details
+[INFO ] 2020-07-31 12:53:03.416 [main] ADTHomePage - Title= Ms.
+[INFO ] 2020-07-31 12:53:03.538 [main] ADTHomePage - Click on Dependent ADM Button
+[INFO ] 2020-07-31 12:53:03.591 [main] ADTHomePage - Dependent_Admission popup window  is open
+[INFO ] 2020-07-31 12:53:03.800 [main] ADTHomePage - Sex= Male
+[INFO ] 2020-07-31 12:53:04.580 [main] ADTHomePage - Father Name= Testing
+[INFO ] 2020-07-31 12:53:05.023 [main] ADTHomePage - Delivery_type= Forceps Delivery Birth_Type= Live Birth
+[INFO ] 2020-07-31 12:53:05.247 [main] ADTHomePage - Gestational Age= 2
+[INFO ] 2020-07-31 12:53:05.519 [main] ADTHomePage - simultaneously transfer to Allotted Bed Type= Single AC
+[INFO ] 2020-07-31 12:53:05.816 [main] ADTHomePage - simultaneously transfer to Ward Name= 1st FLR T1 Transplant ICU
+[INFO ] 2020-07-31 12:53:05.884 [main] ADTHomePage - Bed Option size= 2
+[INFO ] 2020-07-31 12:53:08.101 [main] ADTHomePage - simultaneously transfer to Bed Type= TrioBed89 is selected
+[INFO ] 2020-07-31 12:53:10.210 [main] ADTHomePage - simultaneously transfer to Bed Type= TrioBed89 is selected
+[INFO ] 2020-07-31 12:53:26.605 [main] ADTHomePage - Speciality=Cardiology Primary_Consultant= Anish   Referring_Consultant= Anish
+[INFO ] 2020-07-31 12:53:26.675 [main] ADTHomePage - First Name= BABY OF  Fname79651
+[INFO ] 2020-07-31 12:53:26.731 [main] ADTHomePage - Last_Name= Lname79651
+[INFO ] 2020-07-31 12:53:26.858 [main] ADTHomePage - Click on Cancel Button
+[INFO ] 2020-07-31 12:53:26.972 [main] ADTHomePage - Admit Patient Updated First Name= Fname79651
+[INFO ] 2020-07-31 12:53:27.027 [main] ADTHomePage - Admit Patient Updated Last_Name= Lname79651
+[INFO ] 2020-07-31 12:53:27.027 [main] ADTHomePage - Name is updated
+[INFO ] 2020-07-31 12:53:29.149 [main] ADTHomePage - Tab Name= Package Details is selected
+[INFO ] 2020-07-31 12:53:29.744 [main] ADTHomePage - Package Details popup window  is open
+[INFO ] 2020-07-31 12:53:31.987 [main] ADTHomePage - Bed Type= Single Non-AC
+[INFO ] 2020-07-31 12:53:32.152 [main] ADTHomePage - Price= 7000
+[INFO ] 2020-07-31 12:53:32.294 [main] ADTHomePage - Package details is added in blow grid
+[INFO ] 2020-07-31 12:53:32.410 [main] ADTHomePage - Click on Plus Button Icon
+[INFO ] 2020-07-31 12:53:32.463 [main] ADTHomePage - system will be throwing a pop-up Assign new package?
+[INFO ] 2020-07-31 12:53:32.570 [main] ADTHomePage - Click on New Assign No Button
+[INFO ] 2020-07-31 12:53:32.672 [main] ADTHomePage - Click on Plus Button Icon
+[INFO ] 2020-07-31 12:53:32.785 [main] ADTHomePage - Click on New Assign Yes Button
+[INFO ] 2020-07-31 12:53:33.495 [main] ADTHomePage - Package assigned successfully! is equal to Package assigned successfully!
+[INFO ] 2020-07-31 12:53:33.635 [main] ADTHomePage - Click on Delete Button Icon
+[INFO ] 2020-07-31 12:53:33.700 [main] ADTHomePage - system will be throwing a pop-up Delete package?
+[INFO ] 2020-07-31 12:53:33.801 [main] ADTHomePage - Click on Delete Package NO Button
+[INFO ] 2020-07-31 12:53:33.948 [main] ADTHomePage - Click on Delete Button Icon
+[INFO ] 2020-07-31 12:53:34.139 [main] ADTHomePage - Click on Delete Package Yes Button
+[INFO ] 2020-07-31 12:53:34.140 [main] TestListner - [TEST IS SUCCESSFUL -------- Test case ReEnterUHIDandadmitwithdependentpatientsimultaneouslytransfer has passed]

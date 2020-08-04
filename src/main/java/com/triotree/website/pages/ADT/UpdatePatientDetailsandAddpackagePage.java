@@ -68,19 +68,29 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 		i++;
 	}
 
+	public void enterUHID_NUMBER(ExtentTest test,String uhidnumber) 
+	{
+		driver.findElement(UHID_NUMBER).clear();
+		driver.findElement(UHID_NUMBER).sendKeys(uhidnumber);
+		driver.findElement(UHID_NUMBER).sendKeys(Keys.ENTER);
+		logger.info("UHID NUMBER= "+uhidnumber);
+		Markup m1=MarkupHelper.createLabel("UHID NUMBER= "+uhidnumber, ExtentColor.GREEN);
+		test.info(m1);
+	}
+
 	public void clickonDependentADM(ExtentTest test) {
 		WebElement adm_element = driver.findElement(Dependent_ADM);
 		driver.clickByJS(TTWebsiteDriver.driver, adm_element);
 		logger.info("Click on Dependent ADM Button");
-		if(driver.findElements(By.xpath("//div[@class='modal-block-new top23']//span[@class='header_title']")).size()>0)
+		if(driver.findElements(By.xpath("//span[text()='Dependent Admission']")).size()>0)
 		{
 			logger.info("Dependent_Admission popup window  is open");
-			Markup m1=MarkupHelper.createLabel("Dependent_Admission popup window  is open", ExtentColor.GREEN);
+			Markup m1=MarkupHelper.createLabel("Dependent Admission popup window  is open", ExtentColor.GREEN);
 			test.info(m1);
 		}
 		else {
 			logger.info("Dependent_Admission popup window is not open");
-			Markup m1=MarkupHelper.createLabel("Dependent_Admission popup window  is not open", ExtentColor.RED);
+			Markup m1=MarkupHelper.createLabel("Dependent Admission popup window  is not open", ExtentColor.RED);
 			test.info(m1);
 		}
 	}
@@ -144,11 +154,12 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 		test.info(m1);
 	}
 
-	public void clickonSaveButton() {
+	public void clickonSaveButton(ExtentTest test) {
 		WebElement save_element = driver.findElement(Save_Button);
 		driver.clickByJS(TTWebsiteDriver.driver, save_element);
 		logger.info("Click on Save Button");
-
+		Markup m1=MarkupHelper.createLabel("Click on Save Button", ExtentColor.GREEN);
+		test.info(m1);
 
 	}
 
@@ -168,12 +179,16 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 		}
 	}
 
-	public void getvalueofFirstandLastName() {
+	public void getvalueofFirstandLastName(ExtentTest test) {
 
 		First_Name = driver.findElement(By.xpath("//input[@id='admf_name' and @type='text']")).getAttribute("value");
 		logger.info("First Name= "+First_Name);
+		Markup m=MarkupHelper.createLabel("First Name= "+First_Name, ExtentColor.GREEN);
+		test.info(m);
 		Last_Name =driver.findElement(By.xpath("//input[@id='adm_lname' and @type='text']")).getAttribute("value");
 		logger.info("Last_Name= "+Last_Name);
+		Markup m1=MarkupHelper.createLabel("Last_Name= "+Last_Name, ExtentColor.GREEN);
+		test.info(m1);
 	}
 
 	public void verifyandgetAdmitPatientUpdatedFirstandLastName(ExtentTest test) 
@@ -313,7 +328,8 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 
 	public void clickonDeletePackageYesButton(ExtentTest test) 
 	{
-		driver.findElement(Delete_Package_YES_BTN).click();
+		WebElement yes_element = driver.findElement(Delete_Package_YES_BTN);
+		driver.clickByJS(TTWebsiteDriver.driver, yes_element);
 		logger.info("Click on Delete Package Yes Button");
 		Markup m=MarkupHelper.createLabel("Click on Delete Package Yes Button", ExtentColor.GREEN);
 		test.info(m);
@@ -358,14 +374,15 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 					if(selectedValueInDropDown.getText().equals(BedStatusPage.bedvalue))
 					{
 						sl.selectByVisibleText(BedStatusPage.bedvalue);
+						Thread.sleep(2000);
+						logger.info("simultaneously transfer to Bed Type= "+BedStatusPage.bedvalue+" is selected");
+						Markup m=MarkupHelper.createLabel("simultaneously transfer to Bed Type= "+BedStatusPage.bedvalue+" is selected", ExtentColor.GREEN);
+						test.info(m);
 					}
 					else {
 						sl.selectByVisibleText(BedStatusPage.bedvalue);
 					}
-					Thread.sleep(2000);
-					logger.info("simultaneously transfer to Bed Type= "+BedStatusPage.bedvalue+" is selected");
-					Markup m=MarkupHelper.createLabel("simultaneously transfer to Bed Type= "+BedStatusPage.bedvalue+" is selected", ExtentColor.GREEN);
-					test.info(m);
+					
 				}
 				if(selectedValueInDropDown.getText().isEmpty()) {
 					logger.info("Bed Option name= "+selectedValueInDropDown.getText());

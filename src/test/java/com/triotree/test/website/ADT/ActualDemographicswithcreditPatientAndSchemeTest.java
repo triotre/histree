@@ -19,29 +19,24 @@ import com.triotree.website.pages.FrontOffice.IndentIssuePage;
 import com.triotree.website.pages.FrontOffice.IndentItemsPage;
 import com.triotree.website.pages.FrontOffice.PatientRegistrationPage;
 import com.triotree.website.pages.FrontOffice.PurchaseRequisitionPage;
+
 @Listeners(ResultListener.class)
 public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteBaseTest
 {
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(ActualDemographicswithcreditPatientAndSchemeTest.class.getName());
 
 	private HISHomePage hisHomePage;
 	private BedStatusPage bedstatusPage;
 	private ADTHomePage adtpage;
 	private IPDepositRefundformPage ipdepositrefund;
-//	String Facility=PropertyFile.getProperty("facility");
-//	String Bed_Name=PropertyFile.getProperty("bedname");
-//	String Bed_Type=PropertyFile.getProperty("bedtype");
-//	String Room_Number=PropertyFile.getProperty("roonnumber");
-//	String Specility=PropertyFile.getProperty("specility");
-//	String interfacIEN=PropertyFile.getProperty("interfacIEN");
 	
 	
 	@Test
 	public void actualDemographicswithcreditPatientAndScheme() throws InterruptedException 
 	{
 		test=extent.createTest("ActualDemographicswithcreditPatientAndScheme", "This test case is verifies Actual Demographics with credit Patient And Scheme");
-		test.assignCategory("ADT");
+		test.assignCategory("ADT Actual Demographics with credit Patient and Scheme");
 		hisHomePage = new HISHomePage(driver);
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);

@@ -18,7 +18,7 @@ public class UpdateAdmisssionDateTest extends TTWebsiteBaseTest
 {
 
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(UpdateAdmisssionDateTest.class.getName());
 
 	private HISHomePage hisHomePage;
 	private BedStatusPage bedstatusPage;
@@ -29,7 +29,7 @@ public class UpdateAdmisssionDateTest extends TTWebsiteBaseTest
 	@Test
 	public void updateadmissiondatetestcase() throws InterruptedException 
 	{
-		test=extent.createTest("updateadmissiondatetestcase", "This test case is verifies update admission date test case");
+		test=extent.createTest("UpdateAdmisssionDateTest", "This test case is verifies update admission date test case");
 		test.assignCategory("ADT Update Admission Date");
 		hisHomePage = new HISHomePage(driver);
 		adtpage=new ADTHomePage(driver);

@@ -1,173 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite parallel="none" name="Failed suite [Suite]">
-  <test parallel="none" name="Test(failed)">
+<suite parallel="none" name="Failed suite [Default suite]">
+  <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheetManualOrder">
+      <class name="com.triotree.test.website.ADT.OLDUHIDAdmissionFormSearch">
         <methods>
           <include name="beforeclass"/>
+          <include name="OLDUHIDAdmissionFormSearchTest"/>
           <include name="beforeSuite"/>
           <include name="tearDownSession"/>
           <include name="setUp"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheetManualOrder -->
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheetConsultsOrder">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="PhysicianOPDCaseSheetConsultsOrderTest"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheetConsultsOrder -->
-      <class name="com.triotree.website.Physician.PhysicianChiefComplaints">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianChiefComplaints -->
-      <class name="com.triotree.website.Physician.PhysicianAllergiesAndHabitsTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="physicianAllergiesAndHabitsTest"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianAllergiesAndHabitsTest -->
-      <class name="com.triotree.website.Physician.PatientDocumentUploadTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="physicianProgressNotesTest"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PatientDocumentUploadTest -->
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheetProcedureOrder">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="PhysicianOPDCaseSheetProcedureOrderTest"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheetProcedureOrder -->
-      <class name="com.triotree.website.Physician.PhysicianPatientSpecificdocumentation">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianPatientSpecificdocumentation -->
-      <class name="com.triotree.website.Physician.PhysicianHOPI">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-          <include name="PhysicianHOPITest"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianHOPI -->
-      <class name="com.triotree.website.Physician.PhysicalExaminationTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicalExaminationTest -->
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheetOrderSet">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheetOrderSet -->
-      <class name="com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianExistingOrdersOPCasesheet -->
-      <class name="com.triotree.website.Physician.PhysicianDiagnosis">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianDiagnosis -->
-      <class name="com.triotree.website.Physician.PhysicianOtherHistoryTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOtherHistoryTest -->
-      <class name="com.triotree.website.Physician.PhysicianDentalTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="physicianDentalTest"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianDentalTest -->
-      <class name="com.triotree.website.Physician.PhysicianNotetoSelfTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="physicianNotetoSelfTest"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianNotetoSelfTest -->
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheetRadiologyOrder">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-          <include name="PhysicianOPDCaseSheetRadiologyOrderTest"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheetRadiologyOrder -->
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheetMedicineOrder">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheetMedicineOrder -->
-      <class name="com.triotree.website.Physician.PhysicianTemplateFromPhysicianModule">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianTemplateFromPhysicianModule -->
-      <class name="com.triotree.website.Physician.PhysicainAdvice">
-        <methods>
-          <include name="PhysicianHOPITest"/>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicainAdvice -->
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheetLaboratroyorder">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheetLaboratroyorder -->
-      <class name="com.triotree.website.Physician.PhysicianProgressNotesTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianProgressNotesTest -->
-      <class name="com.triotree.website.Physician.PhysicianOPDCaseSheet">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianOPDCaseSheet -->
+      </class> <!-- com.triotree.test.website.ADT.OLDUHIDAdmissionFormSearch -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

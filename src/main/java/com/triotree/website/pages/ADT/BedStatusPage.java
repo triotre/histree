@@ -70,9 +70,15 @@ public class BedStatusPage extends HISWebsiteBasePage {
 		Thread.sleep(2000);
 		TTWebsiteDriver.selectByvisibletext(BED_STATUS, bedstatus);
 
-		logger.info("Ward= "+text+" Bed Type= "+Bed_Type+"Bed Status= "+bedstatus+" is selected");
-		Markup m=MarkupHelper.createLabel("Ward= "+text+" Bed Type= "+Bed_Type+"Bed Status= "+bedstatus+" is selected", ExtentColor.GREEN);
+		logger.info("Ward= "+text+" is selected");
+		logger.info("Bed Type= "+Bed_Type+" is selected");
+		logger.info("Bed Status= "+bedstatus+" is selected");
+		Markup m=MarkupHelper.createLabel("Ward= "+text+" is selected", ExtentColor.GREEN);
 		test.info(m);
+		Markup m1=MarkupHelper.createLabel("Bed Type= "+Bed_Type+" is selected", ExtentColor.GREEN);
+		test.info(m1);
+		Markup m2=MarkupHelper.createLabel("Bed Status= "+bedstatus+" is selected", ExtentColor.GREEN);
+		test.info(m2);
 	}
 
 	public void checkbedstatus(ExtentTest test) throws InterruptedException
@@ -101,14 +107,14 @@ public class BedStatusPage extends HISWebsiteBasePage {
 	public void createbedInIpMaster() throws InterruptedException 
 	{
 		TTWebsiteDriver.selectByvisibletext(FACILITY, Facility);
-		for(int i=1;i<=100;i++) {
+		for(int i=1;i<=200;i++) {
 			if(driver.findElements(By.xpath("//table[@id='tblmain']//td[text()='"+"TrioBed"+i+"']")).size()==0)
 			{
 				Bed_Name="TrioBed"+i;
 				break;
 			}
 		}
-		for(int j=1;j<=100;j++) 
+		for(int j=1;j<=200;j++) 
 		{
 			if(driver.findElements(By.xpath("//table[@id='tblmain']//td[text()='"+"Automation Testing"+j+"']")).size()==0) 
 			{
@@ -307,7 +313,7 @@ public class BedStatusPage extends HISWebsiteBasePage {
 			Thread.sleep(2000);
 		}
 		catch (Exception e) {
-			// TODO: handle exception
+			
 		}
 	}
 }

@@ -34,7 +34,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 	private MarkPatientDeceasedPage markPatientDeceasedPage;
 	private MergeAndUnmergeDuplicatePage mergeAndUnmergeDuplicatePage;
 	
-	private String patientRegistrationId = "AHHS.8996";
+	private String patientRegistrationId = "RAJH.17153173";
 
 	private String desc = null;
 	private String title1 = null;

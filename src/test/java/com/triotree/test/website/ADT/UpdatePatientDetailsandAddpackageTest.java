@@ -17,7 +17,7 @@ import com.triotree.website.pages.CommonPages.HISHomePage;
 public class UpdatePatientDetailsandAddpackageTest extends TTWebsiteBaseTest
 {
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(UpdatePatientDetailsandAddpackageTest.class.getName());
 
 	private HISHomePage hisHomePage;
 	private BedStatusPage bedstatusPage;
@@ -62,7 +62,7 @@ public class UpdatePatientDetailsandAddpackageTest extends TTWebsiteBaseTest
 		updatedetail.selectDeliveryandBirthType(test,"Forceps Delivery","Live Birth");
 		updatedetail.enterGestationalAge(test,"2");
 		updatedetail.selectandfilledspecialityprimaryandReferring(test,"Cardiology","Anish  ","Anish");
-		updatedetail.getvalueofFirstandLastName();
+		updatedetail.getvalueofFirstandLastName(test);
 		updatedetail.clickoncancelbutton(test);
 
 		//Validation of Name is updated 

@@ -1,13 +1,213 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results total="1" passed="1" failed="0" skipped="0">
+<testng-results total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-07-28T05:10:43Z" name="Default suite" finished-at="2020-07-28T05:13:12Z" duration-ms="148693">
+  <suite started-at="2020-08-04T10:30:02Z" name="Suite" finished-at="2020-08-04T11:01:55Z" duration-ms="1913604">
     <groups>
     </groups>
-    <test started-at="2020-07-28T05:10:43Z" name="Default test" finished-at="2020-07-28T05:13:12Z" duration-ms="148693">
+    <test started-at="2020-08-04T10:30:02Z" name="Test1" finished-at="2020-08-04T10:32:30Z" duration-ms="147928">
+      <class name="com.triotree.test.website.ADT.IPDepositRefundDebitCardTest">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundDebitCardTest@596df867]" started-at="2020-08-04T16:00:02Z" name="beforeclass" finished-at="2020-08-04T16:00:02Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundDebitCardTest@596df867]" started-at="2020-08-04T16:00:02Z" name="setUp" finished-at="2020-08-04T16:00:10Z" duration-ms="7972" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="AdtIPDepositRefundDebitCardformTest()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundDebitCardTest@596df867]" started-at="2020-08-04T16:00:10Z" name="AdtIPDepositRefundDebitCardformTest" finished-at="2020-08-04T16:02:29Z" duration-ms="138991" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdtIPDepositRefundDebitCardformTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundDebitCardTest@596df867]" started-at="2020-08-04T16:02:29Z" name="tearDownSession" finished-at="2020-08-04T16:02:30Z" duration-ms="939" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.IPDepositRefundDebitCardTest -->
+    </test> <!-- Test1 -->
+    <test started-at="2020-08-04T10:32:30Z" name="Test2" finished-at="2020-08-04T10:33:16Z" duration-ms="45228">
+      <class name="com.triotree.test.website.ADT.UpdateAdmisssionDateTest">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.UpdateAdmisssionDateTest@1a6f5124]" started-at="2020-08-04T16:02:30Z" name="beforeclass" finished-at="2020-08-04T16:02:30Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.UpdateAdmisssionDateTest@1a6f5124]" started-at="2020-08-04T16:02:30Z" name="setUp" finished-at="2020-08-04T16:02:37Z" duration-ms="6552" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="updateadmissiondatetestcase()[pri:0, instance:com.triotree.test.website.ADT.UpdateAdmisssionDateTest@1a6f5124]" started-at="2020-08-04T16:02:37Z" name="updateadmissiondatetestcase" finished-at="2020-08-04T16:03:15Z" duration-ms="37886" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateadmissiondatetestcase -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.UpdateAdmisssionDateTest@1a6f5124]" started-at="2020-08-04T16:03:15Z" name="tearDownSession" finished-at="2020-08-04T16:03:16Z" duration-ms="784" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.UpdateAdmisssionDateTest -->
+    </test> <!-- Test2 -->
+    <test started-at="2020-08-04T10:33:16Z" name="Test3" finished-at="2020-08-04T10:35:49Z" duration-ms="153076">
+      <class name="com.triotree.test.website.ADT.IPDepositRefundChequeTest">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundChequeTest@51a06cbe]" started-at="2020-08-04T16:03:16Z" name="beforeclass" finished-at="2020-08-04T16:03:16Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundChequeTest@51a06cbe]" started-at="2020-08-04T16:03:16Z" name="setUp" finished-at="2020-08-04T16:03:23Z" duration-ms="6757" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="AdtIPDepositRefundchequeformTest()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundChequeTest@51a06cbe]" started-at="2020-08-04T16:03:23Z" name="AdtIPDepositRefundchequeformTest" finished-at="2020-08-04T16:05:48Z" duration-ms="145484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdtIPDepositRefundchequeformTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundChequeTest@51a06cbe]" started-at="2020-08-04T16:05:48Z" name="tearDownSession" finished-at="2020-08-04T16:05:49Z" duration-ms="831" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.IPDepositRefundChequeTest -->
+    </test> <!-- Test3 -->
+    <test started-at="2020-08-04T10:35:49Z" name="Test4" finished-at="2020-08-04T10:42:46Z" duration-ms="416908">
+      <class name="com.triotree.test.website.ADT.ActualDemographicswithcreditPatientAndSchemeTest">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.ActualDemographicswithcreditPatientAndSchemeTest@52d10fb8]" started-at="2020-08-04T16:05:49Z" name="beforeclass" finished-at="2020-08-04T16:05:49Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.ActualDemographicswithcreditPatientAndSchemeTest@52d10fb8]" started-at="2020-08-04T16:05:49Z" name="setUp" finished-at="2020-08-04T16:05:57Z" duration-ms="7613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="actualDemographicswithcreditPatientAndScheme()[pri:0, instance:com.triotree.test.website.ADT.ActualDemographicswithcreditPatientAndSchemeTest@52d10fb8]" started-at="2020-08-04T16:05:57Z" name="actualDemographicswithcreditPatientAndScheme" finished-at="2020-08-04T16:12:44Z" duration-ms="407122" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- actualDemographicswithcreditPatientAndScheme -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.ActualDemographicswithcreditPatientAndSchemeTest@52d10fb8]" started-at="2020-08-04T16:12:44Z" name="tearDownSession" finished-at="2020-08-04T16:12:46Z" duration-ms="2167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.ActualDemographicswithcreditPatientAndSchemeTest -->
+    </test> <!-- Test4 -->
+    <test started-at="2020-08-04T10:42:46Z" name="Test5" finished-at="2020-08-04T10:44:29Z" duration-ms="103277">
+      <class name="com.triotree.test.website.ADT.BedTransfer">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.BedTransfer@433ffad1]" started-at="2020-08-04T16:12:46Z" name="setUp" finished-at="2020-08-04T16:12:55Z" duration-ms="8685" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.BedTransfer@433ffad1]" started-at="2020-08-04T16:12:46Z" name="beforeclass" finished-at="2020-08-04T16:12:46Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method signature="patientBedTranferTest()[pri:0, instance:com.triotree.test.website.ADT.BedTransfer@433ffad1]" started-at="2020-08-04T16:12:55Z" name="patientBedTranferTest" finished-at="2020-08-04T16:14:29Z" duration-ms="93732" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- patientBedTranferTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.BedTransfer@433ffad1]" started-at="2020-08-04T16:14:29Z" name="tearDownSession" finished-at="2020-08-04T16:14:29Z" duration-ms="853" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.BedTransfer -->
+    </test> <!-- Test5 -->
+    <test started-at="2020-08-04T10:44:30Z" name="Test6" finished-at="2020-08-04T10:46:57Z" duration-ms="147496">
       <class name="com.triotree.test.website.ADT.IPDepositRefundformTest">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@596df867]" started-at="2020-07-28T10:40:43Z" name="beforeSuite" finished-at="2020-07-28T10:40:43Z" duration-ms="253" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@581d969c]" started-at="2020-08-04T16:14:30Z" name="beforeclass" finished-at="2020-08-04T16:14:30Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@581d969c]" started-at="2020-08-04T16:14:30Z" name="setUp" finished-at="2020-08-04T16:14:36Z" duration-ms="6671" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="AdtIPDepositRefundformTest()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@581d969c]" started-at="2020-08-04T16:14:36Z" name="AdtIPDepositRefundformTest" finished-at="2020-08-04T16:16:56Z" duration-ms="139886" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- AdtIPDepositRefundformTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@581d969c]" started-at="2020-08-04T16:16:56Z" name="tearDownSession" finished-at="2020-08-04T16:16:57Z" duration-ms="931" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.IPDepositRefundformTest -->
+    </test> <!-- Test6 -->
+    <test started-at="2020-08-04T10:46:57Z" name="Test7" finished-at="2020-08-04T10:49:54Z" duration-ms="177206">
+      <class name="com.triotree.test.website.ADT.ReEnterIPNumberAdmitwithdependentpatient">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.ReEnterIPNumberAdmitwithdependentpatient@69c43e48]" started-at="2020-08-04T16:16:57Z" name="beforeclass" finished-at="2020-08-04T16:16:57Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.ReEnterIPNumberAdmitwithdependentpatient@69c43e48]" started-at="2020-08-04T16:16:57Z" name="setUp" finished-at="2020-08-04T16:17:04Z" duration-ms="7058" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer()[pri:0, instance:com.triotree.test.website.ADT.ReEnterIPNumberAdmitwithdependentpatient@69c43e48]" started-at="2020-08-04T16:17:04Z" name="ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer" finished-at="2020-08-04T16:19:53Z" duration-ms="168679" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.ReEnterIPNumberAdmitwithdependentpatient@69c43e48]" started-at="2020-08-04T16:19:53Z" name="tearDownSession" finished-at="2020-08-04T16:19:54Z" duration-ms="1461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.ReEnterIPNumberAdmitwithdependentpatient -->
+    </test> <!-- Test7 -->
+    <test started-at="2020-08-04T10:49:55Z" name="Test8" finished-at="2020-08-04T10:56:35Z" duration-ms="400002">
+      <class name="com.triotree.test.website.ADT.ADTCashPatientRegistrationTest">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.ADTCashPatientRegistrationTest@4cc61eb1]" started-at="2020-08-04T16:19:55Z" name="beforeclass" finished-at="2020-08-04T16:19:55Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.ADTCashPatientRegistrationTest@4cc61eb1]" started-at="2020-08-04T16:19:55Z" name="setUp" finished-at="2020-08-04T16:20:03Z" duration-ms="8828" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="RegistrationforminADTwithcashPatient()[pri:0, instance:com.triotree.test.website.ADT.ADTCashPatientRegistrationTest@4cc61eb1]" started-at="2020-08-04T16:20:03Z" name="RegistrationforminADTwithcashPatient" finished-at="2020-08-04T16:26:34Z" duration-ms="390149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RegistrationforminADTwithcashPatient -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.ADTCashPatientRegistrationTest@4cc61eb1]" started-at="2020-08-04T16:26:34Z" name="tearDownSession" finished-at="2020-08-04T16:26:35Z" duration-ms="1019" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.ADTCashPatientRegistrationTest -->
+    </test> <!-- Test8 -->
+    <test started-at="2020-08-04T10:56:35Z" name="Test10" finished-at="2020-08-04T10:57:59Z" duration-ms="83905">
+      <class name="com.triotree.test.website.ADT.UpdatePatientDetailsandAddpackageTest">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.UpdatePatientDetailsandAddpackageTest@3c291aad]" started-at="2020-08-04T16:26:35Z" name="beforeclass" finished-at="2020-08-04T16:26:35Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.UpdatePatientDetailsandAddpackageTest@3c291aad]" started-at="2020-08-04T16:26:35Z" name="setUp" finished-at="2020-08-04T16:26:46Z" duration-ms="11642" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="reEnterUHIDandupdatePatientdetailsandAddsomepackage()[pri:0, instance:com.triotree.test.website.ADT.UpdatePatientDetailsandAddpackageTest@3c291aad]" started-at="2020-08-04T16:26:46Z" name="reEnterUHIDandupdatePatientdetailsandAddsomepackage" finished-at="2020-08-04T16:27:58Z" duration-ms="71348" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reEnterUHIDandupdatePatientdetailsandAddsomepackage -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.UpdatePatientDetailsandAddpackageTest@3c291aad]" started-at="2020-08-04T16:27:58Z" name="tearDownSession" finished-at="2020-08-04T16:27:59Z" duration-ms="907" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.UpdatePatientDetailsandAddpackageTest -->
+    </test> <!-- Test10 -->
+    <test started-at="2020-08-04T10:57:59Z" name="Test11" finished-at="2020-08-04T11:00:25Z" duration-ms="145884">
+      <class name="com.triotree.test.website.ADT.IPDepositRefundCreditCardTest">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundCreditCardTest@6ebd78d1]" started-at="2020-08-04T16:27:59Z" name="beforeclass" finished-at="2020-08-04T16:27:59Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeclass -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundCreditCardTest@6ebd78d1]" started-at="2020-08-04T16:27:59Z" name="setUp" finished-at="2020-08-04T16:28:05Z" duration-ms="6516" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="IPDepositRefundCreditCardTestTest()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundCreditCardTest@6ebd78d1]" started-at="2020-08-04T16:28:05Z" name="IPDepositRefundCreditCardTestTest" finished-at="2020-08-04T16:30:24Z" duration-ms="138535" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- IPDepositRefundCreditCardTestTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundCreditCardTest@6ebd78d1]" started-at="2020-08-04T16:30:24Z" name="tearDownSession" finished-at="2020-08-04T16:30:25Z" duration-ms="829" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownSession -->
+      </class> <!-- com.triotree.test.website.ADT.IPDepositRefundCreditCardTest -->
+    </test> <!-- Test11 -->
+    <test started-at="2020-08-04T11:00:25Z" name="Test" finished-at="2020-08-04T11:01:55Z" duration-ms="90749">
+      <class name="com.triotree.test.website.ADT.SurgeryMedicalEstimate">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.test.website.ADT.SurgeryMedicalEstimate@3c8bdd5b]" started-at="2020-08-04T16:00:02Z" name="beforeSuite" finished-at="2020-08-04T16:00:02Z" duration-ms="263" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,27 +216,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@596df867]" started-at="2020-07-28T10:40:43Z" name="beforeclass" finished-at="2020-07-28T10:40:43Z" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeclass -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@596df867]" started-at="2020-07-28T10:40:43Z" name="setUp" finished-at="2020-07-28T10:40:52Z" duration-ms="9139" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.test.website.ADT.SurgeryMedicalEstimate@3c8bdd5b]" started-at="2020-08-04T16:30:25Z" name="setUp" finished-at="2020-08-04T16:30:32Z" duration-ms="7004" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="AdtIPDepositRefundformTest()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@596df867]" started-at="2020-07-28T10:40:52Z" name="AdtIPDepositRefundformTest" finished-at="2020-07-28T10:43:12Z" duration-ms="139494" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.test.website.ADT.SurgeryMedicalEstimate@3c8bdd5b]" started-at="2020-08-04T16:30:25Z" name="beforeclass" finished-at="2020-08-04T16:30:25Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- AdtIPDepositRefundformTest -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@596df867]" started-at="2020-07-28T10:43:12Z" name="tearDownSession" finished-at="2020-07-28T10:43:12Z" duration-ms="37" status="PASS">
+        </test-method> <!-- beforeclass -->
+        <test-method signature="surgeryMedicalEstimateTest()[pri:0, instance:com.triotree.test.website.ADT.SurgeryMedicalEstimate@3c8bdd5b]" started-at="2020-08-04T16:30:32Z" name="surgeryMedicalEstimateTest" finished-at="2020-08-04T16:31:55Z" duration-ms="82835" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- surgeryMedicalEstimateTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.test.website.ADT.SurgeryMedicalEstimate@3c8bdd5b]" started-at="2020-08-04T16:31:55Z" name="tearDownSession" finished-at="2020-08-04T16:31:55Z" duration-ms="905" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.test.website.ADT.IPDepositRefundformTest@596df867]" started-at="2020-07-28T10:43:13Z" name="afterSuite" finished-at="2020-07-28T10:43:13Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.test.website.ADT.SurgeryMedicalEstimate@3c8bdd5b]" started-at="2020-08-04T16:31:56Z" name="afterSuite" finished-at="2020-08-04T16:31:56Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.triotree.test.website.ADT.IPDepositRefundformTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.triotree.test.website.ADT.SurgeryMedicalEstimate -->
+    </test> <!-- Test -->
+  </suite> <!-- Suite -->
 </testng-results>

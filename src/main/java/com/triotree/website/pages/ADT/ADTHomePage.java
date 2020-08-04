@@ -207,13 +207,6 @@ public class ADTHomePage extends HISWebsiteBasePage {
 
 	}
 
-	//	public void EnterRemark(String remark) 
-	//	{
-	//		driver.waitForElementPresent(By.xpath("//input[@id='remarkstext']"), 10);
-	//		driver.findElement(By.xpath("//input[@id='remarkstext']")).sendKeys(remark);
-	//		logger.info("Remark is Entered=" + remark);
-	//	}
-
 	public void selectTitleDropdown(ExtentTest test,String title) {
 		try {
 			Select sl = new Select(driver.findElement(TITLE_DROP_DOWN));
@@ -301,10 +294,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 				if (val == true) {
 					WebElement agebutton_element = driver.findElement(AGE_RADIO_BUTTON);
 					if(dob_radio_button.isSelected() && (!agebutton_element.isSelected()))
-					{
-						//						logger.info("User is not able to fill Age and Select Age Type");
-						//						Markup m1=MarkupHelper.createLabel("User is not able to fill Age and Select Age Type", ExtentColor.GREEN);
-						//						test.info(m1);		
+					{	
 						driver.findElement(DOD_TEXT_BOX).sendKeys(dob);
 						driver.findElement(DOD_TEXT_BOX).sendKeys(Keys.TAB);
 						logger.info("DOB= "+dob);
@@ -1076,9 +1066,15 @@ public class ADTHomePage extends HISWebsiteBasePage {
 				Thread.sleep(2000);
 				TTWebsiteDriver.selectByvisibletext(RATE_OF_CONTRACT, rate);
 
-				logger.info("Scheme Company Type= "+companytype+" Company= "+company+" Rate of Contract= "+rate);
-				Markup m1=MarkupHelper.createLabel("Scheme Company Type= "+companytype+" Company= "+company+" Rate of Contract= "+rate, ExtentColor.GREEN);
+				logger.info("Scheme Company Type= "+companytype);
+				logger.info("Company= "+company);
+				logger.info("Rate of Contract= "+rate);
+				Markup m1=MarkupHelper.createLabel("Scheme Company Type= "+companytype, ExtentColor.GREEN);
 				test.info(m1);
+				Markup m2=MarkupHelper.createLabel("Company= "+company, ExtentColor.GREEN);
+				test.info(m2);
+				Markup m3=MarkupHelper.createLabel("Rate of Contract= "+rate, ExtentColor.GREEN);
+				test.info(m3);
 			}
 			catch (Exception e) {
 				Markup m2=MarkupHelper.createLabel("Scheme Company Type= "+companytype+" Company= "+company+" Rate of Contract= "+rate+" is not selected", ExtentColor.RED);
@@ -1089,7 +1085,6 @@ public class ADTHomePage extends HISWebsiteBasePage {
 
 	public void enterauthorizationNumber(ExtentTest test,String authnumber) 
 	{
-
 		driver.findElement(AUTHORIZATION_No).sendKeys(authnumber);
 		logger.info("Authorization Number= "+authnumber);
 		Markup m=MarkupHelper.createLabel("Authorization Number= "+authnumber, ExtentColor.GREEN);

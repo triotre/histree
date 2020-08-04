@@ -41,7 +41,7 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 	private final By View=By.id("view_type");
 	private final By From_Date=By.id("FromDate");
 	private final By Search_Button=By.id("search_data");
-	private final By Patient=By.xpath("(//div[@id='op_queue']//div[@id])[3]");
+	private final By Patient=By.xpath("(//div[@id='op_queue']//div[@id])[2]");
 	//=By.xpath("(//div[@id='in_progress']//div[@id])[]");
 	private final By Order=By.xpath("//div[@id='ordersopphycomp']");
 	private final By Chief_Complaints=By.xpath("//div[@id='chiefcomplantopphycomp']");
@@ -187,6 +187,15 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 	public void clickonPatient(ExtentTest test) {
 		if(driver.findElements(Patient).size()>0) {
 			WebElement patient_element = driver.findElement(Patient);
+			driver.clickByJS(TTWebsiteDriver.driver, patient_element);
+			logger.info("Click on Patient");
+			Markup m=MarkupHelper.createLabel("Click on Patient", ExtentColor.GREEN);
+			test.info(m);
+			found=true;
+		}
+		else if(driver.findElements(By.xpath("(//div[@id='signed']//div[@id])[2]")).size()>0)
+		{
+			WebElement patient_element = driver.findElement(By.xpath("(//div[@id='signed']//div[@id])[2]"));
 			driver.clickByJS(TTWebsiteDriver.driver, patient_element);
 			logger.info("Click on Patient");
 			Markup m=MarkupHelper.createLabel("Click on Patient", ExtentColor.GREEN);
@@ -406,8 +415,8 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 			test.info(m1);
 		}
 		else {
-			logger.info(""+selected_Tab+" Service is not get added in the below grid");
-			Markup m1=MarkupHelper.createLabel(""+selected_Tab+" Service is not get added in the below grid", ExtentColor.RED);
+			logger.info(""+selected_Tab+"= "+servicename+" is not get added in the below grid");
+			Markup m1=MarkupHelper.createLabel(""+selected_Tab+"= "+servicename+" is not get added in the below grid", ExtentColor.RED);
 			test.info(m1);
 		}
 	}
@@ -455,7 +464,14 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 				driver.clickByJS(TTWebsiteDriver.driver, yes_btn);
 			}
 			catch (Exception e) {
-				// TODO: handle exception
+				e.printStackTrace();
+			}
+			try {
+				WebElement zeroyes = driver.findElement(By.id("btnZeroYes"));
+				driver.clickByJS(TTWebsiteDriver.driver, zeroyes);
+			}
+			catch (Exception e) {
+				
 			}
 		}
 		f++;

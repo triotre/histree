@@ -37,7 +37,7 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 	public void RegistrationforminADTwithcashPatient() throws InterruptedException 
 	{
 		test=extent.createTest("RegistrationforminADTwithcashPatient", "This test case is verifies Registration form in ADT with cash Patient");
-		test.assignCategory("ADT");
+		test.assignCategory("Registration in ADT with cash Patient");
 		hisHomePage = new HISHomePage(driver);
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);
@@ -116,14 +116,6 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 		adtpage.selectallotedbedtype(test);
 		adtpage.selectwardtype(test);
 		adtpage.selectbedtype(test);
-		
-		/// Scheme company type and company
-//		adtpage.companyInsuranceDetails(test,"Corporate","CGHS COMPANY", "NEW CGHS");
-//		adtpage.enterauthorizationNumber(test, "123456");
-//		adtpage.enterCreditLimit(test, "1");
-//		adtpage.clickonschemecheckbox();
-//		adtpage.selectscheme("Govt Scheme");
-
 
 		///Package Details
 		adtpage.selectTab(test,"Package Details");

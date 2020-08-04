@@ -7,22 +7,39 @@
 	<artifactId>his</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-
+	<build>
+		<plugins>
+			<!-- Compiler plug-in -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5.1</version>
+			
+			</plugin>
+			<!-- Added Surefire Plugin configuration to execute tests -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.19.1</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>testng.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<systemPropertyVariables>
+						<browserName>chrome</browserName>
+					</systemPropertyVariables>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 	<!-- <name>his</name> <url>http://maven.apache.org</url> -->
 	<dependencies>
-		<!-- <dependency> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-surefire-plugin</artifactId> 
-			<version>2.20.1</version> <type>maven-plugin</type> </dependency> -->
-		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+
 		<dependency>
 			<groupId>log4j</groupId>
 			<artifactId>log4j</artifactId>
 			<version>1.2.17</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/com.paulhammant/ngwebdriver -->
-		<!-- <dependency> <groupId>com.paulhammant</groupId> <artifactId>ngwebdriver</artifactId> 
-			<version>0.9</version> </dependency> -->
-
 
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
 		<dependency>

@@ -594,11 +594,11 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnPurchaseOrderAndSelectAnOption("Purchase Requisition");
 		purchaseRequisitionPage.selectInventory("Refresh Stock Level");
 		assertTrue(purchaseRequisitionPage.verifyActionMessage("Calculation for all items completed successfully"), "Calculation for all items completed successfully! Message not showing up");
-		driver.pauseExecutionFor(3000);
+		//driver.pauseExecutionFor(3000);
 		purchaseRequisitionPage.selectInventory("QOH <ROL");
-		driver.pauseExecutionFor(3000);
+		//driver.pauseExecutionFor(3000);
 		purchaseRequisitionPage.selectInventory("QOH <ROL");
-		driver.pauseExecutionFor(3000);
+		//driver.pauseExecutionFor(3000);
 		purchaseRequisitionPage.selectInventory("All Items");
 		purchaseRequisitionPage.searchItemsFromSmartSearchAndSelect("A TO Z SYP 200ML");
 		purchaseRequisitionPage.searchItemsFromSmartSearchAndSelect("A TO Z SYRUP (100ML)");
@@ -924,7 +924,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		purchaseRequisitionPage.selectInventory("QOH<ROL");
 		Thread.sleep(2000);
 		purchaseRequisitionPage.selectInventory("QOH>ROL");
-		driver.pauseExecutionFor(6000);
+		//driver.pauseExecutionFor(6000);
 		purchaseRequisitionPage.selectInventory("ALL ITEMS");
 
 		indentItemsPage.selectMedicines("A TO Z SYP 200ML");

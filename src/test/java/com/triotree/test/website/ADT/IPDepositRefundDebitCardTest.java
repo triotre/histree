@@ -15,7 +15,7 @@ public class IPDepositRefundDebitCardTest extends TTWebsiteBaseTest
 {
 
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(IPDepositRefundDebitCardTest.class.getName());
 
 	private HISHomePage hisHomePage;
 	private IPDepositRefundformPage ipdepositrefund;
@@ -47,15 +47,6 @@ public class IPDepositRefundDebitCardTest extends TTWebsiteBaseTest
 		ipdepositrefund.enterTransferringAmount(test,"10");
 		ipdepositrefund.clickonclearbutton();
 
-//		//Deposit Cash
-//		ipdepositrefund.enterIPNumber(test,"40102");
-//		ipdepositrefund.enterAmount(test,"0");
-//		ipdepositrefund.clickondepositbutton();
-//		ipdepositrefund.validatepopuptext(test);
-//		ipdepositrefund.enterAmount(test,"5");
-//		ipdepositrefund.clickondepositbutton();
-//		ipdepositrefund.clickonDeposityesbutton();
-//		ipdepositrefund.validatepopuptext(test);
 
 		//Deposit By Debit Card
 		ipdepositrefund.enterIPNumber(test,"40102");

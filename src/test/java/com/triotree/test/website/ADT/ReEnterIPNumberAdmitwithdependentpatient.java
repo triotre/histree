@@ -11,10 +11,10 @@ import com.triotree.website.pages.ADT.IPDepositRefundformPage;
 import com.triotree.website.pages.ADT.UpdatePatientDetailsandAddpackagePage;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 
-public class ReEnterUHIDAdmitwithdependentpatient extends TTWebsiteBaseTest
+public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 {
 	private static final Logger logger = LogManager
-			.getLogger(ReEnterUHIDAdmitwithdependentpatient.class.getName());
+			.getLogger(ReEnterIPNumberAdmitwithdependentpatient.class.getName());
 
 	private HISHomePage hisHomePage;
 	private BedStatusPage bedstatusPage;
@@ -23,10 +23,10 @@ public class ReEnterUHIDAdmitwithdependentpatient extends TTWebsiteBaseTest
 	private UpdatePatientDetailsandAddpackagePage updatedetail;
 
 	@Test
-	public void ReEnterUHIDandadmitwithdependentpatientsimultaneouslytransfer() throws InterruptedException
+	public void ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer() throws InterruptedException
 	{
-		test=extent.createTest("ReEnterUHIDandadmitwithdependentpatientsimultaneouslytransfer", "This test case is verifies admit with dependent patient simultaneously transfer");
-		test.assignCategory("ADT reEnter UHID and Admit with dependent patient");
+		test=extent.createTest("ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer", "This test case is verifies ReEnter IP Number Admit with dependent patient simultaneously transfer");
+		test.assignCategory("ADT reEnter IP Number and Admit with dependent patient");
 		hisHomePage = new HISHomePage(driver);
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);
@@ -73,7 +73,7 @@ public class ReEnterUHIDAdmitwithdependentpatient extends TTWebsiteBaseTest
 		updatedetail.selectward(test,"1st FLR T1 Transplant ICU");
 		updatedetail.selectBed(test);
 		updatedetail.selectandfilledspecialityprimaryandReferring(test,"Cardiology","Anish  ","Anish");
-		updatedetail.getvalueofFirstandLastName();
+		updatedetail.getvalueofFirstandLastName(test);
 		updatedetail.clickoncancelbutton(test);
 
 		//Validation of Name is updated 

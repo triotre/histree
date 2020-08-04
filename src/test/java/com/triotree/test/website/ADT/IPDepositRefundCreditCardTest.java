@@ -15,16 +15,16 @@ public class IPDepositRefundCreditCardTest extends TTWebsiteBaseTest
 {
 
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(IPDepositRefundCreditCardTest.class.getName());
 
 	private HISHomePage hisHomePage;
 	private IPDepositRefundformPage ipdepositrefund;
 	private String patientRegistrationId ="RAJH.17150458";
 
 	@Test
-	public void AdtIPDepositRefundCreditCardformTest() throws InterruptedException 
+	public void IPDepositRefundCreditCardTestTest() throws InterruptedException 
 	{
-		test=extent.createTest("AdtIPDepositRefundCreditCardformTest", "This test case is verifies ADT IPDeposit Refund Credit Card form Test");
+		test=extent.createTest("IPDepositRefundCreditCardTestTest", "This test case is verifies IP Deposit/Refund Credit Card Test");
 		test.assignCategory("ADT IP Deposit Credit Card");
 
 		hisHomePage = new HISHomePage(driver);

@@ -15,7 +15,7 @@ public class IPDepositRefundChequeTest extends TTWebsiteBaseTest
 {
 
 	private static final Logger logger = LogManager
-			.getLogger(ADTCashPatientRegistrationTest.class.getName());
+			.getLogger(IPDepositRefundChequeTest.class.getName());
 
 	private HISHomePage hisHomePage;
 	private IPDepositRefundformPage ipdepositrefund;
@@ -24,7 +24,7 @@ public class IPDepositRefundChequeTest extends TTWebsiteBaseTest
 	@Test
 	public void AdtIPDepositRefundchequeformTest() throws InterruptedException 
 	{
-		test=extent.createTest("AdtIPDepositRefundchequeformTest", "This test case is verifies ADT IPDeposit Refund Cheque form Test");
+		test=extent.createTest("IPDepositRefundChequeTest", "This test case is verifies ADT IPDeposit Refund Cheque form Test");
 		test.assignCategory("ADT IP Deposit Cheque");
 
 		hisHomePage = new HISHomePage(driver);
