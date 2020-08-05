@@ -154,7 +154,6 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 		logger.info("Doctor Name= "+text);
 		Markup m=MarkupHelper.createLabel("Doctor Name= "+text, ExtentColor.GREEN);
 		test.info(m);
-		//}
 	}
 
 	public void verifyselectedView(ExtentTest test) 
@@ -276,9 +275,13 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 			{
 
 				String chief_complaint_name = driver.findElement(By.xpath("(//div[@class='resp-tab-content resp-tab-content-active']//label//strong[text()='"+refletedservices_name+"']/..//following-sibling::ul//span)["+h+"]")).getText();
-				logger.info("Reflected Service Name= "+refletedservices_name+" and Laboratory Service Name= "+chief_complaint_name);
-				Markup m=MarkupHelper.createLabel("Reflected Service Name= "+refletedservices_name+" and Laboratory Service Name= "+chief_complaint_name, ExtentColor.GREEN);
+				logger.info("Reflected Service Name= "+refletedservices_name);
+				logger.info("Laboratory Service Name= "+chief_complaint_name);
+
+				Markup m=MarkupHelper.createLabel("Reflected Service Name= "+refletedservices_name, ExtentColor.GREEN);
 				test.info(m);
+				Markup m1=MarkupHelper.createLabel("Laboratory Service Name= "+chief_complaint_name, ExtentColor.GREEN);
+				test.info(m1);
 			}
 		}
 	}
@@ -471,7 +474,7 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 				driver.clickByJS(TTWebsiteDriver.driver, zeroyes);
 			}
 			catch (Exception e) {
-				
+
 			}
 		}
 		f++;
@@ -581,9 +584,15 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 				Select sl=new Select(statusofOrderedItem_element);
 				WebElement item_text_element = sl.getFirstSelectedOption();
 
-				logger.info("Service Name= "+service_name+" Orders Name= "+orders_name+" Status= "+item_text_element.getText());
-				Markup m1=MarkupHelper.createLabel("Service Name= "+service_name+" Orders Name= "+orders_name+" Status= "+item_text_element.getText(), ExtentColor.GREEN);
+				logger.info("Service Name= "+service_name);
+				logger.info("Orders Name= "+orders_name);
+				logger.info("Status= "+item_text_element.getText());
+				Markup m1=MarkupHelper.createLabel("Service Name= "+service_name, ExtentColor.GREEN);
 				test.info(m1);
+				Markup m2=MarkupHelper.createLabel("Orders Name= "+orders_name, ExtentColor.GREEN);
+				test.info(m2);
+				Markup m3=MarkupHelper.createLabel("Status= "+item_text_element.getText(), ExtentColor.GREEN);
+				test.info(m3);
 			}
 		}
 		else {

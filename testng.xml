@@ -92,53 +92,48 @@
 				name="com.triotree.website.Physician.PhysicianChiefComplaints" />
 		</classes>
 	</test>
-	<test thread-count="1" name="Test16">
-		<classes>
-			<class name="com.triotree.website.Physician.PhysicainAdvice" />
-		</classes>
-	</test>
 
-	<test thread-count="1" name="Test17">
+	<test thread-count="1" name="Test16">
 		<classes>
 			<class
 				name="com.triotree.website.Physician.PhysicianOPDCaseSheetConsultsOrder" />
 		</classes>
 	</test>
-	<test thread-count="1" name="Test18">
+	<test thread-count="1" name="Test17">
 		<classes>
 			<class
 				name="com.triotree.website.Physician.PhysicianNotetoSelfTest" />
 		</classes>
 	</test>
 
-	<test thread-count="1" name="Test19">
+	<test thread-count="1" name="Test18">
 		<classes>
 			<class
 				name="com.triotree.website.Physician.PatientDocumentUploadTest" />
 		</classes>
 	</test>
 
-	<test thread-count="1" name="Test20">
+	<test thread-count="1" name="Test19">
 		<classes>
 			<class
 				name="com.triotree.website.Physician.PhysicianOPDCaseSheetProcedureOrder" />
 		</classes>
 	</test>
 
-	<test thread-count="1" name="Test21">
+	<test thread-count="1" name="Test20">
 		<classes>
 			<class name="com.triotree.website.Physician.PhysicianHOPI" />
 		</classes>
 	</test>
 
-	<test thread-count="1" name="Test22">
+	<test thread-count="1" name="Test21">
 		<classes>
 			<class
 				name="com.triotree.website.Physician.PhysicianOPDCaseSheetRadiologyOrder" />
 		</classes>
 	</test>
 
-	<test thread-count="1" name="Test23">
+	<test thread-count="1" name="Test22">
 		<classes>
 			<class
 				name="com.triotree.website.Physician.PhysicianAllergiesAndHabitsTest" />

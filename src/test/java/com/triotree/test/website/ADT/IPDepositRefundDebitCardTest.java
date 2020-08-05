@@ -89,19 +89,19 @@ public class IPDepositRefundDebitCardTest extends TTWebsiteBaseTest
 
 		//Cheque in hand details
 		ipdepositrefund.clickOnMenu();
-		ipdepositrefund.clickOnIpDepositandRefund("Cheque In Hand Details");
+		ipdepositrefund.clickOnIpDepositandRefund(test,"Cheque In Hand Details");
 		driver.switchTo().window(driver.getWindowHandles().toArray()[2].toString());
 		ipdepositrefund.getheading(test,"Cheque In Hand Details");
 		ipdepositrefund.enterFromDate(test,"01/Jun/2020");
 		ipdepositrefund.enterToDate(test,"15/Jun/2020");
-		ipdepositrefund.clickoncheckInHandSearch();
+		ipdepositrefund.clickoncheckInHandSearch(test);
 		ipdepositrefund.verifycheckInHandDetails(test);
 		ipdepositrefund.clickonCSVButton(test);
 
 		//Select the from date greater then to date
 		ipdepositrefund.enterFromDate(test,"16/Jun/2020");
 		ipdepositrefund.enterToDate(test,"15/Jun/2020");
-		ipdepositrefund.clickoncheckInHandSearch();
+		ipdepositrefund.clickoncheckInHandSearch(test);
 		ipdepositrefund.validatepopuptext(test);
 	}
 }

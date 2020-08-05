@@ -312,8 +312,6 @@ public class BedStatusPage extends HISWebsiteBasePage {
 			test.info(m);
 			Thread.sleep(2000);
 		}
-		catch (Exception e) {
-			
-		}
+		catch (Exception e) {}
 	}
 }

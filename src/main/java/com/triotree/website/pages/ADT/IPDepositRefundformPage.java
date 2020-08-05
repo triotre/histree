@@ -105,15 +105,20 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 		Thread.sleep(5000);
 	}
 
-	public void clickOnBedTransferAndSelectAnOption(String option) throws InterruptedException {
+	public void clickOnBedTransferAndSelectAnOption(ExtentTest test,String option) throws InterruptedException {
 		driver.waitForElementPresent(Bed_Transfer);
 		driver.click(Bed_Transfer);
 		logger.info("Bed Transfer Section is Expanded");
-
+		Markup m1=MarkupHelper.createLabel("Bed Transfer Section is Expanded", ExtentColor.GREEN);
+		test.info(m1);
+		
 		driver.waitForElementPresent(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"), 120);
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"));
 		options.click();
 		logger.info("Following Option has been selected from Bed Transfer Section " + option);
+		Markup m2=MarkupHelper.createLabel("Following Option has been selected from Bed Transfer Section " + option, ExtentColor.GREEN);
+		test.info(m2);
+		
 		driver.waitForPageLoad();
 		Thread.sleep(5000);
 	}
@@ -143,28 +148,32 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 
 	}
 
-	public void clickOnMenu() throws InterruptedException {
+	public void clickOnMenu(ExtentTest test) throws InterruptedException {
 		try {
 			driver.waitForElementPresent(MENU);
 			WebElement clickOnMenu_element = driver.findElement(MENU);
 			driver.clickByJS(TTWebsiteDriver.driver, clickOnMenu_element);
 			logger.info("Menu Clicked");
-
+			Markup m=MarkupHelper.createLabel("Menu Clicked", ExtentColor.GREEN);
+			test.info(m);
 			Thread.sleep(2000);
 		}
 		catch (Exception e) {
 		}
 	}
 
-	public void clickOnIpDepositandRefund(String option) throws InterruptedException {
+	public void clickOnIpDepositandRefund(ExtentTest test,String option) throws InterruptedException {
 		driver.waitForElementPresent(IP_DEPOSIT);
 		driver.click(IP_DEPOSIT);
 		logger.info("IP Deposit/Refund Section is Expanded");
-
+		Markup m=MarkupHelper.createLabel("IP Deposit/Refund Section is Expanded", ExtentColor.GREEN);
+		test.info(m);
 		driver.waitForElementPresent(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"), 120);
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"));
 		options.click();
 		logger.info("Following Option has been selected from IP Deposit/Refund Section " + option);
+		Markup m1=MarkupHelper.createLabel("Following Option has been selected from IP Deposit/Refund Section " + option, ExtentColor.GREEN);
+		test.info(m1);
 		driver.waitForPageLoad();
 		Thread.sleep(3000);
 	}
@@ -427,12 +436,14 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 		logger.info("Click on Refersh Button");
 	}
 
-	public void clickonbilldetailclearbutton() {
+	public void clickonbilldetailclearbutton() throws InterruptedException {
 		driver.findElement(BILL_DETAIL_CLEAR).click();
 		logger.info("Click on Bill Detail Clear Button");
+		Thread.sleep(2000);
 	}
 
-	public void clickonReceiptUtility(ExtentTest test) {
+	public void clickonReceiptUtility(ExtentTest test) 
+	{
 		try {
 			WebDriverWait wait=new WebDriverWait(driver, 20);
 			wait.until(ExpectedConditions.elementToBeClickable(RECEPIT_UTILITY));
@@ -544,10 +555,12 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 		test.info(m);
 	}
 
-	public void clickoncheckInHandSearch()
+	public void clickoncheckInHandSearch(ExtentTest test)
 	{
 		driver.findElement(CHECK_IN_HAND_SEARCH).click();
 		logger.info("Click on Search Button");
+		Markup m=MarkupHelper.createLabel("Click on Search Button", ExtentColor.GREEN);
+		test.info(m);
 	}
 
 
@@ -591,8 +604,6 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 
 	public void clickonRefundbutton(ExtentTest test,String amount,String name,String remark) throws InterruptedException 
 	{
-		///driver.findElement(SIDE_REFUND_BUTTON).click();
-
 		List<WebElement> DepositRefundDetails = driver.findElements(By.xpath("//table[@id='tbldeposit']//tbody//tr"));
 		int depositsize=DepositRefundDetails.size();
 		if(depositsize>0)

@@ -128,9 +128,12 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 	{
 		TTWebsiteDriver.selectByvisibletext(Delivery_type, delivery);
 		TTWebsiteDriver.selectByvisibletext(Birth_Type, birth);
-		logger.info("Delivery_type= "+delivery+" Birth_Type= "+birth);
-		Markup m1=MarkupHelper.createLabel("Delivery_type= "+delivery+" Birth_Type= "+birth, ExtentColor.GREEN);
+		logger.info("Delivery_type= "+delivery);
+		logger.info("Birth_Type= "+birth);
+		Markup m1=MarkupHelper.createLabel("Delivery_type= "+delivery, ExtentColor.GREEN);
 		test.info(m1);
+		Markup m2=MarkupHelper.createLabel("Birth_Type= "+birth, ExtentColor.GREEN);
+		test.info(m2);
 	}
 
 
@@ -149,9 +152,15 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 		driver.findElement(Referring_Consultant).sendKeys(refer);
 		WebElement referring_consultant = driver.findElement(Referring_Consultant);
 		TTWebsiteDriver.doubleclick(referring_consultant);
-		logger.info("Speciality="+speciality+" Primary_Consultant= "+consultant+" Referring_Consultant= "+refer);
-		Markup m1=MarkupHelper.createLabel("Speciality="+speciality+" ,Primary_Consultant= "+consultant+" ,Referring_Consultant= "+refer, ExtentColor.GREEN);
+		logger.info("Speciality="+speciality);
+		logger.info("Primary_Consultant= "+consultant);
+		logger.info("Referring_Consultant= "+refer);
+		Markup m1=MarkupHelper.createLabel("Speciality="+speciality, ExtentColor.GREEN);
 		test.info(m1);
+		Markup m2=MarkupHelper.createLabel("Primary_Consultant= "+consultant, ExtentColor.GREEN);
+		test.info(m2);
+		Markup m3=MarkupHelper.createLabel("Referring_Consultant= "+refer, ExtentColor.GREEN);
+		test.info(m3);
 	}
 
 	public void clickonSaveButton(ExtentTest test) {

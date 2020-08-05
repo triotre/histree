@@ -27,7 +27,7 @@ public class BedTransfer  extends TTWebsiteBaseTest
 	public void patientBedTranferTest() throws InterruptedException 
 	{
 		test=extent.createTest("patientBedTranferTest", "This test case is verifies Patient Bed Tranfer Test");
-		test.assignCategory("ADT");
+		test.assignCategory("ADT Bed Tranfer");
 		hisHomePage = new HISHomePage(driver);
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);
@@ -37,12 +37,12 @@ public class BedTransfer  extends TTWebsiteBaseTest
 		hisHomePage.clickOnADTIcon();
 		ipdepositrefund.selectStationAndClickOnYes(test,"IT");
 		ipdepositrefund.clickOnMenu();
-		ipdepositrefund.clickOnBedTransferAndSelectAnOption("Bed Transfer");
+		ipdepositrefund.clickOnBedTransferAndSelectAnOption(test,"Bed Transfer");
 		bedstatusPage.clickonPendingTransferRequest(test);
 		bedstatusPage.checkandselectOccupiedBed_Bed(test);
 		bedstatusPage.selectOccupiedBedward(test);
 		bedstatusPage.clickonPackageandBillingcontinue(test);
-		///adtpage.validatepopuptext(test);
+		
 
 	}
 
