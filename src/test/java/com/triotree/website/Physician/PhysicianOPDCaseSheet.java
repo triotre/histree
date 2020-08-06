@@ -28,7 +28,7 @@ public class PhysicianOPDCaseSheet extends TTWebsiteBaseTest
 		opdorder=new PhysicianOPDcaseSheetOrders(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickonPhysicianIcon();
+		hisHomePage.clickonPhysicianIcon(test);
 		opdorder.selectStationAndClickOnYes(test, "1st FLR T1 Transplant ICU");
 		opdorder.getHeading(test);
 		opdorder.clickonOutPatient(test);

@@ -42,7 +42,6 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 	private final By From_Date=By.id("FromDate");
 	private final By Search_Button=By.id("search_data");
 	private final By Patient=By.xpath("(//div[@id='op_queue']//div[@id])[2]");
-	//=By.xpath("(//div[@id='in_progress']//div[@id])[]");
 	private final By Order=By.xpath("//div[@id='ordersopphycomp']");
 	private final By Chief_Complaints=By.xpath("//div[@id='chiefcomplantopphycomp']");
 	private final By Diagnosis=By.xpath("//div[@id='diagnosisopphycomp']");
@@ -103,7 +102,6 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 	public PhysicianOPDcaseSheetOrders(TTWebsiteDriver driver) 
 	{
 		super(driver);
-		// TODO Auto-generated constructor stub
 	}
 
 	public void selectStationAndClickOnYes(ExtentTest test,String station) throws InterruptedException {

@@ -9,6 +9,10 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.triotree.driver.TTDriver;
 import com.triotree.driver.website.TTWebsiteDriver;
 import com.triotree.pages.TTBasePage;
@@ -106,7 +110,7 @@ public class HISHomePage extends HISWebsiteBasePage{
 		logger.info("MIS Report Icon Clicked");
 	}
 
-	public void clickonPhysicianIcon() 
+	public void clickonPhysicianIcon(ExtentTest test) 
 	{
 		driver.waitForElementPresent(MIS_REPORT_ICON);
 		Select stationDropDown = new Select(driver.findElement(By.xpath("//select[@id='Facility']")));
@@ -115,9 +119,11 @@ public class HISHomePage extends HISWebsiteBasePage{
 		WebElement element =driver.findElement(Physician_ICON);
 		driver.clickByJS(TTWebsiteDriver.driver, element);
 		logger.info("Physician Icon Clicked");
+		Markup m1=MarkupHelper.createLabel("Physician Icon Clicked", ExtentColor.GREEN);
+		test.info(m1);	
 	}
 
-	public void clickOnInventoryIcon() {
+	public void clickOnInventoryIcon(ExtentTest test) {
 		driver.waitForElementPresent(INVENTORY_ICON);
 
 		Select stationDropDown = new Select(driver.findElement(By.xpath("//select[@id='Facility']")));
@@ -126,6 +132,8 @@ public class HISHomePage extends HISWebsiteBasePage{
 		WebElement element = driver.findElement(INVENTORY_ICON);
 		driver.clickByJS(TTWebsiteDriver.driver, element);
 		logger.info("Inventory Icon Clicked");
+		Markup m1=MarkupHelper.createLabel("Inventory Icon Clicked", ExtentColor.GREEN);
+		test.info(m1);
 	}
 
 

@@ -51,7 +51,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentItemsPage = new IndentItemsPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Indent Items");
 		indentItemsPage.clickOnSaveButton();
@@ -128,7 +128,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentApprovalPage = new IndentApprovalPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Indent Items");
 		indentItemsPage.clickOnSaveButton();
@@ -284,7 +284,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		//		frontOfficeHomePage.clickOnMenu();
 		//		frontOfficeHomePage.clickOnHomeIcon();
 		//
-		//		hisHomePage.clickOnInventoryIcon();
+		//		hisHomePage.clickOnInventoryIcon(test);
 		//		indentItemsPage.selectToDepartmentFromDropdown("Central General Store");
 
 		//		  frontOfficeHomePage.clickOnIndentIssuesAndSelectAnOption("Indent Items");
@@ -311,7 +311,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentIssuePage = new IndentIssuePage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Indent Items");
 		indentItemsPage.clickOnSaveButton();
@@ -394,7 +394,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnHomeIcon();
 
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("Central General Store");
 		frontOfficeHomePage.clickOnIndentIssuesAndSelectAnOption("Indent Issue");
 		indentIssuePage.clickOnPrintCumulativeIssueButton();
@@ -434,7 +434,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		purchaseRequisitionPage = new PurchaseRequisitionPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Indent Items");
 		indentItemsPage.enterFromDateIntendItemsScreen("01/Jun/2020");
@@ -476,7 +476,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		purchaseRequisitionPage = new PurchaseRequisitionPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Indent Items");
 		indentItemsPage.clickOnSaveButton();
@@ -554,7 +554,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnHomeIcon();
 
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnPurchaseOrderAndSelectAnOption("Purchase Requisition");
 		purchaseRequisitionPage.clickOnSaveFloppyIcon();
@@ -588,7 +588,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		purchaseRequisitionPage = new PurchaseRequisitionPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		//hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnPurchaseOrderAndSelectAnOption("Purchase Requisition");
@@ -651,7 +651,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentIssuePage = new IndentIssuePage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnIndentIssuesAndSelectAnOption("Direct Issue");
 		indentItemsPage.clickOnSaveButtonOnDirectIssuePage();
@@ -717,7 +717,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentIssuePage = new IndentIssuePage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");		
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Direct Receipt");
 
@@ -836,7 +836,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentIssuePage = new IndentIssuePage(driver);
 		purchaseRequisitionPage = new PurchaseRequisitionPage(driver);
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnPurchaseOrderAndSelectAnOption("Purchase Requisition Approval");
 		purchaseRequisitionPage.enterFromDatePurchaseRequisitionApprovalPage("28-Mar-2019");
@@ -907,7 +907,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Indent Items");
 		indentItemsPage.clickOnSaveButton();
@@ -1048,7 +1048,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnHomeIcon();
 
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnIndentIssuesAndSelectAnOption("Indent Issue");
 		//		try {
@@ -1107,7 +1107,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		purchaseRequisitionPage = new PurchaseRequisitionPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnPurchaseOrderAndSelectAnOption("Purchase Order");
 		purchaseRequisitionPage.clickSaveButtonOnPurchaseOrderPage();
@@ -1201,7 +1201,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		purchaseRequisitionPage = new PurchaseRequisitionPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnPurchaseOrderAndSelectAnOption("Purchase Requisition");
 		purchaseRequisitionPage.selectInventory("Refresh Stock Level");
@@ -1262,7 +1262,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentIssuePage=new IndentIssuePage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnIndentIssuesAndSelectAnOption("Acknowledge Return");
 		//indentItemsPage.clickOnSaveButton();
@@ -1294,7 +1294,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentApprovalPage = new IndentApprovalPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("Indent Items");
 		indentItemsPage.clickOnSaveButton();
@@ -1434,7 +1434,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnHomeIcon();
 
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnIndentIssuesAndSelectAnOption("Indent Issue");
 
@@ -1518,7 +1518,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnHomeIcon();
 		//hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("OP Billable Consumption");
 		indentItemsPage.clickOnSaveButton();
@@ -1575,7 +1575,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentApprovalPage = new IndentApprovalPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 
 		//frontOfficeHomePage.clickOnMenu();
@@ -1723,7 +1723,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentApprovalPage = new IndentApprovalPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 
 		//frontOfficeHomePage.clickOnMenu();
@@ -1869,7 +1869,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentApprovalPage = new IndentApprovalPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("2 nd floor nursing station");
 		frontOfficeHomePage.clickOnPurchaseOrderAndSelectAnOption("Purchase Order Approval");
 		frontOfficeHomePage.EnterPurcahseorderFromDate("03/Mar/2020");
@@ -1909,7 +1909,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentApprovalPage = new IndentApprovalPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 
 		//frontOfficeHomePage.clickOnMenu();
@@ -2033,7 +2033,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnHomeIcon();
 		//hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnIndentItemsAndSelectAnOption("OP Billable Consumption");
 		indentItemsPage.clickOnSaveButton();
@@ -2180,7 +2180,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentApprovalPage = new IndentApprovalPage(driver);
 
 		hisHomePage.loginToTriotreeHIS();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 
 		frontOfficeHomePage.clickOnGRNAndSelectAnOption("GRN");
@@ -2252,7 +2252,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.saveRecordYesButton();
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnHomeIcon();
-		hisHomePage.clickOnInventoryIcon();
+		hisHomePage.clickOnInventoryIcon(test);
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 
 		frontOfficeHomePage.clickOnGRNAndSelectAnOption("Payment Advice");
