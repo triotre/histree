@@ -2,12 +2,12 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-08-06T05:43:42Z" name="Default suite" finished-at="2020-08-06T05:47:00Z" duration-ms="197536">
+  <suite started-at="2020-08-17T06:11:31Z" name="Default suite" finished-at="2020-08-17T06:12:01Z" duration-ms="29919">
     <groups>
     </groups>
-    <test started-at="2020-08-06T05:43:42Z" name="Default test" finished-at="2020-08-06T05:47:00Z" duration-ms="197536">
-      <class name="com.triotree.website.Physician.PhysicainAdvice">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.website.Physician.PhysicainAdvice@596df867]" started-at="2020-08-06T11:13:42Z" name="beforeSuite" finished-at="2020-08-06T11:13:42Z" duration-ms="228" status="PASS">
+    <test started-at="2020-08-17T06:11:31Z" name="Default test" finished-at="2020-08-17T06:12:01Z" duration-ms="29919">
+      <class name="com.triotree.website.Physician.PhysicianEMRTest">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.website.Physician.PhysicianEMRTest@499b2a5c]" started-at="2020-08-17T11:41:31Z" name="beforeSuite" finished-at="2020-08-17T11:41:31Z" duration-ms="226" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,27 +16,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.website.Physician.PhysicainAdvice@596df867]" started-at="2020-08-06T11:13:42Z" name="beforeclass" finished-at="2020-08-06T11:13:42Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.website.Physician.PhysicianEMRTest@499b2a5c]" started-at="2020-08-17T11:41:31Z" name="beforeclass" finished-at="2020-08-17T11:41:31Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.website.Physician.PhysicainAdvice@596df867]" started-at="2020-08-06T11:13:42Z" name="setUp" finished-at="2020-08-06T11:13:50Z" duration-ms="7942" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.website.Physician.PhysicianEMRTest@499b2a5c]" started-at="2020-08-17T11:41:31Z" name="setUp" finished-at="2020-08-17T11:41:39Z" duration-ms="7768" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="PhysicainAdviceTest()[pri:0, instance:com.triotree.website.Physician.PhysicainAdvice@596df867]" started-at="2020-08-06T11:13:50Z" name="PhysicainAdviceTest" finished-at="2020-08-06T11:16:59Z" duration-ms="189542" status="PASS">
+        <test-method signature="physicianEMRTest()[pri:0, instance:com.triotree.website.Physician.PhysicianEMRTest@499b2a5c]" started-at="2020-08-17T11:41:39Z" name="physicianEMRTest" finished-at="2020-08-17T11:42:01Z" duration-ms="22090" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- PhysicainAdviceTest -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.website.Physician.PhysicainAdvice@596df867]" started-at="2020-08-06T11:16:59Z" name="tearDownSession" finished-at="2020-08-06T11:17:00Z" duration-ms="26" status="PASS">
+        </test-method> <!-- physicianEMRTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.website.Physician.PhysicianEMRTest@499b2a5c]" started-at="2020-08-17T11:42:01Z" name="tearDownSession" finished-at="2020-08-17T11:42:01Z" duration-ms="36" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.website.Physician.PhysicainAdvice@596df867]" started-at="2020-08-06T11:17:01Z" name="afterSuite" finished-at="2020-08-06T11:17:01Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.website.Physician.PhysicianEMRTest@499b2a5c]" started-at="2020-08-17T11:42:01Z" name="afterSuite" finished-at="2020-08-17T11:42:01Z" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.triotree.website.Physician.PhysicainAdvice -->
+      </class> <!-- com.triotree.website.Physician.PhysicianEMRTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

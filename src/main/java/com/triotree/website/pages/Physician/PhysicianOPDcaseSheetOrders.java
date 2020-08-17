@@ -280,6 +280,7 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 				test.info(m);
 				Markup m1=MarkupHelper.createLabel("Laboratory Service Name= "+chief_complaint_name, ExtentColor.GREEN);
 				test.info(m1);
+				break;
 			}
 		}
 	}
@@ -290,7 +291,8 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 			try {
 				WebElement chief_complaint_element = driver.findElement(By.xpath("//div[@class='resp-tab-content resp-tab-content-active']//label//strong[text()='"+refletedservices.get(i)+"']/..//following-sibling::ul//span[text()='"+service+"']"));
 				driver.clickByJS(TTWebsiteDriver.driver, chief_complaint_element);
-				if(service.equals("3T MRI Angiography Abdomen")) 
+				
+				if(service.equals("3T MRI Ankle Joint Left")) 
 				{
 					Thread.sleep(2000);
 					driver.findElement(By.xpath("//input[@id='txtOrderInvestigationResponse']")).sendKeys(text);
@@ -309,6 +311,7 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 			}
 			catch (Exception e) {
 			}
+			
 		}
 	}
 	public void clickonSaveOrder(ExtentTest test) 

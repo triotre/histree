@@ -32,7 +32,7 @@ public class PhysicianOPDCaseSheet extends TTWebsiteBaseTest
 		opdorder.selectStationAndClickOnYes(test, "1st FLR T1 Transplant ICU");
 		opdorder.getHeading(test);
 		opdorder.clickonOutPatient(test);
-		opdorder.verifyselectedDoctorName(test,"Geena  Jacob ");
+		opdorder.verifyselectedDoctorName(test,"Abhin  Lazar");
 		opdorder.verifyselectedView(test);
 		opdorder.enterFromDate(test,"10/Feb/2020");
 		opdorder.clickonSearchButton(test);
@@ -43,9 +43,9 @@ public class PhysicianOPDCaseSheet extends TTWebsiteBaseTest
 		opdorder.getHeading(test);
 		opdorder.verifyselectedTab(test);
 		opdorder.verifyreflectedservices(test,"ababa");
-		opdorder.clickandverifyservices(test, "ababa", "Blood Routine Examination ( CBC With ESR )");
-		opdorder.clickandverifyservices(test, "ababa", "USG - Abdomen And Pelvis");
-		opdorder.clickandverifyservices(test, "ababa", "Echo Cardiogram");
+		opdorder.clickandverifyservices(test, "ababa", "24 hr Urine Potassium");
+		opdorder.clickandverifyservices(test, "ababa", "3T MRI Ankle Joint Left");
+		opdorder.clickandverifyservices(test, "ababa", "11 Surgery ,name character limit gretarer than 150");
 		opdorder.clickonSaveOrder(test);
 		
 	}
