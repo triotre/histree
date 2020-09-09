@@ -10,6 +10,7 @@ import org.testng.annotations.Test;
 
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
+import com.triotree.utils.MyScreenRecorder;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 import com.triotree.website.pages.FrontOffice.BillingPage;
 import com.triotree.website.pages.FrontOffice.DepositPage;
@@ -38,6 +39,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 	@Test(priority=1)
 	public void patientRegistrationValidDataTest() throws Throwable {
 		
+		MyScreenRecorder.startRecording("patientRegistrationValidDataTest");
 		test=extent.createTest("PatientRegistrationValidDataTest", "This test case is verifies Patient Registration Valid Data");
 		test.assignCategory("Front Office");
 		hisHomePage = new HISHomePage(driver);
@@ -106,6 +108,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 		patientRegistrationPage.clickOnYesButtonOnRegisteredSuccessfullyPopup();
 		//assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
+		MyScreenRecorder.stopRecording();
 	}
 
 	@Test(priority=2)

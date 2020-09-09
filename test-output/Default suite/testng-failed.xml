@@ -3,16 +3,16 @@
 <suite parallel="none" name="Failed suite [Default suite]">
   <test parallel="none" name="Default test(failed)">
     <classes>
-      <class name="com.triotree.website.Physician.PhysicianEMRTest">
+      <class name="com.triotree.website.Physician.InpatientDischargeNotificationTest">
         <methods>
           <include name="beforeclass"/>
           <include name="beforeSuite"/>
           <include name="tearDownSession"/>
           <include name="setUp"/>
+          <include name="inpatientDischargeNotificationTest"/>
           <include name="afterSuite"/>
-          <include name="physicianEMRTest"/>
         </methods>
-      </class> <!-- com.triotree.website.Physician.PhysicianEMRTest -->
+      </class> <!-- com.triotree.website.Physician.InpatientDischargeNotificationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

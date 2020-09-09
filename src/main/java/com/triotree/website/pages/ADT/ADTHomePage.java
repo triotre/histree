@@ -224,6 +224,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 	public void EnterFirstName(ExtentTest test,String firstname) 
 	{
 		try {
+			driver.findElement(FIRST_NAME).clear();
 			driver.findElement(FIRST_NAME).sendKeys(firstname);
 			logger.info("First Name= "+firstname);
 			Markup m1=MarkupHelper.createLabel("First Name is filled= "+firstname, ExtentColor.GREEN);
@@ -404,6 +405,22 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			Assert.assertEquals("Diagnosis details are mandatory before order","Diagnosis details are mandatory before order");
 			logger.info(text+" is equal to "+"Diagnosis details are mandatory before order");
 			Markup m=MarkupHelper.createLabel("Diagnosis details are mandatory before order", ExtentColor.GREEN);
+			test.info(m);
+		}
+		
+		if(text.equals("Reason for modification is mandatory")) 
+		{
+			Assert.assertEquals("Reason for modification is mandatory","Reason for modification is mandatory");
+			logger.info(text+" is equal to "+"Reason for modification is mandatory");
+			Markup m=MarkupHelper.createLabel("Reason for modification is mandatory", ExtentColor.GREEN);
+			test.info(m);
+		}
+		
+		if(text.equals("Update successfully")) 
+		{
+			Assert.assertEquals("Update successfully","Update successfully");
+			logger.info(text+" is equal to "+"Update successfully");
+			Markup m=MarkupHelper.createLabel("Update successfully", ExtentColor.GREEN);
 			test.info(m);
 		}
 	}

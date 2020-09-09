@@ -32,10 +32,7 @@ public class HISWebsiteBasePage extends TTBasePage{
 	protected PropertyFile propertyFile = new PropertyFile();
 	
 	
-	//This Class will contain all the common methods of all the Pages
-	public void clickOnSaveButton() {
-		
-	}
+	
 	
 	public void clickOnMenu() throws InterruptedException {
 		try {
