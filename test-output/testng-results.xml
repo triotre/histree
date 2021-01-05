@@ -2,12 +2,12 @@
 <testng-results total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-09-09T04:33:34Z" name="Default suite" finished-at="2020-09-09T04:34:44Z" duration-ms="69935">
+  <suite started-at="2021-01-04T13:02:38Z" name="Default suite" finished-at="2021-01-04T13:14:11Z" duration-ms="693179">
     <groups>
     </groups>
-    <test started-at="2020-09-09T04:33:34Z" name="Default test" finished-at="2020-09-09T04:34:44Z" duration-ms="69935">
-      <class name="com.triotree.website.Physician.DoctorWorklistAppointment">
-        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.website.Physician.DoctorWorklistAppointment@241a53ef]" started-at="2020-09-09T10:03:34Z" name="beforeSuite" finished-at="2020-09-09T10:03:34Z" duration-ms="350" status="PASS">
+    <test started-at="2021-01-04T13:02:38Z" name="Default test" finished-at="2021-01-04T13:14:11Z" duration-ms="693179">
+      <class name="com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest">
+        <test-method is-config="true" signature="beforeSuite(java.lang.String)[pri:0, instance:com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest@5a4bef8]" started-at="2021-01-04T18:32:37Z" name="beforeSuite" finished-at="2021-01-04T18:32:38Z" duration-ms="267" status="PASS">
           <params>
             <param index="0">
               <value is-null="true"/>
@@ -16,27 +16,27 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.website.Physician.DoctorWorklistAppointment@241a53ef]" started-at="2020-09-09T10:03:34Z" name="beforeclass" finished-at="2020-09-09T10:03:34Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="beforeclass()[pri:0, instance:com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest@5a4bef8]" started-at="2021-01-04T18:32:38Z" name="beforeclass" finished-at="2021-01-04T18:32:38Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeclass -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.website.Physician.DoctorWorklistAppointment@241a53ef]" started-at="2020-09-09T10:03:34Z" name="setUp" finished-at="2020-09-09T10:03:45Z" duration-ms="11274" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest@5a4bef8]" started-at="2021-01-04T18:32:38Z" name="setUp" finished-at="2021-01-04T18:32:51Z" duration-ms="13371" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="DoctorWorklistAppointmentTest()[pri:0, instance:com.triotree.website.Physician.DoctorWorklistAppointment@241a53ef]" started-at="2020-09-09T10:03:45Z" name="DoctorWorklistAppointmentTest" finished-at="2020-09-09T10:04:43Z" duration-ms="58148" status="PASS">
+        <test-method signature="nursingActivityIPViewEMRTest()[pri:0, instance:com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest@5a4bef8]" started-at="2021-01-04T18:32:51Z" name="nursingActivityIPViewEMRTest" finished-at="2021-01-04T18:44:11Z" duration-ms="679755" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- DoctorWorklistAppointmentTest -->
-        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.website.Physician.DoctorWorklistAppointment@241a53ef]" started-at="2020-09-09T10:04:43Z" name="tearDownSession" finished-at="2020-09-09T10:04:44Z" duration-ms="497" status="PASS">
+        </test-method> <!-- nursingActivityIPViewEMRTest -->
+        <test-method is-config="true" signature="tearDownSession()[pri:0, instance:com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest@5a4bef8]" started-at="2021-01-04T18:44:11Z" name="tearDownSession" finished-at="2021-01-04T18:44:11Z" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownSession -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.website.Physician.DoctorWorklistAppointment@241a53ef]" started-at="2020-09-09T10:04:44Z" name="afterSuite" finished-at="2020-09-09T10:04:44Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest@5a4bef8]" started-at="2021-01-04T18:44:12Z" name="afterSuite" finished-at="2021-01-04T18:44:12Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
-      </class> <!-- com.triotree.website.Physician.DoctorWorklistAppointment -->
+      </class> <!-- com.triotree.website.pages.NursingTest.NursingActivityIPViewEMRTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

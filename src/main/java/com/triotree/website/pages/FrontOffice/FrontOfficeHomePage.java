@@ -45,147 +45,139 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 
 	public void clickOnAddPatientAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(ADD_PATIENT_SECTION);
-		driver.click(ADD_PATIENT_SECTION);
+		//driver.waitForElementPresent(ADD_PATIENT_SECTION);
+
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(ADD_PATIENT_SECTION));
 		logger.info("Add Patient Section is Expanded");
 
-		Thread.sleep(6000);
 
 		WebElement options = driver.findElement(By.xpath("//a[text()='"+option+"']"));
-		options.click();
+		driver.clickByJS(TTWebsiteDriver.driver, options);
 		logger.info("Following Option has been selected from Add Patient Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(18000);
+
 	}
 
 	public void clickOnIndentItemsAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(INDENT_ITEM_SECTION);
+
 		driver.click(INDENT_ITEM_SECTION);
 		logger.info("Indent Item Section is Expanded");
-
-		driver.waitForElementPresent(By.xpath("//ul[@style='display: block;']//a[text()='"+option+"']"), 120);
+		//'/driver.waitForElementPresent(By.xpath("//ul[@style='display: block;']//a[text()='"+option+"']"), 120);
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='"+option+"']"));
-		options.click();
+		driver.clickByJS(TTWebsiteDriver.driver, options);
 		logger.info("Following Option has been selected from Indent Items Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(30000);
 	}
-	
-	
-	public void clickOnIndentIssuesAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(INDENT_ISSUE);
+
+
+	public void clickOnIndentIssuesAndSelectAnOption(String option) throws InterruptedException 
+	{
 		driver.click(INDENT_ISSUE);
 		logger.info("Indent Issue Section is Expanded");
 
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from Indent Issue Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(30000);
 	}
 
 	public void clickOnPurchaseOrderAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(PURCHASE_ORDER);
+		//driver.waitForElementPresent(PURCHASE_ORDER);
 		driver.click(PURCHASE_ORDER);
 		logger.info("Indent Issue Section is Expanded");
 
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from Purchase Order Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(30000);
+		//driver.waitForPageLoad();
+		//Thread.sleep(30000);
 	}
 
 	public void clickOnDoctorScheduleAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(DOCTOR_SCHEDULE);
-		driver.click(DOCTOR_SCHEDULE);
+		//driver.waitForElementPresent(DOCTOR_SCHEDULE);
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(DOCTOR_SCHEDULE));
 		logger.info("Doctor Schedule Section is Expanded");
-		Thread.sleep(6000);
+		//Thread.sleep(6000);
 		WebElement options = driver.findElement(By.xpath("//li[@id='FODoctorScheduleMenu']//following-sibling::ul/li//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from Doctor Schedule Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(18000);
+		//driver.waitForPageLoad();
+		//Thread.sleep(18000);
 	}
 
 	public void clickOnBillingAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(BILLING_SECTION);
+		//driver.waitForElementPresent(BILLING_SECTION);
 		WebElement billsection = driver.findElement(BILLING_SECTION);
 		driver.clickByJS(TTWebsiteDriver.driver, billsection);
 		logger.info("Billing Section is Expanded");
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		WebElement options = driver.findElement(By.xpath("//a[text()='"+option+"']"));
-		options.click();
+		driver.clickByJS(TTWebsiteDriver.driver, options);
 		logger.info("Following Option has been selected from Billing Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(18000);
+		//driver.waitForPageLoad();
+		//Thread.sleep(18000);
 	}
 
 
 	public void clickOnCommonThenMISAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(COMMON_SECTION);
+		//driver.waitForElementPresent(COMMON_SECTION);
 		driver.click(COMMON_SECTION);
 		logger.info("Common Section is Expanded");
 		driver.waitForElementPresent(MIS_SECTION);
-		driver.click(MIS_SECTION);
-		driver.waitForElementPresent(By.xpath("//a[text()='"+option+"']"));
+		driver.findElement(MIS_SECTION).click();
+		//driver.waitForElementPresent(By.xpath("//a[text()='"+option+"']"));
 		WebElement options = driver.findElement(By.xpath("//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from MIS Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(18000);
+		//driver.waitForPageLoad();
+		//Thread.sleep(18000);
 	} 
 
 	public void clickOnOPThenBillingAndSelectAnOption(String option) throws InterruptedException {
 		driver.waitForElementPresent(OP_SECTION);
-		driver.click(OP_SECTION);
+		driver.findElement(OP_SECTION).click();
 		logger.info("OP Section is Expanded");
-		driver.waitForElementPresent(BILLING_SECTION_UNDER_OP);
-		driver.click(BILLING_SECTION_UNDER_OP);
-		driver.waitForElementPresent(By.xpath("//a[text()='"+option+"']"));
+		//driver.waitForElementPresent(BILLING_SECTION_UNDER_OP);
+		driver.findElement(BILLING_SECTION_UNDER_OP).click();
+		///driver.waitForElementPresent(By.xpath("//a[text()='"+option+"']"));
 		WebElement options = driver.findElement(By.xpath("//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from OP Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(18000);
+
 	} 
 
 	public void clickOnIPThenBillingAndSelectAnOption(String option) throws InterruptedException {
 		driver.waitForElementPresent(IP_SECTION);
-		driver.click(IP_SECTION);
+		driver.findElement(IP_SECTION).click();
 		logger.info("IP Section is Expanded");
 		driver.waitForElementPresent(BILLING_SECTION_UNDER_IP);
-		driver.click(BILLING_SECTION_UNDER_IP);
-		driver.waitForElementPresent(By.xpath("//a[text()='"+option+"']"));
+		driver.findElement(BILLING_SECTION_UNDER_IP).click();
+		//driver.waitForElementPresent(By.xpath("//a[text()='"+option+"']"));
 		WebElement options = driver.findElement(By.xpath("//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from IP Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(18000);
+
 	} 
 	public void clickOnGRNAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(GRN);
-		driver.click(GRN);
+		//driver.waitForElementPresent(GRN);
+		driver.findElement(GRN).click();
 		logger.info("Indent Issue Section is Expanded");
 
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from Purchase Order Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(30000);
+		//		driver.waitForPageLoad();
+		//		Thread.sleep(30000);
 
 	}
 
 	public void clickOnGRNRETURNAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(GRN_RETURN);
-		driver.click(GRN_RETURN);
+		//driver.waitForElementPresent(GRN_RETURN);
+		driver.findElement(GRN_RETURN).click();
 		logger.info("Indent Issue Section is Expanded");
 
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='"+option+"']"));
 		options.click();
 		logger.info("Following Option has been selected from Purchase Order Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(30000);
+		//driver.waitForPageLoad();
+		//Thread.sleep(30000);
 
 	}
 	public void selectReceiptTypewithPO(String text) 
@@ -213,7 +205,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void selectPurchaseOrder() 
 	{
-		driver.waitForElementPresent(By.xpath("(//table[@id='tblpurchaseo']//tr//td[text()='14'])[1]"));
+		//driver.waitForElementPresent(By.xpath("(//table[@id='tblpurchaseo']//tr//td[text()='14'])[1]"));
 		driver.findElement(By.xpath("(//table[@id='tblpurchaseo']//tr//td[text()='14'])[1]")).click();
 		logger.info("Purchase Order is selected");
 	}
@@ -239,7 +231,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonCalculateButton()
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btncal']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btncal']"));
 		WebElement CalculateButton_element = driver.findElement(By.xpath("//a[@id='btncal']"));
 		driver.clickByJS(TTWebsiteDriver.driver, CalculateButton_element);
 		logger.info("Click on Calculate Button");
@@ -247,7 +239,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonEditButton()
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnedit']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnedit']"));
 		WebElement clickonEditButton_element = driver.findElement(By.xpath("//a[@id='btnedit']"));
 		driver.clickByJS(TTWebsiteDriver.driver, clickonEditButton_element);
 		logger.info("Click on Edit Button");
@@ -255,9 +247,9 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void clickonSchemeDetailsOkButton() 
 	{
 		try {
-		driver.waitForElementPresent(By.xpath("//input[@id='btnsyes']"));
-		driver.findElement(By.xpath("//input[@id='btnsyes']")).click();
-		logger.info("Click on Scheme Details Ok Button");
+			//driver.waitForElementPresent(By.xpath("//input[@id='btnsyes']"));
+			driver.findElement(By.xpath("//input[@id='btnsyes']")).click();
+			logger.info("Click on Scheme Details Ok Button");
 		}
 		catch (Exception e) {}
 	}
@@ -340,7 +332,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	}
 	public void clickonSaveButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@title='Save']"));
+		//driver.waitForElementPresent(By.xpath("//a[@title='Save']"));
 		WebElement save_element = driver.findElement(By.xpath("//a[@title='Save']"));
 		driver.clickByJS(TTWebsiteDriver.driver, save_element);
 		logger.info("Click on Save Button");
@@ -356,7 +348,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonFreeDetails(String value,String batchnumber) throws InterruptedException 
 	{
-		driver.waitForElementPresent(By.xpath("//a[text()='Free Details']"));
+		///driver.waitForElementPresent(By.xpath("//a[text()='Free Details']"));
 		WebElement FreeDetails_element = driver.findElement(By.xpath("//a[text()='Free Details']"));
 		driver.clickByJS(TTWebsiteDriver.driver, FreeDetails_element);
 		logger.info("Click on Free Details");
@@ -368,7 +360,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void saveRecordYesButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btngrnyes']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btngrnyes']"));
 		WebElement saveRecordYes_btn_element = driver.findElement(By.xpath("//a[@id='btngrnyes']"));
 		driver.clickByJS(TTWebsiteDriver.driver, saveRecordYes_btn_element);
 		logger.info("Click on Save Button");
@@ -376,7 +368,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void saveRecordNoButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btngrnno']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btngrnno']"));
 		WebElement saveRecordNO_btn_element = driver.findElement(By.xpath("//a[@id='btngrnno']"));
 		driver.clickByJS(TTWebsiteDriver.driver, saveRecordNO_btn_element);
 		logger.info("Click on Save Button");
@@ -384,7 +376,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void EnterInvoiceNumber(String invoicenumber) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txtinvoice']"));
+		//driver.waitForElementPresent(By.xpath("//input[@id='txtinvoice']"));
 		driver.findElement(By.xpath("//input[@id='txtinvoice']")).clear();
 		driver.findElement(By.xpath("//input[@id='txtinvoice']")).sendKeys(invoicenumber);
 		logger.info("Enter Invoice Number");
@@ -392,7 +384,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void EnterFromDate(String fromdate) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txtFromDate']"));
+		///driver.waitForElementPresent(By.xpath("//input[@id='txtFromDate']"));
 		driver.findElement(By.xpath("//input[@id='txtFromDate']")).clear();
 		driver.findElement(By.xpath("//input[@id='txtFromDate']")).sendKeys(fromdate);
 		driver.findElement(By.xpath("//input[@id='txtFromDate']")).sendKeys(Keys.ENTER);
@@ -401,7 +393,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void EnterToDate(String todate) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txtToDate']"));
+		//driver.waitForElementPresent(By.xpath("//input[@id='txtToDate']"));
 		driver.findElement(By.xpath("//input[@id='txtToDate']")).clear();
 		driver.findElement(By.xpath("//input[@id='txtToDate']")).sendKeys(todate);
 		driver.findElement(By.xpath("//input[@id='txtToDate']")).sendKeys(Keys.ENTER);
@@ -410,7 +402,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonOpenDraftCheckBox()
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='chkdraft']"));
+		///driver.waitForElementPresent(By.xpath("//input[@id='chkdraft']"));
 		WebElement draftcheckbox_element = driver.findElement(By.xpath("//input[@id='chkdraft']"));
 		driver.clickByJS(TTWebsiteDriver.driver, draftcheckbox_element);
 		logger.info("Click on Open Draft Check Box");	
@@ -418,7 +410,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonLoadButton() 
 	{	
-		driver.waitForElementPresent(By.xpath("//i[@id='iLoad']"));
+		///driver.waitForElementPresent(By.xpath("//i[@id='iLoad']"));
 		WebElement loadbutton_element = driver.findElement(By.xpath("//i[@id='iLoad']"));
 		driver.clickByJS(TTWebsiteDriver.driver, loadbutton_element);
 		logger.info("Click on Load Button");	
@@ -426,14 +418,14 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonLoadButtonNearSupplierName() 
 	{
-		driver.waitForElementPresent(By.xpath("//i[@id='btnRefreshSupplier']"));
+		//driver.waitForElementPresent(By.xpath("//i[@id='btnRefreshSupplier']"));
 		WebElement loadbuttonNearSupplierName_element = driver.findElement(By.xpath("//i[@id='btnRefreshSupplier']"));
 		driver.clickByJS(TTWebsiteDriver.driver, loadbuttonNearSupplierName_element);
 		logger.info("Click on Load Button Near Supplier Name");
 	}
 	public void GRNNumberRadioButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@value='rbGRNNo']"));
+		//driver.waitForElementPresent(By.xpath("//input[@value='rbGRNNo']"));
 		WebElement GRNNumberRadioButton_element = driver.findElement(By.xpath("//input[@value='rbGRNNo']"));
 		driver.clickByJS(TTWebsiteDriver.driver, GRNNumberRadioButton_element);
 		logger.info("Click on GRN Number Radio Button");
@@ -441,7 +433,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void CloseGRNList() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='grnistmodalclose']"));
+		///driver.waitForElementPresent(By.xpath("//a[@id='grnistmodalclose']"));
 		WebElement CloseGRNList_element = driver.findElement(By.xpath("//a[@id='grnistmodalclose']"));
 		driver.clickByJS(TTWebsiteDriver.driver, CloseGRNList_element);
 		logger.info("Click on Close GRN List Button");
@@ -475,7 +467,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void OKReciptTypeButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//i[@id='btnserachsupp']"));
+		//driver.waitForElementPresent(By.xpath("//i[@id='btnserachsupp']"));
 		WebElement OKReciptTypeButton_element = driver.findElement(By.xpath("//i[@id='btnserachsupp']"));
 		driver.clickByJS(TTWebsiteDriver.driver, OKReciptTypeButton_element);
 		logger.info("Click on OK Recipt Type Button");
@@ -483,14 +475,14 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonReceiptDetails() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[text()='Receipt Details']"));
+		//driver.waitForElementPresent(By.xpath("//a[text()='Receipt Details']"));
 		driver.findElement(By.xpath("//a[text()='Receipt Details']")).click();
 		logger.info("Click on Receipt Details Button");
 	}
 
 	public void clearButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnclear']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnclear']"));
 		WebElement clearButton_element = driver.findElement(By.xpath("//a[@id='btnclear']"));
 		driver.clickByJS(TTWebsiteDriver.driver, clearButton_element);
 		logger.info("Click on Clear Button");
@@ -498,14 +490,14 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void paymentAdviceclearButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnClear']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnClear']"));
 		WebElement clearButton_element = driver.findElement(By.xpath("//a[@id='btnClear']"));
 		driver.clickByJS(TTWebsiteDriver.driver, clearButton_element);
 		logger.info("Click on Clear Button");
 	}
 	public void ClearFilledDetails()
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnclearyes']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnclearyes']"));
 		WebElement DeleteClearFilledDetails_element = driver.findElement(By.xpath("//a[@id='btnclearyes']"));
 		driver.clickByJS(TTWebsiteDriver.driver, DeleteClearFilledDetails_element);
 		logger.info("Click on Clear Filled Details");
@@ -513,14 +505,14 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonGRNItemsCloseButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//span[@id='withoutpomodalclose']//i"));
+		//driver.waitForElementPresent(By.xpath("//span[@id='withoutpomodalclose']//i"));
 		driver.findElement(By.xpath("//span[@id='withoutpomodalclose']//i")).click();
 		logger.info("Click on GRN Items Close Button");
 	}
 
 	public void clickonCSVButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btncsvgrnrpt']//i"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btncsvgrnrpt']//i"));
 		WebElement clickonCSVButton_element = driver.findElement(By.xpath("//a[@id='btncsvgrnrpt']//i"));
 		driver.clickByJS(TTWebsiteDriver.driver, clickonCSVButton_element);
 		logger.info("Click on CSV Button");
@@ -528,21 +520,21 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonDeleteButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@value='Delete']"));
+		//driver.waitForElementPresent(By.xpath("//input[@value='Delete']"));
 		driver.findElement(By.xpath("//input[@value='Delete']")).click();
 		logger.info("Click on Delete Button");
 	}
 
 	public void clickonGRNList()
 	{
-		driver.waitForElementPresent(By.xpath("//table[@id='tblgrnlist']//tr[@id]"));
+		//driver.waitForElementPresent(By.xpath("//table[@id='tblgrnlist']//tr[@id]"));
 		driver.findElement(By.xpath("//table[@id='tblgrnlist']//tr[@id]")).click();
 		logger.info("Click on GRN List");
 	}
 
 	public void selectAgaistChallanCheckBox() 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='chkchllan']"));
+		//driver.waitForElementPresent(By.xpath("//input[@id='chkchllan']"));
 		WebElement AgaistChallanCheckBox_element = driver.findElement(By.xpath("//input[@id='chkchllan']"));
 		driver.clickByJS(TTWebsiteDriver.driver, AgaistChallanCheckBox_element);
 		logger.info("Click on Agaist Challan Check Box");
@@ -550,7 +542,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonReloadButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//i[@id='btnrefreshsupp']"));
+		//driver.waitForElementPresent(By.xpath("//i[@id='btnrefreshsupp']"));
 		WebElement clickonReloadButton_element = driver.findElement(By.xpath("//i[@id='btnrefreshsupp']"));
 		driver.clickByJS(TTWebsiteDriver.driver, clickonReloadButton_element);
 		logger.info("Click on Reload Button");
@@ -563,7 +555,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 		{
 			driver.findElement(By.xpath("(//a[text()='"+drugtab+"']/..)[1]")).click();
 		}
-		driver.waitForElementPresent(By.xpath("//table[@id='tblmedicine']//tr"));
+		//driver.waitForElementPresent(By.xpath("//table[@id='tblmedicine']//tr"));
 		driver.findElement(By.xpath("//input[@id='Chksmart_search']/..//input[@id='txtitemsearch']")).clear();
 		driver.findElement(By.xpath("//input[@id='Chksmart_search']/..//input[@id='txtitemsearch']")).sendKeys(value);
 		driver.findElement(By.xpath("//input[@id='Chksmart_search']/..//input[@id='txtitemsearch']")).sendKeys(Keys.ENTER);
@@ -575,7 +567,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonClearNoButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnclrarno']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnclrarno']"));
 		WebElement clickonClearNoButton_element = driver.findElement(By.xpath("//a[@id='btnclrarno']"));
 		driver.clickByJS(TTWebsiteDriver.driver, clickonClearNoButton_element);
 		logger.info("Click on Clear No Button");
@@ -583,7 +575,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonClearYesButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnclearyes']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnclearyes']"));
 		WebElement clickonClearYesButton_element = driver.findElement(By.xpath("//a[@id='btnclearyes']"));
 		driver.clickByJS(TTWebsiteDriver.driver, clickonClearYesButton_element);
 		logger.info("Click on Clear No Button");
@@ -592,7 +584,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void EnterPurcahseorderFromDate(String fromdate) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='frmdate']"));
+		//driver.waitForElementPresent(By.xpath("//input[@id='frmdate']"));
 		driver.findElement(By.xpath("//input[@id='frmdate']")).clear();
 		driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(fromdate);
 		driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(Keys.ENTER);
@@ -601,7 +593,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void EnterPurcahseorderToDate(String todate) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='todate']"));
+		//driver.waitForElementPresent(By.xpath("//input[@id='todate']"));
 		driver.findElement(By.xpath("//input[@id='todate']")).clear();
 		driver.findElement(By.xpath("//input[@id='todate']")).sendKeys(todate);
 		driver.findElement(By.xpath("//input[@id='todate']")).sendKeys(Keys.ENTER);
@@ -642,7 +634,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void selectApprovedRadioButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='radApproved']"));
+		//driver.waitForElementPresent(By.xpath("//input[@id='radApproved']"));
 		driver.findElement(By.xpath("//input[@id='radApproved']")).click();
 		logger.info("Select Approved Radio Button");
 	}
@@ -664,41 +656,38 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonApprovalButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnApprove']//i"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnApprove']//i"));
 		driver.findElement(By.xpath("//a[@id='btnApprove']//i")).click();
 		logger.info("Click on Approval Button");
 	}
 
 	public void clickonYesApproveButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnyesPrintModal']"));
 		driver.findElement(By.xpath("//a[@id='btnyesPrintModal']")).click();
 		logger.info("Click on Approve Yes Button");
 	}
 
 	public void clickonNoApproveButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnno']"));
 		driver.findElement(By.xpath("//a[@id='btnno']")).click();
 		logger.info("Click on Approve No Button");
 	}
 
-	public void clickonBatch(String text,String batchnumber)
+	public void clickonBatch(String text)
 	{
 		try 
 		{
-			driver.waitForElementPresent(By.xpath("//td[text()='"+text+"']//following::td[@class='required'][1]"));
 			driver.findElement(By.xpath("//td[text()='"+text+"']//following::td[@class='required'][1]")).click();
+			String batchnumber = driver.findElement(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[1]")).getText();
+			WebElement clickbatch = driver.findElement(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[1]"));
+			driver.clickByJS(TTWebsiteDriver.driver, clickbatch);
 
-//			List<WebElement> batchdetails_list =driver.findElements(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[text()='"+batchnumber+"']/.."));
-//
-//			for(int i=1;i<=batchdetails_list.size();i++) 
-//			{
-				WebElement clickbatch = driver.findElement(By.xpath("//table[@id='batchDetailTbl']//tbody//tr//td[text()='"+batchnumber+"']/.."));
-				driver.clickByJS(TTWebsiteDriver.driver, clickbatch);
-				//break;
-			//}
 			logger.info("Click on Batch "+text+" "+batchnumber);
+			String messg = driver.findElement(By.xpath("//div[@id='grnReturnBatchSupplierPopup']//section//label")).getText();
+			logger.info(messg);
+			Thread.sleep(1000);
+			driver.findElement(By.id("btnbatchSuppierAlertYes")).click();
+			logger.info("Click on Yes button");
 		}
 		catch (Exception e) {
 			driver.findElement(By.xpath("//div[@class='modal-block-new top30']//span[@class='inventory_close_modal']//i")).click();
@@ -708,7 +697,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void clickonDoYouWantContinueNoOption() 
 	{
 		try {
-			driver.waitForElementPresent(By.xpath("//a[@id='btnbatchSuppierAlertNo']"));
 			driver.findElement(By.xpath("//a[@id='btnbatchSuppierAlertNo']")).click();
 			logger.info("Click on Do You Want Continue No Option");
 		}
@@ -718,7 +706,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void clickonDoYouWantContinueYesOption() 
 	{
 		try {
-			driver.waitForElementPresent(By.xpath("//a[@id='btnbatchSuppierAlertYes']"));
 			driver.findElement(By.xpath("//a[@id='btnbatchSuppierAlertYes']")).click();
 			logger.info("Click on Do You Want Continue Yes Option");
 		}
@@ -729,7 +716,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void EnterGRNReturnQTY(String text,String qty)
 	{
 		try {
-			driver.waitForElementPresent(By.xpath("//td[text()='"+text+"']//following-sibling::td//input[@type='text'][@ ctype='QTY']"));
 			driver.findElement(By.xpath("//td[text()='"+text+"']//following-sibling::td//input[@type='text'][@ ctype='QTY']")).clear();
 			driver.findElement(By.xpath("//td[text()='"+text+"']//following-sibling::td//input[@type='text'][@ ctype='QTY']")).sendKeys(qty);;
 
@@ -740,7 +726,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void EnterReasonandSelectReason(String text) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txtReason']"));
 		driver.findElement(By.xpath("//input[@id='txtReason']")).clear();
 		driver.findElement(By.xpath("//input[@id='txtReason']")).sendKeys(text);
 		logger.info("Enter Reason and Select Reason "+text);
@@ -748,7 +733,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void EnterInvoiceNumberandReferenceNumber(String text) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txtInvoiceNoRefNo']"));
 		driver.findElement(By.xpath("//input[@id='txtInvoiceNoRefNo']")).sendKeys(text);	
 		logger.info("Enter Invoice Number and Reference Number "+text);
 	}
@@ -762,7 +746,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void GRNReturnSaveNo()
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnSaveAlertNo']"));
 		driver.findElement(By.xpath("//a[@id='btnSaveAlertNo']")).click();	
 		logger.info("GRN Return Save No");
 
@@ -770,14 +753,13 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void GRNReturnSaveYes()
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnSaveAlertYes']"));
 		driver.findElement(By.xpath("//a[@id='btnSaveAlertYes']")).click();	
 		logger.info("GRN Return Save Yes");
 	}
 
 	public void GRNReturnPrintYes() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnAfterSavePrintAlertYes']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnAfterSavePrintAlertYes']"));
 		driver.findElement(By.xpath("//a[@id='btnAfterSavePrintAlertYes']")).click();	
 		logger.info("GRN Return Print Yes");
 
@@ -785,65 +767,59 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void GRNReturnAfterSavePrintCreditNoteAlertYes() 
 	{	
-		driver.waitForElementPresent(By.xpath("//a[@id='btnAfterSavePrintCreditNoteAlertYes']"));
 		driver.findElement(By.xpath("//a[@id='btnAfterSavePrintCreditNoteAlertYes']")).click();	
 		logger.info("GRN Return After Save Print Credit Note Alert Yes");
 	}
 
 	public void GRNReturnAfterSavePrintCreditNoteAlertNo() 
 	{	
-		driver.waitForElementPresent(By.xpath("//a[@id='btnAfterSavePrintCreditNoteAlertNo']"));
 		driver.findElement(By.xpath("//a[@id='btnAfterSavePrintCreditNoteAlertNo']")).click();	
 		logger.info("GRN Return After Save Print Credit Note Alert Yes");
 	}
 	public void clickonGRNReturnCloseReport() 
 	{
 		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='printmodalclose']//i"));
-		driver.findElement(By.xpath("//a[@id='printmodalclose']//i")).click();	
-		logger.info("Click on GRN Return Close Report");
+			//driver.waitForElementPresent(By.xpath("//a[@id='printmodalclose']//i"));
+			driver.findElement(By.xpath("//a[@id='printmodalclose']//i")).click();	
+			logger.info("Click on GRN Return Close Report");
 		}
 		catch (Exception e) {}
 	}
 
 	public void clickonMainReportCloseButton() {
 
-		driver.waitForElementPresent(By.xpath("//span[@id='printcreditmodalclose']//i"));
+		//driver.waitForElementPresent(By.xpath("//span[@id='printcreditmodalclose']//i"));
 		driver.findElement(By.xpath("//span[@id='printcreditmodalclose']//i")).click();	
 		logger.info("Click on Main Report Close Button");
 	}
 
 	public void clickonPurchaseReturnApproveButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btnapprovegrnret']//i"));
 		driver.findElement(By.xpath("//a[@id='btnapprovegrnret']//i")).click();	
 		logger.info("Click on Purchase Return Approve Button");
 	}
 
 	public void clickonLoad() 
 	{
-		driver.waitForElementPresent(By.xpath("//i[@id='btnSearchGrnReturn']"));
+		//driver.waitForElementPresent(By.xpath("//i[@id='btnSearchGrnReturn']"));
 		driver.findElement(By.xpath("//i[@id='btnSearchGrnReturn']")).click();	
 		logger.info("Click on Load Button");
 	}
 
 	public void clickonclosePurchaseOrderButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@class='inventory_close_modal']//i"));
 		driver.findElement(By.xpath("//a[@class='inventory_close_modal']//i")).click();	
 		logger.info("Click on close Purchase Order Button");
 	}
 
 	public void selectDateRangeCheckBox() 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='chk_DateRange']"));
 		driver.findElement(By.xpath("//input[@id='chk_DateRange']")).click();	
 		logger.info("Select Date Range Check Box");
 	}
 
 	public void selectPaymentAdviceFromDate(String fromdate) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txt_From']"));
 		driver.findElement(By.xpath("//input[@id='txt_From']")).clear();
 		driver.findElement(By.xpath("//input[@id='txt_From']")).sendKeys(fromdate);
 		logger.info("Select Payment Advice From Date "+fromdate);
@@ -851,7 +827,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void selectPaymentAdviceToDate(String todate) 
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='txt_To']"));
 		driver.findElement(By.xpath("//input[@id='txt_To']")).clear();
 		driver.findElement(By.xpath("//input[@id='txt_To']")).sendKeys(todate);
 		logger.info("Select Payment Advice To Date "+todate);
@@ -859,7 +834,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonPaymentAdviceSearchButton() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[@id='btn_Search']//i"));
 		driver.findElement(By.xpath("//a[@id='btn_Search']//i")).click();	
 		logger.info("Click on Payment Advice Search Button");
 	}
@@ -867,7 +841,6 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void selectCheckBox() 
 	{
 		try {
-			driver.waitForElementPresent(By.xpath("//input[@class='SelectedRow']"));
 			List<WebElement> selectcheckbox_list = driver.findElements(By.xpath("//input[@class='SelectedRow']"));	
 			for(int i=1;i<=selectcheckbox_list.size();i++) 
 			{
@@ -882,10 +855,9 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void clickonModifyButton() 
 	{	
 		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='btn_Modify']//i"));
-		WebElement modify_btn = driver.findElement(By.xpath("//a[@id='btn_Modify']//i"));
-		driver.clickByJS(TTWebsiteDriver.driver, modify_btn);
-		logger.info("click on Modify Button");
+			WebElement modify_btn = driver.findElement(By.xpath("//a[@id='btn_Modify']//i"));
+			driver.clickByJS(TTWebsiteDriver.driver, modify_btn);
+			logger.info("click on Modify Button");
 		}
 		catch (Exception e) {}
 	}
@@ -893,15 +865,14 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void PaymentAdviceInvoiceNumber(String invoicenumber) 
 	{	
 		try {
-		driver.waitForElementPresent(By.xpath("//input[@ctype='InvNo']"));
-		List<WebElement> invoice_list = driver.findElements(By.xpath("//input[@ctype='InvNo']"));
-		for(int i=1;i<=invoice_list.size();i++) 
-		{
-			driver.findElement(By.xpath("(//input[@ctype='InvNo'])["+i+"]")).clear();
-			driver.findElement(By.xpath("(//input[@ctype='InvNo'])["+i+"]")).sendKeys(invoicenumber);
-			logger.info("Payment Advice Invoice Number "+invoicenumber); 
-			break;
-		}
+			List<WebElement> invoice_list = driver.findElements(By.xpath("//input[@ctype='InvNo']"));
+			for(int i=1;i<=invoice_list.size();i++) 
+			{
+				driver.findElement(By.xpath("(//input[@ctype='InvNo'])["+i+"]")).clear();
+				driver.findElement(By.xpath("(//input[@ctype='InvNo'])["+i+"]")).sendKeys(invoicenumber);
+				logger.info("Payment Advice Invoice Number "+invoicenumber); 
+				break;
+			}
 		}
 		catch (Exception e) {}
 	}
@@ -909,9 +880,9 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void paymentAdviceclickonYesButton() 
 	{	
 		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='btn_printYes']"));
-		driver.findElement(By.xpath("//a[@id='btn_printYes']")).click();	
-		logger.info("Payment Advice click on Yes Button");
+			//driver.waitForElementPresent(By.xpath("//a[@id='btn_printYes']"));
+			driver.findElement(By.xpath("//a[@id='btn_printYes']")).click();	
+			logger.info("Payment Advice click on Yes Button");
 		}
 		catch (Exception e) {
 		}
@@ -919,9 +890,8 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void paymentAdvicePrintButton() 
 	{	
 		try {
-		driver.waitForElementPresent(By.xpath("//a[@id='btn_PaymentAdvicePrint']//i"));
-		driver.findElement(By.xpath("//a[@id='btn_PaymentAdvicePrint']//i")).click();	
-		logger.info("Payment Advice click on Print Button");
+			driver.findElement(By.xpath("//a[@id='btn_PaymentAdvicePrint']//i")).click();	
+			logger.info("Payment Advice click on Print Button");
 		}
 		catch (Exception e) {}
 	}
@@ -929,19 +899,18 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 	public void selectsummaryRadioButton() 
 	{	
 		try {
-		driver.waitForElementPresent(By.xpath("//input[@id='rbl_Summary']"));
-		driver.findElement(By.xpath("//input[@id='rbl_Summary']")).click();	
-		logger.info("select summary Radio Button");
+			driver.findElement(By.xpath("//input[@id='rbl_Summary']")).click();	
+			logger.info("select summary Radio Button");
 		}
 		catch (Exception e) {
 			// TODO: handle exception
 		}
-		
+
 	}
 
 	public void showExistingAdvicesTab() 
 	{
-		driver.waitForElementPresent(By.xpath("//a[text()='Show Existing Advices']"));
+		////driver.waitForElementPresent(By.xpath("//a[text()='Show Existing Advices']"));
 		driver.findElement(By.xpath("//a[text()='Show Existing Advices']")).click();	
 		logger.info("Show Existing Advices Tab");
 	}

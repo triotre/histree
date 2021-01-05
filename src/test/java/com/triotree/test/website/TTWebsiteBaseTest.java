@@ -44,8 +44,9 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	public String occupation = null;
 	public String qualification = null;
 	public String referredFrom = null;
-	public String city = null;
+	
 	public String title = null;
+	public String city = null;
 
 	/**
 	 * @throws Exception
@@ -69,7 +70,7 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	@AfterMethod
 	public void tearDownSession() throws IOException 
 	{
-		///driver.quit();
+		//driver.quit();
 		renameLogfileName();
 	}
 

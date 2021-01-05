@@ -54,18 +54,19 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 	private final By Allotted_Bed_Type=By.id("admallotedbedtype");
 	private final By Ward=By.id("admward");
 	private final By Bed=By.id("admbed");
+	private final By Clear_Button=By.id("Clearitem");
 
 	public void enterIPNumber(ExtentTest test,String ipnumber) 
 	{
-		if(i==1) {
-			driver.findElement(IP_NUMBER).clear();
-		}
+//		if(i==1) {
+//			driver.findElement(IP_NUMBER).clear();
+//		}
 		driver.findElement(IP_NUMBER).sendKeys(ipnumber);
 		driver.findElement(IP_NUMBER).sendKeys(Keys.ENTER);
 		logger.info("IP Number= "+ipnumber);
 		Markup m1=MarkupHelper.createLabel("IP Number= "+ipnumber, ExtentColor.GREEN);
 		test.info(m1);
-		i++;
+		//i++;
 	}
 
 	public void enterUHID_NUMBER(ExtentTest test,String uhidnumber) 
@@ -400,5 +401,13 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 				}
 			}
 		}
+	}
+	
+	public void clickonClear_Button(ExtentTest test)
+	{
+	driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(Clear_Button));
+	logger.info("Click on Clear Button");
+	Markup m=MarkupHelper.createLabel("Click on Clear Button", ExtentColor.GREEN);
+	test.info(m);
 	}
 }

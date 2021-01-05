@@ -47,7 +47,7 @@ public class UpdatePatientDetailsandAddpackageTest extends TTWebsiteBaseTest
 		updatedetail.clickonDependentADM(test);
 		adtpage.validatepopuptext(test);
 
-
+		updatedetail.clickonClear_Button(test);
 		updatedetail.enterIPNumber(test,"15726");
 		adtpage.verifyDetailsFetch(test);
 		updatedetail.clickonModifyButton();
@@ -61,7 +61,7 @@ public class UpdatePatientDetailsandAddpackageTest extends TTWebsiteBaseTest
 		updatedetail.enterFatherName(test,"Testing");
 		updatedetail.selectDeliveryandBirthType(test,"Forceps Delivery","Live Birth");
 		updatedetail.enterGestationalAge(test,"2");
-		updatedetail.selectandfilledspecialityprimaryandReferring(test,"Cardiology","Anish  ","Anish");
+		updatedetail.selectandfilledspecialityprimaryandReferring(test,"cardiology1","brad   pitt","brad   pitt");
 		updatedetail.getvalueofFirstandLastName(test);
 		updatedetail.clickoncancelbutton(test);
 

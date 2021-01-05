@@ -100,9 +100,9 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 
 		/////Consultant Tab
 		adtpage.selectTab(test,"Consultant");
-		adtpage.selectdoctorspeciality(test,"Cardiology");
-		adtpage.selectAdmittingConsultant(test,"Scheudle  Testing");
-		adtpage.selectPrimaryAttendingConsultant(test,"Scheudle  Testing");
+		adtpage.selectdoctorspeciality(test,"cardiology1");
+		adtpage.selectAdmittingConsultant(test,"neha  jain");
+		adtpage.selectPrimaryAttendingConsultant(test,"neha  jain");
 		adtpage.enterrefferby(test," A.G.RAJAN");
 		adtpage.enterexpectedlength(test,"5");
 		adtpage.clickonSaveButton();
@@ -117,17 +117,17 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 		adtpage.selectbedtype(test);
 		
 		/// Scheme company type and company
-		adtpage.companyInsuranceDetails(test,"Corporate","CGHS COMPANY", "NEW CGHS");
+		adtpage.companyInsuranceDetails(test,"Corporate","CGHS", "Sagar,gohri,king ");
 		adtpage.enterauthorizationNumber(test, "123456");
 		adtpage.enterCreditLimit(test, "1");
 		adtpage.clickonschemecheckbox();
-		adtpage.selectscheme("Govt Scheme");
+		adtpage.selectscheme("Rajagiri-Staff Dependent");
 
 
 		///Package Details
 		adtpage.selectTab(test,"Package Details");
-		adtpage.selectpackagedetailsspeciality(test,"Cardiology");
-		adtpage.selectdoctor(test,"MANNAT  DEVGAN");
+		adtpage.selectpackagedetailsspeciality(test,"cardiology1");
+		adtpage.selectdoctor(test,"brad   pitt");
 
 		//Next of Kin Details
 		adtpage.selectTab(test,"Next of Kin Details");
@@ -140,7 +140,9 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 		adtpage.enterClinicalCounselling("Patient himself");
 		adtpage.clickonSaveButton();
 		adtpage.clickonacceptyes(test);
-		adtpage.clickonprintbutton(test);	
+		adtpage.getUHIDandIP(test);
+		adtpage.clickonprintbutton(test);
+		
 	}
 	
 	

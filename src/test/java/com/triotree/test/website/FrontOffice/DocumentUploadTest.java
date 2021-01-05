@@ -2,14 +2,16 @@ package com.triotree.test.website.FrontOffice;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
 import com.triotree.website.pages.ADT.ADTHomePage;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 import com.triotree.website.pages.FrontOffice.FrontOfficeHomePage;
 import com.triotree.website.pages.FrontOffice.PatientRegistrationPage;
-
+@Listeners(ResultListener.class)
 public class DocumentUploadTest extends TTWebsiteBaseTest{
 
 	private static final Logger logger = LogManager

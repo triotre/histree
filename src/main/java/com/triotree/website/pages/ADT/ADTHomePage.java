@@ -96,18 +96,16 @@ public class ADTHomePage extends HISWebsiteBasePage {
 	String Bed_Name=PropertyFile.getProperty("bedname");
 
 	BedStatusPage ob=new BedStatusPage(driver);
-
+	String popvalue="";
 
 	public void clickOnAdmitPatientAndSelectAdmitPatient(ExtentTest test,String option) throws InterruptedException {
-		driver.waitForElementPresent(ADMIT_PATIENT_SECTION);
 		driver.click(ADMIT_PATIENT_SECTION);
 		logger.info("Admit Patient Section is Expanded");
 
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"));
 		options.click();
 		logger.info("Following Option has been selected from Indent Items Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(3000);
+
 	}
 
 	public void clickOnAdmitPatientAndSelectAnOption(String option) throws InterruptedException {
@@ -124,12 +122,12 @@ public class ADTHomePage extends HISWebsiteBasePage {
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"));
 		options.click();
 		logger.info("Following Option has been selected from Indent Items Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(3000);
+		//driver.waitForPageLoad();
+		//Thread.sleep(3000);
 	}
 
 	public void clickOnIpMasterAndSelectAnBed(String option) throws InterruptedException {
-		driver.waitForElementPresent(IP_MASTER_SECTION);
+		///driver.waitForElementPresent(IP_MASTER_SECTION);
 		WebElement option_element = driver.findElement(IP_MASTER_SECTION);
 		if(option_element.isDisplayed()) 
 		{
@@ -141,12 +139,10 @@ public class ADTHomePage extends HISWebsiteBasePage {
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"));
 		options.click();
 		logger.info("Following Option has been selected from Indent Items Section " + option);
-		driver.waitForPageLoad();
-		Thread.sleep(3000);
+
 	}
 
 	public void enterUHIDInSearchBox(String uhid) {
-		driver.waitForElementPresent(UHID_SEARCH_BOX);
 		driver.findElement(UHID_SEARCH_BOX).clear();
 		driver.findElement(UHID_SEARCH_BOX).sendKeys(uhid);
 		driver.findElement(UHID_SEARCH_BOX).sendKeys(Keys.RETURN);
@@ -180,7 +176,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 
 	public void clickOnRemarkCheckBox(ExtentTest test,String remark)
 	{
-		driver.waitForElementPresent(By.xpath("//input[@id='reamarkcheck']"), 20);
+		//driver.waitForElementPresent(By.xpath("//input[@id='reamarkcheck']"), 20);
 		WebElement RemarkCheckBox_element = driver.findElement(By.xpath("//input[@id='reamarkcheck']"));
 		if(!RemarkCheckBox_element.isSelected()) {
 			driver.clickByJS(TTWebsiteDriver.driver, RemarkCheckBox_element);
@@ -306,7 +302,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 				}
 				else {
 					if(i==1) {
-						driver.findElement(DOD_TEXT_BOX).clear();
+						driver.findElement(DOD_TEXT_BOX).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
 					}
 					driver.findElement(DOD_TEXT_BOX).sendKeys(dob);
 					driver.findElement(DOD_TEXT_BOX).sendKeys(Keys.TAB);
@@ -332,95 +328,97 @@ public class ADTHomePage extends HISWebsiteBasePage {
 		if(text.equals("Please enter Date of Birth Age is less than 18 year")) 
 		{
 			//Test.class.
-			Assert.assertEquals("Please enter Date of Birth Age is less than 18 year", "Please enter Date of Birth Age is less than 18 year");
-			logger.info(text+" is equal to "+"Please enter Date of Birth Age is less than 18 year");
-			Markup m=MarkupHelper.createLabel("Please enter Date of Birth Age is less than 18 year", ExtentColor.GREEN);
+			Assert.assertEquals(text, "Please enter Date of Birth Age is less than 18 year");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
 		if(text.equals("Please Select Please enter Expected Length of Stay, Requested Bed Type, Billable Bed Type, Allotted Bed Type, Emergency Name, Emergency Phone, Billing Counselling To, Clinical Counseling To,Emergency Mobile No. Should be correct")) 
 		{
-			Assert.assertEquals("Please Select Please enter Expected Length of Stay, Requested Bed Type, Billable Bed Type, Allotted Bed Type, Emergency Name, Emergency Phone, Billing Counselling To, Clinical Counseling To,Emergency Mobile No. Should be correct", "Please Select Please enter Expected Length of Stay, Requested Bed Type, Billable Bed Type, Allotted Bed Type, Emergency Name, Emergency Phone, Billing Counselling To, Clinical Counseling To,Emergency Mobile No. Should be correct");
-			logger.info(text+" is equal to "+"Please Select Please enter Expected Length of Stay, Requested Bed Type, Billable Bed Type, Allotted Bed Type, Emergency Name, Emergency Phone, Billing Counselling To, Clinical Counseling To,Emergency Mobile No. Should be correct");
-			Markup m=MarkupHelper.createLabel("Please Select Please enter Expected Length of Stay, Requested Bed Type, Billable Bed Type, Allotted Bed Type, Emergency Name, Emergency Phone, Billing Counselling To, Clinical Counseling To,Emergency Mobile No. Should be correct", ExtentColor.GREEN);
+			Assert.assertEquals(text,"Please Select Please enter Expected Length of Stay, Requested Bed Type, Billable Bed Type, Allotted Bed Type, Emergency Name, Emergency Phone, Billing Counselling To, Clinical Counseling To,Emergency Mobile No. Should be correct");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
 
 		if(text.equals("Patient has been discharged!")) {
 			Assert.assertEquals("Patient has been discharged!", "Patient has been discharged!");
-			logger.info(text+" is equal to "+"Patient has been discharged!");
-			Markup m=MarkupHelper.createLabel("Patient has been discharged!", ExtentColor.GREEN);
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
 
 		if(text.equals("An error encountered while retrieving the patient's details. Please check IP number and try again!"))
 		{
-			Assert.assertEquals("An error encountered while retrieving the patient's details. Please check IP number and try again!", "An error encountered while retrieving the patient's details. Please check IP number and try again!");
-			logger.info(text+" is equal to "+"An error encountered while retrieving the patient's details. Please check IP number and try again!");
-			Markup m=MarkupHelper.createLabel("An error encountered while retrieving the patient's details. Please check IP number and try again!", ExtentColor.RED);
+			Assert.assertEquals(text, "An error encountered while retrieving the patient's details. Please check IP number and try again!");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);	
 		}
 
-		if(text.equals("Discharge Type Can be Change Only Same Day Of Discharge")) {
-			Assert.assertEquals("Discharge Type Can be Change Only Same Day Of Discharge","Discharge Type Can be Change Only Same Day Of Discharge");
-			logger.info(text+" is equal to "+"Discharge Type Can be Change Only Same Day Of Discharge");
-			Markup m=MarkupHelper.createLabel("Discharge Type Can be Change Only Same Day Of Discharge", ExtentColor.GREEN);
-			test.info(m);	
+		if(text.equals("Discharge Type Can be Change Only Same Day Of Discharge")) 
+		{
+			Assert.assertEquals(text,"Discharge Type Can be Change Only Same Day Of Discharge");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
+			test.info(m);
 		}
-		if(text.equals("Dependent admission option is available only for females older than 14 years!")) {
-			Assert.assertEquals("Dependent admission option is available only for females older than 14 years!","Dependent admission option is available only for females older than 14 years!");
-			logger.info(text+" is equal to "+"Dependent admission option is available only for females older than 14 years!");
-			Markup m=MarkupHelper.createLabel("Dependent admission option is available only for females older than 14 years!", ExtentColor.GREEN);
+		if(text.equals("Dependent admission option is available only for females older than 14 years!")) 
+		{
+			Assert.assertEquals(text,"Dependent admission option is available only for females older than 14 years!");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);		
 		}
 
 		if(text.equals("Package assigned successfully!")) {
-			Assert.assertEquals("Package assigned successfully!","Package assigned successfully!");
-			logger.info(text+" is equal to "+"Package assigned successfully!");
-			Markup m=MarkupHelper.createLabel("Package assigned successfully!", ExtentColor.GREEN);
-			test.info(m);	
+			Assert.assertEquals(text,"Package assigned successfully!");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
+			test.info(m);
 		}
 
 		if(text.equals("Package deleted successfully!")) {
 			Assert.assertEquals("Package deleted successfully!","Package deleted successfully!");
-			logger.info(text+" is equal to "+"Package deleted successfully!");
-			Markup m=MarkupHelper.createLabel("Package deleted successfully!", ExtentColor.GREEN);
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
 
 		if(text.equals("This Bed is already assigned to the patient")) {
-			Assert.assertEquals("This Bed is already assigned to the patient","This Bed is already assigned to the patient");
-			logger.info(text+" is equal to "+"This Bed is already assigned to the patient");
-			Markup m=MarkupHelper.createLabel("This Bed is already assigned to the patient", ExtentColor.GREEN);
+			Assert.assertEquals(text,"This Bed is already assigned to the patient");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
 
 		if(text.equals("Already transferred!")) 
 		{
-			Assert.assertEquals("Already transferred!","Already transferred!");
-			logger.info(text+" is equal to "+"Already transferred!");
-			Markup m=MarkupHelper.createLabel("Already transferred!", ExtentColor.GREEN);
+			Assert.assertEquals(text,"Already transferred!");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
 		if(text.equals("Diagnosis details are mandatory before order")) {
-			Assert.assertEquals("Diagnosis details are mandatory before order","Diagnosis details are mandatory before order");
-			logger.info(text+" is equal to "+"Diagnosis details are mandatory before order");
-			Markup m=MarkupHelper.createLabel("Diagnosis details are mandatory before order", ExtentColor.GREEN);
+			Assert.assertEquals(text,"Diagnosis details are mandatory before order");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
-		
+
 		if(text.equals("Reason for modification is mandatory")) 
 		{
-			Assert.assertEquals("Reason for modification is mandatory","Reason for modification is mandatory");
-			logger.info(text+" is equal to "+"Reason for modification is mandatory");
-			Markup m=MarkupHelper.createLabel("Reason for modification is mandatory", ExtentColor.GREEN);
+			Assert.assertEquals(text,"Reason for modification is mandatory");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
-		
+
 		if(text.equals("Update successfully")) 
 		{
-			Assert.assertEquals("Update successfully","Update successfully");
-			logger.info(text+" is equal to "+"Update successfully");
-			Markup m=MarkupHelper.createLabel("Update successfully", ExtentColor.GREEN);
+			Assert.assertEquals(text,"Update successfully");
+			logger.info("Dispaly Message= "+text);
+			Markup m=MarkupHelper.createLabel("Dispaly Message= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
 	}
@@ -769,7 +767,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			for(int k=0;k<option_text.size();k++) 
 			{
 				WebElement selectedValueInDropDown = option_text.get(k);
-				if(!selectedValueInDropDown.getText().isEmpty()) 
+				if(!selectedValueInDropDown.getText().isEmpty() && !option_text.get(k).getText().equals("Select")) 
 				{	
 					logger.info("Requested Bed Type= "+sl.getFirstSelectedOption().getText()+" is selected");
 					Markup m=MarkupHelper.createLabel("Requested Bed Type= "+sl.getFirstSelectedOption().getText()+" is selected", ExtentColor.GREEN);
@@ -793,7 +791,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			for(int k=0;k<option_text.size();k++) 
 			{
 				WebElement selectedValueInDropDown = option_text.get(k);
-				if(!selectedValueInDropDown.getText().isEmpty()) 
+				if(!selectedValueInDropDown.getText().isEmpty() && !option_text.get(k).getText().equals("Select")) 
 				{
 					Thread.sleep(2000);
 					logger.info("Billable Bed Type= "+sl.getFirstSelectedOption().getText()+" is selected");
@@ -821,7 +819,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			for(int k=0;k<option_text.size();k++) 
 			{
 				WebElement selectedValueInDropDown = option_text.get(k);
-				if(!selectedValueInDropDown.getText().isEmpty()) 
+				if(!selectedValueInDropDown.getText().isEmpty() && !option_text.get(k).getText().equals("Select")) 
 				{
 					///sl.selectByVisibleText(allotedbedtype);
 					logger.info("Alloted Bed Type= "+sl.getFirstSelectedOption().getText()+" is selected");
@@ -882,15 +880,18 @@ public class ADTHomePage extends HISWebsiteBasePage {
 					if(selectedValueInDropDown.getText().equals(Bed_Name))
 					{
 						sl.selectByVisibleText(Bed_Name);
+					
 					}
 					else {
 						Bed_Name=BedStatusPage.bedvalue;
 						sl.selectByVisibleText(Bed_Name);
+						break;
 					}
 					Thread.sleep(2000);
 					logger.info("Bed Type= "+Bed_Name+" is selected");
 					Markup m=MarkupHelper.createLabel("Bed Type= "+Bed_Name+" is selected", ExtentColor.GREEN);
 					test.info(m);
+					break;
 				}
 				if(selectedValueInDropDown.getText().isEmpty()) {
 					logger.info("Bed Option name= "+selectedValueInDropDown.getText());
@@ -1055,9 +1056,9 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			Markup m=MarkupHelper.createLabel("Click on Print Button", ExtentColor.GREEN);
 			test.info(m);
 			driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
-			Thread.sleep(4000);
+			Thread.sleep(2000);
 			driver.close();
-
+			driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
 		}
 		catch (Exception e) 
 		{
@@ -1139,5 +1140,36 @@ public class ADTHomePage extends HISWebsiteBasePage {
 			test.info(m1);	
 		}
 
+	}
+
+	public void getUHIDandIP(ExtentTest test) 
+	{
+
+		String text="";
+		try {
+			text = driver.findElement(POPUP_TEXT).getText();
+			popvalue=text;
+			logger.info(text);
+			Markup m1=MarkupHelper.createLabel(text, ExtentColor.GREEN);
+		}
+		catch (Exception e) {}
+	}
+
+	public String getInfo(ExtentTest test) 
+	{
+		String value="";
+		String []arr=popvalue.split("UHID");
+		String add[]=arr[arr.length-1].split("and");
+		value=add[add.length-1].replace("IPno.:", "");
+		return value;
+	}
+	
+	public String getUHID(ExtentTest test) 
+	{
+		String value="";
+		String []arr=popvalue.split("UHID");
+		String add[]=arr[arr.length-1].split("and");
+		value=add[add.length-2].replace("UHID:", "");
+		return value;
 	}
 }

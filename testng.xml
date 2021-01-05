@@ -1,22 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
-	<test thread-count="1" name="Test1">
-		<classes>
-			<class
-				name="com.triotree.website.Physician.PhysicianOPDCaseSheet" />
-		</classes>
-	</test>
-	<test thread-count="1" name="Test2">
-		<classes>
-			<class
-				name="com.triotree.website.Physician.PhysicianOPDCaseSheetMedicineOrder" />
-		</classes>
-	</test>
-	<test thread-count="1" name="Test3">
-		<classes>
-			<class
-				name="com.triotree.website.Physician.PhysicianVitalsTest" />
-		</classes>
-	</test>
+  <test thread-count="1" name="Test">
+    <classes>
+     <!--  <class name="com.triotree.test.website.FrontOffice.MergeDuplicateTest"/>
+      <class name="com.triotree.test.website.FrontOffice.DepositBillingTest"/> -->
+       <class name="com.triotree.test.website.FrontOffice.DepositBillingTest"/>
+    <!--   <class name="com.triotree.test.website.FrontOffice.GenerateScheduleTest"/>
+      <class name="com.triotree.test.website.FrontOffice.FrontOfficeBillingTest"/>
+      <class name="com.triotree.test.website.FrontOffice.DocumentUploadTest"/>
+      <class name="com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest"/> -->
+    </classes>
+  </test> <!-- Test -->
 </suite> <!-- Suite -->

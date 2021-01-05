@@ -7,6 +7,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.triotree.driver.website.TTWebsiteDriver;
 import com.triotree.website.pages.CommonPages.HISWebsiteBasePage;
 
@@ -41,7 +45,8 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	private final By SAVE_POPUP_MESSAGE = By.xpath("//section[@class='popupBody_validation']");
 	private final By YES_BUTTON_SAVE_POPUP = By.xpath("//a[@id='btnyes']");
 	private final By SAVE_SUCCESSFULLY_MESSAGE = By.xpath("//p[contains(text(),'Saved successfully!')]");
-
+	private final By EQUIPMENT_EDIT_BTN=By.xpath("//a[@id='opbilldiagnostic']//h4");
+	
 	public void clickOnSearchButton() {
 		WebElement element = driver.findElement(SEARCH_BUTTON);
 		driver.clickByJS(TTWebsiteDriver.driver, element);
@@ -69,7 +74,7 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 		logger.info("Following specialization  has been selected from specialization Dropdown : " + specialization);
 	}
 	public void selectDoctorFromDropdown(String doctor) {
-		driver.waitForElementPresent(DOCTOR_DROPDOWN);
+		//driver.waitForElementPresent(DOCTOR_DROPDOWN);
 		Select doctorDorpdown = new Select(driver.findElement(DOCTOR_DROPDOWN));
 		doctorDorpdown.selectByVisibleText(doctor);
 		logger.info("Following doctor  has been selected from doctor Dropdown : " + doctor);
@@ -80,15 +85,15 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	}
 
 	public void selectFacilityFromDropdown(String facility) {
-		driver.waitForElementPresent(FACILITY_DROPDOWN);
+		//driver.waitForElementPresent(FACILITY_DROPDOWN);
 		Select facilityDropdown = new Select(driver.findElement(FACILITY_DROPDOWN));
 		facilityDropdown.selectByVisibleText(facility);
 		logger.info("Following facility  has been selected from facility Dropdown : " + facility);
 	}
-	
+
 	public void selectGenerateScheduledropdown(String facility) 
 	{
-		driver.waitForElementPresent(By.xpath("//div[@class='form_line generate_facility']//select[@name='Facility']"));
+		///driver.waitForElementPresent(By.xpath("//div[@class='form_line generate_facility']//select[@name='Facility']"));
 		Select facilityDropdown = new Select(driver.findElement(By.xpath("//div[@class='form_line generate_facility']//select[@name='Facility']")));
 		facilityDropdown.selectByVisibleText(facility);
 		logger.info("Following facility  has been selected from facility Dropdown : " + facility);
@@ -97,7 +102,7 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	public void enterFromDate(String date) {
 		driver.findElement(FROM_DATE_TEXT_BOX).clear();
 		driver.findElement(FROM_DATE_TEXT_BOX).sendKeys(date);
-		driver.pauseExecutionFor(2000);
+		//driver.pauseExecutionFor(2000);
 		logger.info("Following Date  has been added in From Date Textbox : " + date);
 	}
 
@@ -108,7 +113,7 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	public void enterToDate(String date) {
 		driver.findElement(TO_DATE_TEXT_BOX).clear();
 		driver.findElement(TO_DATE_TEXT_BOX).sendKeys(date);
-		driver.pauseExecutionFor(2000);
+		//driver.pauseExecutionFor(2000);
 		logger.info("Following Date  has been added in To Date Textbox : " + date);
 	}
 
@@ -117,27 +122,31 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	}
 
 	public void selectFromTimeForSitting1(String fromTime) {
-		driver.waitForElementPresent(FROM_TIME_SITTING_1);
+		//driver.waitForElementPresent(FROM_TIME_SITTING_1);
 		Select fromTimeDropdown = new Select(driver.findElement(FROM_TIME_SITTING_1));
 		fromTimeDropdown.selectByVisibleText(fromTime);
 		logger.info("Following From Time  has been selected from From Time Dropdown for Sitting 1 : " + fromTime);
 	}
 
 	public void selectToTimeForSitting1(String toTime) {
-		driver.waitForElementPresent(TO_TIME_SITTING_1);
+		//driver.waitForElementPresent(TO_TIME_SITTING_1);
 		Select toTimeDropdown = new Select(driver.findElement(TO_TIME_SITTING_1));
 		toTimeDropdown.selectByVisibleText(toTime);
 		logger.info("Following To Time  has been selected from To Time Dropdown for Sitting 1 : " + toTime);
 	}
 
-	public void selectDayCheckbox(String day) {
-		driver.pauseExecutionFor(8000);
-		WebElement element = driver.findElement(By.xpath("//td[contains(text(),'"+day+"')]//preceding::td[1]/input"));
-		driver.clickByJS(TTWebsiteDriver.driver, element);
+	public void selectDayCheckbox(String day) throws InterruptedException {
+		try {
+			Thread.sleep(3000);
+			WebElement element = driver.findElement(By.xpath("//td[contains(text(),'"+day+"')]//preceding::td[1]/input"));
+			driver.clickByJS(TTWebsiteDriver.driver, element);
+		}
+		catch (Exception e) {}
 	}
 
-	public void selectRightCheckForSitting1(){
-		driver.findElement(RIGHT_CHECKBOX_SITTING_1).click();
+	public void selectRightCheckForSitting1()
+	{
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(RIGHT_CHECKBOX_SITTING_1));
 		logger.info("Right Check clicked For Sitting 1");
 	}
 
@@ -146,23 +155,23 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 		logger.info("Right Check clicked For Sitting 2");
 	}
 
-	
+
 	public void enterRemarksForCurrentDayForSitting1(String remarks, String currentDay) throws InterruptedException {
-		driver.pauseExecutionFor(7000);
+		////driver.pauseExecutionFor(7000);
 		driver.findElement(By.xpath("(//td[contains(text(),'"+currentDay+"')]//following::td//input)[1]")).sendKeys(remarks);
 
 
 	}
 
 	public void selectFromTimeForSitting2(String fromTime) {
-		driver.waitForElementPresent(FROM_TIME_SITTING_2, 120);
+		///driver.waitForElementPresent(FROM_TIME_SITTING_2, 120);
 		Select fromTimeDropdown = new Select(driver.findElement(FROM_TIME_SITTING_2));
 		fromTimeDropdown.selectByVisibleText(fromTime);
 		logger.info("Following From Time  has been selected from From Time Dropdown for Sitting 2 : " + fromTime);
 	}
 
 	public void selectToTimeForSitting2(String toTime) {
-		driver.waitForElementPresent(TO_TIME_SITTING_2);
+		///driver.waitForElementPresent(TO_TIME_SITTING_2);
 		Select toTimeDropdown = new Select(driver.findElement(TO_TIME_SITTING_2));
 		toTimeDropdown.selectByVisibleText(toTime);
 		logger.info("Following To Time  has been selected from To Time Dropdown for Sitting 2 : " + toTime);
@@ -170,12 +179,12 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 
 	public void enterRemarksForCurrentDayForSitting2(String remarks, String currentDay) 
 	{
-		driver.pauseExecutionFor(7000);
+		///driver.pauseExecutionFor(7000);
 		driver.findElement(By.xpath("(//td[contains(text(),'"+currentDay+"')]//following::td//input)[2]")).sendKeys(remarks);
 	}
 
 	public void clickOnSaveButtonOnHeader() throws InterruptedException {
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		WebElement HEADER = driver.findElement(SAVE_BUTTON_HEADER);
 		driver.clickByJS(TTWebsiteDriver.driver, HEADER);
 		logger.info("Save button on header clicked");
@@ -198,11 +207,24 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 	public boolean isSaveSuccessfullyMessageShowsUp() {
 		return driver.isElementPresent(SAVE_SUCCESSFULLY_MESSAGE);
 	}
-	
+
 	public void selectspecility(String text) 
 	{
-	Select sl =new Select(driver.findElement(By.xpath("//select[@id='Speciality']")));
-	sl.selectByVisibleText(text);
-	logger.info("Specility of the doctor is selected: "+text);
+		Select sl =new Select(driver.findElement(By.xpath("//select[@id='Speciality']")));
+		sl.selectByVisibleText(text);
+		logger.info("Specility of the doctor is selected: "+text);
+	}
+
+	public void selectEquipmentTab(ExtentTest test) {
+		WebElement equiptab = driver.findElement(EQUIPMENT_EDIT_BTN);
+		driver.clickByJS(TTWebsiteDriver.driver, equiptab);
+		logger.info("Click On Equipment Tab Btn");
+		Markup m=MarkupHelper.createLabel("Click on Equipment Schedule", ExtentColor.GREEN);
+		test.info(m);
+	}
+
+	public void selectEquipment(ExtentTest test,String text)
+	{
+		TTWebsiteDriver.selectclass(test, "Equipment", "drpequipment", text);
 	}
 }

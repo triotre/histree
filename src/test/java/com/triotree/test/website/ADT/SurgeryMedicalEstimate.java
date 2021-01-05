@@ -55,7 +55,7 @@ public class SurgeryMedicalEstimate extends TTWebsiteBaseTest
 		medical.selectPrimaryAttendingSpeciality(test,"Dermatology");
 		medical.enterVisitsDays(test,"7");
 		medical.selectCospecility(test,"Dermatology");
-		medical.selectCoConsultant(test,"Preethy  Harrison");
+		medical.selectCoConsultant(test);
 		medical.enterCOVisitsDays(test,"2");
 		medical.selectSecondarySpeciality(test,"Endocrinology");
 		medical.enterSecondaryVisitsDays(test,"3");
@@ -76,7 +76,7 @@ public class SurgeryMedicalEstimate extends TTWebsiteBaseTest
 		medical.enterOtherItem1Amount(test,"450");
 		medical.clickonAddOtherItemButton(test);
 		medical.selectService(test,"Cardiology Services");
-		medical.selectItem(test,"ECG (Nos)");
+		medical.selectItem(test);
 		medical.enterQty(test,"3");
 		medical.clickonAddServiceIteam(test);
 		medical.clickonCalculatesurgery(test);

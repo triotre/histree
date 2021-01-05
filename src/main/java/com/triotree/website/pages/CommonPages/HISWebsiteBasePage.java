@@ -14,7 +14,7 @@ import com.triotree.pages.TTBasePage;
 public class HISWebsiteBasePage extends TTBasePage{
 	
 	private final By MENU = By.xpath("//i[@class='fa fa-bars']");
-	private final By BARS_MENU = By.xpath("//i[@class='fa fa-bars']");
+	private final By BARS_MENU = By.xpath("(//i[@class='fa fa-bars'])[1]");
 	private final By HOME_ICON = By.xpath("//a[contains(text(),'HOME')]");
 
 	//private final By ADD_PATIENT_FROM_MENU = By.xpath("//body[@id='body_clickable']/nav[@id='menu']/ul/li[@id='FOAddPatientMenu']/a[1]");
@@ -36,7 +36,7 @@ public class HISWebsiteBasePage extends TTBasePage{
 	
 	public void clickOnMenu() throws InterruptedException {
 		try {
-		driver.waitForElementPresent(MENU);
+		//driver.waitForElementPresent(MENU);
 		WebElement clickOnMenu_element = driver.findElement(MENU);
 		driver.clickByJS(TTWebsiteDriver.driver, clickOnMenu_element);
 		logger.info("Menu Clicked");
@@ -47,14 +47,15 @@ public class HISWebsiteBasePage extends TTBasePage{
 	}
 	
 	public void clickOnHomeIcon() {
-		driver.waitForElementPresent(HOME_ICON);
-		driver.click(HOME_ICON);
+		//driver.waitForElementPresent(HOME_ICON);
+		driver.clickByJS(TTWebsiteDriver.driver,driver.findElement(HOME_ICON));
 		logger.info("HOME ICON Clicked");
 	}
 	
 	public void expandMenu() {
-		driver.waitForElementPresent(BARS_MENU);
-		driver.click(BARS_MENU);
+		///driver.waitForElementPresent(BARS_MENU);
+		driver.findElement(BARS_MENU).click();
+		///driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(BARS_MENU));
 		logger.info("Menu Expanded");
 	}
 	

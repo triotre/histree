@@ -15,8 +15,10 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.TakesScreenshot;
@@ -33,13 +35,21 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.CapabilityType;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.server.DriverFactory;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.triotree.utils.PropertyFile;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 import com.triotree.driver.website.TTWebsiteDriver;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.Markup;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.triotree.driver.TTDriver;
 
 public class TTWebsiteDriver implements TTDriver, WebDriver
@@ -54,7 +64,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		SimpleDateFormat dateformate=new SimpleDateFormat("yyyy-MM-dd_hhmmss");
 		System.setProperty("current.date", dateformate.format(new Date()));
 	}
-	
+
 	public TTWebsiteDriver(PropertyFile propertyFile) {
 		//super();
 		this.propertyFile = propertyFile;			
@@ -81,21 +91,24 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 
 		}
 		else if (propertyFile.getProperty("browser").equalsIgnoreCase("chrome")){
-			System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-
+			//System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			String downloadFilepath = System.getProperty("user.dir") + "\\Downloads";
 
 
 			HashMap<String, Object> chromePrefs = new HashMap<String, Object>();
 			chromePrefs.put("profile.default_content_settings.popups", 0);
 			chromePrefs.put("download.default_directory", downloadFilepath);
-			chromePrefs.put("pdfjs.disabled", true);
+			//Turns off download prompt
+			//chromePrefs.put("download.prompt_for_download", false);
+			
+			//chromePrefs.put("pdfjs.disabled", true);
 			ChromeOptions options = new ChromeOptions();
 			HashMap<String, Object> chromeOptionsMap = new HashMap<String, Object>();
 			options.setExperimentalOption("prefs", chromePrefs);
 			options.addArguments("--test-type");
 			options.addArguments("--disable-extensions"); //to disable browser extension popup
-
+			
 			DesiredCapabilities cap = DesiredCapabilities.chrome();
 			cap.setCapability(ChromeOptions.CAPABILITY, chromeOptionsMap);
 			cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
@@ -122,7 +135,6 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		//Disabling the chrome-is-being-controlled-by-automated-test-software infobar
 		ChromeOptions options = new ChromeOptions(); 
 		options.addArguments("disable-infobars"); 
-
 		driver.manage().window().maximize();
 		//logger.info("Window is maximized");
 		// for clearing cookies
@@ -380,40 +392,36 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 
 		String FullSnapShotFilePath = "";
 
-		//try { 
-			File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); 
-			String sFilename ="Screenshot-" +methodName+getDateTime() + ".png";
-			System.out.println("Screenshotfile name is "+sFilename); 
-			FullSnapShotFilePath= System.getProperty("user.dir") +"/output/" + sFilename;
-			System.out.println("FullSnapShotFilePath name is "+FullSnapShotFilePath);
-			FileUtils.copyFile(scrFile, new File(FullSnapShotFilePath));
-			
-		//} 
-		//catch(Exception e) {}
+		File scrFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE); 
+		String sFilename ="Screenshot-" +methodName+getDateTime() + ".png";
+		System.out.println("Screenshotfile name is "+sFilename); 
+		FullSnapShotFilePath= System.getProperty("user.dir") +"/output/" + sFilename;
+		System.out.println("FullSnapShotFilePath name is "+FullSnapShotFilePath);
+		FileUtils.copyFile(scrFile, new File(FullSnapShotFilePath));
 
 		return FullSnapShotFilePath; 
 	}
 
 
-//	public static String takeSnapShotAndRetPath(WebDriver driver) throws Exception {
-//
-//		String FullSnapShotFilePath = "";
-//		try {
-//			logger.info("Taking Screenshot");
-//			File scrFile = ((TakesScreenshot) driver)
-//					.getScreenshotAs(OutputType.FILE);
-//			String sFilename = null;
-//			sFilename = "verificationFailure_Screenshot.png";
-//			FullSnapShotFilePath = System.getProperty("user.dir")
-//					+ "/output/" + sFilename;
-//			FileUtils.copyFile(scrFile, new File(FullSnapShotFilePath));
-//
-//		} catch (Exception e) {
-//
-//		}
-//
-//		return FullSnapShotFilePath;
-//	}
+	//	public static String takeSnapShotAndRetPath(WebDriver driver) throws Exception {
+	//
+	//		String FullSnapShotFilePath = "";
+	//		try {
+	//			logger.info("Taking Screenshot");
+	//			File scrFile = ((TakesScreenshot) driver)
+	//					.getScreenshotAs(OutputType.FILE);
+	//			String sFilename = null;
+	//			sFilename = "verificationFailure_Screenshot.png";
+	//			FullSnapShotFilePath = System.getProperty("user.dir")
+	//					+ "/output/" + sFilename;
+	//			FileUtils.copyFile(scrFile, new File(FullSnapShotFilePath));
+	//
+	//		} catch (Exception e) {
+	//
+	//		}
+	//
+	//		return FullSnapShotFilePath;
+	//	}
 
 
 
@@ -437,7 +445,6 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 				continue;
 			}
 		}
-
 	}
 
 	public void waitForSpinImageToDisappear(){
@@ -475,7 +482,6 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 				e.printStackTrace();
 			}
 		}
-
 	}
 
 	public void moveToELement(By locator) {
@@ -544,7 +550,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		return new Select(findElement(by));
 	}
 
-	public void scrollToBottomJS() throws InterruptedException {
+	public static void scrollToBottomJS() throws InterruptedException {
 		((JavascriptExecutor) driver)
 		.executeScript("window.scrollTo(0,Math.max(document.documentElement.scrollHeight,document.body.scrollHeight,document.documentElement.clientHeight));");
 	}
@@ -564,17 +570,8 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		return findElement(by).getAttribute(name);
 	}
 
-	/**
-	 * 
-	 * Purpose:This Method return text value of Element.
-	 * 
-	 * @author: 
-	 * @date:
-	 * @returnType: String
-	 * @param by
-	 * @return
-	 */
-	public String getText(By by) {
+	public String getText(By by)
+	{
 		return findElement(by).getText();
 	}
 
@@ -666,7 +663,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 	 */
 	public boolean waitForElementToBeInVisible(By locator, int timeOut) {
 		WebDriverWait wait = new WebDriverWait(driver, timeOut) {
-			
+
 		};
 		return wait.until(ExpectedConditions
 				.invisibilityOfElementLocated(locator));
@@ -712,16 +709,79 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
+
 	public static void selectByvisibletext(By locator,String text) 
 	{
 		Select sl =new Select(driver.findElement(locator));
 		sl.selectByVisibleText(text);
+		
 	}
-	
+
 	public static void doubleclick(WebElement element) 
 	{
 		Actions ac=new Actions(driver);
 		ac.doubleClick(element).click().perform();
 	}
+
+	public static void selectclass(ExtentTest test,String label,String id,String text) 
+	{
+		TTWebsiteDriver.selectByvisibletext(By.xpath("//label[text()='"+label+"']/..//select[@id='"+id+"']"), text);
+		logger.info("Selected "+label+"= "+text);
+		Markup m=MarkupHelper.createLabel("Selected "+label+"= "+text, ExtentColor.GREEN);
+		test.info(m);
+	}
+
+	public static void enterInputData(ExtentTest test,String label,String id,String text)
+	{
+		try {
+			if(label.contains("UHID")) 
+			{
+				driver.findElement(By.xpath("//label[text()='"+label+"']/..//input[@id='"+id+"']")).clear();
+			}
+			driver.findElement(By.xpath("//label[text()='"+label+"']/..//input[@id='"+id+"']")).sendKeys(text);
+			driver.findElement(By.xpath("//label[text()='"+label+"']/..//input[@id='"+id+"']")).sendKeys(Keys.ENTER);
+			logger.info(label+"= "+text);
+			Markup m=MarkupHelper.createLabel(label+"= "+text, ExtentColor.GREEN);
+			test.info(m);
+		}
+		catch (Exception e) {
+		}
+	}
+
+	public static void clearData(String label,String id)
+	{
+		driver.findElement(By.xpath("//label[text()='"+label+"']/..//input[@id='"+id+"']")).sendKeys(Keys.chord(Keys.CONTROL,"a",Keys.DELETE));
+	}
+
+	public static void clickonCheckBox(ExtentTest test,String text) 
+	{
+		driver.findElement(By.xpath("//label[text()='"+text+"']/..//input[@type='checkbox']")).click();
+		logger.info(text+" Check box is selected");
+		Markup m=MarkupHelper.createLabel(text+" Check box is selected", ExtentColor.GREEN);
+		test.info(m);
+	}
+
+	public static void clickonRadioButton(ExtentTest test,String label,String id) throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//label[text()='"+label+"']/..//input[@id='"+id+"']")).click();
+		logger.info("Click on "+label+" Radio Button");
+		Markup m=MarkupHelper.createLabel("Click on "+label+" Radio Button", ExtentColor.GREEN);
+		test.info(m);
+	}
+
+	public static void switchWindow(int windownumber) 
+	{
+		driver.switchTo().window(driver.getWindowHandles().toArray()[windownumber].toString());
+	}
+
+	public static void dismissAlert(WebDriver driver) 
+	{
+		String currenturl = driver.getCurrentUrl();
+		System.out.println(currenturl);
+		((JavascriptExecutor)driver).executeScript("window.open('about:blank','-blank')");
+		switchWindow(1);
+		driver.get(currenturl);
+	}
+
 }

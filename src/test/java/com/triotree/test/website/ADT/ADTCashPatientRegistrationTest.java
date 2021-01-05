@@ -42,9 +42,9 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);
 		bedstatusPage=new BedStatusPage(driver);
-		
+
 		hisHomePage.loginToTriotreeHIS();
-		
+
 		///////Create Bed 
 		hisHomePage.clickOnIPMasterIcon();
 		ipdepositrefund.selectStationAndClickOnYes(test,"IT");
@@ -101,14 +101,14 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 
 		/////Consultant Tab
 		adtpage.selectTab(test,"Consultant");
-		adtpage.selectdoctorspeciality(test,"Cardiology");
-		adtpage.selectAdmittingConsultant(test,"Scheudle  Testing");
-		adtpage.selectPrimaryAttendingConsultant(test,"Scheudle  Testing");
+		adtpage.selectdoctorspeciality(test,"cardiology1");
+		adtpage.selectAdmittingConsultant(test,"brad   pitt");
+		adtpage.selectPrimaryAttendingConsultant(test,"brad   pitt");
 		adtpage.enterrefferby(test," A.G.RAJAN");
 		adtpage.enterexpectedlength(test,"5");
 		adtpage.clickonSaveButton();
 		adtpage.validatepopuptext(test);
-		
+
 		//////Bed & Payment Details Tab
 		adtpage.selectTab(test,"Bed & Payment Details");
 		adtpage.selectrequestedbedtype(test);
@@ -119,8 +119,8 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 
 		///Package Details
 		adtpage.selectTab(test,"Package Details");
-		adtpage.selectpackagedetailsspeciality(test,"Cardiology");
-		adtpage.selectdoctor(test,"MANNAT  DEVGAN");
+		adtpage.selectpackagedetailsspeciality(test,"cardiology1");
+		adtpage.selectdoctor(test,"brad   pitt");
 
 		//Next of Kin Details
 		adtpage.selectTab(test,"Next of Kin Details");

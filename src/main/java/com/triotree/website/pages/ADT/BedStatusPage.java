@@ -107,14 +107,14 @@ public class BedStatusPage extends HISWebsiteBasePage {
 	public void createbedInIpMaster() throws InterruptedException 
 	{
 		TTWebsiteDriver.selectByvisibletext(FACILITY, Facility);
-		for(int i=1;i<=200;i++) {
+		for(int i=1;i<=1000;i++) {
 			if(driver.findElements(By.xpath("//table[@id='tblmain']//td[text()='"+"TrioBed"+i+"']")).size()==0)
 			{
 				Bed_Name="TrioBed"+i;
 				break;
 			}
 		}
-		for(int j=1;j<=200;j++) 
+		for(int j=1;j<=1000;j++) 
 		{
 			if(driver.findElements(By.xpath("//table[@id='tblmain']//td[text()='"+"Automation Testing"+j+"']")).size()==0) 
 			{

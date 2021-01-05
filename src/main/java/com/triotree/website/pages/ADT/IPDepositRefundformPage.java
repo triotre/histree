@@ -136,7 +136,7 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 			test.info(m);
 		}
 		try {
-			driver.click(YES_STATION_DROPDOWN);
+			driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(YES_STATION_DROPDOWN));
 			logger.info("YES has been clicked from Station Dropdown");
 			Markup m=MarkupHelper.createLabel("YES has been clicked from Station Dropdown", ExtentColor.GREEN);
 			test.info(m);

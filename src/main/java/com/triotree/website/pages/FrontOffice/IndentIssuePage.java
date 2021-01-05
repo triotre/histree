@@ -44,13 +44,12 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 	}
 
 	public void selectFirstIndentFromPopup() {
-		driver.waitForElementPresent(FIRST_INDENT_NO);
 		driver.click(FIRST_INDENT_NO);
 		logger.info("Indent No clicked");
 	}
 
 	public void clickOnOrderedItemsMedicines(String medicine) {
-		driver.waitForElementPresent(By.xpath("//table[@id='tbl_OrderedItems']//td[contains(text(),'"+medicine+"')]"));
+
 		driver.click(By.xpath("//table[@id='tbl_OrderedItems']//td[contains(text(),'"+medicine+"')]"));
 	}
 
@@ -60,7 +59,6 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 
 	public void clickOnYesButtonOnSaveThisRecordPopup() {
 		try {
-		driver.waitForElementPresent(YES_BTN_SAVE_THIS_RECORD_POPUP);
 		driver.click(YES_BTN_SAVE_THIS_RECORD_POPUP);
 		}
 		catch (Exception e) {
@@ -68,7 +66,7 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 	}
 
 	public boolean verifyIndentCreatedSuccessMessage(String message) {
-		driver.waitForElementPresent(By.xpath("//label[contains(text(),'"+message+"')]"));
+	
 		if (driver.findElement(By.xpath("//label[contains(text(),'"+message+"')]")).isDisplayed()) {
 			return true;
 		}
@@ -79,7 +77,7 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 
 	public void clickOnYesButtonOnCreatedSuccessfullyPopup() {
 		try {
-		driver.waitForElementPresent(YES_BTN_CREATED_SUCCESSFULLY_POPUP);
+		
 		driver.findElement(YES_BTN_CREATED_SUCCESSFULLY_POPUP).click();
 		}
 		catch (Exception e) {
@@ -87,8 +85,8 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 		}
 	}
 	
-	public void clickOnNoButtonOnCreatedSuccessfullyPopup() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnNo']"));
+	public void clickOnNoButtonOnCreatedSuccessfullyPopup() 
+	{
 		driver.findElement(By.xpath("//a[@id='btnNo']")).click();
 	}
 	
@@ -118,7 +116,6 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 	
 	public void clickOnSaveFloppyIcon() {
 		try {
-		driver.waitForElementPresent(SAVE_FLOPPY_ICON);
 		driver.click(SAVE_FLOPPY_ICON);
 		}
 		catch (Exception e) {
@@ -127,8 +124,7 @@ public class IndentIssuePage extends HISWebsiteBasePage{
 	}
 	
 	public void enterFromDate(String date) {
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//input[@id='txt_From']"));
+
 		driver.findElement(By.xpath("//input[@id='txt_From']")).clear();
 		driver.findElement(By.xpath("//input[@id='txt_From']")).sendKeys(date);
 	}

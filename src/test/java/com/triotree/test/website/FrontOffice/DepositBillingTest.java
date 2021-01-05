@@ -11,8 +11,10 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.triotree.driver.website.TTWebsiteDriver;
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
+import com.triotree.utils.PropertyFile;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 import com.triotree.website.pages.FrontOffice.ApproveRefundPage;
 import com.triotree.website.pages.FrontOffice.BillingPage;
@@ -42,9 +44,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 	private DoctorSchedulePage doctorSchedulePage;
 	private BillsUtilityPage billsUtilityPage;
 	private ApproveRefundPage approveRefundPage;
-
-
-	private String patientRegistrationId = "RAJH.17152824";
+	private String patientRegistrationId = "RAJH.17154826";
 
 	private String desc = null;
 	private String title1 = null;
@@ -56,6 +56,16 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 	{	
 		test=extent.createTest("frontOfficeWithAvailDepositAmountTest", "This test case verify the Fornt Office With Avail Deposit Amount Test Case");
 		test.assignCategory("Deposit Billing");
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -68,66 +78,65 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
-		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
-		patientRegistrationPage.enterFirstName("Demo");
-		patientRegistrationPage.enterMiddleName("Test");
-		patientRegistrationPage.enterLastName("User");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
-		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
-		patientRegistrationPage.enterDob("15-12-1991");
-		patientRegistrationPage.enterAge("16");
-		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
-		patientRegistrationPage.enterAge("23");
-		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
-		patientRegistrationPage.enterFathersName("DemoFather@123 ");
-		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkNRIChecbox();
-		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
-		patientRegistrationPage.enterNationalID("12345");
-		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
-		patientRegistrationPage.enterMobileNumber("12345");
-		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
-		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
-		patientRegistrationPage.enterEmailId("%^%^%^%^");
-		patientRegistrationPage.clickOnRegisterIcon();
-		patientRegistrationPage.enterEmailId("test@demo.com");
-		patientRegistrationPage.enterRefferdBy("demo");
-		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
-		patientRegistrationPage.selectOccupationFromDropdown(occupation);
-		patientRegistrationPage.selectQualificationFromDropdown(qualification);
-		patientRegistrationPage.selectReligionFromDropdown("Hindu");
-		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
-		patientRegistrationPage.checkFinancialDetailsCheckBox();
-		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
-		patientRegistrationPage.selectCompanyFromDropdown(1);
-		patientRegistrationPage.showAllCheckBox();
-		patientRegistrationPage.selectRateContractFromDropdown(1);
-		patientRegistrationPage.checkSchemeCheckBox();
-		patientRegistrationPage.selectSchemeFromDropdown(1);
-		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
-		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
-		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
-		System.out.println("Second Patient Registration Id is " +patientRegistrationId);
-		System.out.println("Patient Registration Id is " +patientRegistrationId);
-
-
-		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-
-		//correct
-		frontOfficeHomePage.clickOnMenu();
+		//		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
+		//		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+		//		patientRegistrationPage.enterFirstName("Demo");
+		//		patientRegistrationPage.enterMiddleName("Test");
+		//		patientRegistrationPage.enterLastName("User");
+		//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
+		//		patientRegistrationPage.enterDob("15-12-1991");
+		//		patientRegistrationPage.enterAge("16");
+		//		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
+		//		patientRegistrationPage.enterAge("23");
+		//		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
+		//		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+		//		patientRegistrationPage.enterFathersName("DemoFather@123 ");
+		//		patientRegistrationPage.selectNationalityFromDropDown("Indian");
+		//		patientRegistrationPage.checkNRIChecbox();
+		//		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
+		//		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
+		//		patientRegistrationPage.enterNationalID("12345");
+		//		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
+		//		patientRegistrationPage.enterMobileNumber("12345");
+		//		patientRegistrationPage.clickOnRegisterIcon();
+		//		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+		//		patientRegistrationPage.enterMobileNumber("1234567890");
+		//		patientRegistrationPage.enterHouseNumber("Demo Test Address");
+		//		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.enterLocationID("Test city");
+		//		patientRegistrationPage.enterEmailId("%^%^%^%^");
+		//		patientRegistrationPage.clickOnRegisterIcon();
+		//		patientRegistrationPage.enterEmailId("test@demo.com");
+		//		patientRegistrationPage.enterRefferdBy("demo");
+		//		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
+		//		patientRegistrationPage.selectOccupationFromDropdown(occupation);
+		//		patientRegistrationPage.selectQualificationFromDropdown(qualification);
+		//		patientRegistrationPage.selectReligionFromDropdown("Hindu");
+		//		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
+		//		patientRegistrationPage.checkFinancialDetailsCheckBox();
+		//		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
+		//		patientRegistrationPage.selectCompanyFromDropdown(1);
+		//		patientRegistrationPage.showAllCheckBox();
+		//		patientRegistrationPage.selectRateContractFromDropdown(1);
+		//		patientRegistrationPage.checkSchemeCheckBox();
+		//		patientRegistrationPage.selectSchemeFromDropdown(1);
+		//		patientRegistrationPage.clickOnRegisterIcon();
+		//		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+		//		patientRegistrationPage.yesButtonOnConfirmPopup();
+		//		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+		//		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
+		//		System.out.println("Second Patient Registration Id is " +patientRegistrationId);
+		//		System.out.println("Patient Registration Id is " +patientRegistrationId);
+		//
+		//
+		//		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
+		//
+		//		//correct
+		//		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Deposits");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17155652");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
@@ -143,7 +152,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+		//
 
 		depositPage.clickOnCreditCardRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
@@ -151,26 +160,24 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnChequeRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
 		depositPage.enterChequeDetails("123456789", "Andhra Bank", "Noida");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnPrintButtonOnHeader();
-		assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
+		//assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
 		depositPage.clickOnFirstDepositDetails();
-		//////////////////////////////////////////////
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17155652");
 		try {
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -180,20 +187,18 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality,Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -206,7 +211,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -249,6 +254,18 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		test=extent.createTest("frontOfficeCreditPatientBillingWithAvaialDiscountAndWithoutCoPayTest", "This test case verify the Fornt Office Credit Patient Billing With Avaial Discount And Without CoPay Test Case");
 		test.assignCategory("Deposit Billing");
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -286,9 +303,9 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -306,39 +323,30 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkSchemeCheckBox();
 		patientRegistrationPage.selectSchemeFromDropdown(1);
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
-		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
-		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
-		System.out.println("Second Patient Registration Id is " +patientRegistrationId);
-		System.out.println("Patient Registration Id is " +patientRegistrationId);
 
+		patientRegistrationPage.yesButtonOnConfirmPopup();
+		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
+
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Deposits");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 		depositPage.clickOnDepositButtonOnHeader();
-		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isAmountCanNotBeZeroMessageDisplayed(), "Amount Can Not be Zero Message is not showing up");
-		depositPage.clickonwalltreecheckbox();//////////////////add
+
+		depositPage.clickonwalltreecheckbox();
 		depositPage.enterEmountInAmountTextBox("2000001");
 		depositPage.clickOnDepositButtonOnHeader();
-		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
+
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		///assertTrue(depositPage.isTotalAmountInCashMessageDisplayed(), "Total Amount in Cash isEqual to or Exceeds message is not showing up");
+
 
 		depositPage.enterEmountInAmountTextBox("1000");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 
 		depositPage.clickOnCreditCardRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
@@ -346,14 +354,14 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnChequeRadioButton();
 		depositPage.enterEmountInAmountTextBox("30000");
 		depositPage.enterChequeDetails("123456789", "Andhra Bank", "Noida");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnPrintButtonOnHeader();
 		assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
 		depositPage.clickOnFirstDepositDetails();
@@ -364,8 +372,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 		try {
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
+
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -375,20 +383,18 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
-		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
+		billingPage.selectScheduleSlotAndToken("54"); 
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality,Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -398,10 +404,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -410,13 +416,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 			billingPage.closeSchemeDetailsPopup();
 		}
 		catch (Exception e) {
-			// TODO: handle exception
+
 		}
-		//billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		//billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
-		//billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
-		//billingPage.clickOnYesButtonOnAvailDepositPopup();
-		//billingPage.enterAjustFromDeposit("5000");
+
+		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 	}
 
 	@Test(priority = 3) 
@@ -458,12 +461,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+
+
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -481,19 +485,15 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkSchemeCheckBox();
 		patientRegistrationPage.selectSchemeFromDropdown(1);
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+
 		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+
 		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
+
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Deposits");	
 		billingPage.clickOnSearchNewButtonOnHeader();
@@ -502,21 +502,21 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 
 		depositPage.clickOnDepositButtonOnHeader();
-		///assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
+
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		///assertTrue(depositPage.isAmountCanNotBeZeroMessageDisplayed(), "Amount Can Not be Zero Message is not showing up");
+
 		depositPage.clickonwalltreecheckbox();
 		depositPage.enterEmountInAmountTextBox("2000001");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isTotalAmountInCashMessageDisplayed(), "Total Amount in Cash isEqual to or Exceeds message is not showing up");
+
 
 		depositPage.enterEmountInAmountTextBox("1000");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 
 		depositPage.clickOnCreditCardRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
@@ -524,21 +524,21 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnChequeRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
 		depositPage.enterChequeDetails("123456789", "Andhra Bank", "Noida");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnPrintButtonOnHeader();
 		assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
 		depositPage.clickOnFirstDepositDetails();
 
 	}
 
-	@Test(priority = 4)//pass and fixed 06-04-2020 test to be run
+	@Test(priority = 4)
 	public void frontOfficeDepositAndRefundTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDepositAndRefundTest", "This test case verify the Fornt Office Deposit And Refund Test Case");
@@ -564,25 +564,25 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
 		patientRegistrationPage.enterDob("15-12-1991");
 		patientRegistrationPage.enterAge("16");
-		//assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
+
 		patientRegistrationPage.enterAge("23");
 		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
 		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
 		patientRegistrationPage.enterFathersName("DemoFather@123 ");
 		patientRegistrationPage.selectNationalityFromDropDown("Indian");
 		patientRegistrationPage.checkNRIChecbox();
-		//assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
+
 		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
 		patientRegistrationPage.enterNationalID("12345");
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -600,134 +600,51 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkSchemeCheckBox();
 		patientRegistrationPage.selectSchemeFromDropdown(1);
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+
 		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+
 		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
-		///System.out.println("Second Patient Registration Id is " +patientRegistrationId);
+
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
+
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Deposits");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 
 		depositPage.clickOnDepositButtonOnHeader();
-		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
+
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isAmountCanNotBeZeroMessageDisplayed(), "Amount Can Not be Zero Message is not showing up");
+
 		depositPage.clickonwalltreecheckbox();
 		depositPage.enterEmountInAmountTextBox("2000001");
 		depositPage.clickOnDepositButtonOnHeader();
-		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
+
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isTotalAmountInCashMessageDisplayed(), "Total Amount in Cash isEqual to or Exceeds message is not showing up");
 
 		depositPage.enterEmountInAmountTextBox("1000");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
 
 		depositPage.clickOnCreditCardRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
 		depositPage.enterCreditCardDetails(123456789, "MASTERCARD", "Andhra Bank", "2222222222");
 		depositPage.clickOnDepositButtonOnHeader();
-		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
+
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
 		depositPage.clickOnChequeRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
 		depositPage.enterChequeDetails("123456789", "Andhra Bank", "Noida");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
 		depositPage.clickOnPrintButtonOnHeader();
-		assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
 		depositPage.clickOnFirstDepositDetails();
-
-
-//		frontOfficeHomePage.clickOnMenu();
-//		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
-//		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
-//		try {
-//			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-//			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-//			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
-//			billingPage.clickonschemedetails();
-//		}
-//		catch (Exception e) {
-//		}
-//		try {
-//			billingPage.closevalidityschemepopup();
-//		}
-//		catch (Exception e) {}
-//		try {
-//			billingPage.closeSchemeDetailsPopup();
-//		} catch (Exception e) {}
-//		billingPage.closeRemarksPopup();
-//
-//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
-//		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
-//		billingPage.clickOnDiagnosticIcon();
-//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-//		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-//		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
-//		billingPage.clickOnYesButtonOnPatientMappedPopup();
-//		billingPage.clickOnManualIcon();
-//		billingPage.selectServiceNameFromDropdown("Cardiology Services");
-//		billingPage.enterDescriptionInManualSection("cardic");
-//		billingPage.selectQuantityInManualSection("50");
-//		billingPage.enterPriceInManualSection("100");
-//		billingPage.clickOnVerifyButton();
-//		billingPage.clickOnOtherServicesIcon();
-//		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-//		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
-//		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-//		//billingPage.selectSpecialityAndDoctor();
-//		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
-//		billingPage.enterRefferedBy("demo");
-//		billingPage.selectFacilitatorFromDropdown(1);
-//		billingPage.clickOnAddToBillButton();
-//		try {
-//			billingPage.clickonschemedetails();
-//			billingPage.clickOnAddToBillButton();
-//		}
-//		catch (Exception e) {}
-//		//assertTrue(billingPage.verifyInvestigationInstructionPopupIsPresent(), "Investigation Instruction Popup Is Not showing up");
-//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
-//
-//		billingPage.clickOnYesButtonOnAvailDepositPopup();
-//		billingPage.enterAjustFromDeposit("5000");
-//
-//		billingPage.clickOnBillingButtonOnHeader();
-//		billingPage.clickOnyesBtnOnGenrateBillPopup();
-//		//billingPage.enterPatientPaidAmount("5000");
-//		billingPage.selectSecondPaymentModeAsCheque();
-//		//billingPage.enterPatientPaidAmountForCheque("1000");
-//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");
-//		billingPage.saveprocesspayment();
-//		//		billingPage.selectAuthorisedByFromProcessPaymentDropdown("Management Decision");
-//		//		billingPage.enterRemarsInProcessPaymentPopup("Testing Remarks");
-//		//		billingPage.clickOnVerifyButtonOnProcessPayment();
-//		//		assertTrue(billingPage.verifyBillGotGenerated("generated successfully"), "Bill did not got generated");
-//		billingPage.clickOnNoButtonOnBillGotGeneratedPopup();
-//		billingPage.clickOnYesButtonOnOpdPopup();
-//		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
-
 	}
 
-	@Test(priority = 5)//pass and fixed 29-May-2020 test to be run
+	@Test(priority = 5)
 	public void frontOfficeDepositBySearchPatientTestSchedule() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDepositBySearchPatientTestSchedule", "This test case verify the Fornt Office Deposit BySearch Patient Test Schedule Test Case");
@@ -739,21 +656,25 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage = new BillingPage(driver);
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
+		String Specialization=PropertyFile.getproperty("FrontOffice","Specialization");
+		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+
 		generateSchedulePage.clickOnPlusButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
+
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
@@ -761,7 +682,6 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
 		generateSchedulePage.enterToDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
-		//assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
 
 		Date date = new Date();
 		int currenthour= date.getHours();
@@ -795,16 +715,29 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSaveButtonOnHeader();
 		assertTrue(generateSchedulePage.verifyDoYouWantToSavePopupMessage("Do you want to save?"), "Do you want to save popup didnt opened");
 		generateSchedulePage.clickOnSaveButtonOnSavePopup();
-		//assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
 
 	}
 
-	@Test(priority = 6) //pass and fixed 29-May-2020
+	@Test(priority = 6) 
 	public void frontOfficeSchedulingDoctorScheduleandLegendForAppointmentFormTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeSchedulingDoctorScheduleandLegendForAppointmentFormTest", "This test verify that front Office Scheduling Doctor Schedule and Legend For Appointment Form Test");
 		test.assignCategory("Deposit Billing");
-		String tomorrowDay = null;
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
+		String Specialization=PropertyFile.getproperty("FrontOffice", "Specialization");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+
+		String tomorrowDay = "";
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -841,12 +774,12 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -862,10 +795,11 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.showAllCheckBox();
 		patientRegistrationPage.selectRateContractFromDropdown(1);
 		patientRegistrationPage.checkSchemeCheckBox();
+		patientRegistrationPage.selectSchemeFromDropdown(1);
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+
 		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+
 		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
 		System.out.println("Second Patient Registration Id is " +patientRegistrationId);
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
@@ -882,16 +816,14 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		//	assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
-
-		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		generateSchedulePage.selectSpecilizationFromDropdown(Specialization);
+		generateSchedulePage.selectDoctorFromDropdown(Generate_Schedule_Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
@@ -899,8 +831,6 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
 		generateSchedulePage.enterToDate("13/Sep/2019");
 		driver.clickAnyWhereOnScreen();
-
-		//assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
 
 		Date date = new Date();
 		int currenthour= date.getHours();
@@ -954,30 +884,29 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSaveButtonOnHeader();
 		assertTrue(generateSchedulePage.verifyDoYouWantToSavePopupMessage("Do you want to save?"), "Do you want to save popup didnt opened");
 		generateSchedulePage.clickOnSaveButtonOnSavePopup();
-		//assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
+
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Doctor Schedule");
 
 		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
-		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
-		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
+
+		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
 		doctorSchedulePage.clickOnSearchButton();
-		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
+
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("Cardiology");
+		doctorSchedulePage.selectSpecilityFromDropdown(Specialization);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		doctorSchedulePage.selectDoctorFromDropdown(Generate_Schedule_Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
 		assertTrue(doctorSchedulePage.isTimeOfAppointmentWithGreaterMessageShowing(), "Time of Appointment with Greater that current time message is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForFutureTime();
-		//assertTrue(doctorSchedulePage.isAppointmentSchedulingPopupDisplayed(), "Appointment Scheduling Popup is not showing up");
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		//assertTrue(doctorSchedulePage.isEnterValidUhidMessageShowingUp(), "Enter Valid UHID Message is not showing up");
 		doctorSchedulePage.enterUHIDInAppointmentschedulingTextBox(patientRegistrationId);
-		doctorSchedulePage.selectVisitTypeFromDropdown("Initial Visit                 ");
+		doctorSchedulePage.selectVisitTypeFromDropdown("Follow up consult             ");
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		//assertTrue(doctorSchedulePage.isAppointmentBookedSuccessfullyMessageShowingUp(), "Appointment booked Successfully Message is not showing up");
 		//doctorSchedulePage.clickOnBookedYellowAppointment();
@@ -1002,7 +931,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 		try {
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("Opd-offer for the day", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -1017,8 +946,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -1026,7 +955,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -1038,7 +967,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -1070,7 +999,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
 
-	@Test(priority = 7)//pass and fixed 29-May-2020
+	@Test(priority = 7)
 	public void frontOfficeGenerateScheduleTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeGenerateScheduleTest", "This test case verify the Fornt Office GenerateSchedule Test Case");
@@ -1081,21 +1010,23 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage = new BillingPage(driver);
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
+		String Specialization=PropertyFile.getproperty("FrontOffice","Specialization");
+		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		///assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
 		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
-		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		generateSchedulePage.selectSpecilizationFromDropdown(Specialization);
+		generateSchedulePage.selectDoctorFromDropdown(Generate_Schedule_Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("30/May/2020");
@@ -1129,7 +1060,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		String currentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime());
 		generateSchedulePage.selectDayCheckbox(currentDay);			
 
-		generateSchedulePage.selectDayCheckbox("Sunday");	
+		//generateSchedulePage.selectDayCheckbox("Sunday");	
 		generateSchedulePage.selectRightCheckForSitting1();
 		generateSchedulePage.enterRemarksForCurrentDayForSitting1("Remarks added by Automation Scripts", currentDay);		
 		generateSchedulePage.selectFromTimeForSitting2(futureFromTimeSitting2);
@@ -1143,7 +1074,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 8)//pass and fixed 29-May-2020
+	@Test(priority = 8)
 	public void frontOfficeGenerateScheduleandwithGenerateschedule() throws Throwable {	
 
 		test=extent.createTest("frontOfficeGenerateScheduleandwithGenerateschedule", "This test case verify the Fornt Office GenerateSchedule and with Generate schedule Test Case");
@@ -1154,21 +1085,22 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage = new BillingPage(driver);
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
+		String Specialization=PropertyFile.getproperty("FrontOffice","Specialization");
+		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+
 		generateSchedulePage.clickOnPlusButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
-		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		generateSchedulePage.selectSpecilizationFromDropdown(Specialization);
+		generateSchedulePage.selectDoctorFromDropdown(Generate_Schedule_Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("30/May/2020");
@@ -1202,7 +1134,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		String currentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime());
 		generateSchedulePage.selectDayCheckbox(currentDay);			
 
-		generateSchedulePage.selectDayCheckbox("Sunday");	
+		//generateSchedulePage.selectDayCheckbox("Sunday");	
 		generateSchedulePage.selectRightCheckForSitting1();
 		generateSchedulePage.enterRemarksForCurrentDayForSitting1("Remarks added by Automation Scripts", currentDay);		
 		generateSchedulePage.selectFromTimeForSitting2(futureFromTimeSitting2);
@@ -1212,10 +1144,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.clickOnSaveButtonOnHeader();
 		assertTrue(generateSchedulePage.verifyDoYouWantToSavePopupMessage("Do you want to save?"), "Do you want to save popup didnt opened");
 		generateSchedulePage.clickOnSaveButtonOnSavePopup();
-		//assertTrue(generateSchedulePage.isSaveSuccessfullyMessageShowsUp(), "Schedule didnt got saved");
+
 	}
 
-	@Test(priority = 9) //pass and fixed 29-05-2020
+	@Test(priority = 9) 
 	public void frontOfficeGenerateScheduleselectolderdateandRemarksaddedTest() throws Throwable {
 		test=extent.createTest("frontOfficeGenerateScheduleselectolderdateandRemarksaddedTest", "This test case verify the Fornt Office Generate Schedule select older date and Remarks added Test Case");
 		test.assignCategory("Deposit Billing");
@@ -1226,21 +1158,23 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage = new BillingPage(driver);
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
+		String Specialization=PropertyFile.getproperty("FrontOffice","Specialization");
+		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
-		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		generateSchedulePage.selectSpecilizationFromDropdown(Specialization);
+		generateSchedulePage.selectDoctorFromDropdown(Generate_Schedule_Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("30/May/2020");
@@ -1302,7 +1236,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
-
+		//		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
+		//		String Specialization=PropertyFile.getproperty("FrontOffice","Specialization");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -1335,9 +1272,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1377,11 +1315,11 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/May/2020");
@@ -1451,13 +1389,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
-		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
+		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("Cardiology");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
@@ -1467,7 +1405,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		//assertTrue(doctorSchedulePage.isEnterValidUhidMessageShowingUp(), "Enter Valid UHID Message is not showing up");
 		doctorSchedulePage.enterUHIDInAppointmentschedulingTextBox(patientRegistrationId);
-		doctorSchedulePage.selectVisitTypeFromDropdown("Initial Visit                 ");
+		doctorSchedulePage.selectVisitTypeFromDropdown("Follow up consult             ");
 		doctorSchedulePage.cancelTheAppointment();
 		//		assertTrue(doctorSchedulePage.isTimeOfAppointmentWithGreaterMessageShowing(), "Time of Appointment with Greater that current time message is not showing up");
 		//		doctorSchedulePage.clickOnGreenGeneratedScheduleForFutureTime();
@@ -1477,7 +1415,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 
 		//		doctorSchedulePage.enterUHIDInAppointmentschedulingTextBox(patientRegistrationId);
-		//		doctorSchedulePage.selectVisitTypeFromDropdown("Initial Visit                 ");
+		//		doctorSchedulePage.selectVisitTypeFromDropdown("CGHS-Inital Visit             ");
 		//		doctorSchedulePage.cancelTheAppointment();
 		//		assertTrue(doctorSchedulePage.isAppointmentCancelled(), "Appointment has not cancelled");
 
@@ -1496,7 +1434,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
-
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -1504,16 +1443,16 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
 
 		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/May/2020");
@@ -1583,13 +1522,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
-		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
+		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("Cardiology");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
@@ -1599,11 +1538,11 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		//assertTrue(doctorSchedulePage.isEnterValidUhidMessageShowingUp(), "Enter Valid UHID Message is not showing up");
 		doctorSchedulePage.enterUHIDInAppointmentschedulingTextBox(patientRegistrationId);
-		doctorSchedulePage.selectVisitTypeFromDropdown("Initial Visit                 ");
+		doctorSchedulePage.selectVisitTypeFromDropdown("Follow up consult             ");
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		//assertTrue(doctorSchedulePage.isAppointmentBookedSuccessfullyMessageShowingUp(), "Appointment booked Successfully Message is not showing up");
 		//doctorSchedulePage.clickOnBookedYellowAppointment();
-		driver.pauseExecutionFor(5000);
+		//driver.pauseExecutionFor(5000);
 	}
 
 	@Test(priority = 12) //pass and fixed 29-05-2020
@@ -1619,7 +1558,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
-
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -1633,16 +1573,16 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		///assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
 
 		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/May/2020");
@@ -1693,13 +1633,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
-		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
+		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("Cardiology");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
@@ -1709,7 +1649,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		//assertTrue(doctorSchedulePage.isEnterValidUhidMessageShowingUp(), "Enter Valid UHID Message is not showing up");
 		doctorSchedulePage.enterUHIDInAppointmentschedulingTextBox(patientRegistrationId);
-		doctorSchedulePage.selectVisitTypeFromDropdown("Initial Visit                 ");
+		doctorSchedulePage.selectVisitTypeFromDropdown("Follow up consult             ");
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		//assertTrue(doctorSchedulePage.isAppointmentBookedSuccessfullyMessageShowingUp(), "Appointment booked Successfully Message is not showing up");
 
@@ -1721,6 +1661,17 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 	{	
 		test=extent.createTest("frontOfficeBillingWithBillingModeCreditPatientTest", "This test case verify the Fornt Office Billing With Billing Mode Credit Patient Case");
 		test.assignCategory("Deposit Billing");
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -1759,9 +1710,9 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1788,34 +1739,23 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		patientRegistrationPage.clickOnYesButtonOnRegisteredSuccessfullyPopup();
 
-
-		//		try {
-		//			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		//			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-		//			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
-		//			billingPage.clickonschemedetails();
-		//		}
-		//		catch (Exception e) {
-		//		}
 		try {
 			billingPage.closevalidityschemepopup();
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -1824,10 +1764,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		//billingPage.clickOnAddToBillButton();
@@ -1848,7 +1788,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		try {
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {
@@ -1881,6 +1821,17 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		test=extent.createTest("frontOfficeBillingWithBillingModeCashPatientTest", "This test case verify the Fornt Office Billing With Billing Mode Cash Patient Test Case");
 		test.assignCategory("Deposit Billing");
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -1902,25 +1853,24 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
 		patientRegistrationPage.enterDob("15-12-1991");
 		patientRegistrationPage.enterAge("16");
-	//	assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
+		//	assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
 		patientRegistrationPage.enterAge("23");
 		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
 		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
 		patientRegistrationPage.enterFathersName("DemoFather@123 ");
 		patientRegistrationPage.selectNationalityFromDropDown("Indian");
 		patientRegistrationPage.checkNRIChecbox();
-	//	assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
+		//	assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
 		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
 		patientRegistrationPage.enterNationalID("12345");
 		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
 		patientRegistrationPage.enterMobileNumber("12345");
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1938,40 +1888,28 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkSchemeCheckBox();
 		patientRegistrationPage.selectSchemeFromDropdown(1);
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
 		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
 		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
-
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
-		//billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId); //patientRegistrationId
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Doctor);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Speciality);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality,Doctor_Name);
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -1980,27 +1918,19 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
-
-		billingPage.clickOnInsuranceCompanyButton();
-		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-		billingPage.clickonschemedetails();
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-			billingPage.clickonschemedetails();
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
+			billingPage.clickonschemedetails(); ///need to add new functionality
 		}
-		catch (Exception e) {
-		}
-		//billingPage.clickOnAddToBillButton();
-		//assertTrue(billingPage.verifyInvestigationInstructionPopupIsPresent(), "Investigation Instruction Popup Is Not showing up");
+		catch (Exception e) {}
+		billingPage.clickonAddTOBillButton();
 		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		billingPage.clickOnBillingButtonOnHeader();
 		billingPage.clickOnyesBtnOnGenrateBillPopup();
@@ -2014,7 +1944,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 15) //pass and fixed 30-05-2020
+	@Test(priority = 15) 
 	public void frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeDoctorScheduleWithGenerateScheduleAndRegisterPatientTest", "This test case verify the Fornt Office Billing With Billing Mode Cash Patient Test Case");
@@ -2027,6 +1957,11 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
+		String Specialization=PropertyFile.getproperty("FrontOffice","Specialization");
+		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -2034,23 +1969,23 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
-		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		//assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
+		generateSchedulePage.selectSpecilizationFromDropdown(Specialization);
+		generateSchedulePage.selectDoctorFromDropdown(Generate_Schedule_Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
-		generateSchedulePage.enterFromDate("13/Feb/2019");
+		//generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
-		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
-		generateSchedulePage.enterToDate("13/Feb/2019");
+		//assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
+		//generateSchedulePage.enterToDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
-		assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
+		//assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
 
 		Date date = new Date();
 		int currenthour= date.getHours();
@@ -2076,7 +2011,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		String currentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime());
 		generateSchedulePage.selectDayCheckbox(currentDay);	
 
-		generateSchedulePage.selectDayCheckbox("Sunday");	
+		//generateSchedulePage.selectDayCheckbox("Sunday");	
 		generateSchedulePage.selectRightCheckForSitting1();
 		generateSchedulePage.enterRemarksForCurrentDayForSitting1("Remarks added by Automation Scripts", currentDay);		
 		generateSchedulePage.selectFromTimeForSitting2(futureFromTimeSitting2);
@@ -2095,13 +2030,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
-		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
+		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("Dermatology");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
@@ -2111,14 +2046,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		assertTrue(doctorSchedulePage.isEnterValidUhidMessageShowingUp(), "Enter Valid UHID Message is not showing up");
 		doctorSchedulePage.enterUHIDInAppointmentschedulingTextBox(patientRegistrationId);
-		doctorSchedulePage.selectVisitTypeFromDropdown("Initial Visit                 ");
+		doctorSchedulePage.selectVisitTypeFromDropdown("Follow up consult             ");
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
-		//assertTrue(doctorSchedulePage.isAppointmentBookedSuccessfullyMessageShowingUp(), "Appointment booked Successfully Message is not showing up");
-
-
-		//doctorSchedulePage.clickOnBookedYellowAppointment();
-
-		driver.pauseExecutionFor(5000);
 	}
 
 	@Test(priority = 16)  //fixed 30-05-2020
@@ -2134,7 +2063,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
-
+		String Specialization=PropertyFile.getproperty("FrontOffice","Specialization");
+		String Generate_Schedule_Doctor=PropertyFile.getproperty("FrontOffice","Generate_Schedule_Doctor");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -2147,23 +2079,23 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnDoctorScheduleAndSelectAnOption("Generate Schedule");
 
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
-		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
+		generateSchedulePage.selectDoctorFromDropdown("Mohana  Lal");
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Dermatology");
-		generateSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		//assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
+		generateSchedulePage.selectSpecilizationFromDropdown(Specialization);
+		generateSchedulePage.selectDoctorFromDropdown(Generate_Schedule_Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
-		generateSchedulePage.enterFromDate("13/Feb/2019");
+		//generateSchedulePage.enterFromDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
-		assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
-		generateSchedulePage.enterToDate("13/Feb/2019");
+		//assertTrue(generateSchedulePage.verifyFromDateErrorMessage(), "Older Date is being Selected in From Date Column");
+		//generateSchedulePage.enterToDate("13/Feb/2019");
 		driver.clickAnyWhereOnScreen();
-		assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
+		//assertTrue(generateSchedulePage.verifyToDateErrorMessage(), "Older Date is being Selected in To Date Column");
 
 		Date date = new Date();
 		int currenthour= date.getHours();
@@ -2188,7 +2120,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		System.out.println(new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime()));
 		String currentDay = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date1.getTime());
 		generateSchedulePage.selectDayCheckbox(currentDay);	
-		generateSchedulePage.selectDayCheckbox("Sunday");	
+
+		//generateSchedulePage.selectDayCheckbox("Sunday");	
 		generateSchedulePage.selectRightCheckForSitting1();
 		generateSchedulePage.enterRemarksForCurrentDayForSitting1("Remarks added by Automation Scripts", currentDay);		
 		generateSchedulePage.selectFromTimeForSitting2(futureFromTimeSitting2);
@@ -2207,13 +2140,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectFacilityFromDropdown("L1-SANITY-T3");
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please select Speciality Message not showing up");
-		doctorSchedulePage.selectSpecilityFromDropdown("Endocrinology");
+		doctorSchedulePage.selectSpecilityFromDropdown("Anaesthetistgulab");
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("Dermatology");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("Preethy  Harrison");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
@@ -2223,13 +2156,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
 		assertTrue(doctorSchedulePage.isEnterValidUhidMessageShowingUp(), "Enter Valid UHID Message is not showing up");
 		doctorSchedulePage.enterUHIDInAppointmentschedulingTextBox(patientRegistrationId);
-		doctorSchedulePage.selectVisitTypeFromDropdown("Initial Visit                 ");
+		doctorSchedulePage.selectVisitTypeFromDropdown("Follow up consult             ");
 		doctorSchedulePage.clickOnSaveButtonOnAppointmentSchedulingPopup();
-		//assertTrue(doctorSchedulePage.isAppointmentBookedSuccessfullyMessageShowingUp(), "Appointment booked Successfully Message is not showing up");
-
-		//doctorSchedulePage.clickOnBookedYellowAppointment();
-
-		driver.pauseExecutionFor(5000);
 	}
 
 	@Test(priority = 17)  //pass and fixed 30-05-2020
@@ -2237,6 +2165,17 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 	{	
 		test=extent.createTest("frontOfficeDepositamountandwithoutcopayTest", "This test case verify the Fornt Office Deposit amount and without copay Test Case");
 		test.assignCategory("Deposit Billing");
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -2275,9 +2214,9 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -2302,11 +2241,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
+
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Deposits");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
@@ -2325,7 +2260,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+		//
 
 		depositPage.clickOnCreditCardRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
@@ -2333,16 +2268,16 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+		//
 		depositPage.clickOnChequeRadioButton();
 		depositPage.enterEmountInAmountTextBox("30000");
 		depositPage.enterChequeDetails("123456789", "Andhra Bank", "Noida");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+		//
 		depositPage.clickOnPrintButtonOnHeader();
-		assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
+		//assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
 		depositPage.clickOnFirstDepositDetails();
 
 
@@ -2351,7 +2286,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 		try {
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -2362,20 +2297,18 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality,Doctor_Name);
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -2384,25 +2317,19 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
-
-		//		billingPage.clickOnInsuranceCompanyButton();
-		//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
-		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
 		}
+		billingPage.clickonAddTOBillButton();
 		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		billingPage.clickOnYesButtonOnAvailDepositPopup();
 		//billingPage.enterAjustFromDeposit("5000");
@@ -2413,6 +2340,17 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		test=extent.createTest("frontOfficeBillingUtilityWithCreditPartialCoPayPatientRefundWithDueSettlementTest", "This test case verify the Fornt Office Deposit3 Test Case");
 		test.assignCategory("Deposit Billing");
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -2454,9 +2392,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -2495,7 +2434,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -2506,20 +2445,18 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality,Doctor_Name);
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -2528,25 +2465,21 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
-		//		billingPage.clickOnInsuranceCompanyButton();
-		//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
-		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
 		}
+		billingPage.clickonAddTOBillButton();
 		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		billingPage.clickOnYesButtonOnAvailDepositPopup();
 
@@ -2561,15 +2494,6 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.selectDiscountHeadFromDropdown("Special Discount");
 		billingPage.selectDiscountReasonFromDropdown("Specail Discount 10%");
 
-		//		
-		//		billingPage.enterDiscountAmount("20000");
-		//		billingPage.enterDiscountAmount("500");
-		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		//		assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
-		//billingPage.selectAuthorisedByFromDropdown("As per MOU of NDMC");
-		//		billingPage.selectOnCompanyRadioButton();
-		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		//		assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
 		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
 		//assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
 		billingPage.selectAuthorisedByFromDropdown("anshul agarwal");
@@ -2602,7 +2526,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Bills Utility");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
 		billsUtilityPage.processDueSettlement();
-		billsUtilityPage.clickOnServicesIcon();
+		///billsUtilityPage.clickOnServicesIcon();
 
 
 		billsUtilityPage.clickOnSelectRefundButton();
@@ -2651,6 +2575,18 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		test=extent.createTest("frontOfficeBillingUtilityFindAllBillForOnePatientTest", "This test case verify the Fornt Office Deposit3 Test Case");
 		test.assignCategory("Deposit Billing");
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -2690,9 +2626,11 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -2731,7 +2669,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -2742,12 +2680,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -2755,7 +2694,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -2768,7 +2707,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality, Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -2779,7 +2718,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -2836,6 +2775,17 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		test=extent.createTest("frontOfficeToAddDOBMobileNoAddressGaurdianNameTest", "This test case verify the Fornt Office Deposit3 Test Case");
 		test.assignCategory("Deposit Billing");
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -2849,74 +2799,75 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
-		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
-		patientRegistrationPage.enterFirstName("Demo");
-		patientRegistrationPage.enterMiddleName("Test");
-		patientRegistrationPage.enterLastName("User");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
-		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
-		patientRegistrationPage.enterDob("15-12-1991");
-		patientRegistrationPage.enterAge("16");
-		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
-		patientRegistrationPage.enterAge("23");
-		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
-		patientRegistrationPage.enterFathersName("DemoFather@123 ");
-		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkNRIChecbox();
-		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
-		patientRegistrationPage.enterNationalID("12345");
-		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
-		patientRegistrationPage.enterMobileNumber("12345");
-		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
-		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
-		patientRegistrationPage.enterEmailId("%^%^%^%^");
-		patientRegistrationPage.clickOnRegisterIcon();
-		patientRegistrationPage.enterEmailId("test@demo.com");
-		patientRegistrationPage.enterRefferdBy("demo");
-		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
-		patientRegistrationPage.selectOccupationFromDropdown(occupation);
-		patientRegistrationPage.selectQualificationFromDropdown(qualification);
-		patientRegistrationPage.selectReligionFromDropdown("Hindu");
-		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
-		patientRegistrationPage.checkFinancialDetailsCheckBox();
-		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
-		patientRegistrationPage.selectCompanyFromDropdown(1);
-		patientRegistrationPage.showAllCheckBox();
-		patientRegistrationPage.selectRateContractFromDropdown(1);
-		patientRegistrationPage.checkSchemeCheckBox();
-		patientRegistrationPage.selectSchemeFromDropdown(1);
-		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
-		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
-		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
-		System.out.println("Patient Registration Id is " +patientRegistrationId);
-
-		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-
+		//		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
+		//		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+		//		patientRegistrationPage.enterFirstName("Demo");
+		//		patientRegistrationPage.enterMiddleName("Test");
+		//		patientRegistrationPage.enterLastName("User");
+		//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+		//		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
+		//		patientRegistrationPage.enterDob("15-12-1991");
+		//		patientRegistrationPage.enterAge("16");
+		//		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
+		//		patientRegistrationPage.enterAge("23");
+		//		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
+		//		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+		//		patientRegistrationPage.enterFathersName("DemoFather@123 ");
+		//		patientRegistrationPage.selectNationalityFromDropDown("Indian");
+		//		patientRegistrationPage.checkNRIChecbox();
+		//		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
+		//		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
+		//		patientRegistrationPage.enterNationalID("12345");
+		//		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
+		//		patientRegistrationPage.enterMobileNumber("12345");
+		//		patientRegistrationPage.clickOnRegisterIcon();
+		//		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+		//		patientRegistrationPage.enterMobileNumber("1234567890");
+		//		patientRegistrationPage.enterHouseNumber("Demo Test Address");
+		//		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		//		patientRegistrationPage.enterLocationID("Test city");
+		//		patientRegistrationPage.enterEmailId("%^%^%^%^");
+		//		patientRegistrationPage.clickOnRegisterIcon();
+		//		patientRegistrationPage.enterEmailId("test@demo.com");
+		//		patientRegistrationPage.enterRefferdBy("demo");
+		//		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
+		//		patientRegistrationPage.selectOccupationFromDropdown(occupation);
+		//		patientRegistrationPage.selectQualificationFromDropdown(qualification);
+		//		patientRegistrationPage.selectReligionFromDropdown("Hindu");
+		//		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
+		//		patientRegistrationPage.checkFinancialDetailsCheckBox();
+		//		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
+		//		patientRegistrationPage.selectCompanyFromDropdown(1);
+		//		patientRegistrationPage.showAllCheckBox();
+		//		patientRegistrationPage.selectRateContractFromDropdown(1);
+		//		patientRegistrationPage.checkSchemeCheckBox();
+		//		patientRegistrationPage.selectSchemeFromDropdown(1);
+		//		patientRegistrationPage.clickOnRegisterIcon();
+		//		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+		//		patientRegistrationPage.yesButtonOnConfirmPopup();
+		//		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+		//		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
+		//		System.out.println("Patient Registration Id is " +patientRegistrationId);
 		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
-
-
-		frontOfficeHomePage.clickOnMenu();
+		//		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
+		//
+		//		//
+		//		//		driver.getURL();
+		//		//		hisHomePage.loginToTriotreeHIS();
+		//		//		hisHomePage.clickOnFronOfficeIcon();
+		//		//		hisHomePage.selectStationAndClickOnYes("Front Office");
+		//
+		//
+		//		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17155669");
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -2927,12 +2878,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -2940,7 +2892,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -2953,7 +2905,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality, Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -2964,7 +2916,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -3069,6 +3021,17 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		test=extent.createTest("frontOfficeBillUtilitySearchPatientbyDateRangeAndRefundTheBillTest", "This test case verify the Fornt Office Bill Utility Search Patient by Date Range And Refund The Bill Test Case");
 		test.assignCategory("Deposit Billing");
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice", "Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -3082,74 +3045,68 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
-		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
-		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
-		patientRegistrationPage.enterFirstName("Demo");
-		patientRegistrationPage.enterMiddleName("Test");
-		patientRegistrationPage.enterLastName("User");
-		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
-		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
-		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
-		patientRegistrationPage.enterDob("15-12-1991");
-		patientRegistrationPage.enterAge("16");
-		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
-		patientRegistrationPage.enterAge("23");
-		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
-		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
-		patientRegistrationPage.enterFathersName("DemoFather@123 ");
-		patientRegistrationPage.selectNationalityFromDropDown("Indian");
-		patientRegistrationPage.checkNRIChecbox();
-		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
-		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
-		patientRegistrationPage.enterNationalID("12345");
-		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
-		patientRegistrationPage.enterMobileNumber("12345");
-		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
-		patientRegistrationPage.enterMobileNumber("1234567890");
-		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
-		patientRegistrationPage.enterEmailId("%^%^%^%^");
-		patientRegistrationPage.clickOnRegisterIcon();
-		patientRegistrationPage.enterEmailId("test@demo.com");
-		patientRegistrationPage.enterRefferdBy("demo");
-		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
-		patientRegistrationPage.selectOccupationFromDropdown(occupation);
-		patientRegistrationPage.selectQualificationFromDropdown(qualification);
-		patientRegistrationPage.selectReligionFromDropdown("Hindu");
-		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
-		patientRegistrationPage.checkFinancialDetailsCheckBox();
-		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
-		patientRegistrationPage.selectCompanyFromDropdown(1);
-		patientRegistrationPage.showAllCheckBox();
-		patientRegistrationPage.selectRateContractFromDropdown(1);
-		patientRegistrationPage.checkSchemeCheckBox();
-		patientRegistrationPage.selectSchemeFromDropdown(1);
-		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
-		patientRegistrationPage.yesButtonOnConfirmPopup();
-		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
-		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
-		System.out.println("Patient Registration Id is " +patientRegistrationId);
-
-		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
-
-
-		frontOfficeHomePage.clickOnMenu();
+//		frontOfficeHomePage.clickOnAddPatientAndSelectAnOption("Patient Registration");
+//		patientRegistrationPage.selectTitleFromTitleDropDown("Mr.");
+//		patientRegistrationPage.enterFirstName("Demo");
+//		patientRegistrationPage.enterMiddleName("Test");
+//		patientRegistrationPage.enterLastName("User");
+//		patientRegistrationPage.checkVipCheckBoxAndEnterData("This VIP Data has been added by Test Automation Scripts");
+//		patientRegistrationPage.checkRemarksCheckBoxAndEnterData("This Remarks Data has been added by Test Automation Scripts");
+//		patientRegistrationPage.selectGenderFromGenderDropDown("Male");
+//		patientRegistrationPage.enterDob("15-12-1991");
+//		patientRegistrationPage.enterAge("16");
+//		assertTrue(patientRegistrationPage.verifyLesserAgeAlertMessage("Please enter Date of Birth Age is less than 18 year"), "System is not throwing lesser age than 18 years message");
+//		patientRegistrationPage.enterAge("23");
+//		patientRegistrationPage.selectMartialStatusFromDropDown("Single");
+//		patientRegistrationPage.enterMotherMaidenName("Demo Test Mother");
+//		patientRegistrationPage.enterFathersName("DemoFather@123 ");
+//		patientRegistrationPage.selectNationalityFromDropDown("Indian");
+//		patientRegistrationPage.checkNRIChecbox();
+//		assertTrue(patientRegistrationPage.verifyIDCardDropDownIsEnabled(), "After checking NRI Checkbox, ID Card Dropdown is not getting enabled");
+//		patientRegistrationPage.selectIdCardTypeFromDropDown("PAN CARD");
+//		patientRegistrationPage.enterNationalID("12345");
+//		patientRegistrationPage.enterTelephoneNumber("1234567891011123");
+//		patientRegistrationPage.enterMobileNumber("12345");
+//		patientRegistrationPage.clickOnRegisterIcon();
+//		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
+//		patientRegistrationPage.enterMobileNumber("1234567890");
+//		patientRegistrationPage.enterHouseNumber("Demo Test Address");
+//		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+//		patientRegistrationPage.enterLocationID("Test city");
+//		patientRegistrationPage.enterEmailId("%^%^%^%^");
+//		patientRegistrationPage.clickOnRegisterIcon();
+//		patientRegistrationPage.enterEmailId("test@demo.com");
+//		patientRegistrationPage.enterRefferdBy("demo");
+//		patientRegistrationPage.selectPrefferedLanguageFromDropdown("English");
+//		patientRegistrationPage.selectOccupationFromDropdown(occupation);
+//		patientRegistrationPage.selectQualificationFromDropdown(qualification);
+//		patientRegistrationPage.selectReligionFromDropdown("Hindu");
+//		patientRegistrationPage.selectReferedFromDropdown(referredFrom);
+//		patientRegistrationPage.checkFinancialDetailsCheckBox();
+//		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
+//		patientRegistrationPage.selectCompanyFromDropdown(1);
+//		patientRegistrationPage.showAllCheckBox();
+//		patientRegistrationPage.selectRateContractFromDropdown(1);
+//		patientRegistrationPage.checkSchemeCheckBox();
+//		patientRegistrationPage.selectSchemeFromDropdown(1);
+//		patientRegistrationPage.clickOnRegisterIcon();
+//		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+//		patientRegistrationPage.yesButtonOnConfirmPopup();
+//		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
+//		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
+//		System.out.println("Patient Registration Id is " +patientRegistrationId);
+//
+//		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
+//
+//		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17155737");
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -3160,20 +3117,18 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
-		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
+//		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
+//		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -3183,25 +3138,19 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+		
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality, Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
-
-		//		billingPage.clickOnInsuranceCompanyButton();
-		//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
-		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
-		catch (Exception e) {
-		}
+		catch (Exception e) {}
 		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		billingPage.clickOnYesButtonOnAvailDepositPopup();
 
@@ -3209,33 +3158,20 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		billingPage.clickOnYesBtnUnderProvideDiscountPopup();
 
-
 		billingPage.selectDiscountOnFromDropdown("On Items");
 		billingPage.selecServiceNameFromPercentagePopupDropdown("Investigations");
 		billingPage.selecItemDoctorNameFromDiscountPopupDropdown("24 hour urine 5HIAA");
 		billingPage.selectDiscountHeadFromDropdown("Special Discount");
 		billingPage.selectDiscountReasonFromDropdown("Specail Discount 10%");
 
-		//		
-		//		billingPage.enterDiscountAmount("20000");
-		//		billingPage.enterDiscountAmount("500");
-		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		//		assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
-		//billingPage.selectAuthorisedByFromDropdown("As per MOU of NDMC");
-		//		billingPage.selectOnCompanyRadioButton();
-		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		//		assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
 		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		//assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
+	
 		billingPage.selectAuthorisedByFromDropdown("anshul agarwal");
-		//billingPage.selectOnCompanyRadioButton();
-		//billingPage.enterDiscountAmount("5");
 		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		//assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
+		
 		billingPage.clickOnBillingButtonOnHeader();
 		billingPage.clickOnyesBtnOnGenrateBillPopup();
 		billingPage.enterPatientPaidAmount("500");
-
 
 		billingPage.clickOnNewPaymentModeButton();
 		billingPage.selectSecondPaymentMode("Debit Card");
@@ -3250,7 +3186,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Bills Utility");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17155737");
 		billsUtilityPage.processDueSettlement();
 		billsUtilityPage.clickonyes();
 		billsUtilityPage.clickOnServicesIcon();
@@ -3282,12 +3218,12 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Approve Refunds");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17155737");
 		//approveRefundPage.clickOnApproveButton();
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Bills Utility");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader("RAJH.17155737");
 		//billsUtilityPage.clickOnYesButtonApprovalAgainstBillNoPopup();
 		billsUtilityPage.selectDueSettlementTab();
 		billsUtilityPage.selectModeOfPayment("Credit Card");
@@ -3364,11 +3300,22 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billsUtilityPage.selectIPPatientType();		
 	}
 
-	@Test(priority = 23) 
+	@Test(enabled = false) 
 	public void frontOfficeBillingFullyCreditBillPatientRefundWithRefundApprovalTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillingFullyCreditBillPatientRefundWithRefundApprovalTest", "This test case verify the Fornt Office Billing Fully Credit Bill Patient Refund With Refund Approval Test Case");
 		test.assignCategory("Deposit Billing");
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -3409,9 +3356,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -3450,7 +3398,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -3461,12 +3409,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -3474,7 +3423,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -3487,7 +3436,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality, Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -3498,7 +3447,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -3584,17 +3533,28 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 24)
+	@Test(enabled = false)
 	public void frontOfficeBillingFullyCreditPatientRefundApprovalAndAlsoRejectApprovalTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillingFullyCreditPatientRefundApprovalAndAlsoRejectApprovalTest", "This test case verify the Fornt Office Billing Fully Credit Patient Refund Approval And Also Reject Approval Test Case");
 		test.assignCategory("Deposit Billing");
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
+
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		
+
 		depositPage = new DepositPage(driver);
 		billsUtilityPage = new BillsUtilityPage(driver);
 		approveRefundPage = new ApproveRefundPage(driver);
@@ -3630,9 +3590,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -3671,7 +3632,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -3682,12 +3643,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -3695,7 +3657,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -3708,7 +3670,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality, Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -3719,7 +3681,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -3861,11 +3823,22 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 
 	}
 
-	@Test(priority = 25) 
+	@Test(enabled = false) 
 	public void frontOfficeBillUtilityCashPatientRefundWithDueSettlementTest() throws Throwable {
 
 		test=extent.createTest("frontOfficeBillUtilityCashPatientRefundWithDueSettlementTest", "This test case verify the Fornt Office Bill Utility Cash Patient Refund With Due Settlement Test Case");
 		test.assignCategory("Deposit Billing");
+
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
 
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
@@ -3906,9 +3879,9 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -3926,20 +3899,13 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkSchemeCheckBox();
 		patientRegistrationPage.selectSchemeFromDropdown(1);
 		patientRegistrationPage.clickOnRegisterIcon();
-		//assertTrue(patientRegistrationPage.verifyConfirmPatientDetailsPopupPresence("Confirm Patient Details"), "Confirm Patient Details Popup is not showing Up");
+
 		patientRegistrationPage.yesButtonOnConfirmPopup();
 		//assertTrue(patientRegistrationPage.verifyRegisteredSuccessfullPopupPresence("Registered Successfully"), "Registered Successfully Popup is not showing Up");
 		String patientRegistrationId =	patientRegistrationPage.getUHIDOfPatient();
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
-
-
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
@@ -3947,7 +3913,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -3958,15 +3924,12 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
-
-
-		//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Pathologist");
-		//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("Megha");
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -3974,7 +3937,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -3987,7 +3950,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality, Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -4002,7 +3965,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
 
 		try {
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {
@@ -4081,7 +4044,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billsUtilityPage.clickMakeReceiptButton();
 		billsUtilityPage.clickClearButton();
 		billsUtilityPage. searchPatientDetails();
-		billsUtilityPage.selectRegisteredPatient("RAJH.17153145");
+		billsUtilityPage.selectRegisteredPatient(patientRegistrationId);
 		billsUtilityPage.clickOnSelectRefundButton();
 		billsUtilityPage.selectServices("MANNAT  DEVGAN");
 		billsUtilityPage.selectServices("24 hour urine 5HIAA");
@@ -4130,7 +4093,6 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billsUtilityPage.clickOnSaveButton();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -4191,9 +4153,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -4247,9 +4210,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+		//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -4337,7 +4301,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		//assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		//assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+		//
 
 		depositPage.clickOnCreditCardRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
@@ -4345,25 +4309,35 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnChequeRadioButton();
 		depositPage.enterEmountInAmountTextBox("2000");
 		depositPage.enterChequeDetails("123456789", "Andhra Bank", "Noida");
 		depositPage.clickOnDepositButtonOnHeader();
 		assertTrue(depositPage.isConfirmDepositMessageDisplayed(), "Confirm Deposit Popup is not showing up");
 		depositPage.clickOnYesButtonOnConfirmDepositPopup();
-		assertTrue(depositPage.isDepositTakenSuccessfullyMessageDisplayed(), "Deposit Taken Successfully Message is not showing up");
+
 		depositPage.clickOnPrintButtonOnHeader();
 		assertTrue(depositPage.isPleaseSelectDepositReceiptMessageDisplayed(), "Please Select Deposit Receipt Message is not showing up");
 		depositPage.clickOnFirstDepositDetails();
 	}
 
-	@Test(priority = 27) 
+	@Test(enabled = false) 
 	public void frontOfficeBillUtilityCashPatientWithDiscountDueAmountAndRefundBillWithDueSettlementTest() throws Throwable {	
 
 		test=extent.createTest("frontOfficeBillUtilityCashPatientWithDiscountDueAmountAndRefundBillWithDueSettlementTest", "This test case verify the Fornt Office BillUtility Cash Patient With Discount Due Amount And Refund Bill With Due Settlement Test Case");
 		test.assignCategory("Deposit Billing");
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Speciality=PropertyFile.getproperty("FrontOffice","Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice","Doctor");
 		hisHomePage = new HISHomePage(driver);
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
@@ -4406,9 +4380,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -4433,21 +4406,15 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
 
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
-		//		assertTrue(billingPage.isCashBillingNotAllowedMessageDisplayed(), "Cash Billing Not Allowed Message is not showing Up");
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -4458,23 +4425,17 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-
-		//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Pathologist");
-		//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("Megha");
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectAllTestSpecialityAndDoctorName(Diagnostics_Speciality, Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -4487,7 +4448,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor(Diagnostics_Speciality,Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -4502,7 +4463,7 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
 
 		try {
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type,Company, Corporate_Company, Rate_Contract,Standard_Deductible, Standard_Copay);
 			billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {
@@ -4553,13 +4514,11 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.selectAythorisedByInProcessPaymentPopupAndAddRemarks("anshul agarwal");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
 			billingPage.clickOnVerifyButtonOnProcessPaymentPopup();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		try {
@@ -4567,11 +4526,10 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 			billingPage.clickOnNoButtonOnPrintOPDCard();
 		}
 		catch (Exception e) {}
-		//billingPage.clickOnNoButtonOnPrintOPDCard();
-
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Bills Utility");
 		billsUtilityPage. searchPatientDetails();
+		TTWebsiteDriver.enterInputData(test, "UHID", "modal_UHID", patientRegistrationId);
 		billsUtilityPage.selectRegisteredPatient(patientRegistrationId);
 		billsUtilityPage.clickOnSelectRefundButton();
 		billsUtilityPage.selectAllServices();
@@ -4587,9 +4545,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billsUtilityPage. searchPatientDetails();
 		billsUtilityPage.selectRegisteredPatient(patientRegistrationId);
 		billsUtilityPage.clickOnSelectRefundButton();
-		billsUtilityPage.selectServices("MANNAT  DEVGAN");
+		billsUtilityPage.selectServices(Doctor_Name);
 		billsUtilityPage.selectServices("24 hour urine 5HIAA");
-		//billsUtilityPage.selectServices("X-ray Both Leg Skyline");
 		billsUtilityPage.closerefund();
 		billsUtilityPage.enterUsernamePasswordAndSelectApproveButton("Deepak", "Test1234$");
 

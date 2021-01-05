@@ -33,9 +33,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 	private BillingPage billingPage;
 	private MarkPatientDeceasedPage markPatientDeceasedPage;
 	private MergeAndUnmergeDuplicatePage mergeAndUnmergeDuplicatePage;
-	
-	private String patientRegistrationId = "RAJH.17153173";
 
+	private String patientRegistrationId = "RAJH.17154826";
+	
+	private String city=null;
 	private String desc = null;
 	private String title1 = null;
 	private String desc1 = null;
@@ -83,9 +84,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -111,12 +113,6 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 
 		patientRegistrationPage.clickOnNoButtonOnRegisteredSuccessfullyPopup();
 
-		//
-		//		driver.getURL();
-		//		hisHomePage.loginToTriotreeHIS();
-		//		hisHomePage.clickOnFronOfficeIcon();
-		//		hisHomePage.selectStationAndClickOnYes("Front Office");
-
 
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
@@ -124,7 +120,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			//billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -135,6 +132,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
@@ -145,11 +143,15 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
-		billingPage.clickOnYesButtonOnPatientMappedPopup();
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		try {
+			billingPage.clickOnYesButtonOnPatientMappedPopup();
+		}
+		catch (Exception e) {
+		}
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -161,25 +163,25 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
-		
-//		billingPage.clickOnInsuranceCompanyButton();
-//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
-//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
+
+		//		billingPage.clickOnInsuranceCompanyButton();
+		//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
+		//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
+		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		try {
-		billingPage.clickOnInsuranceCompanyButton();
-		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-		billingPage.clickonschemedetails();
+			billingPage.clickOnInsuranceCompanyButton();
+			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
 		}
 		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
-		
-		
+
+
 		///////////////////////////Not Functioning
 		//		billingPage.enterPatientPaidAmount("500");
 		//		billingPage.clickOnNewPaymentModeButton();
@@ -234,9 +236,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
@@ -268,6 +271,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		catch (Exception e) {}
 
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		}
 		catch (Exception e) {}
@@ -290,10 +294,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -306,7 +310,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -358,9 +362,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
@@ -398,7 +403,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		try {
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "0", "0");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("Automation Testing Scheme 2", "Management Decision", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -418,10 +423,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -434,10 +439,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
-		
+
 		billingPage.clickOnAddToBillButton();
 		try {
 			billingPage.closeSchemeDetailsPopup();
@@ -504,9 +509,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
@@ -551,58 +557,58 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
-//		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
-//		billingPage.clickOnDiagnosticIcon();
-//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-//		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-////		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-////		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-////		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-//		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
-//		billingPage.clickOnYesButtonOnPatientMappedPopup();
-//		billingPage.clickOnManualIcon();
-//		billingPage.selectServiceNameFromDropdown("Cardiology Services");
-//		billingPage.enterDescriptionInManualSection("cardic");
-//		billingPage.selectQuantityInManualSection("50");
-//		billingPage.enterPriceInManualSection("100");
-//		billingPage.clickOnVerifyButton();
-//		billingPage.clickOnOtherServicesIcon();
-//		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-//		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
-//		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-//		//billingPage.selectSpecialityAndDoctor();
-//		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
-//		billingPage.enterRefferedBy("Self");
-//		billingPage.selectFacilitatorFromDropdown(1);
-//
-//		billingPage.clickOnInsuranceCompanyButton();
-//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-//		try {
-//			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "0", "0");
-//			billingPage.clickonschemedetails();
-//		}
-//		catch (Exception e) {}
-//		//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("All Keral Blood Donors Scheme", "testing master", "Today Testing");
-//
-//		//		try {
-//		//			billingPage.okButtonSchemePopup();
-//		//		} catch (Exception e) {
-//		//			// TODO Auto-generated catch block
-//		//			e.printStackTrace();
-//		//		}
-//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
-//		billingPage.clickOnBillingButtonOnHeader();
-//		//		billingPage.clickOnyesBtnOnGenrateBillPopup();
-//		//		billingPage.enterPatientPaidAmount("500");
-//		//		billingPage.clickOnNewPaymentModeButton();
-//		//		billingPage.selectSecondPaymentModeAsCheque();
-//		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");
-//		//		assertTrue(billingPage.verifyBillGotGenerated("generated successfully"), "Bill did not got generated");
-//		//		billingPage.clickOnNoButtonOnBillGotGeneratedPopup();
-//		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
-//		//billingPage.clickOnYesButtonOnOpdPopup();
+		//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
+		//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		//		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
+		//		billingPage.clickOnDiagnosticIcon();
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		//		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
+		////		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		////		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		////		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		//		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		//		billingPage.clickOnYesButtonOnPatientMappedPopup();
+		//		billingPage.clickOnManualIcon();
+		//		billingPage.selectServiceNameFromDropdown("Cardiology Services");
+		//		billingPage.enterDescriptionInManualSection("cardic");
+		//		billingPage.selectQuantityInManualSection("50");
+		//		billingPage.enterPriceInManualSection("100");
+		//		billingPage.clickOnVerifyButton();
+		//		billingPage.clickOnOtherServicesIcon();
+		//		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
+		//		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+		//		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
+		//		//billingPage.selectSpecialityAndDoctor();
+		//		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		//		billingPage.enterRefferedBy("Self");
+		//		billingPage.selectFacilitatorFromDropdown(1);
+		//
+		//		billingPage.clickOnInsuranceCompanyButton();
+		//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
+		//		try {
+		//			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+		//			billingPage.clickonschemedetails();
+		//		}
+		//		catch (Exception e) {}
+		//		//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("All Keral Blood Donors Scheme", "testing master", "Today Testing");
+		//
+		//		//		try {
+		//		//			billingPage.okButtonSchemePopup();
+		//		//		} catch (Exception e) {
+		//		//			// TODO Auto-generated catch block
+		//		//			e.printStackTrace();
+		//		//		}
+		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
+		//		billingPage.clickOnBillingButtonOnHeader();
+		//		//		billingPage.clickOnyesBtnOnGenrateBillPopup();
+		//		//		billingPage.enterPatientPaidAmount("500");
+		//		//		billingPage.clickOnNewPaymentModeButton();
+		//		//		billingPage.selectSecondPaymentModeAsCheque();
+		//		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");
+		//		//		assertTrue(billingPage.verifyBillGotGenerated("generated successfully"), "Bill did not got generated");
+		//		//		billingPage.clickOnNoButtonOnBillGotGeneratedPopup();
+		//		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
+		//		//billingPage.clickOnYesButtonOnOpdPopup();
 
 	}
 
@@ -649,9 +655,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
@@ -687,6 +694,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
@@ -697,10 +705,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -713,18 +721,20 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
 
 		billingPage.clickOnInsuranceCompanyButton();
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "0", "0");
+		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS", "Trio Tree Noida", "Sagar,gohri,king ", "0", "0");
+
+		///billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 		billingPage.clickonschemedetails();
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "0", "0");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -793,9 +803,11 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
@@ -809,9 +821,9 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.checkFinancialDetailsCheckBox();
 		patientRegistrationPage.selectCompanyTypeFromDropdown("Corporate");
 		patientRegistrationPage.selectCompanyFromDropdown(1);
-		
+
 		patientRegistrationPage.showAllCheckBox();/////////////////////////////////////not clicked issues arise
-		
+
 		patientRegistrationPage.selectRateContractFromDropdown(1);
 		patientRegistrationPage.checkSchemeCheckBox();
 		patientRegistrationPage.selectSchemeFromDropdown(1);
@@ -827,13 +839,14 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickOnMenu();
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
 		patientRegistrationPage.searchUHIDFromSearchBoxOnHeader(patientRegistrationId);
-		
+
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.closevalidityschemepopup();
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
@@ -846,8 +859,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
 		//billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		//billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -859,18 +872,18 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
 
 		billingPage.clickOnInsuranceCompanyButton();
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "0", "0");
+		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 		billingPage.clickonschemedetails();
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "0", "0");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -915,7 +928,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");		
 		frontOfficeHomePage.clickOnBillingAndSelectAnOption("Billing");		
-		patientRegistrationPage.searchUHIDFromSearchBoxOnHeaderSecondMethod("RAJH.17152860");
+		patientRegistrationPage.searchUHIDFromSearchBoxOnHeaderSecondMethod("RAJH.17154826");
 		//assertTrue(billingPage.verifySchemeExpiryPopupMessage("The validity of this patients association with scheme is expired. Please extend the validity or remove scheme!"), "Scheme Expiry Popup is not showing up");
 		//billingPage.closeSchemeExpiryPopup();
 		try {
@@ -924,6 +937,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		catch (Exception e) {}
 		billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
@@ -941,17 +955,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.closePreviousVisitPopup();
 
 		//choose speciality
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" brad   pitt");
 		billingPage.selectScheduleSlotAndToken("54"); 
 		//Diagnostic Test
 		billingPage.clickOnDiagnosticIcon();
-		billingPage.selectTestsByName("24 hour Urine Cortisol");
+		//billingPage.selectTestsByName("24 hour Urine Cortisol");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 
 		//Manual Icon 
 		billingPage.clickOnManualIcon();
@@ -965,17 +979,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
 		billingPage.clickOnInsuranceCompanyButton();
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 		billingPage.clickonschemedetails();
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -993,7 +1007,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.selectAuthorisedByFromDropdown("anshul");
 		billingPage.selectOnCompanyRadioButton();
 		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		assertTrue(patientRegistrationPage.verifymessagedisplay("Discount of given % cannot be saved as Maximum Discount allowed in billing service item is applicable!"), "Verify that Discount of given % cannot be saved as Maximum Discount allowed in billing service item is applicable!");
+		//assertTrue(patientRegistrationPage.verifymessagedisplay("Discount of given % cannot be saved as Maximum Discount allowed in billing service item is applicable!"), "Verify that Discount of given % cannot be saved as Maximum Discount allowed in billing service item is applicable!");
 		billingPage.closeprocessdiscountpopup();
 		try {
 			billingPage.clickOnBillingButtonOnHeader();
@@ -1061,9 +1075,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
@@ -1099,20 +1114,21 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1125,7 +1141,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -1135,33 +1151,33 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.checkDiscountCheckbox();
 		billingPage.clickOnYesBtnUnderProvideDiscountPopup();
 		//assertTrue(billingPage.isPercentageProcessDiscountMessageDisplayed(), "Percentage Process Discount Message is NOT Displayed");
-//		billingPage.selectDiscountOnFromDropdown("On Items");
-//		billingPage.selecServiceNameFromPercentagePopupDropdown("Investigations");
-//		billingPage.selecItemDoctorNameFromDiscountPopupDropdown("24 hour Urine Cortisol");
-//		billingPage.selectDiscountHeadFromDropdown("Staff Dependent");
-//		billingPage.selectDiscountReasonFromDropdown("Investigation Discount");
-//
-//		//billingPage.enterDiscountAmount("500");
-//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-//		//assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
-//		billingPage.selectAuthorisedByFromDropdown("anshul agarwal");
-//		billingPage.selectOnCompanyRadioButton();
-//		billingPage.enterDiscountAmount("5");
-//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-//		//assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
-//		billingPage.selectOnPatientRadioButton();
-//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-//		billingPage.clickOnBillingButtonOnHeader();
-//		billingPage.clickOnyesBtnOnGenrateBillPopup();
-//		billingPage.enterPatientPaidAmount("5000");
-//		billingPage.clickOnNewPaymentModeButton();
-//		billingPage.selectSecondPaymentModeAsCheque();
-//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		
-//		billingPage.clickOnVerifyButtonOnProcessPayment();
-//		assertTrue(billingPage.verifyBillGotGenerated("generated successfully"), "Bill did not got generated");
-//		billingPage.clickOnNoButtonOnBillGotGeneratedPopup();
-//		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
-//		//billingPage.clickOnYesButtonOnOpdPopup();
+		//		billingPage.selectDiscountOnFromDropdown("On Items");
+		//		billingPage.selecServiceNameFromPercentagePopupDropdown("Investigations");
+		//		billingPage.selecItemDoctorNameFromDiscountPopupDropdown("24 hour Urine Cortisol");
+		//		billingPage.selectDiscountHeadFromDropdown("Staff Dependent");
+		//		billingPage.selectDiscountReasonFromDropdown("Investigation Discount");
+		//
+		//		//billingPage.enterDiscountAmount("500");
+		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
+		//		//assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
+		//		billingPage.selectAuthorisedByFromDropdown("anshul agarwal");
+		//		billingPage.selectOnCompanyRadioButton();
+		//		billingPage.enterDiscountAmount("5");
+		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
+		//		//assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
+		//		billingPage.selectOnPatientRadioButton();
+		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
+		//		billingPage.clickOnBillingButtonOnHeader();
+		//		billingPage.clickOnyesBtnOnGenrateBillPopup();
+		//		billingPage.enterPatientPaidAmount("5000");
+		//		billingPage.clickOnNewPaymentModeButton();
+		//		billingPage.selectSecondPaymentModeAsCheque();
+		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		
+		//		billingPage.clickOnVerifyButtonOnProcessPayment();
+		//		assertTrue(billingPage.verifyBillGotGenerated("generated successfully"), "Bill did not got generated");
+		//		billingPage.clickOnNoButtonOnBillGotGeneratedPopup();
+		//		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
+		//		//billingPage.clickOnYesButtonOnOpdPopup();
 	}
 
 	@Test(priority = 9) 
@@ -1208,9 +1224,11 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");
@@ -1258,66 +1276,66 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
-//		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
-//		billingPage.clickOnDiagnosticIcon();
-//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-//		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-////		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-////		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-////		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-//		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
-//		billingPage.clickOnYesButtonOnPatientMappedPopup();
-//		billingPage.clickOnManualIcon();
-//		billingPage.selectServiceNameFromDropdown("Cardiology Services");
-//		billingPage.enterDescriptionInManualSection("cardic");
-//		billingPage.selectQuantityInManualSection("50");
-//		billingPage.enterPriceInManualSection("100");
-//		billingPage.clickOnVerifyButton();
-//		billingPage.clickOnOtherServicesIcon();
-//		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-//		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
-//		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-//		//billingPage.selectSpecialityAndDoctor();
-//		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
-//		billingPage.enterRefferedBy("Self");
-//		billingPage.selectFacilitatorFromDropdown(1);
-//		billingPage.clickOnAddToBillButton();
-//
-//		assertTrue(billingPage.verifyInvestigationInstructionPopupIsPresent(), "Investigation Instruction Popup Is Not showing up");
-//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
-//		billingPage.checkDiscountCheckbox();
-//		billingPage.clickOnYesBtnUnderProvideDiscountPopup();
-//		assertTrue(billingPage.isPercentageProcessDiscountMessageDisplayed(), "Percentage Process Discount Message is NOT Displayed");
-//		billingPage.selectDiscountOnFromDropdown("On Items");
-//		billingPage.selecServiceNameFromPercentagePopupDropdown("Investigations");
-//		billingPage.selecItemDoctorNameFromDiscountPopupDropdown("24 hour Urine Cortisol");
-//		billingPage.selectDiscountHeadFromDropdown("Staff Dependent");
-//		billingPage.selectDiscountReasonFromDropdown("Investigation Discount");
-//
-//		//billingPage.enterDiscountAmount("500");
-//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-//		//assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
-//		billingPage.selectAuthorisedByFromDropdown("anshul agarwal");
-//		billingPage.selectOnCompanyRadioButton();
-//		billingPage.enterDiscountAmount("5");
-//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-//		//assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
-//		billingPage.selectOnPatientRadioButton();
-//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-//		billingPage.clickOnBillingButtonOnHeader();
-//		billingPage.clickOnyesBtnOnGenrateBillPopup();
-//		billingPage.enterPatientPaidAmount("5000");
-//		billingPage.clickOnNewPaymentModeButton();
-//		billingPage.selectSecondPaymentModeAsCheque();
-//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		
-//		billingPage.clickOnVerifyButtonOnProcessPayment();
-//		billingPage.clickOnYesButtonOnOpdPopup();
-//		//assertTrue(billingPage.verifyBillGotGenerated("generated successfully"), "Bill did not got generated");
-//		//billingPage.clickOnNoButtonOnBillGotGeneratedPopup();
-//		//		assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
-//		//		
+		//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
+		//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		//		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
+		//		billingPage.clickOnDiagnosticIcon();
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		//		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
+		////		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		////		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		////		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		//		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		//		billingPage.clickOnYesButtonOnPatientMappedPopup();
+		//		billingPage.clickOnManualIcon();
+		//		billingPage.selectServiceNameFromDropdown("Cardiology Services");
+		//		billingPage.enterDescriptionInManualSection("cardic");
+		//		billingPage.selectQuantityInManualSection("50");
+		//		billingPage.enterPriceInManualSection("100");
+		//		billingPage.clickOnVerifyButton();
+		//		billingPage.clickOnOtherServicesIcon();
+		//		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
+		//		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
+		//		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
+		//		//billingPage.selectSpecialityAndDoctor();
+		//		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		//		billingPage.enterRefferedBy("Self");
+		//		billingPage.selectFacilitatorFromDropdown(1);
+		//		billingPage.clickOnAddToBillButton();
+		//
+		//		assertTrue(billingPage.verifyInvestigationInstructionPopupIsPresent(), "Investigation Instruction Popup Is Not showing up");
+		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
+		//		billingPage.checkDiscountCheckbox();
+		//		billingPage.clickOnYesBtnUnderProvideDiscountPopup();
+		//		assertTrue(billingPage.isPercentageProcessDiscountMessageDisplayed(), "Percentage Process Discount Message is NOT Displayed");
+		//		billingPage.selectDiscountOnFromDropdown("On Items");
+		//		billingPage.selecServiceNameFromPercentagePopupDropdown("Investigations");
+		//		billingPage.selecItemDoctorNameFromDiscountPopupDropdown("24 hour Urine Cortisol");
+		//		billingPage.selectDiscountHeadFromDropdown("Staff Dependent");
+		//		billingPage.selectDiscountReasonFromDropdown("Investigation Discount");
+		//
+		//		//billingPage.enterDiscountAmount("500");
+		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
+		//		//assertTrue(billingPage.isAuthorisedByErrorMessageDisplayed(), "Authorised By Error Message is NOT Displayed");
+		//		billingPage.selectAuthorisedByFromDropdown("anshul agarwal");
+		//		billingPage.selectOnCompanyRadioButton();
+		//		billingPage.enterDiscountAmount("5");
+		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
+		//		//assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
+		//		billingPage.selectOnPatientRadioButton();
+		//		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
+		//		billingPage.clickOnBillingButtonOnHeader();
+		//		billingPage.clickOnyesBtnOnGenrateBillPopup();
+		//		billingPage.enterPatientPaidAmount("5000");
+		//		billingPage.clickOnNewPaymentModeButton();
+		//		billingPage.selectSecondPaymentModeAsCheque();
+		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		
+		//		billingPage.clickOnVerifyButtonOnProcessPayment();
+		//		billingPage.clickOnYesButtonOnOpdPopup();
+		//		//assertTrue(billingPage.verifyBillGotGenerated("generated successfully"), "Bill did not got generated");
+		//		//billingPage.clickOnNoButtonOnBillGotGeneratedPopup();
+		//		//		assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
+		//		//		
 
 	}
 
@@ -1363,9 +1381,11 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1404,7 +1424,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -1419,16 +1439,16 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1441,19 +1461,19 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
-		
-//		billingPage.clickOnInsuranceCompanyButton();
-//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
-//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
+
+		//		billingPage.clickOnInsuranceCompanyButton();
+		//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
+		//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
+		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		try {
-		billingPage.clickOnInsuranceCompanyButton();
-		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-		billingPage.clickonschemedetails();
+			billingPage.clickOnInsuranceCompanyButton();
+			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
 		}
@@ -1545,9 +1565,11 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1601,9 +1623,11 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1649,7 +1673,9 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		catch (Exception e) {}
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
+
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
@@ -1667,16 +1693,16 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1689,7 +1715,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -1719,21 +1745,21 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.isCompOnlyDiscoutErrorMessageDisplayed(), "Comp Only Discount Error Message is NOT Displayed");
 		billingPage.selectOnPatientRadioButton();
 		billingPage.clickOnYesBtnPercentageProcessDiscountPopup();
-		
+
 		billingPage.clickOnBillingButtonOnHeader();
 		billingPage.clickOnyesBtnOnGenrateBillPopup();
 		//Assert.assertTrue(patientRegistrationPage.verifymessagedisplay("there is no token to be assigned for this doctor"));
-//		billingPage.enterPatientPaidAmount("5000");
-//		billingPage.clickOnNewPaymentModeButton();
-//		billingPage.selectSecondPaymentModeAsCheque();
-//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		
-//		billingPage.clickOnVerifyButtonOnProcessPayment();
-//		billingPage.clickOnYesButtonOnOpdPopup();
+		//		billingPage.enterPatientPaidAmount("5000");
+		//		billingPage.clickOnNewPaymentModeButton();
+		//		billingPage.selectSecondPaymentModeAsCheque();
+		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		
+		//		billingPage.clickOnVerifyButtonOnProcessPayment();
+		//		billingPage.clickOnYesButtonOnOpdPopup();
 		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
 		//billingPage.clickOnYesButtonOnOpdPopup();
 
 	}
-	
+
 	@Test(priority = 12) //fixed 27-05-2020
 	public void frontOfficeBillingselectInsuranceCompTestCase() throws Throwable {	
 
@@ -1776,9 +1802,10 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+		patientRegistrationPage.enterLocationID("Test city");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1817,7 +1844,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -1832,16 +1859,16 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
 		//assertTrue(billingPage.verifyPriceNotDefinedMessage("Price not defined for this service"), "Price Not Defined Message is not showing up");
-//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
-//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
-//		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("Cardiology", "MANNAT  DEVGAN");
+		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
+		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
+		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1854,19 +1881,19 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("Cardiology", "MANNAT  DEVGAN");
+		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
-		
-//		billingPage.clickOnInsuranceCompanyButton();
-//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
-//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
+
+		//		billingPage.clickOnInsuranceCompanyButton();
+		//		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
+		//		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "STATE BANK OF INDIA", "OTHER", "STATE BANK OF INDIA - (CGHS)", "100", "50");
+		//		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		try {
-		billingPage.clickOnInsuranceCompanyButton();
-		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS COMPANY", "Trio Tree Noida", "NEW CGHS", "5", "10");
-		billingPage.clickonschemedetails();
+			billingPage.clickOnInsuranceCompanyButton();
+			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
 		}

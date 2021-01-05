@@ -2,8 +2,10 @@ package com.triotree.test.website.ADT;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
 import com.triotree.website.pages.ADT.ADTHomePage;
 import com.triotree.website.pages.ADT.BedStatusPage;
@@ -11,6 +13,7 @@ import com.triotree.website.pages.ADT.IPDepositRefundformPage;
 import com.triotree.website.pages.ADT.UpdatePatientDetailsandAddpackagePage;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 
+@Listeners(ResultListener.class)
 public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 {
 	private static final Logger logger = LogManager
@@ -56,7 +59,8 @@ public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 		updatedetail.enterIPNumber(test,"40934");
 		updatedetail.clickonDependentADM(test);
 		adtpage.validatepopuptext(test);
-
+		
+		updatedetail.clickonClear_Button(test);
 		updatedetail.enterIPNumber(test,"15726");
 		adtpage.verifyDetailsFetch(test);
 		updatedetail.clickonModifyButton();
@@ -72,7 +76,7 @@ public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 		updatedetail.selectAllottedBedType(test);
 		updatedetail.selectward(test,"1st FLR T1 Transplant ICU");
 		updatedetail.selectBed(test);
-		updatedetail.selectandfilledspecialityprimaryandReferring(test,"Cardiology","Anish  ","Anish");
+		updatedetail.selectandfilledspecialityprimaryandReferring(test,"cardiology1","brad   pitt","brad   pitt");
 		updatedetail.getvalueofFirstandLastName(test);
 		updatedetail.clickoncancelbutton(test);
 

@@ -41,67 +41,62 @@ public class DepositPage extends HISWebsiteBasePage{
 	private final By FIRST_DEPOSIT_DETAILS = By.xpath("//table/thead//following::tbody/tr[1]/td[1]");
 	private final By SELECT_MODE_OF_PAYMENT_MESSAGE = By.xpath("//p[contains(text(),'Please select the mode of payment!')]");
 
-	public void clickOnDepositButtonOnHeader() {
-
+	public void clickOnDepositButtonOnHeader()
+	{
 		try {
-			driver.waitForElementPresent(By.xpath("//a[@id='btnremarksOk']"), 120);
-			driver.click(By.xpath("//a[@id='btnremarksOk']"));
+			//driver.findElement(By.xpath("//a[@id='btnremarksOk']")).click();
+			driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(DEPOSIT_BUTTON_HEADER));
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		driver.waitForElementPresent(DEPOSIT_BUTTON_HEADER);
-		driver.click(DEPOSIT_BUTTON_HEADER);
 	}
 
 	public boolean isConfirmDepositMessageDisplayed() {
-		driver.waitForElementPresent(CONFIRM_DEPOSIT_POPUP_MESSAGE);
 		return driver.isElementPresent(CONFIRM_DEPOSIT_POPUP_MESSAGE);
 	}
 
 	public void clickOnYesButtonOnConfirmDepositPopup() throws InterruptedException {
-		Thread.sleep(4000);	
-		driver.click(CONFIRM_DEPOSIT_YES_BUTTON);
-		logger.info("Yes Button Clicked on Confirm Deposit Popup");
+		try {
+			driver.findElement(CONFIRM_DEPOSIT_YES_BUTTON).click();
+			logger.info("Yes Button Clicked on Confirm Deposit Popup");
+		}
+		catch (Exception e) {}
 	}
 
 	public boolean isAmountCanNotBeZeroMessageDisplayed() {
-		driver.waitForElementPresent(AMOUNT_CANNOT_BE_ZERO_MESSAGE);
 		return driver.isElementPresent(AMOUNT_CANNOT_BE_ZERO_MESSAGE);
 	}
 
 	public void enterEmountInAmountTextBox(String amount) {
-		driver.waitForElementPresent(AMOUNT_TEXT_BOX);
-		driver.clear(AMOUNT_TEXT_BOX);
-		driver.findElement(AMOUNT_TEXT_BOX).sendKeys(amount);
-		logger.info("Following Amount has been added in Amount Text Box"+amount);
-		
+		try {
+			driver.clear(AMOUNT_TEXT_BOX);
+			driver.findElement(AMOUNT_TEXT_BOX).sendKeys(amount);
+			logger.info("Following Amount has been added in Amount Text Box"+amount);
+		}
+		catch (Exception e) {}
 		try {
 			driver.findElement(By.xpath("//button[@id='btnEditReceivedBy']")).click();
-			driver.pauseExecutionFor(5000);
 			driver.findElement(By.xpath("//input[@id='txtReceivedBy']")).sendKeys("Automation");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 
 	public boolean isTotalAmountInCashMessageDisplayed() {
-		driver.waitForElementPresent(TOTAL_AMOUNT_IN_CASH_MESSAGE);
+		//	driver.waitForElementPresent(TOTAL_AMOUNT_IN_CASH_MESSAGE);
 		return driver.isElementPresent(TOTAL_AMOUNT_IN_CASH_MESSAGE);
 	}
 
 	public boolean isDepositTakenSuccessfullyMessageDisplayed() {
-		driver.waitForElementPresent(DEPOSIT_TAKEN_SUCCESSFULLY_MESSAGE);
+		//driver.waitForElementPresent(DEPOSIT_TAKEN_SUCCESSFULLY_MESSAGE);
 		return driver.isElementPresent(DEPOSIT_TAKEN_SUCCESSFULLY_MESSAGE);
 	}
 
 	public void clickOnCreditCardRadioButton() {
 		try {
-		driver.waitForElementPresent(CREDIT_CARD_RADIO_BUTTON);
-		driver.click(CREDIT_CARD_RADIO_BUTTON);
-		logger.info("Credit Card Radio Button Clicked");
+			//driver.waitForElementPresent(CREDIT_CARD_RADIO_BUTTON);
+			driver.findElement(CREDIT_CARD_RADIO_BUTTON).click();
+			logger.info("Credit Card Radio Button Clicked");
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -109,87 +104,106 @@ public class DepositPage extends HISWebsiteBasePage{
 	}
 
 	public void enterCreditCardDetails(int cardNo, String cardName, String bankName, String transactionNo) throws InterruptedException {
-		driver.waitForElementPresent(CARD_NO_TEXT_BOX);
-		Thread.sleep(3000);
-		JavascriptExecutor jse = (JavascriptExecutor)TTWebsiteDriver.driver;
-		String s1="document.getElementById('Card_no_Credit').value='123456789'";
-		jse.executeScript(s1);
+		//driver.waitForElementPresent(CARD_NO_TEXT_BOX);
+		//Thread.sleep(3000);
+		try {
+			JavascriptExecutor jse = (JavascriptExecutor)TTWebsiteDriver.driver;
+			String s1="document.getElementById('Card_no_Credit').value='123456789'";
+			jse.executeScript(s1);
 
 
-		//driver.findElement(CARD_NO_TEXT_BOX).sendKeys(cardName);
-		Select cardNameDropdown = new Select(driver.findElement(CARD_NAME_DROPDOWN));
-		cardNameDropdown.selectByVisibleText(cardName);
-		Select bankdNameDropdown = new Select(driver.findElement(BANK_NAME_DROPDOWN));
-		bankdNameDropdown.selectByVisibleText(bankName);
-		driver.findElement(TRANSACTION_NO_TEXT_BOX).sendKeys(transactionNo);
-		logger.info("Credit Card Details Entered");
+			//driver.findElement(CARD_NO_TEXT_BOX).sendKeys(cardName);
+			Select cardNameDropdown = new Select(driver.findElement(CARD_NAME_DROPDOWN));
+			cardNameDropdown.selectByVisibleText(cardName);
+			Select bankdNameDropdown = new Select(driver.findElement(BANK_NAME_DROPDOWN));
+			bankdNameDropdown.selectByVisibleText(bankName);
+			driver.findElement(TRANSACTION_NO_TEXT_BOX).sendKeys(transactionNo);
+			logger.info("Credit Card Details Entered");
+		}
+		catch (Exception e) {
+
+		}
 	}
 
 	public void clickOnChequeRadioButton() {
-		driver.waitForElementPresent(CHEQUE_RADIO_BUTTON);
-		driver.click(CHEQUE_RADIO_BUTTON);
-		logger.info("Cheque Radio Button Clicked");
+		//driver.waitForElementPresent(CHEQUE_RADIO_BUTTON);
+		try {
+			driver.findElement(CHEQUE_RADIO_BUTTON).click();
+			logger.info("Cheque Radio Button Clicked");
+		}
+		catch (Exception e) {
+		}
 	}
 
-	public void enterChequeDetails(String chequeNo, String bankName, String branchName) {
-		driver.waitForElementPresent(CHEQUE_NO_TEXT_BOX);
-		driver.findElement(CHEQUE_NO_TEXT_BOX).sendKeys(chequeNo);
-		Select bankNameDropdown = new Select(driver.findElement(BANK_NAME_CHEQUE_DROPDOWN));
-		bankNameDropdown.selectByVisibleText(bankName);
-		driver.findElement(BRANCH_NAME_TEXT_BOX).sendKeys(branchName);
-		logger.info("Cheque Details Entered");
+	public void enterChequeDetails(String chequeNo, String bankName, String branchName) 
+	{
+		try {
+			driver.findElement(CHEQUE_NO_TEXT_BOX).sendKeys(chequeNo);
+			Select bankNameDropdown = new Select(driver.findElement(BANK_NAME_CHEQUE_DROPDOWN));
+			bankNameDropdown.selectByVisibleText(bankName);
+			driver.findElement(BRANCH_NAME_TEXT_BOX).sendKeys(branchName);
+			logger.info("Cheque Details Entered");
+		}
+		catch (Exception e) {
+		}
 	}
 
 	public void clickOnPrintButtonOnHeader() {
-		driver.waitForElementPresent(PRINT_BUTTON_HEADER);
-		driver.click(PRINT_BUTTON_HEADER);
-		logger.info("Print Button Clicked");
+		//driver.waitForElementPresent(PRINT_BUTTON_HEADER);
+		try {
+			driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(PRINT_BUTTON_HEADER));
+			logger.info("Print Button Clicked");
+		}
+		catch (Exception e) {}
 	}
 
 	public boolean isPleaseSelectDepositReceiptMessageDisplayed() {
-		driver.waitForElementPresent(PLEASE_SELECT_DEPOSIT_RECEIPT_MESSAGE);
+		//driver.waitForElementPresent(PLEASE_SELECT_DEPOSIT_RECEIPT_MESSAGE);
 		return driver.isElementPresent(PLEASE_SELECT_DEPOSIT_RECEIPT_MESSAGE);
 	}
 
 	public void clickOnFirstDepositDetails() {
-		driver.waitForElementPresent(FIRST_DEPOSIT_DETAILS);
-		driver.click(FIRST_DEPOSIT_DETAILS);
-		logger.info("First Deposit Clicked");
+		//driver.waitForElementPresent(FIRST_DEPOSIT_DETAILS);
+		try {
+			driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(FIRST_DEPOSIT_DETAILS));
+			logger.info("First Deposit Clicked");
+		}
+		catch (Exception e) {}
 	}
 
-	public boolean isSelectModeOfPaymentMessageDisplayed() {
-		driver.waitForElementPresent(SELECT_MODE_OF_PAYMENT_MESSAGE);
+	public boolean isSelectModeOfPaymentMessageDisplayed() 
+	{
 		return driver.isElementPresent(SELECT_MODE_OF_PAYMENT_MESSAGE);
 	}
 
 	public void clickOnClearButton() {
-		driver.waitForElementPresent(By.xpath("//a[@id='Clear']//i[@class='fa fa-refresh']"));
-		driver.click(By.xpath("//a[@id='Clear']//i[@class='fa fa-refresh']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='Clear']//i[@class='fa fa-refresh']"));
+		driver.findElement(By.xpath("//a[@id='Clear']//i[@class='fa fa-refresh']")).click();
 	}
 
 	public void clickYesButtonPatienIsMerged() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnMergedUhidYes']"));
-		driver.click(By.xpath("//a[@id='btnMergedUhidYes']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnMergedUhidYes']"));
+		driver.findElement(By.xpath("//a[@id='btnMergedUhidYes']")).click();
 	}
-	
+
 	public void clickNoButtonPatienIsMerged() {
-		driver.waitForElementPresent(By.xpath("//a[@id='btnMergedUhidNo']"));
-		driver.click(By.xpath("//a[@id='btnMergedUhidNo']"));
+		//driver.waitForElementPresent(By.xpath("//a[@id='btnMergedUhidNo']"));
+		driver.findElement(By.xpath("//a[@id='btnMergedUhidNo']")).click();
 	}
-	
+
 	public void clickonwalltreecheckbox() {
-		
+
 		WebElement walltree = driver.findElement(By.xpath("//input[@id='Rechrge']"));
 		if(walltree.isSelected()) 
 		{
 			driver.findElement(By.xpath("//input[@id='Rechrge']")).click();
 		}
 	}
-	
+
 	public void closesearchpopup() throws InterruptedException 
 	{
-		Thread.sleep(2000);
-		driver.findElement(By.xpath("//div[@id='fosearch_patient']//a[@class='modal_close']")).click();
+		//Thread.sleep(2000);
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(By.xpath("//div[@id='fosearch_patient']//a[@class='modal_close']")));
 		logger.info("Close Search Popup");
 	}
 }

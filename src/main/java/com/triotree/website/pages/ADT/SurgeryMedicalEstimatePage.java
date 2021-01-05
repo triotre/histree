@@ -224,12 +224,21 @@ public class SurgeryMedicalEstimatePage extends HISWebsiteBasePage {
 		test.info(m2);
 	}
 
-	public void selectCoConsultant(ExtentTest test,String text) 
+	public void selectCoConsultant(ExtentTest test) 
 	{
-		TTWebsiteDriver.selectByvisibletext(CoConsultant, text);
-		logger.info("Co-Consultant= "+text+" is selected");
-		Markup m2=MarkupHelper.createLabel("Co-Consultant= "+text+" is selected", ExtentColor.GREEN);
-		test.info(m2);
+		Select sl =new Select(driver.findElement(CoConsultant));
+		List<WebElement> option_list = sl.getOptions();
+		for(int i=0;i<option_list.size()-1;i++) 
+		{
+			if(!option_list.get(i).getText().isEmpty())
+			{
+				sl.selectByVisibleText(option_list.get(i).getText());	
+				logger.info("Co-Consultant= "+option_list.get(i).getText()+" is selected");
+				Markup m2=MarkupHelper.createLabel("Co-Consultant= "+option_list.get(i).getText()+" is selected", ExtentColor.GREEN);
+				test.info(m2);
+				break;
+			}
+		}
 	}
 
 	public void enterCOVisitsDays(ExtentTest test,String text) 
@@ -427,17 +436,26 @@ public class SurgeryMedicalEstimatePage extends HISWebsiteBasePage {
 	public void selectService(ExtentTest test,String text) 
 	{
 		TTWebsiteDriver.selectByvisibletext(Service, text);
-		logger.info("Service= "+text+" is Selected");
-		Markup m2=MarkupHelper.createLabel("Service= "+text+" is Selected", ExtentColor.GREEN);
+		logger.info("Service "+text+" is Selected");
+		Markup m2=MarkupHelper.createLabel("Service "+text+" is Selected", ExtentColor.GREEN);
 		test.info(m2);
 	}
 
-	public void selectItem(ExtentTest test,String text) 
+	public void selectItem(ExtentTest test) 
 	{
-		TTWebsiteDriver.selectByvisibletext(Item, text);
-		logger.info("Item= "+text+" is Selected");
-		Markup m2=MarkupHelper.createLabel("Item= "+text+" is Selected", ExtentColor.GREEN);
-		test.info(m2);
+		Select sl =new Select(driver.findElement(Item));
+		List<WebElement> option_list = sl.getOptions();
+		for(int i=0;i<option_list.size()-1;i++)
+		{
+			if(!option_list.get(i).getText().isEmpty() && !option_list.get(i).getText().equals(" Select "))
+			{
+				sl.selectByVisibleText(option_list.get(i).getText());
+				logger.info("Item "+option_list.get(i).getText()+" is Selected");
+				Markup m2=MarkupHelper.createLabel("Item "+option_list.get(i).getText()+" is Selected", ExtentColor.GREEN);
+				test.info(m2);
+				break;
+			}
+		}
 	}
 
 

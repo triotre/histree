@@ -120,9 +120,10 @@ public class MergeDuplicateTest extends TTWebsiteBaseTest{
 		assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		//assertTrue(patientRegistrationPage.verifyInvalidEmailIdAlertMessage("Please enter correct email Id!"), "Invalid Email ID is getting accepted by the system");

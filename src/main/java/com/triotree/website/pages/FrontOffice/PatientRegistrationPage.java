@@ -9,6 +9,7 @@ import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
+import com.aventstack.extentreports.ExtentTest;
 import com.triotree.driver.TTDriver;
 import com.triotree.driver.website.TTWebsiteDriver;
 import com.triotree.website.pages.CommonPages.HISWebsiteBasePage;
@@ -141,13 +142,13 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectFillActualDemographicsCheckbox() {
-		driver.waitForElementPresent(ALIAS_CHECKBOX);
-		driver.click(ALIAS_CHECKBOX);
+		//driver.waitForElementPresent(ALIAS_CHECKBOX);
+		driver.findElement(ALIAS_CHECKBOX).click();
 		logger.info("Alias Checkbox is checked");
 	}
 
 	public void enterFirstName(String firstName) {
-		driver.waitForElementPresent(FIRST_NAME);
+		//driver.waitForElementPresent(FIRST_NAME);
 		driver.findElement(FIRST_NAME).clear();
 		driver.findElement(FIRST_NAME).sendKeys(firstName);
 		logger.info("First Name has been added as : " +  firstName);
@@ -155,7 +156,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void enterMiddleName(String middleName) {
-		driver.waitForElementPresent(MIDDLE_NAME);
+		//driver.waitForElementPresent(MIDDLE_NAME);
 		driver.findElement(MIDDLE_NAME).clear();
 		driver.findElement(MIDDLE_NAME).sendKeys(middleName);
 		logger.info("Middle Name has been added as : " +  middleName);
@@ -163,7 +164,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void enterLastName(String lastName) {
-		driver.waitForElementPresent(LAST_NAME);
+		//driver.waitForElementPresent(LAST_NAME);
 		driver.findElement(LAST_NAME).clear();
 		driver.findElement(LAST_NAME).sendKeys(lastName);
 		logger.info("Last Name has been added as : " +  lastName);
@@ -171,26 +172,26 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectGenderFromGenderDropDown(String gender) {
-		driver.waitForElementPresent(GENDER_DROPDOWM);
+		//driver.waitForElementPresent(GENDER_DROPDOWM);
 		Select genderDropDown = new Select(driver.findElement(GENDER_DROPDOWM));
 		genderDropDown.selectByVisibleText(gender);
 		logger.info("Following Gender has been selected from Gender Dropdown : " + gender);
 	}
 
 	public void enterDob(String dob) {
-		driver.waitForElementPresent(DOD_TEXT_BOX);
+		///driver.waitForElementPresent(DOD_TEXT_BOX);
 		driver.findElement(DOD_TEXT_BOX).sendKeys(dob);
 		driver.clickAnyWhereOnScreen();
 		logger.info("Following DOB has been added : " + dob);
 	}
 
 	public void enterAge(String age) throws InterruptedException {
-		driver.waitForElementToBeClickable(AGE_RADIO_BUTTON, 40);
-		Thread.sleep(8000);
+		//	driver.waitForElementToBeClickable(AGE_RADIO_BUTTON, 40);
+		//Thread.sleep(8000);
 		driver.waitForElementPresent(AGE_RADIO_BUTTON);
 		WebElement checkBox = driver.findElement(AGE_RADIO_BUTTON);
 		driver.clickByJS(TTWebsiteDriver.driver, checkBox);
-		driver.waitForElementPresent(AGE_TEXT_BOX);
+		//driver.waitForElementPresent(AGE_TEXT_BOX);
 		driver.findElement(AGE_TEXT_BOX).clear();
 		driver.findElement(AGE_TEXT_BOX).sendKeys(age);
 		driver.clickByJS(TTWebsiteDriver.driver, checkBox);
@@ -210,26 +211,26 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectMartialStatusFromDropDown(String status) {
-		driver.waitForElementPresent(MARIAL_STATUS_DROPDOWN,60);
+		//driver.waitForElementPresent(MARIAL_STATUS_DROPDOWN,60);
 		Select statusDropDown = new Select(driver.findElement(MARIAL_STATUS_DROPDOWN));
 		statusDropDown.selectByVisibleText(status);
 		logger.info("Following MArtial Status has been selected from MArtial Status  Dropdown : " + status);
 	}
 
 	public void enterMotherMaidenName(String motherName) {
-		driver.waitForElementPresent(MOTHER_MAIDEN_NAME);
+		//driver.waitForElementPresent(MOTHER_MAIDEN_NAME);
 		driver.findElement(MOTHER_MAIDEN_NAME).sendKeys(motherName);
 		logger.info("Following Mother Maiden Name Has been Added: " + motherName);
 	}
 
 	public void enterFathersName(String fatherName) {
-		driver.waitForElementPresent(FATHERS_NAME);
+		//driver.waitForElementPresent(FATHERS_NAME);
 		driver.findElement(FATHERS_NAME).sendKeys(fatherName);
 		logger.info("Following Fathers Name Has been Added: " + fatherName);
 	}
 
 	public void selectNationalityFromDropDown(String nationality) {
-		driver.waitForElementPresent(NATIONALITY_DROPDOWN);
+		//driver.waitForElementPresent(NATIONALITY_DROPDOWN);
 		Select nationalityDropDown = new Select(driver.findElement(NATIONALITY_DROPDOWN));
 		nationalityDropDown.selectByVisibleText(nationality);
 		logger.info("Following Nationality has been selected from Nationality Dropdown : " + nationality);
@@ -244,7 +245,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void checkRemarksCheckBoxAndEnterData(String data) {
-		driver.waitForElementPresent(REMARKS_CHECKBOX,60);
+		//driver.waitForElementPresent(REMARKS_CHECKBOX,60);
 		WebElement checkBox = driver.findElement(REMARKS_CHECKBOX);
 		driver.clickByJS(TTWebsiteDriver.driver, checkBox);
 		driver.findElement(REMARKS_TEXT_BOX).sendKeys(data);
@@ -270,7 +271,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectIdCardTypeFromDropDown(String idcard) {
-		driver.waitForElementPresent(ID_CARD_DROP_DOWN);
+		//driver.waitForElementPresent(ID_CARD_DROP_DOWN);
 		Select titleDropDown = new Select(driver.findElement(ID_CARD_DROP_DOWN));
 		titleDropDown.selectByVisibleText(idcard);
 		logger.info("Following ID Card has been selected from ID Card Dropdown : " + idcard);
@@ -335,14 +336,14 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectCityFromCityDropdown(String city) {
-		driver.waitForElementPresent(CITY_DROP_DOWN);
+		//driver.waitForElementPresent(CITY_DROP_DOWN);
 		Select titleDropDown = new Select(driver.findElement(CITY_DROP_DOWN));
 		titleDropDown.selectByVisibleText(city);
 		logger.info("Following City  has been selected from City Dropdown : " + city);
 	}
 
 	public void addANewCity(String city, String district) throws InterruptedException {
-		Thread.sleep(5000);
+		//Thread.sleep(5000);
 		WebElement ADD_NEW_CITY_element = driver.findElement(ADD_NEW_CITY);
 		driver.clickByJS(TTWebsiteDriver.driver, ADD_NEW_CITY_element);
 		driver.findElement(CITY_FROM_POPUP).sendKeys(city);
@@ -360,7 +361,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void addLocality(String local, String city, String pincode) throws InterruptedException {
-		driver.waitForElementPresent(ADD_LOCALITY_BUTTON);
+		//driver.waitForElementPresent(ADD_LOCALITY_BUTTON);
 		WebElement button = driver.findElement(ADD_LOCALITY_BUTTON);
 		driver.clickByJS(TTWebsiteDriver.driver, button);
 		driver.waitForElementPresent(LOCALITY_FROM_POPUP);
@@ -368,14 +369,14 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select cityDropDown = new Select(driver.findElement(CITY_DROPDOWN_FROM_POPUP));
 		cityDropDown.selectByVisibleText(city);
 		driver.findElement(PINCODE).sendKeys(pincode);
-		Thread.sleep(8000);
+		//Thread.sleep(8000);
 		WebElement SAVE_BUTTON_element = driver.findElement(SAVE_BUTTON_LOCALITY_POPUP);
 		driver.clickByJS(TTWebsiteDriver.driver, SAVE_BUTTON_element);
 		logger.info("Follwoing Locality has been added: " +local+ "Following City has been selected: " +city+ "Following Pin Code has been added: " +pincode);
 	}
 
 	public void enterEmailId(String email) {
-		driver.waitForElementPresent(EMAIL_ID);
+		//driver.waitForElementPresent(EMAIL_ID);
 		driver.findElement(EMAIL_ID).clear();
 		driver.findElement(EMAIL_ID).sendKeys(email);
 		logger.info("Following email has been added: " + email);
@@ -398,35 +399,35 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectPrefferedLanguageFromDropdown(String language) {
-		driver.waitForElementPresent(LANGUAGE_DROP_DOWN);
+		//driver.waitForElementPresent(LANGUAGE_DROP_DOWN);
 		Select languageDropdown = new Select(driver.findElement(LANGUAGE_DROP_DOWN));
 		languageDropdown.selectByVisibleText(language);
 		logger.info("Following language  has been selected from language Dropdown : " + language);
 	}
 
 	public void selectOccupationFromDropdown(String occupation) {
-		driver.waitForElementPresent(OCCUPATION_DROP_DOWN);
+		//driver.waitForElementPresent(OCCUPATION_DROP_DOWN);
 		Select occupationDropdown = new Select(driver.findElement(OCCUPATION_DROP_DOWN));
 		occupationDropdown.selectByVisibleText(occupation);
 		logger.info("Following occupation  has been selected from occupation Dropdown : " + occupation);
 	}
 
 	public void selectQualificationFromDropdown(String qualification) {
-		driver.waitForElementPresent(QUALIFICATION_DROP_DOWN);
+		//driver.waitForElementPresent(QUALIFICATION_DROP_DOWN);
 		Select qualificationDropdown = new Select(driver.findElement(QUALIFICATION_DROP_DOWN));
 		qualificationDropdown.selectByVisibleText(qualification);
 		logger.info("Following qualification  has been selected from qualification Dropdown : " + qualification);
 	}
 
 	public void selectReligionFromDropdown(String relegion) {
-		driver.waitForElementPresent(RELIGION_DROP_DOWN);
+		//driver.waitForElementPresent(RELIGION_DROP_DOWN);
 		Select relegionDropdown = new Select(driver.findElement(RELIGION_DROP_DOWN));
 		relegionDropdown.selectByVisibleText(relegion);
 		logger.info("Following relegion  has been selected from relegion Dropdown : " + relegion);
 	}
 
 	public void selectReferedFromDropdown(String refer) {
-		driver.waitForElementPresent(REFER_DROP_DOWN);
+		//driver.waitForElementPresent(REFER_DROP_DOWN);
 		Select referDropdown = new Select(driver.findElement(REFER_DROP_DOWN));
 		referDropdown.selectByVisibleText(refer);
 		logger.info("Following refer  has been selected from refer Dropdown : " + refer);
@@ -439,21 +440,21 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectCompanyTypeFromDropdown(String compType) {
-		driver.waitForElementPresent(COMP_TYPE_DROP_DOWN);
+
 		Select compTypeDropdown = new Select(driver.findElement(COMP_TYPE_DROP_DOWN));
 		compTypeDropdown.selectByVisibleText(compType);
 		logger.info("Following compType  has been selected from compType Dropdown : " + compType);
 	}
 
 	public void selectCompanyFromDropdown(int index) {
-		driver.waitForElementPresent(COMP_DROP_DOWN);
+
 		Select compDropdown = new Select(driver.findElement(COMP_DROP_DOWN));
 		compDropdown.selectByIndex(index);
 		logger.info("First comp has been selected from comp Dropdown");
 	}
 
 	public void selectCompanyFromDropdownByName(String name) {
-		driver.waitForElementPresent(COMP_DROP_DOWN);
+
 		Select compDropdown = new Select(driver.findElement(COMP_DROP_DOWN));
 		compDropdown.selectByVisibleText(name);
 		logger.info("Following comp has been selected from comp Dropdown: "+name);
@@ -466,7 +467,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selectRateContractFromDropdown(int index) {
-		driver.waitForElementPresent(RATE_DROP_DOWN);
+		//driver.waitForElementPresent(RATE_DROP_DOWN);
 		Select dropdown = new Select(driver.findElement(RATE_DROP_DOWN));
 		dropdown.selectByIndex(index);
 		logger.info("First Rate has been selected from Rate Dropdown");
@@ -474,7 +475,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 
 	public void selectRateContractFromDropdownByName(String name) {
 		try {
-			driver.waitForElementPresent(RATE_DROP_DOWN);
+			//driver.waitForElementPresent(RATE_DROP_DOWN);
 			Select dropdown = new Select(driver.findElement(RATE_DROP_DOWN));
 			dropdown.selectByVisibleText(name);
 			logger.info("Following Rate has been selected from Rate Dropdown: "+name);
@@ -490,7 +491,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 
 
 	public void selectSchemeFromDropdown(int index) {
-		driver.waitForElementPresent(SCHEME_DROP_DOWN);
+		//driver.waitForElementPresent(SCHEME_DROP_DOWN);
 		Select dropdown = new Select(driver.findElement(SCHEME_DROP_DOWN));
 		dropdown.selectByIndex(index);
 		logger.info("First Scheme has been selected from Scheme Dropdown");
@@ -500,7 +501,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 
 	//Fill Actual Demographics
 	public void clickatfillactualdemographics() {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_ICON);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_ICON);
 		WebElement imageiconelement = driver.findElement(FILLACTUALDEMOGRAPHICS_ICON);
 		driver.clickByJS(TTWebsiteDriver.driver, imageiconelement);
 
@@ -508,58 +509,58 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void selecttitleatactualpatientdetails(String titleatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_TITLE_DROP_DOWN);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_TITLE_DROP_DOWN);
 		Select titleddapd = new Select(driver.findElement(FILLACTUALDEMOGRAPHICS_TITLE_DROP_DOWN));
 		titleddapd.selectByVisibleText(titleatActualPatient);
 		logger.info("Title dropdown is selected at Actual Patient Details window.");
 	}
 
 	public void enterfirstnameatactualpatientdetails(String firstnameatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_FIRST_NAME);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_FIRST_NAME);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_FIRST_NAME).sendKeys(firstnameatActualPatient);
 		logger.info("First Name is entered at Actual Patient Details window.");
 	}
 
 	public void entermiddlenameatactualpatientdetails(String middlenameatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_MIDDLE_NAME);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_MIDDLE_NAME);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_MIDDLE_NAME).sendKeys(middlenameatActualPatient);
 		logger.info("Middle Name is entered at Actual Patient Details window.");
 	}
 
 	public void enterlastnameatactualpatientdetails(String lastnameatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_LAST_NAME);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_LAST_NAME);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_LAST_NAME).sendKeys(lastnameatActualPatient);
 		logger.info("Last Name is entered at Actual Patient Details window.");
 	}
 
 	public void enterdobatactualpatientdetails(String dobatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_DOB);
+		///driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_DOB);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_DOB).sendKeys(dobatActualPatient);
 		driver.clickAnyWhereOnScreen();
 		logger.info("DOB is entered at Actual Patient Details window.");
 	}
 
 	public void entermobileatactualpatientdetails(String mobilenumberatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_MOBILE);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_MOBILE);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_MOBILE).sendKeys(mobilenumberatActualPatient);
 		logger.info("Mobile Number is entered at Actual Patient Details window.");
 	}
 
 	public void enteraddressatactualpatientdetails(String addressatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_ADDRESS);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_ADDRESS);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_ADDRESS).sendKeys(addressatActualPatient);
 		logger.info("Address is entered at Actual Patient Details window.");
 	}
 
 
 	public void enterguardianatactualpatientdetails(String guardianatActualPatient) {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_GUARDIAN_NAME);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_GUARDIAN_NAME);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_GUARDIAN_NAME).sendKeys(guardianatActualPatient);
 		logger.info("Guardian Name is entered at Actual Patient Details window.");
 	}
 
 	public void closebuttonatactualpatientdetails() {
-		driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_CLOSE_BTN);
+		//driver.waitForElementPresent(FILLACTUALDEMOGRAPHICS_CLOSE_BTN);
 		driver.findElement(FILLACTUALDEMOGRAPHICS_CLOSE_BTN).click();
 		logger.info("Close button is clicked at Actual Patient Details window.");
 	}
@@ -577,22 +578,26 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		}
 	}
 
-	public void yesButtonOnConfirmPopup() throws InterruptedException {
-		if(driver.findElements(YES_BUTTON_CONFRM_PAT_DETAILS_POPUP).size()>0) 
-		{
-			try {
-				driver.waitForElementPresent(YES_BUTTON_CONFRM_PAT_DETAILS_POPUP);
-				driver.findElement(YES_BUTTON_CONFRM_PAT_DETAILS_POPUP).click();
-				Thread.sleep(10000);
-				logger.info("Yes button clicked on Confirm Patient Details Popup");	
+	public void yesButtonOnConfirmPopup() throws InterruptedException 
+	{
+		try {
+			if(driver.findElements(YES_BUTTON_CONFRM_PAT_DETAILS_POPUP).size()>0) 
+			{
+				try {
+
+					driver.findElement(YES_BUTTON_CONFRM_PAT_DETAILS_POPUP).click();
+					Thread.sleep(3000);
+					logger.info("Yes button clicked on Confirm Patient Details Popup");	
+				}
+				catch (Exception e) {}
 			}
-			catch (Exception e) {}
 		}
+		catch (Exception e) {}
 
 	}
 
 	public boolean verifyRegisteredSuccessfullPopupPresence(String message) throws InterruptedException{
-		driver.waitForElementPresent(REGISTERED_SUCCESSFULLY_POPUP_HEADER);
+
 		if(driver.findElement(REGISTERED_SUCCESSFULLY_POPUP_HEADER).getText().equals(message))
 		{
 			logger.info("REGISTERED SUCCESSFULLY POPUP is showing up");
@@ -625,9 +630,9 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	public void clickOnYesButtonOnRegisteredSuccessfullyPopup() {
 
 		try {
-			driver.waitForElementPresent(REGSITERED_SUCCESSFULLY_YES_BUTTON);
-			driver.click(REGSITERED_SUCCESSFULLY_YES_BUTTON);
-			driver.waitForPageLoad();
+
+			driver.findElement(REGSITERED_SUCCESSFULLY_YES_BUTTON).click();
+
 			logger.info("REGISTERED SUCCESSFULLY POPUP Yes Button Clicked");
 		} catch (Exception e) {}
 		try {
@@ -638,7 +643,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 
 	public void clickOnNoButtonOnRegisteredSuccessfullyPopup() {
 		try {
-			driver.waitForElementPresent(REGSITERED_SUCCESSFULLY_NO_BUTTON);
+			//driver.waitForElementPresent(REGSITERED_SUCCESSFULLY_NO_BUTTON);
 			driver.click(REGSITERED_SUCCESSFULLY_NO_BUTTON);
 			driver.waitForPageLoad();
 			logger.info("REGISTERED SUCCESSFULLY POPUP No Button Clicked");
@@ -659,28 +664,21 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 
 
 
-	public void searchUHIDFromSearchBoxOnHeader(String uhid) throws InterruptedException {
+	public void searchUHIDFromSearchBoxOnHeader(String uhid) throws InterruptedException 
+	{
 		try {
-			driver.waitForElementPresent(UHID_SEARCH_BOX);
 			driver.findElement(UHID_SEARCH_BOX).clear();
 			driver.findElement(UHID_SEARCH_BOX).sendKeys(uhid);
-			//		Actions action = new Actions(TTWebsiteDriver.driver);
-			//		action.keyDown(Keys.ENTER);
-			Thread.sleep(4000);
-
-			//Actions action = new Actions(driver); 
-			//action.sendKeys(driver.findElement(By.id("uHid")), Keys.ENTER).build().perform();
-
-
 			driver.findElement(UHID_SEARCH_BOX).sendKeys(Keys.ENTER);
-			Thread.sleep(4000);
+			Thread.sleep(1000);
+			driver.findElement(By.id("btnremarksOk")).click();
 			logger.info("Following UHID has been searched from Search Box" + uhid);	
 
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
+
+		} catch (Exception e) {}
 
 	}
+
 	public void patientdeceasedok() {
 
 		WebElement patientdeceasedok_element = driver.findElement(By.xpath("//a[@id='btnyes']"));
@@ -688,27 +686,27 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void clickOnSelectCheckboxatUnmerge() {
-		driver.waitForElementPresent(UNMERGE_SELECT_CHECK_BOX);
+		//driver.waitForElementPresent(UNMERGE_SELECT_CHECK_BOX);
 		driver.click(UNMERGE_SELECT_CHECK_BOX);
 		logger.info("Checkbox has been selected on Unmerge screen.");	
 	}
 
 	public void clickOnUnmergeButtonatUnmerge() throws InterruptedException {
-		driver.waitForElementPresent(UNMERGE_BUTTON);
-		driver.click(UNMERGE_BUTTON);
+		//driver.waitForElementPresent(UNMERGE_BUTTON);
+		driver.findElement(UNMERGE_BUTTON).click();
 		logger.info("User clicked on Unmerge button.");
-		Thread.sleep(8000);
+
 	}
 
 
 
 
 	public void searchUHIDFromSearchBoxOnHeaderSecondMethod(String uhid) throws InterruptedException {
-		driver.waitForElementPresent(UHID_SEARCH_BOX);
+		//driver.waitForElementPresent(UHID_SEARCH_BOX);
 		driver.findElement(UHID_SEARCH_BOX).clear();
 		driver.findElement(UHID_SEARCH_BOX).sendKeys(uhid);
 		driver.findElement(UHID_SEARCH_BOX).sendKeys(Keys.ENTER);
-		Thread.sleep(4000);
+		//Thread.sleep(4000);
 		logger.info("Following UHID has been searched from Search Box" + uhid);
 	}
 
@@ -716,8 +714,8 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 
 	public void clickOnYesButtonOnUpdatePopup() {
 		try {
-			driver.waitForElementPresent(YES_BUTTON_ON_UPDATE_POPUP);
-			driver.click(YES_BUTTON_ON_UPDATE_POPUP);
+			//driver.waitForElementPresent(YES_BUTTON_ON_UPDATE_POPUP);
+			driver.findElement(YES_BUTTON_ON_UPDATE_POPUP).click();
 			logger.info("Yes Button on Update Popup Clicked");
 		} catch (Exception e) {}
 
@@ -725,7 +723,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 
 	public void clickOnSearchPatientButton() {
 		try {
-			driver.waitForElementPresent(SEARCH_PATIENT_BUTTON);
+			//driver.waitForElementPresent(SEARCH_PATIENT_BUTTON);
 			WebElement icon = driver.findElement(SEARCH_PATIENT_BUTTON);
 			driver.clickByJS(TTWebsiteDriver.driver, icon);
 			logger.info("Search Patient Button Clicked");	
@@ -746,111 +744,111 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public void searchMobileNumberAndClickOnEnter(String mobileNumber) {
-		driver.waitForElementPresent(MOBILE_NO_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(MOBILE_NO_SEARCH_PATIENT_POPUP);
 		driver.findElement(MOBILE_NO_SEARCH_PATIENT_POPUP).sendKeys(mobileNumber);
 		driver.findElement(MOBILE_NO_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following Mobile Number has been Entered" +mobileNumber);
 	}
 
 	public void searchNameAndClickOnEnter(String name) {
-		driver.waitForElementPresent(NAME_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(NAME_SEARCH_PATIENT_POPUP);
 		driver.findElement(NAME_SEARCH_PATIENT_POPUP).sendKeys(name);
 		driver.findElement(NAME_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following Name has been Entered" +name);
 	}
 
 	public void searchFirstNameAndClickOnEnter(String name) {
-		driver.waitForElementPresent(FIRST_NAME_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(FIRST_NAME_SEARCH_PATIENT_POPUP);
 		driver.findElement(FIRST_NAME_SEARCH_PATIENT_POPUP).sendKeys(name);
 		driver.findElement(FIRST_NAME_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following First Name has been Entered" +name);
 	}
 
 	public void searchLastNameAndClickOnEnter(String name) {
-		driver.waitForElementPresent(LAST_NAME_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(LAST_NAME_SEARCH_PATIENT_POPUP);
 		driver.findElement(LAST_NAME_SEARCH_PATIENT_POPUP).sendKeys(name);
 		driver.findElement(LAST_NAME_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following Last Name has been Entered" +name);
 	}
 
 	public void searchAddressAndClickOnEnter(String address) {
-		driver.waitForElementPresent(ADDRESS_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(ADDRESS_SEARCH_PATIENT_POPUP);
 		driver.findElement(ADDRESS_SEARCH_PATIENT_POPUP).sendKeys(address);
 		driver.findElement(ADDRESS_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following Address has been Entered" +address);
 	}
 
 	public void searchLocalityAndClickOnEnter(String address) {
-		driver.waitForElementPresent(LOCALITY_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(LOCALITY_SEARCH_PATIENT_POPUP);
 		driver.findElement(LOCALITY_SEARCH_PATIENT_POPUP).sendKeys(address);
 		driver.findElement(LOCALITY_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following Localtiy has been Entered" +address);
 	}
 
 	public void searchNationalIdAndClickOnEnter(String id) {
-		driver.waitForElementPresent(NATIONAL_ID_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(NATIONAL_ID_SEARCH_PATIENT_POPUP);
 		driver.findElement(NATIONAL_ID_SEARCH_PATIENT_POPUP).sendKeys(id);
 		driver.findElement(NATIONAL_ID_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following National Id has been Entered" +id);
 	}
 
 	public void searchRemarksAndClickOnEnter(String id) {
-		driver.waitForElementPresent(REMARKS_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(REMARKS_SEARCH_PATIENT_POPUP);
 		driver.findElement(REMARKS_SEARCH_PATIENT_POPUP).sendKeys(id);
 		driver.findElement(REMARKS_SEARCH_PATIENT_POPUP).sendKeys(Keys.RETURN);
 		logger.info("Following Remarks has been Entered" +id);
 	}
 
 	public void clearMobileNumberField() {
-		driver.waitForElementPresent(MOBILE_NO_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(MOBILE_NO_SEARCH_PATIENT_POPUP);
 		driver.findElement(MOBILE_NO_SEARCH_PATIENT_POPUP).clear();
 		logger.info("Mobile Number Field Got Cleared");
 	}
 
 	public void clearNameField() {
-		driver.waitForElementPresent(NAME_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(NAME_SEARCH_PATIENT_POPUP);
 		driver.findElement(NAME_SEARCH_PATIENT_POPUP).clear();
 		logger.info("Name Field Got Cleared");
 	}
 
 	public void clearFirstNameField() {
-		driver.waitForElementPresent(FIRST_NAME_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(FIRST_NAME_SEARCH_PATIENT_POPUP);
 		driver.findElement(FIRST_NAME_SEARCH_PATIENT_POPUP).clear();
 		logger.info("First Name Field Got Cleared");
 	}
 
 	public void clearLastNameField() {
-		driver.waitForElementPresent(LAST_NAME_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(LAST_NAME_SEARCH_PATIENT_POPUP);
 		driver.findElement(LAST_NAME_SEARCH_PATIENT_POPUP).clear();
 		logger.info("Last Name Field Got Cleared");
 	}
 
 	public void clearAddressField() {
-		driver.waitForElementPresent(ADDRESS_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(ADDRESS_SEARCH_PATIENT_POPUP);
 		driver.findElement(ADDRESS_SEARCH_PATIENT_POPUP).clear();
 		logger.info("Address Field Got Cleared");
 	}
 
 	public void clearLocalityField() {
-		driver.waitForElementPresent(LOCALITY_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(LOCALITY_SEARCH_PATIENT_POPUP);
 		driver.findElement(LOCALITY_SEARCH_PATIENT_POPUP).clear();
 		logger.info("Locality Field Got Cleared");
 	}
 
 	public void clearNationalityField() {
-		driver.waitForElementPresent(NATIONAL_ID_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(NATIONAL_ID_SEARCH_PATIENT_POPUP);
 		driver.findElement(NATIONAL_ID_SEARCH_PATIENT_POPUP).clear();
 		logger.info("National Id Field Got Cleared");
 	}
 
 	public void clearRemarksField() {
-		driver.waitForElementPresent(REMARKS_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(REMARKS_SEARCH_PATIENT_POPUP);
 		driver.findElement(REMARKS_SEARCH_PATIENT_POPUP).clear();
 		logger.info("Remarks Field Got Cleared");
 	}
 
 	public boolean verifyErrorMessageOfEnteringLesserCharacters(String message) throws InterruptedException{
-		driver.waitForElementPresent(ERROR_MESSAGE_LESSER_CHARACTER);
+		//driver.waitForElementPresent(ERROR_MESSAGE_LESSER_CHARACTER);
 		if(driver.findElement(ERROR_MESSAGE_LESSER_CHARACTER).getText().contains(message))
 		{
 			logger.info("Error Message Verified and is showing up");
@@ -862,7 +860,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public boolean verifyResultIsShowingUpInSearchPopupScreen() throws InterruptedException{
-		driver.waitForElementPresent(FIRST_RESULT_IN_SEARCH_PATIENT_POPUP);
+		//driver.waitForElementPresent(FIRST_RESULT_IN_SEARCH_PATIENT_POPUP);
 		if(driver.findElements(FIRST_RESULT_IN_SEARCH_PATIENT_POPUP).size()>0)
 		{
 			if(driver.findElement(FIRST_RESULT_IN_SEARCH_PATIENT_POPUP).isDisplayed())
@@ -877,7 +875,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public boolean verifyPatientDeceasedPopupPresence(String message) throws InterruptedException{
-		driver.waitForElementPresent(PATIENT_DECEASED_POPUP_BODY);
+		//driver.waitForElementPresent(PATIENT_DECEASED_POPUP_BODY);
 		if(driver.findElement(PATIENT_DECEASED_POPUP_BODY).getText().contains(message))
 		{
 			logger.info("Patient Deceased Popup Verified and is showing up");
@@ -889,7 +887,7 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	}
 
 	public boolean verifyPossibleDuplicateAlertPresence(String message) throws InterruptedException{
-		driver.waitForElementPresent(POSSIBLE_DUPLICATE_ALERT_HEADING);
+		//driver.waitForElementPresent(POSSIBLE_DUPLICATE_ALERT_HEADING);
 		if(driver.findElement(POSSIBLE_DUPLICATE_ALERT_HEADING).getText().contains(message))
 		{
 			logger.info("Possible Alert Message is showing up");
@@ -905,8 +903,8 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		if(driver.findElements(POSSIBLE_DUPLICATE_ALERT_CLOSE).size()>0)
 		{
 			try {
-				driver.waitForElementPresent(POSSIBLE_DUPLICATE_ALERT_CLOSE);
-				driver.click(POSSIBLE_DUPLICATE_ALERT_CLOSE);
+				//driver.waitForElementPresent(POSSIBLE_DUPLICATE_ALERT_CLOSE);
+				driver.findElement(POSSIBLE_DUPLICATE_ALERT_CLOSE).click();
 				logger.info("Possible Duplicate Alert Box Closed");		
 			}
 			catch (Exception e) {}
@@ -946,9 +944,9 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	public void clickOnSearchButtonOnSearchPopup() {
 		try {
 			driver.waitForElementPresent(By.xpath("//a[@id='search_button']//i[@class='fa fa-search']"), 120);
-			 WebElement clickOnSearchButton_element = driver.findElement(By.xpath("//a[@id='search_button']//i[@class='fa fa-search']"));
-			 driver.clickByJS(TTWebsiteDriver.driver, clickOnSearchButton_element);
-			 Thread.sleep(3000);
+			WebElement clickOnSearchButton_element = driver.findElement(By.xpath("//a[@id='search_button']//i[@class='fa fa-search']"));
+			driver.clickByJS(TTWebsiteDriver.driver, clickOnSearchButton_element);
+			Thread.sleep(3000);
 		} 
 		catch (Exception e) {}
 
@@ -1012,12 +1010,18 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		}
 
 	}
-	
+
 	public void clickonAdvancedButton()
 	{
 		driver.waitForElementPresent(By.xpath("//button[@id='details-button']"));
 		WebElement advanced_btn = driver.findElement(By.xpath("//button[@id='details-button']"));
 		driver.clickByJS(TTWebsiteDriver.driver, advanced_btn);
 		logger.info("Click on Advanced Button");
+	}
+
+	public void enterLocationID(String text) 
+	{
+		driver.findElement(By.id("locationid")).sendKeys(text);
+		logger.info("Locality= "+text);
 	}
 }

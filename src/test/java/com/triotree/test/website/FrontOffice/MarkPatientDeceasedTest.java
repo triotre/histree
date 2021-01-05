@@ -115,6 +115,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		//billingPage.closeCompanyDetailsPopup();
 		
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {
 			e.printStackTrace();}
@@ -217,6 +218,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		//billingPage.closeCompanyDetailsPopup();
 		
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -354,6 +356,7 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		//billingPage.closeCompanyDetailsPopup();
 		
 		try {
+			billingPage.closeCompanyDetailsPopup();
 			billingPage.closeSchemeDetailsPopup();
 			} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -478,8 +481,13 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		System.out.println("Patient Registration Id is " +patientRegistrationId);
 		patientRegistrationPage.clickOnYesButtonOnRegisteredSuccessfullyPopup();
 		//assertTrue(patientRegistrationPage.verifyUserIsOnBillingScreen("Billing"), "User is not on Billing Screen");
+		try {
 		billingPage.closeCompanyDetailsPopup();
 		billingPage.closeSchemeDetailsPopup();
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 		try {
 			billingPage.cancelSchemeForPatientPopup();
 		} catch (Exception e) {
@@ -496,8 +504,8 @@ public class MarkPatientDeceasedTest extends TTWebsiteBaseTest{
 		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
 		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("Cardiology");
-		generateSchedulePage.selectDoctorFromDropdown("MANNAT  DEVGAN");
+		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
+		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
 		generateSchedulePage.clickOnSearchButton();
 		//assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Anaesthetistgulab");

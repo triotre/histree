@@ -9,7 +9,7 @@ public class PropertyFile {
 
 	public static String path = "src/test/resources/";
 	private static final Properties props = new Properties();
-
+	static Properties prop;
 	public static void loadProps(String fileName) {
 		try {
 			FileInputStream inputStream = new FileInputStream(path+fileName);
@@ -34,4 +34,17 @@ public class PropertyFile {
 		props.setProperty(key, value);
 	}
 
+	public static String getproperty(String filename, String propertyname) throws Exception
+	{
+		prop=new Properties();
+		prop.load(new FileInputStream("./src/test/resources/"+filename+".properties"));
+		String value=prop.getProperty(propertyname);
+		if(value==null)
+		{
+			throw new Exception("Property "+propertyname+" not found in "+filename+".properties");
+		}
+		return value;
+
+
+	}
 }

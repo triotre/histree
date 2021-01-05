@@ -67,14 +67,14 @@ public class IndentApprovalPage extends HISWebsiteBasePage{
 
 	public void selectFirstIndentFromNewIntendPopup() {
 		try {
-			driver.waitForElementPresent(FIRST_INDENT_NO);
-			driver.click(FIRST_INDENT_NO);
+			driver.clickByJS(TTWebsiteDriver.driver,driver.findElement(FIRST_INDENT_NO));
 			logger.info("Indent No clicked");
 		}
 		catch (Exception e) {}
 	}
 
-	public void changeQuantityAgainSelectedItem(String medicine, String quantity) {
+	public void changeQuantityAgainSelectedItem(String medicine, String quantity) 
+	{
 		try {
 
 			driver.findElement(By.xpath("//td[contains(text(),'"+medicine+"')]/..//following-sibling::td//input[@name='txtNewQuantity']")).clear();
@@ -104,16 +104,15 @@ public class IndentApprovalPage extends HISWebsiteBasePage{
 
 	public void selectFirstIndentFromApproveIntendPopup() {
 		try {
-			driver.waitForElementPresent(FIRST_INDENT_NO_APPROVE_POPUP);
-			driver.click(FIRST_INDENT_NO_APPROVE_POPUP);
+			
+			driver.clickByJS(TTWebsiteDriver.driver,driver.findElement(FIRST_INDENT_NO_APPROVE_POPUP));
 			logger.info("Indent No From Approve Popupclicked");
 		}
 		catch (Exception e) {}
 	}
 
 	public void selectFirstIndentFromRejectedIntendPopup() {
-		driver.waitForElementPresent(FIRST_INDENT_NO_REJECTED_POPUP);
-		driver.click(FIRST_INDENT_NO_REJECTED_POPUP);
+		driver.clickByJS(TTWebsiteDriver.driver,driver.findElement(FIRST_INDENT_NO_REJECTED_POPUP));
 		logger.info("Indent No From Rejected Popupclicked");
 	}
 
@@ -129,32 +128,27 @@ public class IndentApprovalPage extends HISWebsiteBasePage{
 		logger.info("Reject Indent Radio Button clicked");
 	}
 
-	public String getValueOfIndentNoFromNewIndentPopup() {
-
-		driver.waitForElementPresent(FIRST_INDENT_NUMBER_VALUE_NEW_INDENT);
-		return driver.findElement(FIRST_INDENT_NUMBER_VALUE_NEW_INDENT).getText();
-
+	public String getValueOfIndentNoFromNewIndentPopup() 
+	{
+		return driver.findElement(FIRST_INDENT_NUMBER_VALUE_NEW_INDENT).getText();	
 	}
 
 	public String getValueOfIndentNoFromApproveIndentPopup() throws InterruptedException {
-		//driver.waitForElementPresent(FIRST_INDENT_NUMBER_VALUE_APPROVE_INDENT);
 		Thread.sleep(2000);
 		return driver.findElement(FIRST_INDENT_NUMBER_VALUE_APPROVE_INDENT).getText();
 		
 	}
 
 	public void enterFromDate(String date) {
-		driver.pauseExecutionFor(4000);
-		driver.waitForElementPresent(By.xpath("//input[@id='frmdate']"));
+
 		driver.findElement(By.xpath("//input[@id='frmdate']")).clear();
 		driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(date);
 		driver.findElement(By.xpath("//input[@id='frmdate']")).sendKeys(Keys.ENTER);
 	}
 
-	public void selectStore(String store) {
-		driver.pauseExecutionFor(4000);
+	public void selectStore(String store) 
+	{
 		driver.click(By.xpath("//select[@id='ddlStore']"));
-		driver.waitForElementPresent(By.xpath("//select[@id='ddlStore']"));
 		Select stationDropDown = new Select(driver.findElement(By.xpath("//select[@id='ddlStore']")));
 		stationDropDown.selectByVisibleText(store);
 

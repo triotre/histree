@@ -550,7 +550,7 @@ public class PatientRegistrationTest extends TTWebsiteBaseTest{
 		patientRegistrationPage.enterDOBInSearchPopup("22/08/2019");
 		patientRegistrationPage.clickOnSearchButtonOnSearchPopup();
 		//assertTrue(patientRegistrationPage.verifyNoRecordFoundMessage(), "No Record Found Message is not showing Up");
-		patientRegistrationPage.enterDOBInSearchPopup("10/09/1994");
+		patientRegistrationPage.enterDOBInSearchPopup("15-12-1991");
 		patientRegistrationPage.clickOnSearchButtonOnSearchPopup();
 		patientRegistrationPage.selectFirstSearchedPatientRow();
 		assertTrue(patientRegistrationPage.verifyUserIsOnPatientRegisterationPage(), "User is not on Patient Registration Page");

@@ -26,7 +26,7 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 	private final By LEGEND_KEY = By.xpath("//a[@title='legend key']//i[@class='fa fa-key']");
 	private final By LEGEND_FOR_APPOINTMENT_FORM = By.xpath("//span[contains(text(),'Legend for Appointment')]");
 	private final By CLOSE_LEGEND_FOR_APPOINTMENT_FORM = By.xpath("//div[@id='modal_legend']//i[@class='fa fa-times']");
-	private final By SEARCH_BUTTON = By.xpath("//div[@class='form_line spidiv123']//span[@class='float_field']//a[@title='Show Schedule']//i[@class='fa fa-search']");
+	private final By SEARCH_BUTTON=By.xpath("//div[@id='spidiv']//span[@class='float_field']//a[@title='Show Schedule']//i[@class='fa fa-search']");
 	private final By PLEASE_SELECT_SPECIALITY_MESSAGE = By.xpath("//p[contains(text(),'Please Select Speciality')]");
 	private final By FACILITY_DORPDOWN = By.xpath("//select[@name='Facility']");
 	private final By SPECIALITY_DROPDOWN = By.xpath("//select[@name='Speciality']");
@@ -81,7 +81,7 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 	}
 
 	public void selectSpecilityFromDropdown(String speciality) {
-		driver.waitForElementPresent(SPECIALITY_DROPDOWN);
+		///driver.waitForElementPresent(SPECIALITY_DROPDOWN);
 		Select specDropdown = new Select(driver.findElement(SPECIALITY_DROPDOWN));
 		specDropdown.selectByVisibleText(speciality);
 		logger.info("Following speciality  has been selected from speciality Dropdown : " + speciality);
@@ -151,7 +151,7 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 
 	public void clickOnSaveButtonOnAppointmentSchedulingPopup() {
 		try {
-		driver.findElement(SAVE_BUTTON_APPOINTMENT_SCHEDULING).click();
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(SAVE_BUTTON_APPOINTMENT_SCHEDULING));
 		logger.info("Save Button on Appointment scheduling clicked");
 		}
 		catch (Exception e) {}
@@ -163,20 +163,18 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 
 	public void enterUHIDInAppointmentschedulingTextBox(String uhid) {
 		try {
-		driver.pauseExecutionFor(6000);
+		//driver.pauseExecutionFor(6000);
 		driver.findElement(UHID_TEXTBOX_APPOINTMENT_SCHEDULING).clear();
 		driver.findElement(UHID_TEXTBOX_APPOINTMENT_SCHEDULING).sendKeys(uhid);
-		driver.pauseExecutionFor(5000);
-
-		Actions action = new Actions(TTWebsiteDriver.driver);
-		action.sendKeys(Keys.ENTER);
+		driver.findElement(UHID_TEXTBOX_APPOINTMENT_SCHEDULING).sendKeys(Keys.ENTER);
+		//driver.pauseExecutionFor(5000);
 		}
 		catch (Exception e) {}
 	}
 
 	public void selectVisitTypeFromDropdown(String visitType) {
 		try {
-		driver.waitForElementPresent(VISIT_TYPE_DROPDOWN);
+		//driver.waitForElementPresent(VISIT_TYPE_DROPDOWN);
 		Select visitDropdown = new Select(driver.findElement(VISIT_TYPE_DROPDOWN));
 		visitDropdown.selectByVisibleText(visitType);
 		logger.info("Following visitType  has been selected from visitType Dropdown : " + visitType);
@@ -206,7 +204,7 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 	public void cancelTheAppointment() {
 		driver.findElement(By.xpath("//textarea[@id='apptremarks']")).sendKeys("Remarks");
 		driver.findElement(By.xpath("//i[@class='fa fa-times border-icon']")).click();
-		driver.waitForElementPresent(By.xpath("//a[@id='cancil_yesapp']"), 120);
+		//driver.waitForElementPresent(By.xpath("//a[@id='cancil_yesapp']"), 120);
 		driver.findElement(By.xpath("//a[@id='cancil_yesapp']")).click();
 	}
 
