@@ -149,10 +149,19 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 
 	public void verifyselectedDoctorName(ExtentTest test,String text) {
 		Select sl=new Select(driver.findElement(Doctor));
-		sl.selectByVisibleText(text);
-		logger.info("Doctor Name= "+text);
-		Markup m=MarkupHelper.createLabel("Doctor Name= "+text, ExtentColor.GREEN);
-		test.info(m);
+		List<WebElement> sl_option_li =sl.getOptions();
+		for(int i=0;i<=sl_option_li.size()-1;i++) 
+		{
+			if(sl_option_li.get(i).getText().equals(text)) 
+			{
+				sl.selectByVisibleText(text);
+				logger.info("Doctor Name= "+text);
+				Markup m=MarkupHelper.createLabel("Doctor Name= "+text, ExtentColor.GREEN);
+				test.info(m);
+				break;
+			}
+		}
+		
 	}
 
 	public void verifyselectedView(ExtentTest test) 
@@ -568,6 +577,7 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 
 	public void ClickandAddDiagnosis(ExtentTest test,String text) 
 	{
+		try {
 		WebElement digno_element = driver.findElement(Diagnosis);
 		driver.clickByJS(TTWebsiteDriver.driver, digno_element);
 
@@ -600,7 +610,8 @@ public class PhysicianOPDcaseSheetOrders extends HISWebsiteBasePage
 			driver.clickByJS(TTWebsiteDriver.driver, save);
 			logger.info("Click on Save Button");
 		}
-
+		}
+		catch (Exception e) {}
 	}
 
 	public void checkDescriptionType(ExtentTest test) 

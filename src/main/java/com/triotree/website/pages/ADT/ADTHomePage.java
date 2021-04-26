@@ -102,7 +102,7 @@ public class ADTHomePage extends HISWebsiteBasePage {
 		driver.click(ADMIT_PATIENT_SECTION);
 		logger.info("Admit Patient Section is Expanded");
 
-		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"));
+		WebElement options = driver.findElement(By.xpath("/html/body/nav/ul/li[2]/ul/li[6]/a"));
 		options.click();
 		logger.info("Following Option has been selected from Indent Items Section " + option);
 

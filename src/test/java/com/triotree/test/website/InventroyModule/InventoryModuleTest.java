@@ -1482,9 +1482,10 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		//assertTrue(patientRegistrationPage.verifyInvalidMobileNoAlertMessage("mobile number should not be less than 10 digit"), "Alert not showing up when invalid mobile No is added");
 		patientRegistrationPage.enterMobileNumber("1234567890");
 		patientRegistrationPage.enterHouseNumber("Demo Test Address");
-		patientRegistrationPage.selectCityFromCityDropdown(city);
-		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
-		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.selectCityFromCityDropdown("DELHI");
+//		patientRegistrationPage.addANewCity("Test City"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad");
+//		patientRegistrationPage.addLocality("Test local"+com.triotree.utils.CommonUtils.getRandomNum(1, 10000), "Ghaziabad", "201001");
+		patientRegistrationPage.enterLocationID("Test city");
 		patientRegistrationPage.enterEmailId("%^%^%^%^");
 		patientRegistrationPage.clickOnRegisterIcon();
 		patientRegistrationPage.enterEmailId("test@demo.com");
@@ -1523,18 +1524,18 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		indentItemsPage.clickOnSaveButton();
 		indentItemsPage.selectDoctorName("MANNAT  DEVGAN");
 		indentItemsPage.clickonZeroStockItems();
-		indentItemsPage.selectdrugandconsumables("0% ASPIRIN ,ASPIRIN ");
-		indentItemsPage.clickonBatchNumber("005b8ajq ");
-		//assertTrue(purchaseRequisitionPage.verifyActionMessage("This batch is already selected!"), "Confirm This batch is already selected! Message is not showing up");
-		indentItemsPage.clickOnSaveButton();
-		indentItemsPage.Itemdescriptionquantity("1");
-		indentItemsPage.clickOnSaveButton();
-		indentItemsPage.saveNothisrecord();
-		indentItemsPage.clickOnSaveButton();
-		indentItemsPage.saveYesthisrecord();
-		indentItemsPage.clickonOKbutton();
-		indentItemsPage.printrecordYesbutton();
-		indentItemsPage.clickClearButtonOnItemReceiptPage();
+//		indentItemsPage.selectdrugandconsumables("0% ASPIRIN ,ASPIRIN ");
+//		indentItemsPage.clickonBatchNumber("005b8ajq ");
+//		//assertTrue(purchaseRequisitionPage.verifyActionMessage("This batch is already selected!"), "Confirm This batch is already selected! Message is not showing up");
+//		indentItemsPage.clickOnSaveButton();
+//		indentItemsPage.Itemdescriptionquantity("1");
+//		indentItemsPage.clickOnSaveButton();
+//		indentItemsPage.saveNothisrecord();
+//		indentItemsPage.clickOnSaveButton();
+//		indentItemsPage.saveYesthisrecord();
+//		indentItemsPage.clickonOKbutton();
+//		indentItemsPage.printrecordYesbutton();
+//		indentItemsPage.clickClearButtonOnItemReceiptPage();
 		indentItemsPage.EnterUHIDnumber(patientRegistrationId);
 		indentItemsPage.selectDoctorName("MANNAT  DEVGAN");
 		indentItemsPage.enterFromDateItemReceiptScreen("03/Apr/2020");
@@ -1640,7 +1641,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 
 		// Enter Batch Number
 		//frontOfficeHomePage.EnterBatchNumber("ATENOLOL ORAL SOLID ORDINARY   0 ","1");
-		frontOfficeHomePage.EnterBatchNumber("Azathioprine Tab 50 MG_WK_WK","dfv");
+		frontOfficeHomePage.EnterBatchNumber("Azathioprine Tab 50 MG_WK_WK");
 		//frontOfficeHomePage.EnterBatchNumber("SP DRUG 5 % ORAL   0 ","sad");
 		//frontOfficeHomePage.EnterBatchNumber("MARKUP DRUG 12% RECTAL   0 ","test2");
 		//		frontOfficeHomePage.EnterBatchNumber("ENDOBUTTON CL ULTRA 15MM","OC2187");
@@ -1788,7 +1789,7 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 
 		// Enter Batch Number
 		//frontOfficeHomePage.EnterBatchNumber("ATENOLOL ORAL SOLID ORDINARY   0 ","1");
-		frontOfficeHomePage.EnterBatchNumber("Azathioprine Tab 50 MG_WK_WK","dfv");
+		frontOfficeHomePage.EnterBatchNumber("Azathioprine Tab 50 MG_WK_WK");
 		//frontOfficeHomePage.EnterBatchNumber("SP DRUG 5 % ORAL   0 ","sad");
 		//frontOfficeHomePage.EnterBatchNumber("MARKUP DRUG 12% RECTAL   0 ","test2");
 		//		frontOfficeHomePage.EnterBatchNumber("ENDOBUTTON CL ULTRA 15MM","OC2187");
@@ -2195,38 +2196,38 @@ public class InventoryModuleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage.clickonReloadButton();
 
 		// Select GRN Durg Item
-		frontOfficeHomePage.selectGRNDrugItem("Medicine", "Amiodarone HCl Tab 200 MG");
+		frontOfficeHomePage.selectGRNDrugItem("Medicine", "0% ASPIRIN ,ASPIRIN");
 
 		frontOfficeHomePage.clickonGRNItemsCloseButton();
 		frontOfficeHomePage.clickonCalculateButton();
 		frontOfficeHomePage.clickonSchemeDetailsOkButton();
 
 		//Enter Qty
-		frontOfficeHomePage.ReceiptDetailsQty("Amiodarone HCl Tab 200 MG","10");
+		frontOfficeHomePage.ReceiptDetailsQty("0% ASPIRIN ,ASPIRIN","10");
 		frontOfficeHomePage.clickonCalculateButton();
 		frontOfficeHomePage.clickonSchemeDetailsOkButton();
 
 		// Enter Batch Number
-		frontOfficeHomePage.EnterBatchNumber("Amiodarone HCl Tab 200 MG","1");
+		frontOfficeHomePage.EnterBatchNumber("0% ASPIRIN ,ASPIRIN");
 
 		//Enter Expiry Date
-		frontOfficeHomePage.EnterExpiryDate("Amiodarone HCl Tab 200 MG","01/Dec/2110");
+		frontOfficeHomePage.EnterExpiryDate("0% ASPIRIN ,ASPIRIN","01/Dec/2110");
 		frontOfficeHomePage.clickonEditButton();
 
 		//Enter PR Rate
-		frontOfficeHomePage.EnterPRRate("Amiodarone HCl Tab 200 MG","20");
+		frontOfficeHomePage.EnterPRRate("0% ASPIRIN ,ASPIRIN","20");
 		frontOfficeHomePage.clickonEditButton();
 
 		//Enter RP/SP/MRP
-		frontOfficeHomePage.EnterRPSPMRPNumber("Amiodarone HCl Tab 200 MG","100");
+		frontOfficeHomePage.EnterRPSPMRPNumber("0% ASPIRIN ,ASPIRIN","100");
 
 		//Enter SGST
 		frontOfficeHomePage.clickonEditButton();
-		frontOfficeHomePage.EnterSGSTPercentage("Amiodarone HCl Tab 200 MG","6");
+		frontOfficeHomePage.EnterSGSTPercentage("0% ASPIRIN ,ASPIRIN","6");
 
 		//Enter CGST
 		frontOfficeHomePage.clickonEditButton();
-		frontOfficeHomePage.EnterCGSTPercentage("Amiodarone HCl Tab 200 MG","6");
+		frontOfficeHomePage.EnterCGSTPercentage("0% ASPIRIN ,ASPIRIN","6");
 		frontOfficeHomePage.clickonCalculateButton();
 		frontOfficeHomePage.clickonSchemeDetailsOkButton();
 		frontOfficeHomePage.clickonDraftCheckBox();

@@ -328,6 +328,7 @@ public class BillingPage extends HISWebsiteBasePage{
 
 	public void selectScheduleSlotAndToken(String token) throws InterruptedException 
 	{
+		try {
 		List<WebElement> Diagnostics_table_list = driver.findElements(By.xpath("//table[@id='tblconsultation']//tbody//tr"));
 		for(int i=1;i<=Diagnostics_table_list.size();i++) 
 		{
@@ -367,6 +368,8 @@ public class BillingPage extends HISWebsiteBasePage{
 				}
 			}
 		}
+		}
+		catch (Exception e) {}
 	}
 	public boolean verifyPriceNotDefinedMessage(String message) throws InterruptedException{
 		if(driver.findElement(PRICE_NOT_DEFINED_MESSAGE).getText().contains(message))
@@ -705,6 +708,10 @@ public class BillingPage extends HISWebsiteBasePage{
 		try {
 			driver.findElement(YES_BTN_BILL_GOT_GENERATED_POPUP).click();
 			logger.info("Yes Button on Bill Got Generated Popup Clicked");
+			
+			driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
+			driver.close();
+			driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
 		}
 		catch (Exception e) {}
 	}
@@ -1423,6 +1430,13 @@ public class BillingPage extends HISWebsiteBasePage{
 			logger.info("Close Appointment Scheduling");
 		}
 		catch (Exception e) {}
+	}
+	
+	public void clickonBillingIcon() 
+	{
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(By.id("process_payment")));
+		logger.info("Click on Billing Icon");
+		
 	}
 }
 

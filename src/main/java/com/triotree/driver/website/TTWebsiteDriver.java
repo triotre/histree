@@ -1,8 +1,10 @@
 package com.triotree.driver.website;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.net.MalformedURLException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -73,7 +75,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 	private static final Logger logger = LogManager
 			.getLogger(TTWebsiteDriver.class.getName());
 
-	public void loadApplication() throws MalformedURLException 
+	public void loadApplication() 
 	{
 
 		if (propertyFile.getProperty("browser").equalsIgnoreCase("firefox"))
@@ -90,9 +92,11 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 			driver = new FirefoxDriver(firefoxOptions);
 
 		}
-		else if (propertyFile.getProperty("browser").equalsIgnoreCase("chrome")){
-			//System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
-			WebDriverManager.chromedriver().setup();
+		else if (propertyFile.getProperty("browser").equalsIgnoreCase("chrome"))
+		{
+		
+			System.setProperty("webdriver.chrome.driver", "src/test/resources/chromedriver.exe");
+			//WebDriverManager.chromedriver().setup();
 			String downloadFilepath = System.getProperty("user.dir") + "\\Downloads";
 
 
@@ -113,7 +117,8 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 			cap.setCapability(ChromeOptions.CAPABILITY, chromeOptionsMap);
 			cap.setCapability(CapabilityType.ACCEPT_SSL_CERTS, true);
 			cap.setCapability(ChromeOptions.CAPABILITY, options);
-			driver = new ChromeDriver(cap);  			
+			driver = new ChromeDriver(cap);  
+			
 		}
 
 		else if(propertyFile.getProperty("browser").equalsIgnoreCase("ie")){
@@ -713,8 +718,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 	public static void selectByvisibletext(By locator,String text) 
 	{
 		Select sl =new Select(driver.findElement(locator));
-		sl.selectByVisibleText(text);
-		
+		 sl.selectByVisibleText(text);
 	}
 
 	public static void doubleclick(WebElement element) 
@@ -744,8 +748,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 			Markup m=MarkupHelper.createLabel(label+"= "+text, ExtentColor.GREEN);
 			test.info(m);
 		}
-		catch (Exception e) {
-		}
+		catch (Exception e) {}
 	}
 
 	public static void clearData(String label,String id)
@@ -755,10 +758,13 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 
 	public static void clickonCheckBox(ExtentTest test,String text) 
 	{
-		driver.findElement(By.xpath("//label[text()='"+text+"']/..//input[@type='checkbox']")).click();
-		logger.info(text+" Check box is selected");
-		Markup m=MarkupHelper.createLabel(text+" Check box is selected", ExtentColor.GREEN);
-		test.info(m);
+		if(driver.findElement(By.xpath("//label[text()='"+text+"']/..//input[@type='checkbox']")).isDisplayed()) 
+		{
+			driver.findElement(By.xpath("//label[text()='"+text+"']/..//input[@type='checkbox']")).click();
+			logger.info(text+" Check box is selected");
+			Markup m=MarkupHelper.createLabel(text+" Check box is selected", ExtentColor.GREEN);
+			test.info(m);	
+		}	
 	}
 
 	public static void clickonRadioButton(ExtentTest test,String label,String id) throws InterruptedException 
@@ -783,5 +789,7 @@ public class TTWebsiteDriver implements TTDriver, WebDriver
 		switchWindow(1);
 		driver.get(currenturl);
 	}
+	
+	
 
 }

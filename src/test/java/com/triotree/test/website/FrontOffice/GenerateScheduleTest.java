@@ -4,52 +4,31 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
-
-import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
 import com.triotree.utils.PropertyFile;
 import com.triotree.website.pages.CommonPages.HISHomePage;
-import com.triotree.website.pages.FrontOffice.ApproveRefundPage;
 import com.triotree.website.pages.FrontOffice.BillingPage;
-import com.triotree.website.pages.FrontOffice.BillsUtilityPage;
-import com.triotree.website.pages.FrontOffice.DepositPage;
 import com.triotree.website.pages.FrontOffice.DoctorSchedulePage;
 import com.triotree.website.pages.FrontOffice.FrontOfficeHomePage;
 import com.triotree.website.pages.FrontOffice.GenerateSchedulePage;
-import com.triotree.website.pages.FrontOffice.MarkPatientDeceasedPage;
-import com.triotree.website.pages.FrontOffice.MergeAndUnmergeDuplicatePage;
 import com.triotree.website.pages.FrontOffice.PatientRegistrationPage;
 
 
 @Listeners(ResultListener.class)
-public class GenerateScheduleTest extends TTWebsiteBaseTest{
-
-	private static final Logger logger = LogManager
-			.getLogger(DepositBillingTest.class.getName());
+public class GenerateScheduleTest extends TTWebsiteBaseTest
+{
 
 	private HISHomePage hisHomePage;
 	private FrontOfficeHomePage frontOfficeHomePage;
 	private PatientRegistrationPage patientRegistrationPage;
 	private BillingPage billingPage;
-	private MarkPatientDeceasedPage markPatientDeceasedPage;
-	private MergeAndUnmergeDuplicatePage mergeAndUnmergeDuplicatePage;
-	private DepositPage depositPage;
 	private GenerateSchedulePage generateSchedulePage;
 	private DoctorSchedulePage doctorSchedulePage;
-	private BillsUtilityPage billsUtilityPage;
-	private ApproveRefundPage approveRefundPage;
-
-
 	private String patientRegistrationId = "RAJH.17152860";
 
-	private String desc = null;
-	private String title1 = null;
-	private String desc1 = null;
 
 	@Test(priority = 1)//fixed 04-05-2020 test to be run
 	public void frontOfficeDepositBySearchPatientTestSchedule() throws Throwable {	
@@ -61,9 +40,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
@@ -76,8 +57,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
@@ -134,10 +115,13 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
 
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -217,8 +201,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		//generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
@@ -293,9 +277,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("cardiology1");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();  //////////////////Not present on UI
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime(); //////////////////Not present on UI
@@ -342,8 +326,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		//		billingPage.selectSpecialityFromChooseSpecialityDropdown("Pathologist");
 		//		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" Anika  Singh");
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -351,7 +335,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 //		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 //		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 //		billingPage.selectTestsByName("Phosphorus - Inorganic 24hr Urine");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -364,7 +348,7 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("Self");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickonschemedetails();
@@ -417,9 +401,20 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
+		//depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
@@ -432,8 +427,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
@@ -489,9 +484,20 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
+		//depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
@@ -504,8 +510,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
@@ -559,9 +565,20 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
+		//depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnYes("1st FLR T1 Transplant ICU");
@@ -574,8 +591,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
@@ -631,11 +648,13 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
+		//depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
 
-
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -707,15 +726,15 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 
 
 		generateSchedulePage.clickOnSearchButton();
-		assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
+		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecilizationMessage(), "Please Select Specialization Message not showing up");
 		generateSchedulePage.clickOnPlusButton();
 		//assertTrue(generateSchedulePage.verifyPleaseSelectSpecialityMessage(), "Please Select Speciality Message not showing up");
 		generateSchedulePage.selectSpecilizationFromDropdown("Endocrinology");
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		//assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Feb/2019");
@@ -769,9 +788,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSearchButton();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("cardiology1");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
@@ -799,10 +818,12 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
-
+		
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -816,8 +837,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
@@ -875,9 +896,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("cardiology1");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();
@@ -895,7 +916,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 	}
 
 	@Test(priority =8) //fixed 26-05-2020 test to run
-	public void frontOfficeDoctorSchedulingWithLinkUHIDTest() throws Throwable {	
+	public void frontOfficeDoctorSchedulingWithLinkUHIDTest() throws Throwable 
+	{	
 
 		test=extent.createTest("frontOfficeDoctorSchedulingWithLinkUHIDTest", "This test case verify the Fornt Office Doctor Scheduling With LinkUHID Test Case");
 		test.assignCategory("Generate Schedule Test");
@@ -904,10 +926,11 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-		depositPage = new DepositPage(driver);
 		generateSchedulePage = new GenerateSchedulePage(driver);
 		doctorSchedulePage = new DoctorSchedulePage(driver);
-
+		
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -921,8 +944,8 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		generateSchedulePage.selectDoctorFromDropdown("Zacharia Parachira Sebastian");
 		generateSchedulePage.clickOnSearchButton();
 		assertTrue(generateSchedulePage.verifyNoScheduleExistMessage(), "No Schedule Exists Message not showing up");
-		generateSchedulePage.selectSpecilizationFromDropdown("cardiology1");
-		generateSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		generateSchedulePage.selectSpecilizationFromDropdown(Speciality);
+		generateSchedulePage.selectDoctorFromDropdown(Doctor);
 		generateSchedulePage.clickOnPlusButton();
 		generateSchedulePage.selectGenerateScheduledropdown("L1-SANITY-T3");
 		generateSchedulePage.enterFromDate("13/Sep/2019");
@@ -981,9 +1004,9 @@ public class GenerateScheduleTest extends TTWebsiteBaseTest{
 		doctorSchedulePage.clickOnSearchButton();
 		//assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnClearButton();
-		doctorSchedulePage.selectSpecilityFromDropdown("cardiology1");
+		doctorSchedulePage.selectSpecilityFromDropdown(Speciality);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
-		doctorSchedulePage.selectDoctorFromDropdown("brad   pitt");
+		doctorSchedulePage.selectDoctorFromDropdown(Doctor);
 		doctorSchedulePage.clickOnSearchButtonNearDate();
 		assertTrue(doctorSchedulePage.isSecialityDoctorTableShowingUp(), "Speciality Doctor Table is not showing up");
 		doctorSchedulePage.clickOnGreenGeneratedScheduleForPreviousTime();

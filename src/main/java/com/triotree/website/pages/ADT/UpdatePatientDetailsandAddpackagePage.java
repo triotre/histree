@@ -146,10 +146,14 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 		test.info(m1);
 	}
 
-	public void selectandfilledspecialityprimaryandReferring(ExtentTest test,String speciality,String consultant,String refer) 
+	public void selectandfilledspecialityprimaryandReferring(ExtentTest test,String speciality,String consultant,String refer) throws InterruptedException 
 	{
 		TTWebsiteDriver.selectByvisibletext(Speciality, speciality);
-		TTWebsiteDriver.selectByvisibletext(Primary_Consultant , consultant);
+		Thread.sleep(1000);
+		try {
+		TTWebsiteDriver.selectByvisibletext(Primary_Consultant ,consultant);
+		}
+		catch (Exception e) {}
 		driver.findElement(Referring_Consultant).sendKeys(refer);
 		WebElement referring_consultant = driver.findElement(Referring_Consultant);
 		TTWebsiteDriver.doubleclick(referring_consultant);
@@ -243,7 +247,7 @@ public class UpdatePatientDetailsandAddpackagePage extends HISWebsiteBasePage
 	{
 		driver.findElement(Package_Detail_Search).sendKeys(packagename);
 		driver.findElement(Package_Detail_Search).sendKeys(Keys.ENTER);
-		driver.findElement(By.xpath("//td[text()='"+packagename+"']")).click();
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(By.xpath("//td[text()='"+packagename+"']")));
 		WebElement selected_bed_type = driver.findElement(By.xpath("//table[@id='pricepkdetail']//tbody//tr//input[@checked]"));
 		if(selected_bed_type.isSelected())
 		{

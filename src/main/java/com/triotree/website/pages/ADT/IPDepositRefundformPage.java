@@ -92,16 +92,19 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 
 
 	public void clickOnAdmitPatientAndSelectAnOption(String option) throws InterruptedException {
-		driver.waitForElementPresent(IP_DEPOSIT_REFUND);
-		driver.click(IP_DEPOSIT_REFUND);
-		logger.info("IP Deposit/Refund Section is Expanded");
-
-		driver.waitForElementPresent(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"), 120);
+		//driver.waitForElementPresent(IP_DEPOSIT_REFUND);
+		Thread.sleep(2000);
+		try {
+		if(!driver.findElement(By.xpath("//li[@id='FOBedTranferMenu']//a[text()='IP Deposit Refund']/..//ul")).getAttribute("style").equals("display: block;")) {
+			driver.click(IP_DEPOSIT_REFUND);
+			logger.info("IP Deposit/Refund Section is Expanded");
+		}
+		}
+		catch (Exception e) {}
 		WebElement options = driver.findElement(By.xpath("//ul[@style='display: block;']//a[text()='" + option + "']"));
 		options.click();
 		logger.info("Following Option has been selected from IP Deposit/Refund Section " + option);
 
-		driver.waitForPageLoad();
 		Thread.sleep(5000);
 	}
 
@@ -163,7 +166,7 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 	}
 
 	public void clickOnIpDepositandRefund(ExtentTest test,String option) throws InterruptedException {
-		driver.waitForElementPresent(IP_DEPOSIT);
+		try {
 		driver.click(IP_DEPOSIT);
 		logger.info("IP Deposit/Refund Section is Expanded");
 		Markup m=MarkupHelper.createLabel("IP Deposit/Refund Section is Expanded", ExtentColor.GREEN);
@@ -174,8 +177,12 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 		logger.info("Following Option has been selected from IP Deposit/Refund Section " + option);
 		Markup m1=MarkupHelper.createLabel("Following Option has been selected from IP Deposit/Refund Section " + option, ExtentColor.GREEN);
 		test.info(m1);
-		driver.waitForPageLoad();
+		//driver.waitForPageLoad();
 		Thread.sleep(3000);
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 
 	public void searchUHIDFromSearchBoxOnHeader(String uhid) throws InterruptedException {
@@ -195,8 +202,12 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 	}
 
 	public void validatepopuptext(ExtentTest test) {
-		String text = driver.findElement(POPUP_TEXT).getText();
-
+		String text="";
+		try 
+		{
+		 text = driver.findElement(POPUP_TEXT).getText();
+		}
+		catch (Exception e) {}
 		if(text.equals("The patient has been discharged!")) 
 		{
 			//Test.class.
@@ -495,6 +506,7 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 	{
 		driver.findElement(PRINT_BUTTON).click();
 		logger.info("Click on Print Button");
+		try {
 		driver.switchTo().window(driver.getWindowHandles().toArray()[2].toString());
 		if(driver.getWindowHandles().size()>0) 
 		{
@@ -511,6 +523,10 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 
 		driver.close();
 		driver.switchTo().window(driver.getWindowHandles().toArray()[1].toString());
+		}
+		catch (Exception e) {
+			// TODO: handle exception
+		}
 
 	}
 
@@ -538,6 +554,7 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 	public void enterFromDate(ExtentTest test,String fromdate) 
 	{
 		driver.findElement(FROM_DATE).clear();
+		
 		driver.findElement(FROM_DATE).sendKeys(fromdate);
 		driver.findElement(FROM_DATE).sendKeys(Keys.ENTER);
 		logger.info("From Date= "+fromdate);
@@ -823,7 +840,7 @@ public class IPDepositRefundformPage extends HISWebsiteBasePage
 	public void clickonsiderefundbutton(ExtentTest test) throws InterruptedException
 	{
 		try {
-			driver.findElement(SIDE_REFUND_BUTTON).click();
+			driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(SIDE_REFUND_BUTTON));
 			logger.info("Click on Refund Button");
 			Markup m=MarkupHelper.createLabel("Click on Refund Button", ExtentColor.GREEN);
 			test.info(m);

@@ -235,8 +235,8 @@ public class DepositBillingTest extends TTWebsiteBaseTest{
 		billingPage.cashrecieved();
 		billingPage.saveprocesspayment();
 		billingPage.clickonYesButtonOnBillGotGenertedPopup();
-		//billingPage.enterPatientPaidAmount("5000");
-		//		billingPage.clickOnNewPaymentModeButton();
+		billingPage.enterPatientPaidAmount("5000");
+				billingPage.clickOnNewPaymentModeButton();
 		//		billingPage.selectSecondPaymentModeAsCheque();
 		//		billingPage.enterPatientPaidAmountForCheque("1000");
 		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		

@@ -57,7 +57,7 @@ import com.triotree.website.pages.Reports.OpDiscoutReportPage;
 import com.triotree.website.pages.Reports.ReportPDFPage;
 
 @Listeners(ResultListener.class)
-public class ReportsTest extends TTWebsiteBaseTest{
+public class MISReportsTest extends TTWebsiteBaseTest{
 
 	private static final Logger logger = LogManager
 			.getLogger(PatientRegistrationTest.class.getName());
@@ -146,12 +146,11 @@ public class ReportsTest extends TTWebsiteBaseTest{
 		workbook.write(out);
 		out.close();
 
-
 		// Converting CSV to Excel File
 		File myFile = new File(currentDirectory.getCanonicalPath() + "/Downloads/IP Discount Report.csv");
 		ExcelWriter writer = new ExcelWriter();
 		writer.setExcelFile(System.getProperty("user.dir")+"IP Discount Report Excel.xlsx");
-
+		Thread.sleep(2000);
 		try (FileInputStream fileInputStream = new FileInputStream(myFile);) {
 
 			try (BufferedReader reader = new BufferedReader(new InputStreamReader(fileInputStream));) {
@@ -170,9 +169,7 @@ public class ReportsTest extends TTWebsiteBaseTest{
 				writer.write();
 				System.out.println("Migration completed");
 			}
-
 		}
-
 
 		Double sumOfDiscountValueFromIPReport = ExcelReader.readExcelIpDiscount(System.getProperty("user.dir")+"IP Discount Report Excel.xlsx", "IP Discount");
 		System.out.println("sumOfDiscountValueFromIPReport"+sumOfDiscountValueFromIPReport);
@@ -186,7 +183,6 @@ public class ReportsTest extends TTWebsiteBaseTest{
 		File csvFile = new File(currentDirectory.getCanonicalPath() + "/Downloads/IP Discount Report.csv");
 		csvFile.delete();
 
-
 		//Getting Discount Amount From DSD Report
 
 		frontOfficeHomePage.expandMenu();
@@ -196,50 +192,49 @@ public class ReportsTest extends TTWebsiteBaseTest{
 		departmentWiseSubDepartmentWiseRevenuePage.enterFromDate("04/Jun/2020");
 		departmentWiseSubDepartmentWiseRevenuePage.selectFacility("L1-SANITY-T3");
 		departmentWiseSubDepartmentWiseRevenuePage.clickOnCSVButton();
-		//Thread.sleep(25000);
 		Thread.sleep(7000);
+
 		//Create Blank workbook
-		XSSFWorkbook workbook1 = new XSSFWorkbook();
-		FileOutputStream out1 = new FileOutputStream(new File(System.getProperty("user.dir")+"Department Wise SubDepartment Wise Revenue.xlsx"));
-
-		//write operation workbook using file out object
-		workbook1.write(out1);
-		out1.close();
-
-
-		// Converting CSV to Excel File
-		File myFile1 = new File(currentDirectory.getCanonicalPath() + "/Downloads/Department Wise SubDepartment Wise Revenue.csv");
-		ExcelWriter writer1 = new ExcelWriter();
-		writer1.setExcelFile(System.getProperty("user.dir")+"Department Wise SubDepartment Wise Revenue.xlsx");
-		Thread.sleep(4000);
-		try (FileInputStream fileInputStream1 = new FileInputStream(myFile1);) {
-
-			try (BufferedReader reader1 = new BufferedReader(new InputStreamReader(fileInputStream1));) {
-				XSSFSheet sheet1 = writer1.createSheet("Department Wise SubDepartment W");
-				int i = 0;
-				Iterator<String> ite1 = reader1.lines().iterator();
-				while (ite1.hasNext()) {
-
-					i = i + 1;
-					XSSFRow row1 = writer1.createRow(i);
-					String[] strCollection1 = ite1.next().split(",");
-
-					for (int j = 0; j < strCollection1.length; j++)
-						row1.createCell(j).setCellValue(strCollection1[j]);
-				}
-				try {
-					writer1.write();
-				}
-				catch (Exception e) {
-				}
-				System.out.println("Migration completed");
-			}
-
-		}
-		Double sumOfDiscountValueFromDSD = ExcelReader.readExcelDSDDiscount(System.getProperty("user.dir")+"Department Wise SubDepartment Wise Revenue.xlsx", "Department Wise SubDepartment W");
-		System.out.println("sumOfDiscountValueFromDSD"+sumOfDiscountValueFromDSD);
-
-		CommonUtils.saveDownloadedExcel("Department Wise SubDepartment Wise Revenue");
+//		XSSFWorkbook workbook1 = new XSSFWorkbook();
+//		FileOutputStream out1 = new FileOutputStream(new File(System.getProperty("user.dir")+"Department Wise SubDepartment Wise Revenue.xlsx"));
+//
+//		//write operation workbook using file out object
+//		workbook1.write(out1);
+//		out1.close();
+//
+//		// Converting CSV to Excel File
+//		File myFile1 = new File(currentDirectory.getCanonicalPath() + "/Downloads/Department Wise SubDepartment Wise Revenue.csv");
+//		ExcelWriter writer1 = new ExcelWriter();
+//		writer1.setExcelFile(System.getProperty("user.dir")+"Department Wise SubDepartment Wise Revenue.xlsx");
+//		Thread.sleep(6000);
+//		try(FileInputStream fileInputStream1 = new FileInputStream(myFile1);)
+//		{
+//			try (BufferedReader reader1 = new BufferedReader(new InputStreamReader(fileInputStream1));) {
+//				XSSFSheet sheet1 = writer1.createSheet("Department Wise SubDepartment W");
+//				int i = 0;
+//				Iterator<String> ite1 = reader1.lines().iterator();
+//				while (ite1.hasNext()) {
+//
+//					i = i + 1;
+//					XSSFRow row1 = writer1.createRow(i);
+//					String[] strCollection1 = ite1.next().split(",");
+//
+//					for (int j = 0; j < strCollection1.length; j++)
+//						row1.createCell(j).setCellValue(strCollection1[j]);
+//				}
+//				try {
+//					writer1.write();
+//				}
+//				catch (Exception e) {
+//				}
+//				System.out.println("Migration completed");
+//			}
+//
+//		}
+//		Double sumOfDiscountValueFromDSD = ExcelReader.readExcelDSDDiscount(System.getProperty("user.dir")+"Department Wise SubDepartment Wise Revenue.xlsx", "Department Wise SubDepartment W");
+//		System.out.println("sumOfDiscountValueFromDSD"+sumOfDiscountValueFromDSD);
+//
+//		CommonUtils.saveDownloadedExcel("Department Wise SubDepartment Wise Revenue");
 
 		//Delete Summary Report Excel File and CSV File
 
@@ -247,8 +242,6 @@ public class ReportsTest extends TTWebsiteBaseTest{
 		excelFile1.delete();
 		File csvFile1 = new File(currentDirectory.getCanonicalPath() + "/Downloads/Department Wise SubDepartment Wise Revenue.csv");
 		csvFile1.delete();
-
-
 	}
 
 
@@ -389,7 +382,7 @@ public class ReportsTest extends TTWebsiteBaseTest{
 	@Test(priority = 4) //not fixed 13-04-2020 
 	public void misDsdMatchWithDeptWiseTestAndRevenueReportForIpEpisodeTest() throws Throwable {
 
-		test=extent.createTest("misOpDiscountReportAndDSDReportTest", "This test case verify the misOp Discount Report And DSD Report Test Case");
+		test=extent.createTest("misDsdMatchWithDeptWiseTestAndRevenueReportForIpEpisodeTest", "This test case verify the mis Dsd Match With DeptWise Test And Revenue Report For Ip Episode Test Case");
 		test.assignCategory("MIS Report");
 
 		hisHomePage = new HISHomePage(driver);

@@ -10,6 +10,7 @@ import com.aventstack.extentreports.ExtentTest;
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
 import com.triotree.test.website.InventroyModule.InventoryModuleTest;
+import com.triotree.utils.PropertyFile;
 import com.triotree.website.pages.ADT.ADTHomePage;
 import com.triotree.website.pages.ADT.BedStatusPage;
 import com.triotree.website.pages.ADT.IPDepositRefundformPage;
@@ -34,7 +35,7 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 	private IPDepositRefundformPage ipdepositrefund;
 
 	@Test
-	public void RegistrationforminADTwithcashPatient() throws InterruptedException 
+	public void RegistrationforminADTwithcashPatient() throws Exception 
 	{
 		test=extent.createTest("RegistrationforminADTwithcashPatient", "This test case is verifies Registration form in ADT with cash Patient");
 		test.assignCategory("Registration in ADT with cash Patient");
@@ -42,7 +43,12 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);
 		bedstatusPage=new BedStatusPage(driver);
-
+		String Company_Type=PropertyFile.getproperty("ADT","Company_Type");
+		String Company=PropertyFile.getproperty("ADT","Company");
+		String Rate_Contract=PropertyFile.getproperty("ADT","Rate_Contract");
+		String Doctor=PropertyFile.getproperty("ADT", "Doctor");
+		String Speciality= PropertyFile.getproperty("ADT", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 
 		///////Create Bed 
@@ -101,9 +107,9 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 
 		/////Consultant Tab
 		adtpage.selectTab(test,"Consultant");
-		adtpage.selectdoctorspeciality(test,"cardiology1");
-		adtpage.selectAdmittingConsultant(test,"brad   pitt");
-		adtpage.selectPrimaryAttendingConsultant(test,"brad   pitt");
+		adtpage.selectdoctorspeciality(test,Speciality);
+		adtpage.selectAdmittingConsultant(test,Doctor);
+		adtpage.selectPrimaryAttendingConsultant(test,Doctor);
 		adtpage.enterrefferby(test," A.G.RAJAN");
 		adtpage.enterexpectedlength(test,"5");
 		adtpage.clickonSaveButton();
@@ -119,8 +125,8 @@ public class ADTCashPatientRegistrationTest extends TTWebsiteBaseTest
 
 		///Package Details
 		adtpage.selectTab(test,"Package Details");
-		adtpage.selectpackagedetailsspeciality(test,"cardiology1");
-		adtpage.selectdoctor(test,"brad   pitt");
+		adtpage.selectpackagedetailsspeciality(test,Speciality);
+		adtpage.selectdoctor(test,Doctor);
 
 		//Next of Kin Details
 		adtpage.selectTab(test,"Next of Kin Details");

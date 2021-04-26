@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
+import com.triotree.utils.PropertyFile;
 import com.triotree.website.pages.ADT.ADTHomePage;
 import com.triotree.website.pages.ADT.BedStatusPage;
 import com.triotree.website.pages.ADT.IPDepositRefundformPage;
@@ -26,7 +27,7 @@ public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 	private UpdatePatientDetailsandAddpackagePage updatedetail;
 
 	@Test
-	public void ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer() throws InterruptedException
+	public void ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer() throws Exception
 	{
 		test=extent.createTest("ReEnterIPNumberAdmitwithdependentpatientsimultaneouslytransfer", "This test case is verifies ReEnter IP Number Admit with dependent patient simultaneously transfer");
 		test.assignCategory("ADT reEnter IP Number and Admit with dependent patient");
@@ -35,7 +36,14 @@ public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 		ipdepositrefund = new IPDepositRefundformPage(driver);
 		bedstatusPage=new BedStatusPage(driver);
 		updatedetail=new UpdatePatientDetailsandAddpackagePage(driver);
-
+		String Company_Type=PropertyFile.getproperty("ADT","Company_Type");
+		String Company=PropertyFile.getproperty("ADT","Company");
+		String Rate_Contract=PropertyFile.getproperty("ADT","Rate_Contract");
+		String Doctor=PropertyFile.getproperty("ADT", "Doctor");
+		String Speciality=PropertyFile.getproperty("ADT", "Speciality");
+		String Primary_Consultant=PropertyFile.getproperty("ADT", "Primary_Consultant");
+		System.out.println("doctor="+Doctor);
+		
 		hisHomePage.loginToTriotreeHIS();
 		///////Create Bed 
 		hisHomePage.clickOnIPMasterIcon();
@@ -76,7 +84,7 @@ public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 		updatedetail.selectAllottedBedType(test);
 		updatedetail.selectward(test,"1st FLR T1 Transplant ICU");
 		updatedetail.selectBed(test);
-		updatedetail.selectandfilledspecialityprimaryandReferring(test,"cardiology1","brad   pitt","brad   pitt");
+		updatedetail.selectandfilledspecialityprimaryandReferring(test,Speciality,Primary_Consultant,Doctor);//////
 		updatedetail.getvalueofFirstandLastName(test);
 		updatedetail.clickoncancelbutton(test);
 
@@ -86,7 +94,7 @@ public class ReEnterIPNumberAdmitwithdependentpatient extends TTWebsiteBaseTest
 		//Package Details tab Speciality
 		adtpage.selectTab(test,"Package Details");
 		updatedetail.clickonSelectedPackage(test);
-		updatedetail.packageDetailSearch(test,"Akash package()");
+		updatedetail.packageDetailSearch(test,"Normal ,Package ,1()");
 		updatedetail.verifypackageDetails(test);
 		updatedetail.clickonplusbuttonicon(test);
 		updatedetail.verfiyAssignnewPackagePopup(test);

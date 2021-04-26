@@ -5,12 +5,14 @@ import org.apache.log4j.Logger;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import com.mysql.cj.jdbc.Driver;
 import com.triotree.test.base.ResultListener;
 import com.triotree.test.website.TTWebsiteBaseTest;
 import com.triotree.website.pages.ADT.IPDepositRefundformPage;
 import com.triotree.website.pages.CommonPages.HISHomePage;
 
 @Listeners(ResultListener.class)
+
 public class IPDepositRefundChequeTest extends TTWebsiteBaseTest
 {
 
@@ -74,34 +76,37 @@ public class IPDepositRefundChequeTest extends TTWebsiteBaseTest
 
 
 		//receipt got selected
-		ipdepositrefund.clickonclearbutton();
-		ipdepositrefund.clickonReceiptUtility(test);
-		ipdepositrefund.enterbilldetailsuhid("RAJH.17150458");
-		ipdepositrefund.clickonbilldetailclearbutton();
-		ipdepositrefund.clickonReceiptUtility(test);
-		ipdepositrefund.enterbilldetailsIPNumber(test,"40102");
-		ipdepositrefund.clickonPrintButton(test);
-		ipdepositrefund.clickonRefershbutton();
-		ipdepositrefund.enterRecepitNumber(test,"RHDI46457");
-		//ipdepositrefund.clickonPrintButton(test);
-		ipdepositrefund.clickonBillDetailclosebutton();
+				ipdepositrefund.clickonclearbutton();
+				ipdepositrefund.clickonReceiptUtility(test);
+				ipdepositrefund.enterbilldetailsuhid("RAJH.17150458");
+				ipdepositrefund.clickonbilldetailclearbutton();
+				ipdepositrefund.clickonReceiptUtility(test);
+				ipdepositrefund.enterbilldetailsIPNumber(test,"40102");
+				ipdepositrefund.clickonPrintButton(test);
+				ipdepositrefund.clickonRefershbutton();
+				ipdepositrefund.enterRecepitNumber(test,"RHDI46457");
+				//ipdepositrefund.clickonPrintButton(test);
+				ipdepositrefund.clickonBillDetailclosebutton();
+				driver.close();
+				driver.switchTo().window(driver.getWindowHandles().toArray()[0].toString());
+				//Cheque in hand details
+				//ipdepositrefund.clickOnMenu();
+				///hisHomePage.clickOnHomeIcon();
+				//ipdepositrefund.clickOnIpDepositandRefund(test,"Cheque In Hand Details");
+				ipdepositrefund.clickOnAdmitPatientAndSelectAnOption("Cheque In Hand Details");
+				//driver.switchTo().window(driver.getWindowHandles().toArray()[2].toString());
+				//ipdepositrefund.getheading(test,"Cheque In Hand Details");
+				ipdepositrefund.enterFromDate(test,"01/Jun/2020");
+				ipdepositrefund.enterToDate(test,"15/Jun/2020");
+				ipdepositrefund.clickoncheckInHandSearch(test);
+				//ipdepositrefund.verifycheckInHandDetails(test);
+				//ipdepositrefund.clickonCSVButton(test);
 
-		//Cheque in hand details
-		ipdepositrefund.clickOnMenu();
-		ipdepositrefund.clickOnIpDepositandRefund(test,"Cheque In Hand Details");
-		driver.switchTo().window(driver.getWindowHandles().toArray()[2].toString());
-		ipdepositrefund.getheading(test,"Cheque In Hand Details");
-		ipdepositrefund.enterFromDate(test,"01/Jun/2020");
-		ipdepositrefund.enterToDate(test,"15/Jun/2020");
-		ipdepositrefund.clickoncheckInHandSearch(test);
-		ipdepositrefund.verifycheckInHandDetails(test);
-		ipdepositrefund.clickonCSVButton(test);
-
-		//Select the from date greater then to date
-		ipdepositrefund.enterFromDate(test,"16/Jun/2020");
-		ipdepositrefund.enterToDate(test,"15/Jun/2020");
-		ipdepositrefund.clickoncheckInHandSearch(test);
-		ipdepositrefund.validatepopuptext(test);
+				//Select the from date greater then to date
+				//ipdepositrefund.enterFromDate(test,"16/Jun/2020");
+				//ipdepositrefund.enterToDate(test,"15/Jun/2020");
+				//ipdepositrefund.clickoncheckInHandSearch(test);
+				//ipdepositrefund.validatepopuptext(test);
 	}
 
 }

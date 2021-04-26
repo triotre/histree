@@ -51,7 +51,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage=new BillingPage(driver);
-
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		System.out.println("idCard>>>>"+idCard);
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -121,7 +131,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
 			//billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -137,8 +147,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" Abhin  Lazar");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -146,7 +156,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Diagnostics_Speciality);
 		try {
 			billingPage.clickOnYesButtonOnPatientMappedPopup();
 		}
@@ -158,12 +168,13 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.selectQuantityInManualSection("50");
 		billingPage.enterPriceInManualSection("100");
 		billingPage.clickOnVerifyButton();
+		
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -174,7 +185,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -202,6 +213,18 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage=new BillingPage(driver);
 
+		
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		System.out.println("idCard>>>>"+idCard);
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -288,8 +311,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		//billingPage.selectSpecialityFromChooseSpecialityDropdown("Pathologist");
 		//billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" Anika  Singh");
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -297,7 +320,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -310,7 +333,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -329,6 +352,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -403,7 +437,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		try {
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("Automation Testing Scheme 2", "Management Decision", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -417,8 +451,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -426,7 +460,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -439,7 +473,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -475,6 +509,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage=new BillingPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		System.out.println("idCard>>>>"+idCard);
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
@@ -622,6 +667,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -699,8 +755,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -708,7 +764,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -721,20 +777,20 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
 
 		billingPage.clickOnInsuranceCompanyButton();
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "CGHS", "Trio Tree Noida", "Sagar,gohri,king ", "0", "0");
+		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 
 		///billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
 		billingPage.clickonschemedetails();
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -770,6 +826,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		 
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -851,8 +918,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("Cardiology");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" MANNAT  DEVGAN");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -860,7 +927,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
 		billingPage.enterDescriptionInManualSection("cardic");
@@ -872,18 +939,18 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
 
 		billingPage.clickOnInsuranceCompanyButton();
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 		billingPage.clickonschemedetails();
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -921,7 +988,18 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		frontOfficeHomePage = new FrontOfficeHomePage(driver);
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
-
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
+		
 		String schemeExpiredPatienId = propertyFile.getProperty("schemeExpiredPatient");
 
 		hisHomePage.loginToTriotreeHIS();
@@ -955,8 +1033,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.closePreviousVisitPopup();
 
 		//choose speciality
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(" brad   pitt");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); 
 		//Diagnostic Test
 		billingPage.clickOnDiagnosticIcon();
@@ -965,7 +1043,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 
 		//Manual Icon 
 		billingPage.clickOnManualIcon();
@@ -979,17 +1057,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
 		billingPage.clickOnInsuranceCompanyButton();
 		billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+		billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 		billingPage.clickonschemedetails();
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -1042,6 +1120,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -1119,8 +1208,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -1128,7 +1217,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1138,15 +1227,12 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage.clickOnVerifyButton();
 		billingPage.clickOnOtherServicesIcon();
 		billingPage.checkChooseServicesCheckboxInOtherServicesSection();
-		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
-		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
 
-		//assertTrue(billingPage.verifyInvestigationInstructionPopupIsPresent(), "Investigation Instruction Popup Is Not showing up");
 		billingPage.enterReponseInInvestigationPopupAndClickOnAddButton("ggg");
 		billingPage.checkDiscountCheckbox();
 		billingPage.clickOnYesBtnUnderProvideDiscountPopup();
@@ -1191,6 +1277,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage = new BillingPage(driver);
 		markPatientDeceasedPage = new MarkPatientDeceasedPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -1350,6 +1447,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -1424,7 +1532,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -1439,8 +1547,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -1448,7 +1556,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1461,7 +1569,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -1472,7 +1580,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {
@@ -1534,6 +1642,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		billingPage = new BillingPage(driver);
 		mergeAndUnmergeDuplicatePage = new MergeAndUnmergeDuplicatePage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -1693,8 +1812,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -1702,7 +1821,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1715,7 +1834,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 		billingPage.clickOnAddToBillButton();
@@ -1752,7 +1871,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.enterPatientPaidAmount("5000");
 		//		billingPage.clickOnNewPaymentModeButton();
 		//		billingPage.selectSecondPaymentModeAsCheque();
-		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bank of India", "Noida");		
+		//		billingPage.enterChequeDetailsAndSaveDetails("123456789", "State Bsank of India", "Noida");		
 		//		billingPage.clickOnVerifyButtonOnProcessPayment();
 		//		billingPage.clickOnYesButtonOnOpdPopup();
 		//assertTrue(billingPage.verifyPrintOPDMessageIsDisplaying("Do you want to print OPD card"), "Print OP Card Message is not showing up");
@@ -1771,6 +1890,17 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		patientRegistrationPage = new PatientRegistrationPage(driver);
 		billingPage = new BillingPage(driver);
 
+		String Company_Type=PropertyFile.getproperty("FrontOffice","Company_Type");
+		String Company=PropertyFile.getproperty("FrontOffice","Company");
+		String Corporate_Company=PropertyFile.getproperty("FrontOffice","Corporate_Company");
+		String Rate_Contract=PropertyFile.getproperty("FrontOffice","Rate_Contract");
+		String Standard_Deductible=PropertyFile.getproperty("FrontOffice","Standard_Deductible");
+		String Standard_Copay=PropertyFile.getproperty("FrontOffice","Standard_Co-pay");
+		String Doctor_Name=PropertyFile.getproperty("FrontOffice","Doctor_Name");
+		String Diagnostics_Speciality=PropertyFile.getproperty("FrontOffice","Diagnostics_Speciality");
+		String Doctor=PropertyFile.getproperty("FrontOffice", "Doctor");
+		String Speciality= PropertyFile.getproperty("FrontOffice", "Speciality");
+		
 		hisHomePage.loginToTriotreeHIS();
 		hisHomePage.clickOnFronOfficeIcon();
 		hisHomePage.selectStationAndClickOnNo("1st FLR T1 Transplant ICU");
@@ -1844,7 +1974,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnSaveButtonOnDocumentChecklistPopup();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			//billingPage.selectSchemeAuthorisedSchemeDetailsPopup("New Scheme", "anshul agarwal", "Today Testing");
 			billingPage.clickonschemedetails();
 		}
@@ -1859,8 +1989,8 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		} catch (Exception e) {}
 		billingPage.closeRemarksPopup();
 
-		billingPage.selectSpecialityFromChooseSpecialityDropdown("cardiology1");
-		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined("brad   pitt");
+		billingPage.selectSpecialityFromChooseSpecialityDropdown(Speciality);
+		billingPage.selectDoctorByNameAndVerifyIfPriceIsDefined(Doctor);
 		billingPage.selectScheduleSlotAndToken("54"); // new functionality is added
 		billingPage.clickOnDiagnosticIcon();
 		billingPage.selectTestsByName("24 hour urine 5HIAA");
@@ -1868,7 +1998,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//		billingPage.selectTestsByName("24 hour Urine Aldosterone");
 		//		billingPage.selectTestsByName("24 hour Urine Free Cortisol");
 		//		billingPage.selectTestsByName("24 hour urine 5HIAA");
-		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", "Anish  ");
+		billingPage.selectAllTestSpecialityAndDoctorName("REHAB", Doctor_Name);
 		billingPage.clickOnYesButtonOnPatientMappedPopup();
 		billingPage.clickOnManualIcon();
 		billingPage.selectServiceNameFromDropdown("Cardiology Services");
@@ -1881,7 +2011,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		//assertTrue(billingPage.verifyChooseServicesDropdownIsEnabled(), "Choose Services Dropdown is disabled");
 		billingPage.selectAllServiceAndItemFromOtherServicesDropdown("Blood Bank" , "Cross matching");
 		//billingPage.selectSpecialityAndDoctor();
-		billingPage.selectSpecialityAndDoctor("REHAB", "Anish  ");
+		billingPage.selectSpecialityAndDoctor("REHAB", Doctor_Name);
 		billingPage.enterRefferedBy("demo");
 		billingPage.selectFacilitatorFromDropdown(1);
 
@@ -1892,7 +2022,7 @@ public class FrontOfficeBillingTest extends TTWebsiteBaseTest{
 		try {
 			billingPage.clickOnInsuranceCompanyButton();
 			billingPage.selectInsuranceCompRadioButtonOnCompDetailsPopup();
-			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton("Corporate", "Ayush PVT ltd", "Testing Corporate Comapny", "Abcedf", "5", "10");
+			billingPage.enterDetailsInCompDetailsPopupAndPressYesButton(Company_Type, Company, Corporate_Company, Rate_Contract, "5", "10");	
 			billingPage.clickonschemedetails();
 		}
 		catch (Exception e) {

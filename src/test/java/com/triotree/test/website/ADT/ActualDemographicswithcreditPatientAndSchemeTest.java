@@ -12,13 +12,7 @@ import com.triotree.website.pages.ADT.ADTHomePage;
 import com.triotree.website.pages.ADT.BedStatusPage;
 import com.triotree.website.pages.ADT.IPDepositRefundformPage;
 import com.triotree.website.pages.CommonPages.HISHomePage;
-import com.triotree.website.pages.FrontOffice.BillingPage;
-import com.triotree.website.pages.FrontOffice.FrontOfficeHomePage;
-import com.triotree.website.pages.FrontOffice.IndentApprovalPage;
-import com.triotree.website.pages.FrontOffice.IndentIssuePage;
-import com.triotree.website.pages.FrontOffice.IndentItemsPage;
-import com.triotree.website.pages.FrontOffice.PatientRegistrationPage;
-import com.triotree.website.pages.FrontOffice.PurchaseRequisitionPage;
+
 
 @Listeners(ResultListener.class)
 public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteBaseTest
@@ -33,7 +27,7 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 	
 	
 	@Test
-	public void actualDemographicswithcreditPatientAndScheme() throws InterruptedException 
+	public void actualDemographicswithcreditPatientAndScheme() throws Exception 
 	{
 		test=extent.createTest("ActualDemographicswithcreditPatientAndScheme", "This test case is verifies Actual Demographics with credit Patient And Scheme");
 		test.assignCategory("ADT Actual Demographics with credit Patient and Scheme");
@@ -41,6 +35,12 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 		adtpage=new ADTHomePage(driver);
 		ipdepositrefund = new IPDepositRefundformPage(driver);
 		bedstatusPage=new BedStatusPage(driver);
+		
+		String Company_Type=PropertyFile.getproperty("ADT","Company_Type");
+		String Company=PropertyFile.getproperty("ADT","Company");
+		String Rate_Contract=PropertyFile.getproperty("ADT","Rate_Contract");
+		String Doctor=PropertyFile.getproperty("ADT", "Doctor");
+		String Speciality= PropertyFile.getproperty("ADT", "Speciality");
 		
 		hisHomePage.loginToTriotreeHIS();
 		
@@ -100,9 +100,9 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 
 		/////Consultant Tab
 		adtpage.selectTab(test,"Consultant");
-		adtpage.selectdoctorspeciality(test,"cardiology1");
-		adtpage.selectAdmittingConsultant(test,"neha  jain");
-		adtpage.selectPrimaryAttendingConsultant(test,"neha  jain");
+		adtpage.selectdoctorspeciality(test,Speciality);
+		adtpage.selectAdmittingConsultant(test,Doctor);
+		adtpage.selectPrimaryAttendingConsultant(test,Doctor);
 		adtpage.enterrefferby(test," A.G.RAJAN");
 		adtpage.enterexpectedlength(test,"5");
 		adtpage.clickonSaveButton();
@@ -117,7 +117,7 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 		adtpage.selectbedtype(test);
 		
 		/// Scheme company type and company
-		adtpage.companyInsuranceDetails(test,"Corporate","CGHS", "Sagar,gohri,king ");
+		adtpage.companyInsuranceDetails(test,Company_Type,Company, Rate_Contract);
 		adtpage.enterauthorizationNumber(test, "123456");
 		adtpage.enterCreditLimit(test, "1");
 		adtpage.clickonschemecheckbox();
@@ -126,8 +126,8 @@ public class ActualDemographicswithcreditPatientAndSchemeTest extends TTWebsiteB
 
 		///Package Details
 		adtpage.selectTab(test,"Package Details");
-		adtpage.selectpackagedetailsspeciality(test,"cardiology1");
-		adtpage.selectdoctor(test,"brad   pitt");
+		adtpage.selectpackagedetailsspeciality(test,Speciality);
+		adtpage.selectdoctor(test,Doctor);
 
 		//Next of Kin Details
 		adtpage.selectTab(test,"Next of Kin Details");

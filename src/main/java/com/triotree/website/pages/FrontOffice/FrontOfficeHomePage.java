@@ -254,7 +254,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 		catch (Exception e) {}
 	}
 
-	public void EnterBatchNumber(String itemname,String batchnumber) throws InterruptedException 
+	public void EnterBatchNumber(String itemname) throws InterruptedException 
 	{
 		List<WebElement> EnterBatchNumber_list = driver.findElements(By.xpath("//input[@class='required clsvalinteger clskeyup']/../..//td[text()]"));
 		for(int i=1;i<=EnterBatchNumber_list.size();i++) 
@@ -266,7 +266,8 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 				Thread.sleep(2000);
 				driver.findElement(By.xpath("//td[text()='"+value+"']//following-sibling::td//input[@class='required']")).click();
 				Thread.sleep(2000);
-				driver.findElement(By.xpath("//td[@class='clsfillitembatch' and text()='"+batchnumber+"']")).click();
+				String batchnumber=driver.findElement(By.xpath("(//td[@class='clsfillitembatch'])[1]")).getText();
+				driver.findElement(By.xpath("(//td[@class='clsfillitembatch'])[1]")).click();
 				logger.info("Enter Batch Number "+value+" "+batchnumber);
 			}
 		}
@@ -561,7 +562,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 		driver.findElement(By.xpath("//input[@id='Chksmart_search']/..//input[@id='txtitemsearch']")).sendKeys(Keys.ENTER);
 		if(driver.findElements(By.xpath("(//td[text()='"+value+"'])")).size()>0) 
 		{
-			driver.findElement(By.xpath("(//td[text()='"+value+"'])")).click();
+			driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(By.xpath("(//td[text()='"+value+"'])")));
 		}
 	}
 
@@ -690,9 +691,9 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 			logger.info("Click on Yes button");
 		}
 		catch (Exception e) {
-			driver.findElement(By.xpath("//div[@class='modal-block-new top30']//span[@class='inventory_close_modal']//i")).click();
+			//driver.findElement(By.xpath("//div[@class='modal-block-new top30']//span[@class='inventory_close_modal']//i")).click();
 		}
-	}
+	} 
 
 	public void clickonDoYouWantContinueNoOption() 
 	{
@@ -834,7 +835,7 @@ public class FrontOfficeHomePage extends HISWebsiteBasePage
 
 	public void clickonPaymentAdviceSearchButton() 
 	{
-		driver.findElement(By.xpath("//a[@id='btn_Search']//i")).click();	
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(By.xpath("//a[@id='btn_Search']//i")));
 		logger.info("Click on Payment Advice Search Button");
 	}
 

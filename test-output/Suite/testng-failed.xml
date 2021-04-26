@@ -3,82 +3,17 @@
 <suite parallel="none" name="Failed suite [Suite]">
   <test parallel="none" name="Test(failed)">
     <classes>
-      <class name="com.triotree.website.pages.SampleCollectionTest.SampleCollectionOutpatientTest">
+      <class name="com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest">
         <methods>
           <include name="beforeclass"/>
-          <include name="sampleCollectionOutpatientTest"/>
+          <include name="revokeDeceasedPatientTest"/>
+          <include name="frontOfficeCancellationOfAllAppointmentOnMarkPatientDeceased"/>
           <include name="beforeSuite"/>
           <include name="tearDownSession"/>
           <include name="setUp"/>
           <include name="afterSuite"/>
         </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.SampleCollectionOutpatientTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.HomeVisitSampleCollectionReportTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.HomeVisitSampleCollectionReportTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.SampleCollectionSTATandASAPTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-          <include name="sampleCollectionSTATandASAPTest"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.SampleCollectionSTATandASAPTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.TATReportTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tATReportTest"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.TATReportTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.PhlebotomistWorkSheetReportTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.PhlebotomistWorkSheetReportTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.SampleCollectionHealthCheckupTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.SampleCollectionHealthCheckupTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.HomeVisitSampleCollection">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="homeVisitSampleCollection"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.HomeVisitSampleCollection -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.WorkListTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.WorkListTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.ReprintBarcodeTest">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.ReprintBarcodeTest -->
-      <class name="com.triotree.website.pages.SampleCollectionTest.SampleCollectionofInpatientForPeriod">
-        <methods>
-          <include name="beforeclass"/>
-          <include name="tearDownSession"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.triotree.website.pages.SampleCollectionTest.SampleCollectionofInpatientForPeriod -->
+      </class> <!-- com.triotree.test.website.FrontOffice.MarkPatientDeceasedTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

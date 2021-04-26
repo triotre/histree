@@ -1,5 +1,7 @@
 package com.triotree.website.pages.FrontOffice;
 
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
@@ -223,8 +225,21 @@ public class GenerateSchedulePage extends HISWebsiteBasePage{
 		test.info(m);
 	}
 
-	public void selectEquipment(ExtentTest test,String text)
+	public void selectEquipment(ExtentTest test)
 	{
-		TTWebsiteDriver.selectclass(test, "Equipment", "drpequipment", text);
+		Select sl =new Select(driver.findElement(By.id("drpequipment")));
+		List<WebElement> option_list = sl.getOptions();
+		for(int i=0;i<=option_list.size()-1;i++)
+		{
+			if(!option_list.get(i).getText().equals("Select")) 
+			{
+				sl.selectByVisibleText(option_list.get(i).getText());
+				logger.info("Selected Equipment= "+option_list.get(i).getText());
+				Markup m=MarkupHelper.createLabel("Selected Equipment= "+option_list.get(i).getText(), ExtentColor.GREEN);
+				test.info(m);
+				break;
+			}
+		}
+		
 	}
 }

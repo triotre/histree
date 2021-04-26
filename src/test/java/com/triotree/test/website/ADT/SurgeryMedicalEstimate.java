@@ -60,7 +60,7 @@ public class SurgeryMedicalEstimate extends TTWebsiteBaseTest
 		medical.selectSecondarySpeciality(test,"Endocrinology");
 		medical.enterSecondaryVisitsDays(test,"3");
 		medical.checkCashRadioButton(test);
-		medical.selectReferredBy(test," AJITHA");
+		//medical.selectReferredBy(test," AJITHA");
 		medical.enterBillingCounsellingdoneto(test,"Demo person");
 		medical.enterEmergencyContacts(test,"9876543212");
 		medical.checkAsperActual(test);

@@ -71,7 +71,7 @@ public class UpdatePatientDetailsandAddpackageTest extends TTWebsiteBaseTest
 		//Package Details tab Speciality
 		adtpage.selectTab(test,"Package Details");
 		updatedetail.clickonSelectedPackage(test);
-		updatedetail.packageDetailSearch(test,"Akash package()");
+		updatedetail.packageDetailSearch(test,"Normal ,Package ,1()");
 		updatedetail.verifypackageDetails(test);
 		updatedetail.clickonplusbuttonicon(test);
 		updatedetail.verfiyAssignnewPackagePopup(test);

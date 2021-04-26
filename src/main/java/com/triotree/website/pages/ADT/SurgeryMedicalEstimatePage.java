@@ -76,6 +76,7 @@ public class SurgeryMedicalEstimatePage extends HISWebsiteBasePage {
 	public void enterUhid(ExtentTest test,String text) throws InterruptedException 
 	{
 		String att = driver.findElement(UHID).getAttribute("disabled");
+		
 		if(att!=null) {
 			logger.info("UHID field is disabled");
 			Markup m=MarkupHelper.createLabel("UHID field is disabled", ExtentColor.RED);
@@ -282,7 +283,7 @@ public class SurgeryMedicalEstimatePage extends HISWebsiteBasePage {
 
 	public void selectReferredBy(ExtentTest test,String text) 
 	{
-		TTWebsiteDriver.selectByvisibletext(Referred_By, text);
+		TTWebsiteDriver.selectByvisibletext(locator, text);
 		logger.info("Referred By= "+text+" is selected");
 		Markup m2=MarkupHelper.createLabel("Referred By= "+text+" is selected", ExtentColor.GREEN);
 		test.info(m2);

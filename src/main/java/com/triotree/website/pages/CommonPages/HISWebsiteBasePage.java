@@ -54,8 +54,8 @@ public class HISWebsiteBasePage extends TTBasePage{
 	
 	public void expandMenu() {
 		///driver.waitForElementPresent(BARS_MENU);
-		driver.findElement(BARS_MENU).click();
-		///driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(BARS_MENU));
+		//driver.findElement(BARS_MENU).click();
+		driver.clickByJS(TTWebsiteDriver.driver, driver.findElement(BARS_MENU));
 		logger.info("Menu Expanded");
 	}
 	

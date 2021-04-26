@@ -183,11 +183,15 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		driver.findElement(DOD_TEXT_BOX).sendKeys(dob);
 		driver.clickAnyWhereOnScreen();
 		logger.info("Following DOB has been added : " + dob);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
-	public void enterAge(String age) throws InterruptedException {
-		//	driver.waitForElementToBeClickable(AGE_RADIO_BUTTON, 40);
-		//Thread.sleep(8000);
+	public void enterAge(String age) throws InterruptedException 
+	{
 		driver.waitForElementPresent(AGE_RADIO_BUTTON);
 		WebElement checkBox = driver.findElement(AGE_RADIO_BUTTON);
 		driver.clickByJS(TTWebsiteDriver.driver, checkBox);
@@ -290,6 +294,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	public void enterMobileNumber(String mobile) {
 		driver.findElement(MOBILE_NUMBER).sendKeys(mobile);
 		logger.info("Following MOBILE NO has been added : " + mobile);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public boolean verifyInvalidMobileNoAlertMessage(String message) throws InterruptedException{
@@ -314,6 +323,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		WebElement icon = driver.findElement(RGISTER_ICON);
 		driver.clickByJS(TTWebsiteDriver.driver, icon);
 		logger.info("Regsiter Icon Clicked");
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void clickOnUpdateIcon() {
@@ -333,6 +347,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	public void enterHouseNumber(String house) {
 		driver.findElement(HOUSE_NO).sendKeys(house);
 		logger.info("Following house Number has been added "+ house);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectCityFromCityDropdown(String city) {
@@ -340,6 +359,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select titleDropDown = new Select(driver.findElement(CITY_DROP_DOWN));
 		titleDropDown.selectByVisibleText(city);
 		logger.info("Following City  has been selected from City Dropdown : " + city);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void addANewCity(String city, String district) throws InterruptedException {
@@ -380,6 +404,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		driver.findElement(EMAIL_ID).clear();
 		driver.findElement(EMAIL_ID).sendKeys(email);
 		logger.info("Following email has been added: " + email);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public boolean verifyInvalidEmailIdAlertMessage(String message) throws InterruptedException{
@@ -396,6 +425,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	public void enterRefferdBy(String refferedBy) {
 		driver.findElement(REFFERED_BY_TEXT_BOX).sendKeys(refferedBy);
 		logger.info("Following Reffered By has been added: "+refferedBy);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectPrefferedLanguageFromDropdown(String language) {
@@ -403,6 +437,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select languageDropdown = new Select(driver.findElement(LANGUAGE_DROP_DOWN));
 		languageDropdown.selectByVisibleText(language);
 		logger.info("Following language  has been selected from language Dropdown : " + language);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectOccupationFromDropdown(String occupation) {
@@ -410,6 +449,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select occupationDropdown = new Select(driver.findElement(OCCUPATION_DROP_DOWN));
 		occupationDropdown.selectByVisibleText(occupation);
 		logger.info("Following occupation  has been selected from occupation Dropdown : " + occupation);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectQualificationFromDropdown(String qualification) {
@@ -417,6 +461,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select qualificationDropdown = new Select(driver.findElement(QUALIFICATION_DROP_DOWN));
 		qualificationDropdown.selectByVisibleText(qualification);
 		logger.info("Following qualification  has been selected from qualification Dropdown : " + qualification);
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectReligionFromDropdown(String relegion) {
@@ -424,6 +472,11 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select relegionDropdown = new Select(driver.findElement(RELIGION_DROP_DOWN));
 		relegionDropdown.selectByVisibleText(relegion);
 		logger.info("Following relegion  has been selected from relegion Dropdown : " + relegion);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectReferedFromDropdown(String refer) {
@@ -431,6 +484,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select referDropdown = new Select(driver.findElement(REFER_DROP_DOWN));
 		referDropdown.selectByVisibleText(refer);
 		logger.info("Following refer  has been selected from refer Dropdown : " + refer);
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void checkFinancialDetailsCheckBox() {
@@ -444,6 +501,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select compTypeDropdown = new Select(driver.findElement(COMP_TYPE_DROP_DOWN));
 		compTypeDropdown.selectByVisibleText(compType);
 		logger.info("Following compType  has been selected from compType Dropdown : " + compType);
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectCompanyFromDropdown(int index) {
@@ -451,6 +512,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select compDropdown = new Select(driver.findElement(COMP_DROP_DOWN));
 		compDropdown.selectByIndex(index);
 		logger.info("First comp has been selected from comp Dropdown");
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectCompanyFromDropdownByName(String name) {
@@ -471,6 +536,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select dropdown = new Select(driver.findElement(RATE_DROP_DOWN));
 		dropdown.selectByIndex(index);
 		logger.info("First Rate has been selected from Rate Dropdown");
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	public void selectRateContractFromDropdownByName(String name) {
@@ -486,6 +555,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		WebElement SCHEME_CHECKBOX_element = driver.findElement(SCHEME_CHECKBOX);
 		driver.clickByJS(TTWebsiteDriver.driver, SCHEME_CHECKBOX_element);
 		logger.info("Scheme Checkbox Checked");
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 
@@ -495,6 +568,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 		Select dropdown = new Select(driver.findElement(SCHEME_DROP_DOWN));
 		dropdown.selectByIndex(index);
 		logger.info("First Scheme has been selected from Scheme Dropdown");
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 
 	//----------------------------------------------------------------------------------------	
@@ -588,6 +665,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 					driver.findElement(YES_BUTTON_CONFRM_PAT_DETAILS_POPUP).click();
 					Thread.sleep(3000);
 					logger.info("Yes button clicked on Confirm Patient Details Popup");	
+					if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+					{
+						driver.findElement(By.id("duplicatepopupclose")).click();
+					}
 				}
 				catch (Exception e) {}
 			}
@@ -1023,5 +1104,10 @@ public class PatientRegistrationPage extends HISWebsiteBasePage{
 	{
 		driver.findElement(By.id("locationid")).sendKeys(text);
 		logger.info("Locality= "+text);
+		
+		if(driver.findElements(By.xpath("//div[@style='display: block;']//span[@id='duplicatepopupclose']")).size()>0) 
+		{
+			driver.findElement(By.id("duplicatepopupclose")).click();
+		}
 	}
 }

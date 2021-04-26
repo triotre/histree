@@ -3,16 +3,19 @@ package com.triotree.test.website;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+import java.text.ParseException;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.FilenameUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -55,8 +58,10 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 	 */
 
 	@BeforeMethod(alwaysRun=true)
-	public void setUp() throws Exception {
-		driver.loadApplication();           
+	public void setUp() throws Exception
+	{
+		driver.loadApplication();  
+		
 		driver.getURL();
 		//logger.info("Application loaded");
 		idCard = getIDCardType();
@@ -153,12 +158,12 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 
 
 	//Reading test data from JSON File
-	public JSONObject getTestData() throws FileNotFoundException, IOException, ParseException{
-		JSONParser parser = new JSONParser();
-		Object obj = parser.parse(new FileReader("./data/"+jsonTestData+".json"));
-		JSONObject jsonObject = (JSONObject) obj;
-		return jsonObject;
-	}
+//	public JSONObject getTestData() throws FileNotFoundException, IOException, ParseException{
+//		JSONParser parser = new JSONParser();
+//		Object obj = parser.parse(new FileReader("./data/"+jsonTestData+".json"));
+//		JSONObject jsonObject = (JSONObject) obj;
+//		return jsonObject;
+//	}
 
 	//	public void logout(){
 	//		driver.quickWaitForElementPresent(By.xpath(".//*[@id='headerForm:home']"));
@@ -255,4 +260,6 @@ public class TTWebsiteBaseTest extends TTBaseTest {
 		boolean renamefile = chosenFile.renameTo(new File(dd+".log"));
 		return renamefile;
 	}
+	
+
 }

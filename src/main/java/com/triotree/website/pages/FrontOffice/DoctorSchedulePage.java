@@ -107,10 +107,12 @@ public class DoctorSchedulePage extends HISWebsiteBasePage{
 	}
 
 	public void selectDoctorFromDropdown(String doctor) {
-		driver.waitForElementPresent(DOCTOR_DROPDOWN);
+		try {
 		Select docDropdown = new Select(driver.findElement(DOCTOR_DROPDOWN));
 		docDropdown.selectByVisibleText(doctor);
 		logger.info("Following doctor  has been selected from doctor Dropdown : " + doctor);
+		}
+		catch (Exception e) {}
 	}
 
 	public void clickOnGreenGeneratedScheduleForPreviousTime() {
